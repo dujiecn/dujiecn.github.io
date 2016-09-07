@@ -1,42 +1,114 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
 
-block title
-  if page.category
-     title= page.category + " | " + config.title
-  if page.tag
-     title= page.tag + " | " + config.title
-  if page.archive
-     title= __('archive') + " | " + config.title
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main">
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2016/09/07/hello-world/" class="archive-article-date">
+  <time datetime="2016-09-07T03:47:14.000Z" itemprop="datePublished">Sep 7</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/09/07/hello-world/">Hello World</a>
+    </h1>
+  
 
-block main
-  article
-    .container
-      if page.category || page.tag
-          h1.label-title=  (page.category || page.tag)
-      .post
-        // show all categories and tags
-        if !(page.category || page.tag)
-            .all-categories
-              ul.tag-box.list-unstyled
-                for category in site.categories.sort('name').toArray()
-                  li
-                    a(href=root+'categories/'+category.name)= category.name
-                      span= category.posts.length
-            .all-tags
-              ul.tag-box.list-unstyled
-                for tag in site.tags.sort('name').toArray()
-                  li
-                    a(href=root+'tags/'+tag.name)= tag.name
-                      span= tag.posts.length
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 John Doe 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
 
-        .post-archive
-            //Use lodash to classify posts. See https://lodash.com/docs#groupBy
-            each posts, year in _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
-              h2= -year
-              ul.listing
-                for post in posts
-                  li
-                    span.date= post.date.format('YYYY/MM/DD')
-                    a(href=url_for(post.path), title=post.title)
-                      = post.title
-  include _partial/paginator.jade
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
