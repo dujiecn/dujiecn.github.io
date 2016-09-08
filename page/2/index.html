@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="walljay的备忘博客">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="walljay的备忘博客">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-chrome跨域模式打开方式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/chrome跨域模式打开方式/">chrome跨域模式打开方式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/chrome跨域模式打开方式/" class="article-date">
+  <time datetime="2016-09-08T06:00:05.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>open /Applications/Google\ Chrome.app –args –allow-file-access-from-files –disable-web-security</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vim命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/vim命令/">vim命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/vim命令/" class="article-date">
+  <time datetime="2016-09-08T05:55:46.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 模式<br>　　a) 一般模式： vi 处理文件时，一进入该文件，就是一般模式了.<br>　　b) 编辑模式：在一般模式下可以进行删除，复制，粘贴等操作，却无法进行编辑操作。等按下‘i,I,o,O,a,A,r,R’等<br>字母之后才能进入编辑模式.通常在linux中，按下上述字母时，左下方会出现’INSERT’或者‘REPLACE’字样,才可以<br>输入任何文字到文件中.要回到一般模式，按下[ESC]键即可.<br>　　c) 命令行模式：在一般模式中，输入“: 或者/或者?”,即可将光标移动到最下面一行，在该模式下，您可以搜索数据，而且读取，<br>　　 存盘，大量删除字符，离开vi，显示行号等操作.</p>
+<ol>
+<li>vi 常用命令汇总:<br>2.1 一般模式<br>　　a) 移动光标：<br>　　–&gt; 上下左右方向键 ↑↓← →<br>　　–&gt; 翻页 pagedown / pageup 按键<br>　　–&gt; 数字 0 : 将光标移动到当前行首<br>　　 –&gt; $ :　　　将光标移动到当前行尾<br>　　 –&gt; G : 移动到这个文件的最后一行 nG : n 为数字，移动到这个文件的第n行.<br>　　–&gt; gg: 移动到这个文件的第一行 相当于 1G</li>
+</ol>
+<p>　　b) 搜索与替换<br>　　–&gt; /word : 从光标开始，向下查询一个名为word的字符串。<br>　　–&gt; :n1、n2s/word1/word2/g : n1 与n2 为数字.在第n1与n2行之间寻找word1这个字符串,<br>　　并将该字符串替换为word2。<br>　　 –&gt; :1、$s/word1/word2/g : 从第一行到最后一行寻找word1字符串，并将该字符串替换为word2<br>　　–&gt; :1、$s/word1/word2/gc: 从第一行到最后一行寻找word1字符串，并将该字符串替换为word2。<br>　　并且在替换之前显示提示符给用户确认（conform）是否需要替换。<br>　　 c) 删除，复制，粘贴<br>　　 –&gt; x,X : 在一行中，x为向后删除一个字符（相当于del键），X为向前删除一个字符（相当于backspace键）。<br>　　–&gt; dd : 删除光标所在的那一整行。<br>　　–&gt; ndd : n 为数字。从光标开始，删除向下n列。<br>　　 –&gt; yy : 复制光标所在的那一行。<br>　　 –&gt; nyy : n为数字。复制光标所在的向下n行。<br>　　 –&gt; p,P : p 为将已复制的数据粘贴到光标的下一行，P则为贴在光标的上一行。<br>　　–&gt; u : 复原前一个操作<br>　　 –&gt; CTRL + r : 重做上一个操作。<br>　　–&gt; 小数点’.’: 重复前一个动作。<br>2.2 编辑模式：<br>　　a) i, I : 在光标所在处插入输入文字，已存在的文字向后退。i 为‘从当前光标所在处插入’，I 为‘在当前所在行的一个非空格符处开始插入’。<br>　　 b) a, A : a 为‘从当前光标所在处的下一个字符开始插入’。A 为‘从光标所在行的最后一个字符处开始插入’。<br>　　c) o,O : 这是英文o的大小写。o为‘在当前光标所在行的下一行处插入新的一行’。O表示‘在当前光标所在行的上一行插入新的一行’。<br>　　d) r,R : 替换：r 会替换光标所在的那一个字符。 R ： 会一直替换光标所在的字符，直到按下esc 键为止。<br>　　e) ESC : 进入一般模式。<br>2.3 命令模式：<br>　　a) :w : 将编辑的数据写入硬盘<br>　　 b) :q : 离开vi<br>　　 c) :q! : 强制离开，不存储<br>　　d) :wq : 存储后离开<br>　　e) :wq! : 强制存储后离开</p>
+<ol>
+<li>vim 附加命令行<br>3.1 块选择（visual block)<br>　　v 字符选择，将光标经过的地方反白显示<br>　　V 行选择，会将光标经过的行反白选择<br>　　ctrl + v 块选择，可以用长方形的方式选择数据<br>　　y 复制反白的地方<br>　 d 将反白的地方删除掉<br>3.2 多文件编辑<br>　 :n 编辑下一个文件<br>:N 编辑上一个文件<br>　 :files 列出当前vim 打开的所有文件<br>3.3 多窗口功能<br>:sp 【filename】打开一个新窗口，如果加filename，表示在新窗口打开一个新文件<br>　　 否则表示两个窗口为同一个文件内容<br>ctrl+wj 先按下ctrl ，再按下w后，放开所有按键，然后按下j，则光标可移动到下方的窗口<br>ctrl+wk 同上，不过光标移动到上面的窗口<br>ctrl+wq 其实就是:q结束离开。</li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-利用hexo写博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/07/利用hexo写博客/">利用hexo写博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/07/利用hexo写博客/" class="article-date">
+  <time datetime="2016-09-07T04:13:22.000Z" itemprop="datePublished">2016-09-07</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><pre><code>npm install -g hexo
+</code></pre><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>创建一个用来写博客的目录，并cd到该目录运行:</p>
+<pre><code>hexo init
+hexo g
+npm install hexo-deployer-git --save
+</code></pre><h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><p>在github.com上面创建<username>.github.io的仓库<br>在当前目录下，修改_config.yml最下面，修改如下代码并保存<br>git地址为自己的仓库地址</username></p>
+<pre><code>deploy:
+type: git
+  repository: git@github.com:dujiecn/dujiecn.github.io.git
+  branch: master
+</code></pre><h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><pre><code>hexo clean
+hexo g
+hexo d
+</code></pre><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><pre><code>访问dujiecn.github.io          
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
