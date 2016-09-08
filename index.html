@@ -28,6 +28,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mongodb安装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/mongodb安装/">mongodb安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/mongodb安装/" class="article-date">
+  <time datetime="2016-09-08T08:45:13.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><ol>
+<li>到mongodb官网下载对应的包</li>
+<li>解压 tar zxvf mongodb.taz</li>
+<li>把解压出来的文件夹移动自己指定的目录<br> mv mongodb ./develop-tools</li>
+<li>把mongod的命令加入环境变量<br> vi ~/.bash_profile<br> MONGODB_HOME=/Users/dujie/develop-tools/mongodb<br> PATH=$PATH:$MONGO_HOME</li>
+<li>创建存放数据和日志的目录<br> sudo mkdir /data/db<br> sudo mkdir/data/log<br> 赋权限<br> sudo chown -R dujie /data</li>
+<li>指定数据和日志目录<br> cd /data<br> mongod –dbpath db –logpath log/mongod.log –logappend –fork</li>
+<li>启动mongodb数据库<br> mongod</li>
+</ol>
+<p>=================================================================</p>
+<h3 id="mongodb命令"><a href="#mongodb命令" class="headerlink" title="mongodb命令"></a>mongodb命令</h3><ol>
+<li>运行mongodb服务器<br> mongod</li>
+<li>运行mongodb客户端<br> mongo</li>
+<li><p>连上到数据库服务器进行一些操作<br> 查看当前所有的数据库：show dbs<br> 创建数据库：use mydb<br> 查看当前选择的数据库：db<br> 删除数据库：1. use mydb 2. db.dropDatabase()<br> 创建集合：db.createCollection(name,options)</p>
+<pre><code>or  db.myCollection.insert({name:&apos;dj&apos;}) 
+</code></pre><p> 删除集合：db.myCollection.drop()<br> 查询集合：db.myCollection.find()//.pretty()</p>
+<pre><code>具体查询的where条件参照：http://www.yiibai.com/mongodb/mongodb_query_document.html
+</code></pre></li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
