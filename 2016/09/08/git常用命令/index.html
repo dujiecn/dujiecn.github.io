@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git常用命令 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="####添加文件到仓库    git add file
+####提交文件到仓库    git commit -m ‘desc’
+####显示当前仓库的状态    git status
+####显示仓库的提交日志    git log –pretty=oneline
+####回退版本    git reset –hard HEAD^    git reset –hard head~100 往回100">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/git常用命令/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="####添加文件到仓库    git add file
+####提交文件到仓库    git commit -m ‘desc’
+####显示当前仓库的状态    git status
+####显示仓库的提交日志    git log –pretty=oneline
+####回退版本    git reset –hard HEAD^    git reset –hard head~100 往回100">
+<meta property="og:updated_time" content="2016-09-08T08:39:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="####添加文件到仓库    git add file
+####提交文件到仓库    git commit -m ‘desc’
+####显示当前仓库的状态    git status
+####显示仓库的提交日志    git log –pretty=oneline
+####回退版本    git reset –hard HEAD^    git reset –hard head~100 往回100">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git常用命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/git常用命令/" class="article-date">
+  <time datetime="2016-09-08T08:36:18.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####添加文件到仓库<br>    git add file</p>
+<p>####提交文件到仓库<br>    git commit -m ‘desc’</p>
+<p>####显示当前仓库的状态<br>    git status</p>
+<p>####显示仓库的提交日志<br>    git log –pretty=oneline</p>
+<p>####回退版本<br>    git reset –hard HEAD^<br>    git reset –hard head~100 往回100个版本<br>    git reset –hard 08b8637 回退指定版本</p>
+<p>####显示提交操作对应的版本<br>    git reflog</p>
+<p>####复原工作区的文件（回到最近一次git commit或commit add）<br>    git checkout – file</p>
+<p>####撤销暂存区修改，重新放回工作区<br>    git reset head file</p>
+<p>####从版本库删除文件<br>    git rm test.txt<br>    git commit -m ‘del file’</p>
+<p>####远程关联github<br>    git remote add origin git@github.com:dujiecn/learngit.git</p>
+<p>####提交到远程仓库<br>    git push -u origin master</p>
+<p>#####拷贝远程仓库代码<br>    git clone git@github.com:dujiecn/gitskills.git</p>
+<ol>
+<li>创建分支<br> 创建分支很简单：git branch &lt;分支名&gt;</li>
+<li>切换分支<br> git checkout &lt;分支名&gt;<br> 该语句和上一个语句可以和起来用一个语句表示：git checkout -b &lt;分支名&gt;<ol>
+<li>分支合并<br>比如，如果要将开发中的分支（develop），合并到稳定分支（master），<br>首先切换的master分支：git checkout master。<br>然后执行合并操作：git merge develop。<br>如果有冲突，会提示你，调用git status查看冲突文件。<br>解决冲突，然后调用git add或git rm将解决后的文件暂存。<br>所有冲突解决后，git commit 提交更改。</li>
+<li>分支衍合<br>分支衍合和分支合并的差别在于，分支衍合不会保留合并的日志，不留痕迹，而 分支合并则会保留合并的日志。<br>要将开发中的分支（develop），衍合到稳定分支（master）。<br>首先切换的master分支：git checkout master。<br>然后执行衍和操作：git rebase develop。<br>如果有冲突，会提示你，调用git status查看冲突文件。<br>解决冲突，然后调用git add或git rm将解决后的文件暂存。<br>所有冲突解决后，git rebase –continue 提交更改。</li>
+<li>删除分支<br>执行git branch -d &lt;分支名&gt;<br>如果该分支没有合并到主分支会报错，可以用以下命令强制删除git branch -D &lt;分支名&gt;</li>
+</ol>
+</li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/08/JS多文件下载/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS多文件下载</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
