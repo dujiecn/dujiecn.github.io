@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>walljay的备忘博客</title>
+  <title>vim命令 | walljay的备忘博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="walljay的备忘博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="模式　　a) 一般模式： vi 处理文件时，一进入该文件，就是一般模式了.　　b) 编辑模式：在一般模式下可以进行删除，复制，粘贴等操作，却无法进行编辑操作。等按下‘i,I,o,O,a,A,r,R’等字母之后才能进入编辑模式.通常在linux中，按下上述字母时，左下方会出现’INSERT’或者‘REPLACE’字样,才可以输入任何文字到文件中.要回到一般模式，按下[ESC]键即可.　　c) 命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim命令">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/vim命令/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="模式　　a) 一般模式： vi 处理文件时，一进入该文件，就是一般模式了.　　b) 编辑模式：在一般模式下可以进行删除，复制，粘贴等操作，却无法进行编辑操作。等按下‘i,I,o,O,a,A,r,R’等字母之后才能进入编辑模式.通常在linux中，按下上述字母时，左下方会出现’INSERT’或者‘REPLACE’字样,才可以输入任何文字到文件中.要回到一般模式，按下[ESC]键即可.　　c) 命令">
+<meta property="og:updated_time" content="2016-09-08T05:56:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="walljay的备忘博客">
+<meta name="twitter:title" content="vim命令">
+<meta name="twitter:description" content="模式　　a) 一般模式： vi 处理文件时，一进入该文件，就是一般模式了.　　b) 编辑模式：在一般模式下可以进行删除，复制，粘贴等操作，却无法进行编辑操作。等按下‘i,I,o,O,a,A,r,R’等字母之后才能进入编辑模式.通常在linux中，按下上述字母时，左下方会出现’INSERT’或者‘REPLACE’字样,才可以输入任何文字到文件中.要回到一般模式，按下[ESC]键即可.　　c) 命令">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -26,17 +30,15 @@
   <div id="container">
     <div id="wrap">
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-vim命令" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-vim命令" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/vim命令/">vim命令</a>
+    <h1 class="article-title" itemprop="name">
+      vim命令
     </h1>
   
 
@@ -66,59 +68,20 @@
     </div>
   </div>
   
-</article>
-
-
-  
-    <article id="post-利用hexo写博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
     
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/07/利用hexo写博客/">利用hexo写博客</a>
-    </h1>
   
+    <a href="/2016/09/07/利用hexo写博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">利用hexo写博客</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/07/利用hexo写博客/" class="article-date">
-  <time datetime="2016-09-07T04:13:22.000Z" itemprop="datePublished">2016-09-07</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><pre><code>npm install -g hexo
-</code></pre><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>创建一个用来写博客的目录，并cd到该目录运行:</p>
-<pre><code>hexo init
-hexo g
-npm install hexo-deployer-git --save
-</code></pre><h3 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h3><p>在github.com上面创建<username>.github.io的仓库<br>在当前目录下，修改_config.yml最下面，修改如下代码并保存<br>git地址为自己的仓库地址</username></p>
-<pre><code>deploy:
-type: git
-  repository: git@github.com:dujiecn/dujiecn.github.io.git
-  branch: master
-</code></pre><h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><pre><code>hexo clean
-hexo g
-hexo d
-</code></pre><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><pre><code>访问dujiecn.github.io          
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
   
 </article>
 
-
-  
-  
 </section>
         <aside id="sidebar">
   <nav class="menus">
