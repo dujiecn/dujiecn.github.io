@@ -17,7 +17,7 @@
 镜像为：centos:latest容器名：centos映射本地目录到容器/mnt目录中：/usr/local/centos
 导出镜像docker save centos:latest &amp;gt; centos.tar
 导出镜像docker load">
-<meta property="og:updated_time" content="2016-09-08T06:06:42.000Z">
+<meta property="og:updated_time" content="2016-09-08T06:08:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker常用命">
 <meta name="twitter:description" content="运行容器docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
@@ -67,7 +67,8 @@
 </code></pre><h3 id="导出镜像-1"><a href="#导出镜像-1" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker load centos.tar
 </code></pre><h3 id="修改容器并提交新的镜像"><a href="#修改容器并提交新的镜像" class="headerlink" title="修改容器并提交新的镜像"></a>修改容器并提交新的镜像</h3><pre><code>docker commit -m &apos;update&apos; -a &apos;walljay&apos; centos walljay/centos:latest
 </code></pre><p>-m 更新日志<br>-a 作者<br>centos 容器名<br>walljay/centos:lastest 镜像</p>
-
+<h3 id="设置容器时间"><a href="#设置容器时间" class="headerlink" title="设置容器时间"></a>设置容器时间</h3><pre><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre>
       
 
       
@@ -77,6 +78,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/09/08/JS多文件下载/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS多文件下载
+        
+      </div>
+    </a>
   
   
     <a href="/2016/09/08/chrome跨域模式打开方式/" id="article-nav-older" class="article-nav-link-wrap">

@@ -28,6 +28,138 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JS多文件下载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/JS多文件下载/">JS多文件下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/JS多文件下载/" class="article-date">
+  <time datetime="2016-09-08T06:09:01.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js下载"><a href="#js下载" class="headerlink" title="js下载"></a>js下载</h3><pre><code>/**
+ * Javascript 多文件下载
+ * @author Barret Lee
+ * @email  barret.china@gmail.com
+ */
+var Downer = (function(files) {
+var h5Down = !/Trident|MSIE/.test(navigator.userAgent);
+// try{
+//     h5Down = document.createElement(&quot;a&quot;).hasOwnProperty(&quot;download&quot;);
+// } catch(e){
+//     h5Down = document.createElement(&quot;a&quot;).download;
+// }
+
+/**
+ * 在支持 download 属性的情况下使用该方法进行单个文件下载
+ * 目前 FF 还不支持 download 属性，所以 FF 必须另觅他法！
+ * @param  {String} fileName
+ * @param  {String|FileObject} contentOrPath
+ * @return {Null}
+ */
+function downloadFile(fileName, contentOrPath) {
+    var aLink = document.createElement(&quot;a&quot;),
+        evt = document.createEvent(&quot;HTMLEvents&quot;),
+        isData = contentOrPath.slice(0, 5) === &quot;data:&quot;,
+        isPath = contentOrPath.lastIndexOf(&quot;.&quot;) &gt; -1;
+
+    // 初始化点击事件
+    // 注：initEvent 不加后两个参数在FF下会报错
+    evt.initEvent(&quot;click&quot;, false, false);
+
+    // 添加文件下载名
+    aLink.download = fileName;
+
+    // 如果是 path 或者 dataURL 直接赋值
+    // 如果是 file 或者其他内容，使用 Blob 转换
+    aLink.href = isPath || isData ? contentOrPath : URL.createObjectURL(new Blob([contentOrPath]));
+
+    aLink.dispatchEvent(evt);
+}
+
+/**
+ * [IEdownloadFile description]
+ * @param  {String} fileName
+ * @param  {String|FileObject} contentOrPath
+ */
+function IEdownloadFile(fileName, contentOrPath, bool) {
+    var isImg = contentOrPath.slice(0, 10) === &quot;data:image&quot;,
+        ifr = document.createElement(&apos;iframe&apos;);
+
+    ifr.style.display = &apos;none&apos;;
+    ifr.src = contentOrPath;
+
+    document.body.appendChild(ifr);
+
+    // dataURL 的情况
+    isImg &amp;&amp; ifr.contentWindow.document.write(&quot;&lt;img src=&apos;&quot; +
+        contentOrPath + &quot;&apos; /&gt;&quot;);
+
+    // 保存页面 -&gt; 保存文件
+    // alert(ifr.contentWindow.document.body.innerHTML)
+    if (bool) {
+        ifr.contentWindow.document.execCommand(&apos;SaveAs&apos;, false, fileName);
+        document.body.removeChild(ifr);
+    } else {
+        setTimeout(function() {
+            ifr.contentWindow.document.execCommand(&apos;SaveAs&apos;, false, fileName);
+            document.body.removeChild(ifr);
+        }, 0);
+    }
+}
+
+/**
+ * [parseURL description]
+ * @param  {String} str [description]
+ * @return {String}     [description]
+ */
+function parseURL(str) {
+    return str.lastIndexOf(&quot;/&quot;) &gt; -1 ? str.slice(str.lastIndexOf(&quot;/&quot;) + 1) : str;
+}
+
+return function(files) {
+    // 选择下载函数
+    var downer = h5Down ? downloadFile : IEdownloadFile;
+
+    // 判断类型，处理下载文件名
+    if (files instanceof Array) {
+        for (var i = 0, l = files.length; i &lt; l; i++)
+        // bug 处理
+            downer(parseURL(files[i]), files[i], true);
+    } else if (typeof files === &quot;string&quot;) {
+        downer(parseURL(files), files);
+    } else {
+        // 对象
+        for (var file in files) downer(file, files[file]);
+    }
+}
+
+})();    
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-docker常用命" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -56,7 +188,8 @@
 </code></pre><h3 id="导出镜像-1"><a href="#导出镜像-1" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker load centos.tar
 </code></pre><h3 id="修改容器并提交新的镜像"><a href="#修改容器并提交新的镜像" class="headerlink" title="修改容器并提交新的镜像"></a>修改容器并提交新的镜像</h3><pre><code>docker commit -m &apos;update&apos; -a &apos;walljay&apos; centos walljay/centos:latest
 </code></pre><p>-m 更新日志<br>-a 作者<br>centos 容器名<br>walljay/centos:lastest 镜像</p>
-
+<h3 id="设置容器时间"><a href="#设置容器时间" class="headerlink" title="设置容器时间"></a>设置容器时间</h3><pre><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre>
       
 
       

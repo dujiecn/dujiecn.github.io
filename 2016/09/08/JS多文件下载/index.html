@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS多文件下载 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="js下载/**
+ * Javascript 多文件下载
+ * @author Barret Lee
+ * @email  barret.china@gmail.com
+ */
+var Downer = (function(files) {
+var h5Down = !/Trident|MSIE/.test(navigator.userAgent);
+// try{
+//     h5Down =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS多文件下载">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/JS多文件下载/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="js下载/**
+ * Javascript 多文件下载
+ * @author Barret Lee
+ * @email  barret.china@gmail.com
+ */
+var Downer = (function(files) {
+var h5Down = !/Trident|MSIE/.test(navigator.userAgent);
+// try{
+//     h5Down =">
+<meta property="og:updated_time" content="2016-09-08T06:11:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS多文件下载">
+<meta name="twitter:description" content="js下载/**
+ * Javascript 多文件下载
+ * @author Barret Lee
+ * @email  barret.china@gmail.com
+ */
+var Downer = (function(files) {
+var h5Down = !/Trident|MSIE/.test(navigator.userAgent);
+// try{
+//     h5Down =">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-JS多文件下载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS多文件下载
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/JS多文件下载/" class="article-date">
+  <time datetime="2016-09-08T06:09:01.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js下载"><a href="#js下载" class="headerlink" title="js下载"></a>js下载</h3><pre><code>/**
+ * Javascript 多文件下载
+ * @author Barret Lee
+ * @email  barret.china@gmail.com
+ */
+var Downer = (function(files) {
+var h5Down = !/Trident|MSIE/.test(navigator.userAgent);
+// try{
+//     h5Down = document.createElement(&quot;a&quot;).hasOwnProperty(&quot;download&quot;);
+// } catch(e){
+//     h5Down = document.createElement(&quot;a&quot;).download;
+// }
+
+/**
+ * 在支持 download 属性的情况下使用该方法进行单个文件下载
+ * 目前 FF 还不支持 download 属性，所以 FF 必须另觅他法！
+ * @param  {String} fileName
+ * @param  {String|FileObject} contentOrPath
+ * @return {Null}
+ */
+function downloadFile(fileName, contentOrPath) {
+    var aLink = document.createElement(&quot;a&quot;),
+        evt = document.createEvent(&quot;HTMLEvents&quot;),
+        isData = contentOrPath.slice(0, 5) === &quot;data:&quot;,
+        isPath = contentOrPath.lastIndexOf(&quot;.&quot;) &gt; -1;
+
+    // 初始化点击事件
+    // 注：initEvent 不加后两个参数在FF下会报错
+    evt.initEvent(&quot;click&quot;, false, false);
+
+    // 添加文件下载名
+    aLink.download = fileName;
+
+    // 如果是 path 或者 dataURL 直接赋值
+    // 如果是 file 或者其他内容，使用 Blob 转换
+    aLink.href = isPath || isData ? contentOrPath : URL.createObjectURL(new Blob([contentOrPath]));
+
+    aLink.dispatchEvent(evt);
+}
+
+/**
+ * [IEdownloadFile description]
+ * @param  {String} fileName
+ * @param  {String|FileObject} contentOrPath
+ */
+function IEdownloadFile(fileName, contentOrPath, bool) {
+    var isImg = contentOrPath.slice(0, 10) === &quot;data:image&quot;,
+        ifr = document.createElement(&apos;iframe&apos;);
+
+    ifr.style.display = &apos;none&apos;;
+    ifr.src = contentOrPath;
+
+    document.body.appendChild(ifr);
+
+    // dataURL 的情况
+    isImg &amp;&amp; ifr.contentWindow.document.write(&quot;&lt;img src=&apos;&quot; +
+        contentOrPath + &quot;&apos; /&gt;&quot;);
+
+    // 保存页面 -&gt; 保存文件
+    // alert(ifr.contentWindow.document.body.innerHTML)
+    if (bool) {
+        ifr.contentWindow.document.execCommand(&apos;SaveAs&apos;, false, fileName);
+        document.body.removeChild(ifr);
+    } else {
+        setTimeout(function() {
+            ifr.contentWindow.document.execCommand(&apos;SaveAs&apos;, false, fileName);
+            document.body.removeChild(ifr);
+        }, 0);
+    }
+}
+
+/**
+ * [parseURL description]
+ * @param  {String} str [description]
+ * @return {String}     [description]
+ */
+function parseURL(str) {
+    return str.lastIndexOf(&quot;/&quot;) &gt; -1 ? str.slice(str.lastIndexOf(&quot;/&quot;) + 1) : str;
+}
+
+return function(files) {
+    // 选择下载函数
+    var downer = h5Down ? downloadFile : IEdownloadFile;
+
+    // 判断类型，处理下载文件名
+    if (files instanceof Array) {
+        for (var i = 0, l = files.length; i &lt; l; i++)
+        // bug 处理
+            downer(parseURL(files[i]), files[i], true);
+    } else if (typeof files === &quot;string&quot;) {
+        downer(parseURL(files), files);
+    } else {
+        // 对象
+        for (var file in files) downer(file, files[file]);
+    }
+}
+
+})();    
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/08/docker常用命/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">docker常用命</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
