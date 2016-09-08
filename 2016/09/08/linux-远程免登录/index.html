@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux_远程免登录 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为172.24.253.2 ;A和B的系统都是Linux;
+在A上的命令:# ssh-keygen -t rsa (连续三次回车,即在本地生成了公钥和私钥,不设置密码)
+# ssh root@172.24.253.2 &amp;quot;mkdir .ssh;chmod 0700 .ssh&amp;quot; (需要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux_远程免登录">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/linux-远程免登录/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为172.24.253.2 ;A和B的系统都是Linux;
+在A上的命令:# ssh-keygen -t rsa (连续三次回车,即在本地生成了公钥和私钥,不设置密码)
+# ssh root@172.24.253.2 &amp;quot;mkdir .ssh;chmod 0700 .ssh&amp;quot; (需要">
+<meta property="og:updated_time" content="2016-09-08T09:00:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux_远程免登录">
+<meta name="twitter:description" content="A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为172.24.253.2 ;A和B的系统都是Linux;
+在A上的命令:# ssh-keygen -t rsa (连续三次回车,即在本地生成了公钥和私钥,不设置密码)
+# ssh root@172.24.253.2 &amp;quot;mkdir .ssh;chmod 0700 .ssh&amp;quot; (需要">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-linux-远程免登录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux_远程免登录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/linux-远程免登录/" class="article-date">
+  <time datetime="2016-09-08T08:48:06.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A为本地主机(即用于控制其他主机的机器) ;B为远程主机(即被控制的机器Server), 假如ip为172.24.253.2 ;A和B的系统都是Linux;</p>
+<h3 id="在A上的命令"><a href="#在A上的命令" class="headerlink" title="在A上的命令:"></a>在A上的命令:</h3><pre><code># ssh-keygen -t rsa (连续三次回车,即在本地生成了公钥和私钥,不设置密码)
+# ssh root@172.24.253.2 &quot;mkdir .ssh;chmod 0700 .ssh&quot; (需要输入密码， 注:必须将.ssh的权限设为700)
+# scp ~/.ssh/id_rsa.pub root@172.24.253.2:.ssh/id_rsa.pub (需要输入密码)
+</code></pre><h3 id="在B上的命令"><a href="#在B上的命令" class="headerlink" title="在B上的命令:"></a>在B上的命令:</h3><pre><code># touch /root/.ssh/authorized_keys (如果已经存在这个文件, 跳过这条)
+# chmod 600 ~/.ssh/authorized_keys  (# 注意： 必须将~/.ssh/authorized_keys的权限改为600, 该文件用于保存ssh客户端生成的公钥，可以修改服务器的ssh服务端配置文件/etc/ssh/sshd_config来指定其他文件名）
+# cat /root/.ssh/id_rsa.pub  &gt;&gt; /root/.ssh/authorized_keys (将id_rsa.pub的内容追加到 authorized_keys 中, 注意不要用 &gt; ，否则会清空原有的内容，使其他人无法使用原有的密钥登录)
+</code></pre><h3 id="回到A机器"><a href="#回到A机器" class="headerlink" title="回到A机器:"></a>回到A机器:</h3><pre><code># ssh root@172.24.253.2 (不需要密码, 登录成功)
+</code></pre><p>假如在生成密钥对的时候指定了其他文件名（或者需要控制N台机器，此时你会生成多对密钥），则需要使用参数-i指定私钥文件</p>
+<pre><code># ssh root@172.24.253.2 -i /path/to/your_id_rsa    
+</code></pre><p>scp也是一样，如:</p>
+<pre><code>scp －i /root/.ssh/id_rsa  ./xxx 192.168.102.158:/home/wwy/bak
+</code></pre><p>因为默认情况下ssh命令会使用~/.ssh/id_rsa作为私钥文件进行登录，如果需要连接多台服务器而又不希望每次使用ssh命令时指定私钥文件，可以在ssh的客户端全局配置文件/etc/ssh/ssh_config（或本地配置文件~/.ssh/config, 如果该文件不存在则建立一份）中增加如下配置</p>
+<pre><code>IdentityFile /path/to/your_id_rsa
+</code></pre><p>也可以为每个服务器指定一个Host配置:  </p>
+<pre><code>Host 172.24.253.2
+    IdentityFile /path/to/your_id_rsa
+</code></pre><p>如果连接时出现如下的错误：<br>  Agent admitted failure to sign using the key<br>则使用 ssh-add 指令将私钥加进来（根据个人的密匙命名不同更改 id_rsa）</p>
+<pre><code>ssh-add   ~/.ssh/id_rsa
+</code></pre><p>如果能保护好自己的私钥, 这种方法相对在shell上输入密码, 要安全一些</p>
+<h3 id="深入一点"><a href="#深入一点" class="headerlink" title="深入一点:"></a>深入一点:</h3><p>从表面上简单的理解一下登录的过程,<br>首先 ssh-keygen -t rsa 命令生成了一个密钥和一个公钥, 而且密钥可以设置自己的密码<br>可以把密钥理解成一把钥匙, 公钥理解成这把钥匙对应的锁头,<br>把锁头(公钥)放到想要控制的server上, 锁住server, 只有拥有钥匙(密钥)的人, 才能打开锁头, 进入server并控制<br>而对于拥有这把钥匙的人, 必需得知道钥匙本身的密码,才能使用这把钥匙 (除非这把钥匙没设置密码), 这样就可以防止钥匙被了配了(私钥被人复制)</p>
+<p>当然, 这种例子只是方便理解罢了,<br>拥有root密码的人当然是不会被锁住的, 而且不一定只有一把锁(公钥), 但如果任何一把锁, 被人用其对应的钥匙(私钥)打开了, server就可以被那个人控制了<br>所以说, 只要你曾经知道server的root密码, 并将有root身份的公钥放到上面, 就可以用这个公钥对应的私钥”打开” server, 再以root的身分登录, 即使现在root密码已经更改!</p>
+<hr>
+<h3 id="方法二、安装sshpass"><a href="#方法二、安装sshpass" class="headerlink" title="方法二、安装sshpass"></a>方法二、安装sshpass</h3><pre><code># sudo apt-get install sshpass
+</code></pre><p>安装完成后使用sshpass允许你用 -p 参数指定明文密码，然后直接登录远程服务器。例如：</p>
+<pre><code># sshpass -p &apos;你的密码&apos; ssh 用户名@服务器ip地址
+</code></pre><p>用 ‘-p’ 指定了密码后，还需要在后面跟上标准的 ssh 连接命令。</p>
+<p>Sshd的配置文件/etc/ssh/ssd_config</p>
+<hr>
+<p>ssh无密码验证的情况下向远程主机发送命令</p>
+<pre><code>发送一条:
+ssh username@remote_server_ip your_command
+ssh username@remote_server_ip “your_command1;your_command2; your_command3”
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/08/mongodb安装/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mongodb安装</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
