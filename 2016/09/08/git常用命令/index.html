@@ -9,7 +9,9 @@
 提交文件到仓库git commit -m &amp;apos;desc&amp;apos;
 显示当前仓库的状态git status
 显示仓库的提交日志git log --pretty=oneline
-####回退版本    git reset –hard HEAD^    git reset –hard head~100 往回100个版本    git reset –har">
+回退版本git reset --hard HEAD^
+git reset --hard head~100 往回100个版本
+git reset --hard 08b8637 回">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git常用命令">
 <meta property="og:url" content="http://yoursite.com/2016/09/08/git常用命令/index.html">
@@ -18,15 +20,19 @@
 提交文件到仓库git commit -m &amp;apos;desc&amp;apos;
 显示当前仓库的状态git status
 显示仓库的提交日志git log --pretty=oneline
-####回退版本    git reset –hard HEAD^    git reset –hard head~100 往回100个版本    git reset –har">
-<meta property="og:updated_time" content="2016-09-08T08:40:36.000Z">
+回退版本git reset --hard HEAD^
+git reset --hard head~100 往回100个版本
+git reset --hard 08b8637 回">
+<meta property="og:updated_time" content="2016-09-08T08:41:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
 <meta name="twitter:description" content="添加文件到仓库git add file
 提交文件到仓库git commit -m &amp;apos;desc&amp;apos;
 显示当前仓库的状态git status
 显示仓库的提交日志git log --pretty=oneline
-####回退版本    git reset –hard HEAD^    git reset –hard head~100 往回100个版本    git reset –har">
+回退版本git reset --hard HEAD^
+git reset --hard head~100 往回100个版本
+git reset --hard 08b8637 回">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -68,15 +74,18 @@
 </code></pre><h4 id="提交文件到仓库"><a href="#提交文件到仓库" class="headerlink" title="提交文件到仓库"></a>提交文件到仓库</h4><pre><code>git commit -m &apos;desc&apos;
 </code></pre><h4 id="显示当前仓库的状态"><a href="#显示当前仓库的状态" class="headerlink" title="显示当前仓库的状态"></a>显示当前仓库的状态</h4><pre><code>git status
 </code></pre><h4 id="显示仓库的提交日志"><a href="#显示仓库的提交日志" class="headerlink" title="显示仓库的提交日志"></a>显示仓库的提交日志</h4><pre><code>git log --pretty=oneline
-</code></pre><p>####回退版本<br>    git reset –hard HEAD^<br>    git reset –hard head~100 往回100个版本<br>    git reset –hard 08b8637 回退指定版本</p>
-<p>####显示提交操作对应的版本<br>    git reflog</p>
-<p>####复原工作区的文件（回到最近一次git commit或commit add）<br>    git checkout – file</p>
-<p>####撤销暂存区修改，重新放回工作区<br>    git reset head file</p>
-<p>####从版本库删除文件<br>    git rm test.txt<br>    git commit -m ‘del file’</p>
-<p>####远程关联github<br>    git remote add origin git@github.com:dujiecn/learngit.git</p>
-<p>####提交到远程仓库<br>    git push -u origin master</p>
-<p>#####拷贝远程仓库代码<br>    git clone git@github.com:dujiecn/gitskills.git</p>
-<ol>
+</code></pre><h4 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h4><pre><code>git reset --hard HEAD^
+git reset --hard head~100 往回100个版本
+git reset --hard 08b8637 回退指定版本
+</code></pre><h4 id="显示提交操作对应的版本"><a href="#显示提交操作对应的版本" class="headerlink" title="显示提交操作对应的版本"></a>显示提交操作对应的版本</h4><pre><code>git reflog
+</code></pre><h4 id="复原工作区的文件（回到最近一次git-commit或commit-add）"><a href="#复原工作区的文件（回到最近一次git-commit或commit-add）" class="headerlink" title="复原工作区的文件（回到最近一次git commit或commit add）"></a>复原工作区的文件（回到最近一次git commit或commit add）</h4><pre><code>git checkout -- file
+</code></pre><h4 id="撤销暂存区修改，重新放回工作区"><a href="#撤销暂存区修改，重新放回工作区" class="headerlink" title="撤销暂存区修改，重新放回工作区"></a>撤销暂存区修改，重新放回工作区</h4><pre><code>git reset head file
+</code></pre><h4 id="从版本库删除文件"><a href="#从版本库删除文件" class="headerlink" title="从版本库删除文件"></a>从版本库删除文件</h4><pre><code>git rm test.txt
+git commit -m &apos;del file&apos;
+</code></pre><h4 id="远程关联github"><a href="#远程关联github" class="headerlink" title="远程关联github"></a>远程关联github</h4><pre><code>git remote add origin git@github.com:dujiecn/learngit.git
+</code></pre><h4 id="提交到远程仓库"><a href="#提交到远程仓库" class="headerlink" title="提交到远程仓库"></a>提交到远程仓库</h4><pre><code>git push -u origin master
+</code></pre><h5 id="拷贝远程仓库代码"><a href="#拷贝远程仓库代码" class="headerlink" title="拷贝远程仓库代码"></a>拷贝远程仓库代码</h5><pre><code>git clone git@github.com:dujiecn/gitskills.git
+</code></pre><ol>
 <li>创建分支<br> 创建分支很简单：git branch &lt;分支名&gt;</li>
 <li>切换分支<br> git checkout &lt;分支名&gt;<br> 该语句和上一个语句可以和起来用一个语句表示：git checkout -b &lt;分支名&gt;<ol>
 <li>分支合并<br>比如，如果要将开发中的分支（develop），合并到稳定分支（master），<br>首先切换的master分支：git checkout master。<br>然后执行合并操作：git merge develop。<br>如果有冲突，会提示你，调用git status查看冲突文件。<br>解决冲突，然后调用git add或git rm将解决后的文件暂存。<br>所有冲突解决后，git commit 提交更改。</li>
