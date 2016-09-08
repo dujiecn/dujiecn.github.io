@@ -3,14 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>walljay的备忘博客</title>
+  <title>tomcat_ssl_配置步骤 | walljay的备忘博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="walljay的备忘博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="系统需求：
+1、  Windows系统或Linux系统
+2、  安装并配置JDK 1.6.0_13
+3、  安装并配置Tomcat 6.0
+第一步：为服务器生成证书
+Windows系统
+
+“运行”控制台，进入%JAVA_HOME%/bin目录使用keytool为Tomcat生成证书，假定目标机器的域名是“localhost”，keystore文件存放在“D:\home\tomcat.keystor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tomcat_ssl_配置步骤">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/tomcat-ssl-配置步骤/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="系统需求：
+1、  Windows系统或Linux系统
+2、  安装并配置JDK 1.6.0_13
+3、  安装并配置Tomcat 6.0
+第一步：为服务器生成证书
+Windows系统
+
+“运行”控制台，进入%JAVA_HOME%/bin目录使用keytool为Tomcat生成证书，假定目标机器的域名是“localhost”，keystore文件存放在“D:\home\tomcat.keystor">
+<meta property="og:updated_time" content="2016-09-08T09:24:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="walljay的备忘博客">
+<meta name="twitter:title" content="tomcat_ssl_配置步骤">
+<meta name="twitter:description" content="系统需求：
+1、  Windows系统或Linux系统
+2、  安装并配置JDK 1.6.0_13
+3、  安装并配置Tomcat 6.0
+第一步：为服务器生成证书
+Windows系统
+
+“运行”控制台，进入%JAVA_HOME%/bin目录使用keytool为Tomcat生成证书，假定目标机器的域名是“localhost”，keystore文件存放在“D:\home\tomcat.keystor">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -26,17 +51,15 @@
   <div id="container">
     <div id="wrap">
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-tomcat-ssl-配置步骤" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-tomcat-ssl-配置步骤" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/tomcat-ssl-配置步骤/">tomcat_ssl_配置步骤</a>
+    <h1 class="article-title" itemprop="name">
+      tomcat_ssl_配置步骤
     </h1>
   
 
@@ -114,363 +137,20 @@
     </div>
   </div>
   
-</article>
-
-
-  
-    <article id="post-linux利用scp上传下载" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
     
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/linux利用scp上传下载/">linux利用scp上传下载</a>
-    </h1>
   
+    <a href="/2016/09/08/linux利用scp上传下载/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux利用scp上传下载</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/linux利用scp上传下载/" class="article-date">
-  <time datetime="2016-09-08T09:18:39.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><p>拷贝本地test到远程电脑/home/gydl目录下：</p>
-<pre><code>scp -r test root@192.168.0.179:/home/gydl 
-</code></pre><p>如果test是目录则需要加 “-r”    </p>
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>下载远程服务器/home／gydl/test文件到当前目录：</p>
-<pre><code>scp -r root@192.168.0.179:/home/gydl .
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-linux下安装nginx" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/linux下安装nginx/">linux下安装nginx</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/linux下安装nginx/" class="article-date">
-  <time datetime="2016-09-08T09:16:31.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>yum install -y gcc</p>
-<p>yum install -y gcc-c++</p>
-<p>wget <a href="http://nginx.org/download/nginx-1.10.0.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.10.0.tar.gz</a></p>
-<p>yum install -y pcre pcre-devel</p>
-<p>yum install -y zlib zlib-devel</p>
-<p>yum install -y openssl openssl-devel</p>
-<p>tar zxvf nginx-1.10.0.tar.gz</p>
-<p>cd nginx-1.10.0</p>
-<p>./configure</p>
-<p>make &amp;&amp; make install</p>
-<p>cd /usr/local/nginx</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mysql-经纬度两点间的距离" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/mysql-经纬度两点间的距离/">mysql_经纬度两点间的距离</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/mysql-经纬度两点间的距离/" class="article-date">
-  <time datetime="2016-09-08T09:13:35.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>sin(sqrt(pow(sin((31.9142918173043 * PI() / 180.0 - lat * PI() / 180.0) / 2), 2)
-            + cos(31.9142918173043 * PI() / 180.0) * cos(lat * PI() / 180.0) * pow(sin((118.8068875093988 * PI() / 180.0 - lng * PI() / 180.0) / 2), 2))) * 6378.137
-</code></pre><p>lat 纬度 lng 经度，结果是距离，单位是米</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mysql-根据id集合排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/mysql-根据id集合排序/">mysql_根据id集合排序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/mysql-根据id集合排序/" class="article-date">
-  <time datetime="2016-09-08T09:12:08.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>select * from table where id IN (3,6,9,1,2,5,8,7) order by field(id,3,6,9,1,2,5,8,7); </p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mysql-随机产生纪录条数" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/mysql-随机产生纪录条数/">mysql_随机产生纪录条数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/mysql-随机产生纪录条数/" class="article-date">
-  <time datetime="2016-09-08T09:10:18.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>select * from tableName order by rand()  limit 1;</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mysql-前缀索引" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/mysql-前缀索引/">mysql_前缀索引</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/mysql-前缀索引/" class="article-date">
-  <time datetime="2016-09-08T09:08:51.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="添加mysql前缀索引"><a href="#添加mysql前缀索引" class="headerlink" title="添加mysql前缀索引"></a>添加mysql前缀索引</h4><pre><code>ALTER TABLE table_name ADD KEY(column_name(prefix_length));
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mysql的update语句高级用法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/mysql的update语句高级用法/">mysql的update语句高级用法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/mysql的update语句高级用法/" class="article-date">
-  <time datetime="2016-09-08T09:07:25.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>update tableName set column=2 where limit 条数;</p>
-<p>replace into tableName(id,name)  values(1,’abc);</p>
-<p>insert into tableName(id,name) on duplicate key update name = ?;</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux系统安装mysql步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/linux系统安装mysql步骤/">linux系统安装mysql步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/linux系统安装mysql步骤/" class="article-date">
-  <time datetime="2016-09-08T09:04:52.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>下载mysql.tar.gz</li>
-<li>tar -zxvf mysql.tar.gz</li>
-<li>cp mysql /usr/local/mysql</li>
-<li>cd /usr/local</li>
-<li>groupadd mysql ,useradd mysql mysql</li>
-<li>cd /usr/local/mysql</li>
-<li>chown -R mysql:mysql ./</li>
-<li>cp /support-files/my-default.cnf /etc/my.cnf</li>
-<li>vim /etc/my.cnf<br> datadir = /usr/local/mysql/data</li>
-<li>/usr/local/mysql/bin/mysqld –initialize –user=mysql</li>
-<li>/usr/local/mysql/bin/mysqladmin -uroot -p旧密码 password 新密码</li>
-<li>cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql 添加开机启动</li>
-<li>service mysql start/stop</li>
-</ol>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mac硬盘显示bug" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/mac硬盘显示bug/">mac硬盘显示bug</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/mac硬盘显示bug/" class="article-date">
-  <time datetime="2016-09-08T09:02:18.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>打开实用工具 - 终端，并在其中输入命令</p>
-<pre><code>sudo mdutil -E /
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </section>
         <aside id="sidebar">
   <nav class="menus">
