@@ -28,6 +28,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-docker常用命" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/docker常用命/">docker常用命</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/docker常用命/" class="article-date">
+  <time datetime="2016-09-08T06:01:53.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><pre><code>docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+</code></pre><p>镜像为：centos:latest<br>容器名：centos<br>映射本地目录到容器/mnt目录中：/usr/local/centos</p>
+<h3 id="导出镜像"><a href="#导出镜像" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker save centos:latest &gt; centos.tar
+</code></pre><h3 id="导出镜像-1"><a href="#导出镜像-1" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker load centos.tar
+</code></pre><h3 id="修改容器并提交新的镜像"><a href="#修改容器并提交新的镜像" class="headerlink" title="修改容器并提交新的镜像"></a>修改容器并提交新的镜像</h3><pre><code>docker commit -m &apos;update&apos; -a &apos;walljay&apos; centos walljay/centos:latest
+</code></pre><p>-m 更新日志<br>-a 作者<br>centos 容器名<br>walljay/centos:lastest 镜像</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-chrome跨域模式打开方式" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">

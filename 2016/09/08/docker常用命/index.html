@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>docker常用命 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="运行容器docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+镜像为：centos:latest容器名：centos映射本地目录到容器/mnt目录中：/usr/local/centos
+导出镜像docker save centos:latest &amp;gt; centos.tar
+导出镜像docker load">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker常用命">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/docker常用命/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="运行容器docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+镜像为：centos:latest容器名：centos映射本地目录到容器/mnt目录中：/usr/local/centos
+导出镜像docker save centos:latest &amp;gt; centos.tar
+导出镜像docker load">
+<meta property="og:updated_time" content="2016-09-08T06:06:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker常用命">
+<meta name="twitter:description" content="运行容器docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+镜像为：centos:latest容器名：centos映射本地目录到容器/mnt目录中：/usr/local/centos
+导出镜像docker save centos:latest &amp;gt; centos.tar
+导出镜像docker load">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-docker常用命" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      docker常用命
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/docker常用命/" class="article-date">
+  <time datetime="2016-09-08T06:01:53.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><pre><code>docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+</code></pre><p>镜像为：centos:latest<br>容器名：centos<br>映射本地目录到容器/mnt目录中：/usr/local/centos</p>
+<h3 id="导出镜像"><a href="#导出镜像" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker save centos:latest &gt; centos.tar
+</code></pre><h3 id="导出镜像-1"><a href="#导出镜像-1" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker load centos.tar
+</code></pre><h3 id="修改容器并提交新的镜像"><a href="#修改容器并提交新的镜像" class="headerlink" title="修改容器并提交新的镜像"></a>修改容器并提交新的镜像</h3><pre><code>docker commit -m &apos;update&apos; -a &apos;walljay&apos; centos walljay/centos:latest
+</code></pre><p>-m 更新日志<br>-a 作者<br>centos 容器名<br>walljay/centos:lastest 镜像</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/08/chrome跨域模式打开方式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chrome跨域模式打开方式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
