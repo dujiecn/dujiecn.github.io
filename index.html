@@ -28,6 +28,162 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux利用scp上传下载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/linux利用scp上传下载/">linux利用scp上传下载</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/linux利用scp上传下载/" class="article-date">
+  <time datetime="2016-09-08T09:18:39.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><p>拷贝本地test到远程电脑/home/gydl目录下：</p>
+<pre><code>scp -r test root@192.168.0.179:/home/gydl 
+</code></pre><p>如果test是目录则需要加 “-r”    </p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>下载远程服务器/home／gydl/test文件到当前目录：</p>
+<pre><code>scp -r root@192.168.0.179:/home/gydl .
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux下安装nginx" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/linux下安装nginx/">linux下安装nginx</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/linux下安装nginx/" class="article-date">
+  <time datetime="2016-09-08T09:16:31.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>yum install -y gcc</p>
+<p>yum install -y gcc-c++</p>
+<p>wget <a href="http://nginx.org/download/nginx-1.10.0.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.10.0.tar.gz</a></p>
+<p>yum install -y pcre pcre-devel</p>
+<p>yum install -y zlib zlib-devel</p>
+<p>yum install -y openssl openssl-devel</p>
+<p>tar zxvf nginx-1.10.0.tar.gz</p>
+<p>cd nginx-1.10.0</p>
+<p>./configure</p>
+<p>make &amp;&amp; make install</p>
+<p>cd /usr/local/nginx</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mysql-经纬度两点间的距离" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/mysql-经纬度两点间的距离/">mysql_经纬度两点间的距离</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/mysql-经纬度两点间的距离/" class="article-date">
+  <time datetime="2016-09-08T09:13:35.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>sin(sqrt(pow(sin((31.9142918173043 * PI() / 180.0 - lat * PI() / 180.0) / 2), 2)
+            + cos(31.9142918173043 * PI() / 180.0) * cos(lat * PI() / 180.0) * pow(sin((118.8068875093988 * PI() / 180.0 - lng * PI() / 180.0) / 2), 2))) * 6378.137
+</code></pre><p>lat 纬度 lng 经度，结果是距离，单位是米</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mysql-根据id集合排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/mysql-根据id集合排序/">mysql_根据id集合排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/mysql-根据id集合排序/" class="article-date">
+  <time datetime="2016-09-08T09:12:08.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>select * from table where id IN (3,6,9,1,2,5,8,7) order by field(id,3,6,9,1,2,5,8,7); </p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mysql-随机产生纪录条数" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -275,290 +431,6 @@
 <pre><code>发送一条:
 ssh username@remote_server_ip your_command
 ssh username@remote_server_ip “your_command1;your_command2; your_command3”
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mongodb安装" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/mongodb安装/">mongodb安装</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/mongodb安装/" class="article-date">
-  <time datetime="2016-09-08T08:45:13.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><ol>
-<li>到mongodb官网下载对应的包</li>
-<li>解压 tar zxvf mongodb.taz</li>
-<li>把解压出来的文件夹移动自己指定的目录<br> mv mongodb ./develop-tools</li>
-<li>把mongod的命令加入环境变量<br> vi ~/.bash_profile<br> MONGODB_HOME=/Users/dujie/develop-tools/mongodb<br> PATH=$PATH:$MONGO_HOME</li>
-<li>创建存放数据和日志的目录<br> sudo mkdir /data/db<br> sudo mkdir/data/log<br> 赋权限<br> sudo chown -R dujie /data</li>
-<li>指定数据和日志目录<br> cd /data<br> mongod –dbpath db –logpath log/mongod.log –logappend –fork</li>
-<li>启动mongodb数据库<br> mongod</li>
-</ol>
-<p>=================================================================</p>
-<h3 id="mongodb命令"><a href="#mongodb命令" class="headerlink" title="mongodb命令"></a>mongodb命令</h3><ol>
-<li>运行mongodb服务器<br> mongod</li>
-<li>运行mongodb客户端<br> mongo</li>
-<li><p>连上到数据库服务器进行一些操作<br> 查看当前所有的数据库：show dbs<br> 创建数据库：use mydb<br> 查看当前选择的数据库：db<br> 删除数据库：1. use mydb 2. db.dropDatabase()<br> 创建集合：db.createCollection(name,options)</p>
-<pre><code>or  db.myCollection.insert({name:&apos;dj&apos;}) 
-</code></pre><p> 删除集合：db.myCollection.drop()<br> 查询集合：db.myCollection.find()//.pretty()</p>
-<pre><code>具体查询的where条件参照：http://www.yiibai.com/mongodb/mongodb_query_document.html
-</code></pre></li>
-</ol>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/git常用命令/">git常用命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/git常用命令/" class="article-date">
-  <time datetime="2016-09-08T08:36:18.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="添加文件到仓库"><a href="#添加文件到仓库" class="headerlink" title="添加文件到仓库"></a>添加文件到仓库</h4><pre><code>git add file
-</code></pre><h4 id="提交文件到仓库"><a href="#提交文件到仓库" class="headerlink" title="提交文件到仓库"></a>提交文件到仓库</h4><pre><code>git commit -m &apos;desc&apos;
-</code></pre><h4 id="显示当前仓库的状态"><a href="#显示当前仓库的状态" class="headerlink" title="显示当前仓库的状态"></a>显示当前仓库的状态</h4><pre><code>git status
-</code></pre><h4 id="显示仓库的提交日志"><a href="#显示仓库的提交日志" class="headerlink" title="显示仓库的提交日志"></a>显示仓库的提交日志</h4><pre><code>git log --pretty=oneline
-</code></pre><h4 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h4><pre><code>git reset --hard HEAD^
-git reset --hard head~100 往回100个版本
-git reset --hard 08b8637 回退指定版本
-</code></pre><h4 id="显示提交操作对应的版本"><a href="#显示提交操作对应的版本" class="headerlink" title="显示提交操作对应的版本"></a>显示提交操作对应的版本</h4><pre><code>git reflog
-</code></pre><h4 id="复原工作区的文件（回到最近一次git-commit或commit-add）"><a href="#复原工作区的文件（回到最近一次git-commit或commit-add）" class="headerlink" title="复原工作区的文件（回到最近一次git commit或commit add）"></a>复原工作区的文件（回到最近一次git commit或commit add）</h4><pre><code>git checkout -- file
-</code></pre><h4 id="撤销暂存区修改，重新放回工作区"><a href="#撤销暂存区修改，重新放回工作区" class="headerlink" title="撤销暂存区修改，重新放回工作区"></a>撤销暂存区修改，重新放回工作区</h4><pre><code>git reset head file
-</code></pre><h4 id="从版本库删除文件"><a href="#从版本库删除文件" class="headerlink" title="从版本库删除文件"></a>从版本库删除文件</h4><pre><code>git rm test.txt
-git commit -m &apos;del file&apos;
-</code></pre><h4 id="远程关联github"><a href="#远程关联github" class="headerlink" title="远程关联github"></a>远程关联github</h4><pre><code>git remote add origin git@github.com:dujiecn/learngit.git
-</code></pre><h4 id="提交到远程仓库"><a href="#提交到远程仓库" class="headerlink" title="提交到远程仓库"></a>提交到远程仓库</h4><pre><code>git push -u origin master
-</code></pre><h5 id="拷贝远程仓库代码"><a href="#拷贝远程仓库代码" class="headerlink" title="拷贝远程仓库代码"></a>拷贝远程仓库代码</h5><pre><code>git clone git@github.com:dujiecn/gitskills.git
-</code></pre><ol>
-<li>创建分支<br> 创建分支很简单：git branch &lt;分支名&gt;</li>
-<li>切换分支<br> git checkout &lt;分支名&gt;<br> 该语句和上一个语句可以和起来用一个语句表示：git checkout -b &lt;分支名&gt;<ol>
-<li>分支合并<br>比如，如果要将开发中的分支（develop），合并到稳定分支（master），<br>首先切换的master分支：git checkout master。<br>然后执行合并操作：git merge develop。<br>如果有冲突，会提示你，调用git status查看冲突文件。<br>解决冲突，然后调用git add或git rm将解决后的文件暂存。<br>所有冲突解决后，git commit 提交更改。</li>
-<li>分支衍合<br>分支衍合和分支合并的差别在于，分支衍合不会保留合并的日志，不留痕迹，而 分支合并则会保留合并的日志。<br>要将开发中的分支（develop），衍合到稳定分支（master）。<br>首先切换的master分支：git checkout master。<br>然后执行衍和操作：git rebase develop。<br>如果有冲突，会提示你，调用git status查看冲突文件。<br>解决冲突，然后调用git add或git rm将解决后的文件暂存。<br>所有冲突解决后，git rebase –continue 提交更改。</li>
-<li>删除分支<br>执行git branch -d &lt;分支名&gt;<br>如果该分支没有合并到主分支会报错，可以用以下命令强制删除git branch -D &lt;分支名&gt;</li>
-</ol>
-</li>
-</ol>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS多文件下载" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/JS多文件下载/">JS多文件下载</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/JS多文件下载/" class="article-date">
-  <time datetime="2016-09-08T06:09:01.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="js下载"><a href="#js下载" class="headerlink" title="js下载"></a>js下载</h3><pre><code>/**
- * Javascript 多文件下载
- * @author Barret Lee
- * @email  barret.china@gmail.com
- */
-var Downer = (function(files) {
-var h5Down = !/Trident|MSIE/.test(navigator.userAgent);
-// try{
-//     h5Down = document.createElement(&quot;a&quot;).hasOwnProperty(&quot;download&quot;);
-// } catch(e){
-//     h5Down = document.createElement(&quot;a&quot;).download;
-// }
-
-/**
- * 在支持 download 属性的情况下使用该方法进行单个文件下载
- * 目前 FF 还不支持 download 属性，所以 FF 必须另觅他法！
- * @param  {String} fileName
- * @param  {String|FileObject} contentOrPath
- * @return {Null}
- */
-function downloadFile(fileName, contentOrPath) {
-    var aLink = document.createElement(&quot;a&quot;),
-        evt = document.createEvent(&quot;HTMLEvents&quot;),
-        isData = contentOrPath.slice(0, 5) === &quot;data:&quot;,
-        isPath = contentOrPath.lastIndexOf(&quot;.&quot;) &gt; -1;
-
-    // 初始化点击事件
-    // 注：initEvent 不加后两个参数在FF下会报错
-    evt.initEvent(&quot;click&quot;, false, false);
-
-    // 添加文件下载名
-    aLink.download = fileName;
-
-    // 如果是 path 或者 dataURL 直接赋值
-    // 如果是 file 或者其他内容，使用 Blob 转换
-    aLink.href = isPath || isData ? contentOrPath : URL.createObjectURL(new Blob([contentOrPath]));
-
-    aLink.dispatchEvent(evt);
-}
-
-/**
- * [IEdownloadFile description]
- * @param  {String} fileName
- * @param  {String|FileObject} contentOrPath
- */
-function IEdownloadFile(fileName, contentOrPath, bool) {
-    var isImg = contentOrPath.slice(0, 10) === &quot;data:image&quot;,
-        ifr = document.createElement(&apos;iframe&apos;);
-
-    ifr.style.display = &apos;none&apos;;
-    ifr.src = contentOrPath;
-
-    document.body.appendChild(ifr);
-
-    // dataURL 的情况
-    isImg &amp;&amp; ifr.contentWindow.document.write(&quot;&lt;img src=&apos;&quot; +
-        contentOrPath + &quot;&apos; /&gt;&quot;);
-
-    // 保存页面 -&gt; 保存文件
-    // alert(ifr.contentWindow.document.body.innerHTML)
-    if (bool) {
-        ifr.contentWindow.document.execCommand(&apos;SaveAs&apos;, false, fileName);
-        document.body.removeChild(ifr);
-    } else {
-        setTimeout(function() {
-            ifr.contentWindow.document.execCommand(&apos;SaveAs&apos;, false, fileName);
-            document.body.removeChild(ifr);
-        }, 0);
-    }
-}
-
-/**
- * [parseURL description]
- * @param  {String} str [description]
- * @return {String}     [description]
- */
-function parseURL(str) {
-    return str.lastIndexOf(&quot;/&quot;) &gt; -1 ? str.slice(str.lastIndexOf(&quot;/&quot;) + 1) : str;
-}
-
-return function(files) {
-    // 选择下载函数
-    var downer = h5Down ? downloadFile : IEdownloadFile;
-
-    // 判断类型，处理下载文件名
-    if (files instanceof Array) {
-        for (var i = 0, l = files.length; i &lt; l; i++)
-        // bug 处理
-            downer(parseURL(files[i]), files[i], true);
-    } else if (typeof files === &quot;string&quot;) {
-        downer(parseURL(files), files);
-    } else {
-        // 对象
-        for (var file in files) downer(file, files[file]);
-    }
-}
-
-})();    
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-docker常用命" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/docker常用命/">docker常用命</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/docker常用命/" class="article-date">
-  <time datetime="2016-09-08T06:01:53.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><pre><code>docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
-</code></pre><p>镜像为：centos:latest<br>容器名：centos<br>映射本地目录到容器/mnt目录中：/usr/local/centos</p>
-<h3 id="导出镜像"><a href="#导出镜像" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker save centos:latest &gt; centos.tar
-</code></pre><h3 id="导出镜像-1"><a href="#导出镜像-1" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker load centos.tar
-</code></pre><h3 id="修改容器并提交新的镜像"><a href="#修改容器并提交新的镜像" class="headerlink" title="修改容器并提交新的镜像"></a>修改容器并提交新的镜像</h3><pre><code>docker commit -m &apos;update&apos; -a &apos;walljay&apos; centos walljay/centos:latest
-</code></pre><p>-m 更新日志<br>-a 作者<br>centos 容器名<br>walljay/centos:lastest 镜像</p>
-<h3 id="设置容器时间"><a href="#设置容器时间" class="headerlink" title="设置容器时间"></a>设置容器时间</h3><pre><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </code></pre>
       
 
