@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux系统安装mysql步骤 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="下载mysql.tar.gz
+tar -zxvf mysql.tar.gz
+cp mysql /usr/local/mysql
+cd /usr/local
+groupadd mysql ,useradd mysql mysql
+cd /usr/local/mysql
+chown -R mysql:mysql ./
+cp /support-files/my-default.cnf /etc/my.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux系统安装mysql步骤">
+<meta property="og:url" content="http://yoursite.com/2016/09/08/linux系统安装mysql步骤/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="下载mysql.tar.gz
+tar -zxvf mysql.tar.gz
+cp mysql /usr/local/mysql
+cd /usr/local
+groupadd mysql ,useradd mysql mysql
+cd /usr/local/mysql
+chown -R mysql:mysql ./
+cp /support-files/my-default.cnf /etc/my.">
+<meta property="og:updated_time" content="2016-09-08T09:05:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux系统安装mysql步骤">
+<meta name="twitter:description" content="下载mysql.tar.gz
+tar -zxvf mysql.tar.gz
+cp mysql /usr/local/mysql
+cd /usr/local
+groupadd mysql ,useradd mysql mysql
+cd /usr/local/mysql
+chown -R mysql:mysql ./
+cp /support-files/my-default.cnf /etc/my.">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-linux系统安装mysql步骤" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux系统安装mysql步骤
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/linux系统安装mysql步骤/" class="article-date">
+  <time datetime="2016-09-08T09:04:52.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>下载mysql.tar.gz</li>
+<li>tar -zxvf mysql.tar.gz</li>
+<li>cp mysql /usr/local/mysql</li>
+<li>cd /usr/local</li>
+<li>groupadd mysql ,useradd mysql mysql</li>
+<li>cd /usr/local/mysql</li>
+<li>chown -R mysql:mysql ./</li>
+<li>cp /support-files/my-default.cnf /etc/my.cnf</li>
+<li>vim /etc/my.cnf<br> datadir = /usr/local/mysql/data</li>
+<li>/usr/local/mysql/bin/mysqld –initialize –user=mysql</li>
+<li>/usr/local/mysql/bin/mysqladmin -uroot -p旧密码 password 新密码</li>
+<li>cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql 添加开机启动</li>
+<li>service mysql start/stop</li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/08/mac硬盘显示bug/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mac硬盘显示bug</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

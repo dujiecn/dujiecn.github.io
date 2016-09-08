@@ -28,6 +28,91 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux系统安装mysql步骤" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/linux系统安装mysql步骤/">linux系统安装mysql步骤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/linux系统安装mysql步骤/" class="article-date">
+  <time datetime="2016-09-08T09:04:52.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>下载mysql.tar.gz</li>
+<li>tar -zxvf mysql.tar.gz</li>
+<li>cp mysql /usr/local/mysql</li>
+<li>cd /usr/local</li>
+<li>groupadd mysql ,useradd mysql mysql</li>
+<li>cd /usr/local/mysql</li>
+<li>chown -R mysql:mysql ./</li>
+<li>cp /support-files/my-default.cnf /etc/my.cnf</li>
+<li>vim /etc/my.cnf<br> datadir = /usr/local/mysql/data</li>
+<li>/usr/local/mysql/bin/mysqld –initialize –user=mysql</li>
+<li>/usr/local/mysql/bin/mysqladmin -uroot -p旧密码 password 新密码</li>
+<li>cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql 添加开机启动</li>
+<li>service mysql start/stop</li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mac硬盘显示bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/mac硬盘显示bug/">mac硬盘显示bug</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/mac硬盘显示bug/" class="article-date">
+  <time datetime="2016-09-08T09:02:18.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>打开实用工具 - 终端，并在其中输入命令</p>
+<pre><code>sudo mdutil -E /
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux-远程免登录" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
