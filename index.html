@@ -28,6 +28,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql快速拷贝数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/09/mysql快速拷贝数据库/">mysql快速拷贝数据库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/09/mysql快速拷贝数据库/" class="article-date">
+  <time datetime="2016-09-09T06:12:33.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5E93;db1&#xFF0C;&#x62F7;&#x8D1D;&#x5230;&#x65B0;&#x5EFA;&#x7684;db2</p>
+<ol>
+<li><p>&#x65B0;&#x5EFA;&#x6570;&#x636E;&#x5E93;db2</p>
+<pre><code>create database db2 default charset utf8mb4;
+</code></pre></li>
+<li><p>&#x5728;shell&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;mysqldump&#x547D;&#x4EE4;</p>
+<pre><code>mysqldump db1 -uroot -p123 --add-drop-table | mysql db2 -uroot -p123    
+</code></pre></li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="div-内容垂直居中" class="article article-type-div" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -752,41 +795,6 @@ min-height:200px;
         <p>&#x6279;&#x91CF;&#x5220;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x540D;&#x5B57;&#x662F;_md&#x540E;&#x7F00;&#x7684;&#x4EFB;&#x4F55;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;    </p>
 <pre><code>find . -name &quot;*_md.*&quot; -exec rm -rf {} \;
 </code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-服务器跨域问题处理方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/服务器跨域问题处理方法/">服务器跨域问题处理方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/服务器跨域问题处理方法/" class="article-date">
-  <time datetime="2016-09-08T09:27:46.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/2016/09/08/&#x670D;&#x52A1;&#x5668;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x5904;&#x7406;&#x65B9;&#x6CD5;/webxml&#x914D;&#x7F6E;.png" alt="webxml&#x914D;&#x7F6E;"><br><img src="/2016/09/08/&#x670D;&#x52A1;&#x5668;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x5904;&#x7406;&#x65B9;&#x6CD5;/&#x62E6;&#x622A;&#x5668;&#x914D;&#x7F6E;.png" alt="&#x62E6;&#x622A;&#x5668;&#x914D;&#x7F6E;"></p>
-
       
 
       

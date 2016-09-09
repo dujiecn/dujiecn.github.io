@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mysql快速拷贝数据库 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x5047;&amp;#x8BBE;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B58;&amp;#x5728;&amp;#x6570;&amp;#x636E;&amp;#x5E93;db1&amp;#xFF0C;&amp;#x62F7;&amp;#x8D1D;&amp;#x5230;&amp;#x65B0;&amp;#x5EFA;&amp;#x7684;db2
+
+&amp;#x65B0;&amp;#x5EFA;&amp;#x6570;&amp;#x636E;&amp;#x5E93;db2
+create database db2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql快速拷贝数据库">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/mysql快速拷贝数据库/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="&amp;#x5047;&amp;#x8BBE;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B58;&amp;#x5728;&amp;#x6570;&amp;#x636E;&amp;#x5E93;db1&amp;#xFF0C;&amp;#x62F7;&amp;#x8D1D;&amp;#x5230;&amp;#x65B0;&amp;#x5EFA;&amp;#x7684;db2
+
+&amp;#x65B0;&amp;#x5EFA;&amp;#x6570;&amp;#x636E;&amp;#x5E93;db2
+create database db2">
+<meta property="og:updated_time" content="2016-09-09T06:16:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql快速拷贝数据库">
+<meta name="twitter:description" content="&amp;#x5047;&amp;#x8BBE;&amp;#x5DF2;&amp;#x7ECF;&amp;#x5B58;&amp;#x5728;&amp;#x6570;&amp;#x636E;&amp;#x5E93;db1&amp;#xFF0C;&amp;#x62F7;&amp;#x8D1D;&amp;#x5230;&amp;#x65B0;&amp;#x5EFA;&amp;#x7684;db2
+
+&amp;#x65B0;&amp;#x5EFA;&amp;#x6570;&amp;#x636E;&amp;#x5E93;db2
+create database db2">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-mysql快速拷贝数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mysql快速拷贝数据库
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/09/mysql快速拷贝数据库/" class="article-date">
+  <time datetime="2016-09-09T06:12:33.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5E93;db1&#xFF0C;&#x62F7;&#x8D1D;&#x5230;&#x65B0;&#x5EFA;&#x7684;db2</p>
+<ol>
+<li><p>&#x65B0;&#x5EFA;&#x6570;&#x636E;&#x5E93;db2</p>
+<pre><code>create database db2 default charset utf8mb4;
+</code></pre></li>
+<li><p>&#x5728;shell&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;mysqldump&#x547D;&#x4EE4;</p>
+<pre><code>mysqldump db1 -uroot -p123 --add-drop-table | mysql db2 -uroot -p123    
+</code></pre></li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/09/内容垂直居中/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">内容垂直居中</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
