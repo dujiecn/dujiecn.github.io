@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux下批量删除某目录下的某种类型的文件 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x6279;&amp;#x91CF;&amp;#x5220;&amp;#x9664;&amp;#x5F53;&amp;#x524D;&amp;#x76EE;&amp;#x5F55;&amp;#x4E0B;&amp;#x7684;&amp;#x540D;&amp;#x5B57;&amp;#x662F;_md&amp;#x540E;&amp;#x7F00;&amp;#x7684;&amp;#x4EFB;&amp;#x4F55;&amp;#x683C;&amp;#x5F0F;&amp;#x7684;&amp;#x6587;&amp;#x4EF6;    
+find . -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux下批量删除某目录下的某种类型的文件">
+<meta property="og:url" content="http://yoursite.com/2016/09/09/linux下批量删除某目录下的某种类型的文件/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="&amp;#x6279;&amp;#x91CF;&amp;#x5220;&amp;#x9664;&amp;#x5F53;&amp;#x524D;&amp;#x76EE;&amp;#x5F55;&amp;#x4E0B;&amp;#x7684;&amp;#x540D;&amp;#x5B57;&amp;#x662F;_md&amp;#x540E;&amp;#x7F00;&amp;#x7684;&amp;#x4EFB;&amp;#x4F55;&amp;#x683C;&amp;#x5F0F;&amp;#x7684;&amp;#x6587;&amp;#x4EF6;    
+find . -">
+<meta property="og:updated_time" content="2016-09-09T00:52:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux下批量删除某目录下的某种类型的文件">
+<meta name="twitter:description" content="&amp;#x6279;&amp;#x91CF;&amp;#x5220;&amp;#x9664;&amp;#x5F53;&amp;#x524D;&amp;#x76EE;&amp;#x5F55;&amp;#x4E0B;&amp;#x7684;&amp;#x540D;&amp;#x5B57;&amp;#x662F;_md&amp;#x540E;&amp;#x7F00;&amp;#x7684;&amp;#x4EFB;&amp;#x4F55;&amp;#x683C;&amp;#x5F0F;&amp;#x7684;&amp;#x6587;&amp;#x4EF6;    
+find . -">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-linux下批量删除某目录下的某种类型的文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux下批量删除某目录下的某种类型的文件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/09/linux下批量删除某目录下的某种类型的文件/" class="article-date">
+  <time datetime="2016-09-09T00:51:22.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x6279;&#x91CF;&#x5220;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x540D;&#x5B57;&#x662F;_md&#x540E;&#x7F00;&#x7684;&#x4EFB;&#x4F55;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;    </p>
+<pre><code>find . -name &quot;*_md.*&quot; -exec rm -rf {} \;
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/09/浏览器兼容性问题大汇总/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          浏览器兼容性问题大汇总
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/08/服务器跨域问题处理方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">服务器跨域问题处理方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
