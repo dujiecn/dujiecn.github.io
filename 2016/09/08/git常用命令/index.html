@@ -5,34 +5,22 @@
   
   <title>git常用命令 | walljay的备忘博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="添加文件到仓库git add file
-提交文件到仓库git commit -m &amp;apos;desc&amp;apos;
-显示当前仓库的状态git status
-显示仓库的提交日志git log --pretty=oneline
-回退版本git reset --hard HEAD^
-git reset --hard head~100 往回100个版本
-git reset --hard 08b8637 回">
+  <meta name="description" content="&amp;#x6DFB;&amp;#x52A0;&amp;#x6587;&amp;#x4EF6;&amp;#x5230;&amp;#x4ED3;&amp;#x5E93;git add file
+&amp;#x63D0;&amp;#x4EA4;&amp;#x6587;&amp;#x4EF6;&amp;#x5230;&amp;#x4ED3;&amp;#x5E93;git commit -m &amp;apos;desc&amp;apos;
+&amp;#x663E;&amp;#x793A;&amp;#x5F53;&amp;#x524D;&amp;#x4ED3;&amp;#x5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git常用命令">
 <meta property="og:url" content="http://yoursite.com/2016/09/08/git常用命令/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
-<meta property="og:description" content="添加文件到仓库git add file
-提交文件到仓库git commit -m &amp;apos;desc&amp;apos;
-显示当前仓库的状态git status
-显示仓库的提交日志git log --pretty=oneline
-回退版本git reset --hard HEAD^
-git reset --hard head~100 往回100个版本
-git reset --hard 08b8637 回">
+<meta property="og:description" content="&amp;#x6DFB;&amp;#x52A0;&amp;#x6587;&amp;#x4EF6;&amp;#x5230;&amp;#x4ED3;&amp;#x5E93;git add file
+&amp;#x63D0;&amp;#x4EA4;&amp;#x6587;&amp;#x4EF6;&amp;#x5230;&amp;#x4ED3;&amp;#x5E93;git commit -m &amp;apos;desc&amp;apos;
+&amp;#x663E;&amp;#x793A;&amp;#x5F53;&amp;#x524D;&amp;#x4ED3;&amp;#x5">
 <meta property="og:updated_time" content="2016-09-08T08:41:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
-<meta name="twitter:description" content="添加文件到仓库git add file
-提交文件到仓库git commit -m &amp;apos;desc&amp;apos;
-显示当前仓库的状态git status
-显示仓库的提交日志git log --pretty=oneline
-回退版本git reset --hard HEAD^
-git reset --hard head~100 往回100个版本
-git reset --hard 08b8637 回">
+<meta name="twitter:description" content="&amp;#x6DFB;&amp;#x52A0;&amp;#x6587;&amp;#x4EF6;&amp;#x5230;&amp;#x4ED3;&amp;#x5E93;git add file
+&amp;#x63D0;&amp;#x4EA4;&amp;#x6587;&amp;#x4EF6;&amp;#x5230;&amp;#x4ED3;&amp;#x5E93;git commit -m &amp;apos;desc&amp;apos;
+&amp;#x663E;&amp;#x793A;&amp;#x5F53;&amp;#x524D;&amp;#x4ED3;&amp;#x5">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -70,27 +58,27 @@ git reset --hard 08b8637 回">
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="添加文件到仓库"><a href="#添加文件到仓库" class="headerlink" title="添加文件到仓库"></a>添加文件到仓库</h4><pre><code>git add file
-</code></pre><h4 id="提交文件到仓库"><a href="#提交文件到仓库" class="headerlink" title="提交文件到仓库"></a>提交文件到仓库</h4><pre><code>git commit -m &apos;desc&apos;
-</code></pre><h4 id="显示当前仓库的状态"><a href="#显示当前仓库的状态" class="headerlink" title="显示当前仓库的状态"></a>显示当前仓库的状态</h4><pre><code>git status
-</code></pre><h4 id="显示仓库的提交日志"><a href="#显示仓库的提交日志" class="headerlink" title="显示仓库的提交日志"></a>显示仓库的提交日志</h4><pre><code>git log --pretty=oneline
-</code></pre><h4 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h4><pre><code>git reset --hard HEAD^
-git reset --hard head~100 往回100个版本
-git reset --hard 08b8637 回退指定版本
-</code></pre><h4 id="显示提交操作对应的版本"><a href="#显示提交操作对应的版本" class="headerlink" title="显示提交操作对应的版本"></a>显示提交操作对应的版本</h4><pre><code>git reflog
-</code></pre><h4 id="复原工作区的文件（回到最近一次git-commit或commit-add）"><a href="#复原工作区的文件（回到最近一次git-commit或commit-add）" class="headerlink" title="复原工作区的文件（回到最近一次git commit或commit add）"></a>复原工作区的文件（回到最近一次git commit或commit add）</h4><pre><code>git checkout -- file
-</code></pre><h4 id="撤销暂存区修改，重新放回工作区"><a href="#撤销暂存区修改，重新放回工作区" class="headerlink" title="撤销暂存区修改，重新放回工作区"></a>撤销暂存区修改，重新放回工作区</h4><pre><code>git reset head file
-</code></pre><h4 id="从版本库删除文件"><a href="#从版本库删除文件" class="headerlink" title="从版本库删除文件"></a>从版本库删除文件</h4><pre><code>git rm test.txt
+        <h4 id="&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;"><a href="#&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;" class="headerlink" title="&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;"></a>&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;</h4><pre><code>git add file
+</code></pre><h4 id="&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;"><a href="#&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;" class="headerlink" title="&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;"></a>&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;</h4><pre><code>git commit -m &apos;desc&apos;
+</code></pre><h4 id="&#x663E;&#x793A;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;"><a href="#&#x663E;&#x793A;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;" class="headerlink" title="&#x663E;&#x793A;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;"></a>&#x663E;&#x793A;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;</h4><pre><code>git status
+</code></pre><h4 id="&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;"><a href="#&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;" class="headerlink" title="&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;"></a>&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;</h4><pre><code>git log --pretty=oneline
+</code></pre><h4 id="&#x56DE;&#x9000;&#x7248;&#x672C;"><a href="#&#x56DE;&#x9000;&#x7248;&#x672C;" class="headerlink" title="&#x56DE;&#x9000;&#x7248;&#x672C;"></a>&#x56DE;&#x9000;&#x7248;&#x672C;</h4><pre><code>git reset --hard HEAD^
+git reset --hard head~100 &#x5F80;&#x56DE;100&#x4E2A;&#x7248;&#x672C;
+git reset --hard 08b8637 &#x56DE;&#x9000;&#x6307;&#x5B9A;&#x7248;&#x672C;
+</code></pre><h4 id="&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;"><a href="#&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;" class="headerlink" title="&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;"></a>&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;</h4><pre><code>git reflog
+</code></pre><h4 id="&#x590D;&#x539F;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git-commit&#x6216;commit-add&#xFF09;"><a href="#&#x590D;&#x539F;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git-commit&#x6216;commit-add&#xFF09;" class="headerlink" title="&#x590D;&#x539F;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git commit&#x6216;commit add&#xFF09;"></a>&#x590D;&#x539F;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git commit&#x6216;commit add&#xFF09;</h4><pre><code>git checkout -- file
+</code></pre><h4 id="&#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;&#x4FEE;&#x6539;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;"><a href="#&#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;&#x4FEE;&#x6539;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;" class="headerlink" title="&#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;&#x4FEE;&#x6539;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;"></a>&#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;&#x4FEE;&#x6539;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;</h4><pre><code>git reset head file
+</code></pre><h4 id="&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x5220;&#x9664;&#x6587;&#x4EF6;"><a href="#&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x5220;&#x9664;&#x6587;&#x4EF6;" class="headerlink" title="&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x5220;&#x9664;&#x6587;&#x4EF6;"></a>&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x5220;&#x9664;&#x6587;&#x4EF6;</h4><pre><code>git rm test.txt
 git commit -m &apos;del file&apos;
-</code></pre><h4 id="远程关联github"><a href="#远程关联github" class="headerlink" title="远程关联github"></a>远程关联github</h4><pre><code>git remote add origin git@github.com:dujiecn/learngit.git
-</code></pre><h4 id="提交到远程仓库"><a href="#提交到远程仓库" class="headerlink" title="提交到远程仓库"></a>提交到远程仓库</h4><pre><code>git push -u origin master
-</code></pre><h5 id="拷贝远程仓库代码"><a href="#拷贝远程仓库代码" class="headerlink" title="拷贝远程仓库代码"></a>拷贝远程仓库代码</h5><pre><code>git clone git@github.com:dujiecn/gitskills.git
+</code></pre><h4 id="&#x8FDC;&#x7A0B;&#x5173;&#x8054;github"><a href="#&#x8FDC;&#x7A0B;&#x5173;&#x8054;github" class="headerlink" title="&#x8FDC;&#x7A0B;&#x5173;&#x8054;github"></a>&#x8FDC;&#x7A0B;&#x5173;&#x8054;github</h4><pre><code>git remote add origin git@github.com:dujiecn/learngit.git
+</code></pre><h4 id="&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;"><a href="#&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;" class="headerlink" title="&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;"></a>&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h4><pre><code>git push -u origin master
+</code></pre><h5 id="&#x62F7;&#x8D1D;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;"><a href="#&#x62F7;&#x8D1D;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;" class="headerlink" title="&#x62F7;&#x8D1D;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;"></a>&#x62F7;&#x8D1D;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;</h5><pre><code>git clone git@github.com:dujiecn/gitskills.git
 </code></pre><ol>
-<li>创建分支<br> 创建分支很简单：git branch &lt;分支名&gt;</li>
-<li>切换分支<br> git checkout &lt;分支名&gt;<br> 该语句和上一个语句可以和起来用一个语句表示：git checkout -b &lt;分支名&gt;<ol>
-<li>分支合并<br>比如，如果要将开发中的分支（develop），合并到稳定分支（master），<br>首先切换的master分支：git checkout master。<br>然后执行合并操作：git merge develop。<br>如果有冲突，会提示你，调用git status查看冲突文件。<br>解决冲突，然后调用git add或git rm将解决后的文件暂存。<br>所有冲突解决后，git commit 提交更改。</li>
-<li>分支衍合<br>分支衍合和分支合并的差别在于，分支衍合不会保留合并的日志，不留痕迹，而 分支合并则会保留合并的日志。<br>要将开发中的分支（develop），衍合到稳定分支（master）。<br>首先切换的master分支：git checkout master。<br>然后执行衍和操作：git rebase develop。<br>如果有冲突，会提示你，调用git status查看冲突文件。<br>解决冲突，然后调用git add或git rm将解决后的文件暂存。<br>所有冲突解决后，git rebase –continue 提交更改。</li>
-<li>删除分支<br>执行git branch -d &lt;分支名&gt;<br>如果该分支没有合并到主分支会报错，可以用以下命令强制删除git branch -D &lt;分支名&gt;</li>
+<li>&#x521B;&#x5EFA;&#x5206;&#x652F;<br> &#x521B;&#x5EFA;&#x5206;&#x652F;&#x5F88;&#x7B80;&#x5355;&#xFF1A;git branch &lt;&#x5206;&#x652F;&#x540D;&gt;</li>
+<li>&#x5207;&#x6362;&#x5206;&#x652F;<br> git checkout &lt;&#x5206;&#x652F;&#x540D;&gt;<br> &#x8BE5;&#x8BED;&#x53E5;&#x548C;&#x4E0A;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x548C;&#x8D77;&#x6765;&#x7528;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x8868;&#x793A;&#xFF1A;git checkout -b &lt;&#x5206;&#x652F;&#x540D;&gt;<ol>
+<li>&#x5206;&#x652F;&#x5408;&#x5E76;<br>&#x6BD4;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5C06;&#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x5206;&#x652F;&#xFF08;develop&#xFF09;&#xFF0C;&#x5408;&#x5E76;&#x5230;&#x7A33;&#x5B9A;&#x5206;&#x652F;&#xFF08;master&#xFF09;&#xFF0C;<br>&#x9996;&#x5148;&#x5207;&#x6362;&#x7684;master&#x5206;&#x652F;&#xFF1A;git checkout master&#x3002;<br>&#x7136;&#x540E;&#x6267;&#x884C;&#x5408;&#x5E76;&#x64CD;&#x4F5C;&#xFF1A;git merge develop&#x3002;<br>&#x5982;&#x679C;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;&#x4F60;&#xFF0C;&#x8C03;&#x7528;git status&#x67E5;&#x770B;&#x51B2;&#x7A81;&#x6587;&#x4EF6;&#x3002;<br>&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;git add&#x6216;git rm&#x5C06;&#x89E3;&#x51B3;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x6682;&#x5B58;&#x3002;<br>&#x6240;&#x6709;&#x51B2;&#x7A81;&#x89E3;&#x51B3;&#x540E;&#xFF0C;git commit &#x63D0;&#x4EA4;&#x66F4;&#x6539;&#x3002;</li>
+<li>&#x5206;&#x652F;&#x884D;&#x5408;<br>&#x5206;&#x652F;&#x884D;&#x5408;&#x548C;&#x5206;&#x652F;&#x5408;&#x5E76;&#x7684;&#x5DEE;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x5206;&#x652F;&#x884D;&#x5408;&#x4E0D;&#x4F1A;&#x4FDD;&#x7559;&#x5408;&#x5E76;&#x7684;&#x65E5;&#x5FD7;&#xFF0C;&#x4E0D;&#x7559;&#x75D5;&#x8FF9;&#xFF0C;&#x800C; &#x5206;&#x652F;&#x5408;&#x5E76;&#x5219;&#x4F1A;&#x4FDD;&#x7559;&#x5408;&#x5E76;&#x7684;&#x65E5;&#x5FD7;&#x3002;<br>&#x8981;&#x5C06;&#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x5206;&#x652F;&#xFF08;develop&#xFF09;&#xFF0C;&#x884D;&#x5408;&#x5230;&#x7A33;&#x5B9A;&#x5206;&#x652F;&#xFF08;master&#xFF09;&#x3002;<br>&#x9996;&#x5148;&#x5207;&#x6362;&#x7684;master&#x5206;&#x652F;&#xFF1A;git checkout master&#x3002;<br>&#x7136;&#x540E;&#x6267;&#x884C;&#x884D;&#x548C;&#x64CD;&#x4F5C;&#xFF1A;git rebase develop&#x3002;<br>&#x5982;&#x679C;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;&#x4F60;&#xFF0C;&#x8C03;&#x7528;git status&#x67E5;&#x770B;&#x51B2;&#x7A81;&#x6587;&#x4EF6;&#x3002;<br>&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;git add&#x6216;git rm&#x5C06;&#x89E3;&#x51B3;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x6682;&#x5B58;&#x3002;<br>&#x6240;&#x6709;&#x51B2;&#x7A81;&#x89E3;&#x51B3;&#x540E;&#xFF0C;git rebase &#x2013;continue &#x63D0;&#x4EA4;&#x66F4;&#x6539;&#x3002;</li>
+<li>&#x5220;&#x9664;&#x5206;&#x652F;<br>&#x6267;&#x884C;git branch -d &lt;&#x5206;&#x652F;&#x540D;&gt;<br>&#x5982;&#x679C;&#x8BE5;&#x5206;&#x652F;&#x6CA1;&#x6709;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5F3A;&#x5236;&#x5220;&#x9664;git branch -D &lt;&#x5206;&#x652F;&#x540D;&gt;</li>
 </ol>
 </li>
 </ol>

@@ -5,25 +5,19 @@
   
   <title>docker常用命 | walljay的备忘博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="运行容器docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
-镜像为：centos:latest容器名：centos映射本地目录到容器/mnt目录中：/usr/local/centos
-导出镜像docker save centos:latest &amp;gt; centos.tar
-导出镜像docker load">
+  <meta name="description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#x6620;&amp;#x5C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker常用命">
 <meta property="og:url" content="http://yoursite.com/2016/09/08/docker常用命/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
-<meta property="og:description" content="运行容器docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
-镜像为：centos:latest容器名：centos映射本地目录到容器/mnt目录中：/usr/local/centos
-导出镜像docker save centos:latest &amp;gt; centos.tar
-导出镜像docker load">
+<meta property="og:description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#x6620;&amp;#x5C">
 <meta property="og:updated_time" content="2016-09-08T06:08:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker常用命">
-<meta name="twitter:description" content="运行容器docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
-镜像为：centos:latest容器名：centos映射本地目录到容器/mnt目录中：/usr/local/centos
-导出镜像docker save centos:latest &amp;gt; centos.tar
-导出镜像docker load">
+<meta name="twitter:description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#x6620;&amp;#x5C">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -61,13 +55,13 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><pre><code>docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
-</code></pre><p>镜像为：centos:latest<br>容器名：centos<br>映射本地目录到容器/mnt目录中：/usr/local/centos</p>
-<h3 id="导出镜像"><a href="#导出镜像" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker save centos:latest &gt; centos.tar
-</code></pre><h3 id="导出镜像-1"><a href="#导出镜像-1" class="headerlink" title="导出镜像"></a>导出镜像</h3><pre><code>docker load centos.tar
-</code></pre><h3 id="修改容器并提交新的镜像"><a href="#修改容器并提交新的镜像" class="headerlink" title="修改容器并提交新的镜像"></a>修改容器并提交新的镜像</h3><pre><code>docker commit -m &apos;update&apos; -a &apos;walljay&apos; centos walljay/centos:latest
-</code></pre><p>-m 更新日志<br>-a 作者<br>centos 容器名<br>walljay/centos:lastest 镜像</p>
-<h3 id="设置容器时间"><a href="#设置容器时间" class="headerlink" title="设置容器时间"></a>设置容器时间</h3><pre><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+        <h3 id="&#x8FD0;&#x884C;&#x5BB9;&#x5668;"><a href="#&#x8FD0;&#x884C;&#x5BB9;&#x5668;" class="headerlink" title="&#x8FD0;&#x884C;&#x5BB9;&#x5668;"></a>&#x8FD0;&#x884C;&#x5BB9;&#x5668;</h3><pre><code>docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+</code></pre><p>&#x955C;&#x50CF;&#x4E3A;&#xFF1A;centos:latest<br>&#x5BB9;&#x5668;&#x540D;&#xFF1A;centos<br>&#x6620;&#x5C04;&#x672C;&#x5730;&#x76EE;&#x5F55;&#x5230;&#x5BB9;&#x5668;/mnt&#x76EE;&#x5F55;&#x4E2D;&#xFF1A;/usr/local/centos</p>
+<h3 id="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"><a href="#&#x5BFC;&#x51FA;&#x955C;&#x50CF;" class="headerlink" title="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"></a>&#x5BFC;&#x51FA;&#x955C;&#x50CF;</h3><pre><code>docker save centos:latest &gt; centos.tar
+</code></pre><h3 id="&#x5BFC;&#x51FA;&#x955C;&#x50CF;-1"><a href="#&#x5BFC;&#x51FA;&#x955C;&#x50CF;-1" class="headerlink" title="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"></a>&#x5BFC;&#x51FA;&#x955C;&#x50CF;</h3><pre><code>docker load centos.tar
+</code></pre><h3 id="&#x4FEE;&#x6539;&#x5BB9;&#x5668;&#x5E76;&#x63D0;&#x4EA4;&#x65B0;&#x7684;&#x955C;&#x50CF;"><a href="#&#x4FEE;&#x6539;&#x5BB9;&#x5668;&#x5E76;&#x63D0;&#x4EA4;&#x65B0;&#x7684;&#x955C;&#x50CF;" class="headerlink" title="&#x4FEE;&#x6539;&#x5BB9;&#x5668;&#x5E76;&#x63D0;&#x4EA4;&#x65B0;&#x7684;&#x955C;&#x50CF;"></a>&#x4FEE;&#x6539;&#x5BB9;&#x5668;&#x5E76;&#x63D0;&#x4EA4;&#x65B0;&#x7684;&#x955C;&#x50CF;</h3><pre><code>docker commit -m &apos;update&apos; -a &apos;walljay&apos; centos walljay/centos:latest
+</code></pre><p>-m &#x66F4;&#x65B0;&#x65E5;&#x5FD7;<br>-a &#x4F5C;&#x8005;<br>centos &#x5BB9;&#x5668;&#x540D;<br>walljay/centos:lastest &#x955C;&#x50CF;</p>
+<h3 id="&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x65F6;&#x95F4;"><a href="#&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x65F6;&#x95F4;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x65F6;&#x95F4;"></a>&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x65F6;&#x95F4;</h3><pre><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </code></pre>
       
 
