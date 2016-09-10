@@ -50,7 +50,25 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <pre><code>&lt;plugin&gt;
+            &lt;groupId&gt;com.spotify&lt;/groupId&gt;
+            &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;0.4.12&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;imageName&gt;${project.name}&lt;/imageName&gt;
+                &lt;baseImage&gt;java&lt;/baseImage&gt;
+                &lt;entryPoint&gt;[&quot;java&quot;, &quot;-jar&quot;, &quot;/${project.build.finalName}.jar&quot;]&lt;/entryPoint&gt;
+                &lt;resources&gt;
+                    &lt;resource&gt;
+                        &lt;targetPath&gt;/&lt;/targetPath&gt;
+                        &lt;directory&gt;${project.build.directory}&lt;/directory&gt;
+                        &lt;include&gt;${project.build.finalName}.jar&lt;/include&gt;
+                    &lt;/resource&gt;
+                &lt;/resources&gt;
+                &lt;forceTags&gt;true&lt;/forceTags&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+</code></pre>
       
 
       

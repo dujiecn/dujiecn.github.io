@@ -5,13 +5,25 @@
   
   <title>springboot项目中使用docker-maven-plugin | walljay的备忘博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="&amp;lt;plugin&amp;gt;
+            &amp;lt;groupId&amp;gt;com.spotify&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;docker-maven-plugin&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;0.4.12&amp;lt;/version&amp;gt;">
+<meta property="og:type" content="article">
 <meta property="og:title" content="springboot项目中使用docker-maven-plugin">
 <meta property="og:url" content="http://yoursite.com/2016/09/10/springboot项目中使用docker-maven-plugin/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
-<meta property="og:updated_time" content="2016-09-10T02:50:11.000Z">
+<meta property="og:description" content="&amp;lt;plugin&amp;gt;
+            &amp;lt;groupId&amp;gt;com.spotify&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;docker-maven-plugin&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;0.4.12&amp;lt;/version&amp;gt;">
+<meta property="og:updated_time" content="2016-09-10T02:51:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot项目中使用docker-maven-plugin">
+<meta name="twitter:description" content="&amp;lt;plugin&amp;gt;
+            &amp;lt;groupId&amp;gt;com.spotify&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;docker-maven-plugin&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;0.4.12&amp;lt;/version&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -49,7 +61,25 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <pre><code>&lt;plugin&gt;
+            &lt;groupId&gt;com.spotify&lt;/groupId&gt;
+            &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;0.4.12&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;imageName&gt;${project.name}&lt;/imageName&gt;
+                &lt;baseImage&gt;java&lt;/baseImage&gt;
+                &lt;entryPoint&gt;[&quot;java&quot;, &quot;-jar&quot;, &quot;/${project.build.finalName}.jar&quot;]&lt;/entryPoint&gt;
+                &lt;resources&gt;
+                    &lt;resource&gt;
+                        &lt;targetPath&gt;/&lt;/targetPath&gt;
+                        &lt;directory&gt;${project.build.directory}&lt;/directory&gt;
+                        &lt;include&gt;${project.build.finalName}.jar&lt;/include&gt;
+                    &lt;/resource&gt;
+                &lt;/resources&gt;
+                &lt;forceTags&gt;true&lt;/forceTags&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+</code></pre>
       
 
       
