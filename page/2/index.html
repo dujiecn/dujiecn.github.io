@@ -28,6 +28,42 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux下批量删除某目录下的某种类型的文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/09/linux下批量删除某目录下的某种类型的文件/">linux下批量删除某目录下的某种类型的文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/09/linux下批量删除某目录下的某种类型的文件/" class="article-date">
+  <time datetime="2016-09-09T00:51:22.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x6279;&#x91CF;&#x5220;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x540D;&#x5B57;&#x662F;_md&#x540E;&#x7F00;&#x7684;&#x4EFB;&#x4F55;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;    </p>
+<pre><code>find . -name &quot;*_md.*&quot; -exec rm -rf {} \;
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-服务器跨域问题处理方法" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -404,55 +440,6 @@
         <p>update tableName set column=2 where limit &#x6761;&#x6570;;</p>
 <p>replace into tableName(id,name)  values(1,&#x2019;abc);</p>
 <p>insert into tableName(id,name) on duplicate key update name = ?;</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux系统安装mysql步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/linux系统安装mysql步骤/">linux系统安装mysql步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/linux系统安装mysql步骤/" class="article-date">
-  <time datetime="2016-09-08T09:04:52.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>&#x4E0B;&#x8F7D;mysql.tar.gz</li>
-<li>tar -zxvf mysql.tar.gz</li>
-<li>cp mysql /usr/local/mysql</li>
-<li>cd /usr/local</li>
-<li>groupadd mysql ,useradd mysql mysql</li>
-<li>cd /usr/local/mysql</li>
-<li>chown -R mysql:mysql ./</li>
-<li>cp /support-files/my-default.cnf /etc/my.cnf</li>
-<li>vim /etc/my.cnf<br> datadir = /usr/local/mysql/data</li>
-<li>/usr/local/mysql/bin/mysqld &#x2013;initialize &#x2013;user=mysql</li>
-<li>/usr/local/mysql/bin/mysqladmin -uroot -p&#x65E7;&#x5BC6;&#x7801; password &#x65B0;&#x5BC6;&#x7801;</li>
-<li>cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql &#x6DFB;&#x52A0;&#x5F00;&#x673A;&#x542F;&#x52A8;</li>
-<li>service mysql start/stop</li>
-</ol>
 
       
 
