@@ -28,6 +28,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-虚拟机参数配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/09/虚拟机参数配置/">虚拟机参数配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/09/虚拟机参数配置/" class="article-date">
+  <time datetime="2016-09-09T02:09:23.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>-Xverify:none // &#x907F;&#x514D;&#x865A;&#x62DF;&#x673A;&#x8FDB;&#x884C;&#x5B50;&#x8282;&#x7801;&#x9A8C;&#x8BC1;&#xFF0C;&#x56E0;&#x4E3A;eclipse&#x5B50;&#x8282;&#x7801;&#x7F16;&#x8BD1;&#x5DF2;&#x7ECF;&#x5F88;&#x53EF;&#x9760;</p>
+<p>-Xmx512m &#x5806;&#x5BB9;&#x91CF;</p>
+<p>-Xms512m</p>
+<p>-Xmn128m //&#x65B0;&#x751F;&#x4EE3;&#x5BB9;&#x91CF;</p>
+<p>-XX:PermSize=128m</p>
+<p>-XX:MaxPermSize=128m</p>
+<p>-XX:+DisableExplicitGC // &#x5C4F;&#x853D;eclipse&#x663E;&#x5F0F;&#x89E6;&#x53D1;System.gc()</p>
+<p>-XX:+UseConcMarkSweepGC </p>
+<p>-XX:+UseParNewGC (&#x65B0;&#x751F;&#x4EE3;&#x6536;&#x96C6;&#x5668;)</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-浏览器兼容性问题大汇总" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -728,41 +771,6 @@ min-height:200px;
       
         <p>select * from tableName order by rand()  limit 1;</p>
 
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mysql-前缀索引" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/mysql-前缀索引/">mysql_前缀索引</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/mysql-前缀索引/" class="article-date">
-  <time datetime="2016-09-08T09:08:51.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="&#x6DFB;&#x52A0;mysql&#x524D;&#x7F00;&#x7D22;&#x5F15;"><a href="#&#x6DFB;&#x52A0;mysql&#x524D;&#x7F00;&#x7D22;&#x5F15;" class="headerlink" title="&#x6DFB;&#x52A0;mysql&#x524D;&#x7F00;&#x7D22;&#x5F15;"></a>&#x6DFB;&#x52A0;mysql&#x524D;&#x7F00;&#x7D22;&#x5F15;</h4><pre><code>ALTER TABLE table_name ADD KEY(column_name(prefix_length));
-</code></pre>
       
 
       

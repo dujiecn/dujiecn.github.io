@@ -28,6 +28,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-maven项目强制不热重启配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/10/maven项目强制不热重启配置/">maven项目强制不热重启配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/10/maven项目强制不热重启配置/" class="article-date">
+  <time datetime="2016-09-10T03:02:42.000Z" itemprop="datePublished">2016-09-10</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>&#x547D;&#x4EE4;&#x65B9;&#x5F0F;</p>
+<pre><code>clean jetty:run -Djetty.port=8081 -Djetty.reload=manual
+</code></pre></li>
+<li><p>pom.xml&#x4E2D;&#x914D;&#x7F6E;        </p>
+<pre><code>&lt;plugin&gt;
+        &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-jetty-plugin&lt;/artifactId&gt;
+        &lt;version&gt;6.1.26&lt;/version&gt;
+        &lt;configuration&gt;
+            &lt;reload&gt;manual&lt;/reload&gt;
+            &lt;connectors&gt;
+                &lt;connector implementation=&quot;org.mortbay.jetty.nio.SelectChannelConnector&quot;&gt;
+                    &lt;port&gt;8080&lt;/port&gt;
+                    &lt;maxIdleTime&gt;30000&lt;/maxIdleTime&gt;
+                &lt;/connector&gt;
+            &lt;/connectors&gt;
+            &lt;scanIntervalSeconds&gt;3&lt;/scanIntervalSeconds&gt;
+            &lt;webAppSourceDirectory&gt;src/main/webapp&lt;/webAppSourceDirectory&gt;
+            &lt;contextPath&gt;/&lt;/contextPath&gt;
+        &lt;/configuration&gt;
+    &lt;/plugin&gt;
+</code></pre></li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-springboot中application-properties常用配置" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -465,49 +523,6 @@ fireOnThis.dispatchEvent(evObj);
         <p>&#x6253;&#x5F00;eclipse &#x7684;proference</p>
 <p>&#x3000;&#x3000;Team -&gt; Ignored Resources</p>
 <p>&#x3000;&#x3000;&#x7136;&#x540E;&#x81EA;&#x5DF1;&#x6DFB;&#x52A0;pattern</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-虚拟机参数配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/09/虚拟机参数配置/">虚拟机参数配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/09/虚拟机参数配置/" class="article-date">
-  <time datetime="2016-09-09T02:09:23.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>-Xverify:none // &#x907F;&#x514D;&#x865A;&#x62DF;&#x673A;&#x8FDB;&#x884C;&#x5B50;&#x8282;&#x7801;&#x9A8C;&#x8BC1;&#xFF0C;&#x56E0;&#x4E3A;eclipse&#x5B50;&#x8282;&#x7801;&#x7F16;&#x8BD1;&#x5DF2;&#x7ECF;&#x5F88;&#x53EF;&#x9760;</p>
-<p>-Xmx512m &#x5806;&#x5BB9;&#x91CF;</p>
-<p>-Xms512m</p>
-<p>-Xmn128m //&#x65B0;&#x751F;&#x4EE3;&#x5BB9;&#x91CF;</p>
-<p>-XX:PermSize=128m</p>
-<p>-XX:MaxPermSize=128m</p>
-<p>-XX:+DisableExplicitGC // &#x5C4F;&#x853D;eclipse&#x663E;&#x5F0F;&#x89E6;&#x53D1;System.gc()</p>
-<p>-XX:+UseConcMarkSweepGC </p>
-<p>-XX:+UseParNewGC (&#x65B0;&#x751F;&#x4EE3;&#x6536;&#x96C6;&#x5668;)</p>
 
       
 
