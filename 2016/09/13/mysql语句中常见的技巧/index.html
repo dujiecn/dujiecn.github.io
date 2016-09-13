@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mysql语句中常见的技巧 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="update topic_config set value = cast(value as DECIMAL) + 1
+&amp;#x4F7F;&amp;#x7528; cast(value as DECIMAL) &amp;#x628A;varchar&amp;#x7C7B;&amp;#x578B;&amp;#x7684;value&amp;#x503C;&amp;#x8F6C;&amp;#x6210;int&amp;#x7C7B;&amp;#x578B;&amp;#x7136;&amp;#x540">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql语句中常见的技巧">
+<meta property="og:url" content="http://yoursite.com/2016/09/13/mysql语句中常见的技巧/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="update topic_config set value = cast(value as DECIMAL) + 1
+&amp;#x4F7F;&amp;#x7528; cast(value as DECIMAL) &amp;#x628A;varchar&amp;#x7C7B;&amp;#x578B;&amp;#x7684;value&amp;#x503C;&amp;#x8F6C;&amp;#x6210;int&amp;#x7C7B;&amp;#x578B;&amp;#x7136;&amp;#x540">
+<meta property="og:updated_time" content="2016-09-13T04:47:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mysql语句中常见的技巧">
+<meta name="twitter:description" content="update topic_config set value = cast(value as DECIMAL) + 1
+&amp;#x4F7F;&amp;#x7528; cast(value as DECIMAL) &amp;#x628A;varchar&amp;#x7C7B;&amp;#x578B;&amp;#x7684;value&amp;#x503C;&amp;#x8F6C;&amp;#x6210;int&amp;#x7C7B;&amp;#x578B;&amp;#x7136;&amp;#x540">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-mysql语句中常见的技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mysql语句中常见的技巧
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/13/mysql语句中常见的技巧/" class="article-date">
+  <time datetime="2016-09-13T04:43:10.000Z" itemprop="datePublished">2016-09-13</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>update topic_config set value = cast(value as DECIMAL) + 1
+</code></pre><p>&#x4F7F;&#x7528; cast(value as DECIMAL) &#x628A;varchar&#x7C7B;&#x578B;&#x7684;value&#x503C;&#x8F6C;&#x6210;int&#x7C7B;&#x578B;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;</p>
+<pre><code>insert into dictionary (value) values ((select * from (select ifnull(max(value),0) from dictionary where type = 2) tmp) + 1)
+</code></pre><p>insert&#x8BED;&#x53E5;&#x4E2D;&#x5305;&#x542B;select&#x8BED;&#x53E5;&#xFF0C;&#x83B7;&#x53D6;&#x590D;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6700;&#x5927;&#x503C;&#x7136;&#x540E;&#x52A0;1&#xFF0C;&#x5E38;&#x89C1;&#x4E8E;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;    </p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/13/mvc组件使用注意点/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mvc组件使用注意点</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
