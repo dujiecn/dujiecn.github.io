@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mvc组件使用注意点 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x4F7F;&amp;#x7528;ext&amp;#x7EC4;&amp;#x4EF6;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x5982;&amp;#x679C;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x516C;&amp;#x5171;&amp;#x7684;&amp;#x7EC4;&amp;#x4EF6;&amp;#xFF0C;&amp;#x6700;&amp;#x597D;&amp;#x4F7F;&amp;#x7528;&amp;#x59">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mvc组件使用注意点">
+<meta property="og:url" content="http://yoursite.com/2016/09/13/mvc组件使用注意点/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="&amp;#x4F7F;&amp;#x7528;ext&amp;#x7EC4;&amp;#x4EF6;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x5982;&amp;#x679C;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x516C;&amp;#x5171;&amp;#x7684;&amp;#x7EC4;&amp;#x4EF6;&amp;#xFF0C;&amp;#x6700;&amp;#x597D;&amp;#x4F7F;&amp;#x7528;&amp;#x59">
+<meta property="og:updated_time" content="2016-09-13T01:17:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mvc组件使用注意点">
+<meta name="twitter:description" content="&amp;#x4F7F;&amp;#x7528;ext&amp;#x7EC4;&amp;#x4EF6;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x5982;&amp;#x679C;&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&amp;#x516C;&amp;#x5171;&amp;#x7684;&amp;#x7EC4;&amp;#x4EF6;&amp;#xFF0C;&amp;#x6700;&amp;#x597D;&amp;#x4F7F;&amp;#x7528;&amp;#x59">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="extjs-mvc组件使用注意点" class="article article-type-extjs" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mvc组件使用注意点
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/13/mvc组件使用注意点/" class="article-date">
+  <time datetime="2016-09-13T01:10:01.000Z" itemprop="datePublished">2016-09-13</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x4F7F;&#x7528;ext&#x7EC4;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x5982;&#x679C;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x516C;&#x5171;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x6700;&#x597D;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code>Ext.define(&apos;MyComponent&apos;,    {
+    extend:&apos;Ext.panel.Panel&apos;,
+    initComponent:function() {
+        var me = this;
+        Ext.applyIf(me,{
+            items:[
+                ...
+            ]
+        });
+        me.callParent(arguments);
+    }
+
+});
+</code></pre><p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5B50;&#x9762;&#x91CF;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code>Ext.define(&apos;MyComponent&apos;,{
+    extend:&apos;Ext.panel.Panel&apos;,
+    items:[
+        ...
+    ]
+});
+</code></pre><p>&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x4F1A;&#x5BFC;&#x81F4;&#x7EC4;&#x4EF6;&#x91CC;&#x9762;&#x6709;&#x4E9B;store&#x662F;&#x5355;&#x4F8B;&#xFF0C;&#x53EA;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x6B21;&#x3002;&#x5219;&#x4F1A;&#x51FA;&#x73B0;&#x7EC4;&#x4EF6;&#x7684;&#x72B6;&#x6001;&#x5171;&#x7528;&#x95EE;&#x9898;&#x3002;</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/10/maven项目强制不热重启配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">maven项目强制不热重启配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
