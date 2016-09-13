@@ -52,9 +52,22 @@
       
         <pre><code>update topic_config set value = cast(value as DECIMAL) + 1
 </code></pre><p>&#x4F7F;&#x7528; cast(value as DECIMAL) &#x628A;varchar&#x7C7B;&#x578B;&#x7684;value&#x503C;&#x8F6C;&#x6210;int&#x7C7B;&#x578B;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;</p>
-<pre><code>insert into dictionary (value) values ((select * from (select ifnull(max(value),0) from dictionary where type = 2) tmp) + 1)
+<pre><code>insert into dictionary (value) values ((select * from (select ifnull(max(value),0) from dictionary where type = 2) tmp) + 1)        
 </code></pre><p>insert&#x8BED;&#x53E5;&#x4E2D;&#x5305;&#x542B;select&#x8BED;&#x53E5;&#xFF0C;&#x83B7;&#x53D6;&#x590D;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6700;&#x5927;&#x503C;&#x7136;&#x540E;&#x52A0;1&#xFF0C;&#x5E38;&#x89C1;&#x4E8E;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;    </p>
-
+<pre><code>insert into topic_module_subject_category
+    (type,text,ptype)
+    values
+    ( 
+    &lt;choose&gt;
+        &lt;when test=&quot;ptype == 0&quot;&gt;
+            (select * from (select ifnull(max(type),100000) from topic_module_subject_category where ptype = #{ptype}) tmp) + 10000
+        &lt;/when&gt;
+        &lt;otherwise&gt;
+            (select * from (select ifnull(max(type),${ptype}) from topic_module_subject_category where ptype = #{ptype}) tmp) + 1
+        &lt;/otherwise&gt;
+    &lt;/choose&gt;
+    ,#{text},#{ptype})
+</code></pre>
       
 
       
