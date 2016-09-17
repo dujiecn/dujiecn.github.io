@@ -5,19 +5,19 @@
   
   <title>docker常用命令 | walljay的备忘博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
-&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#x6620;&amp;#x5C">
+  <meta name="description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v ~/Documents/Kitematic/centos:/mnt centos:latest
+&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker常用命令">
 <meta property="og:url" content="http://yoursite.com/2016/09/08/docker常用命令/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
-<meta property="og:description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
-&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#x6620;&amp;#x5C">
-<meta property="og:updated_time" content="2016-09-09T02:32:29.000Z">
+<meta property="og:description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v ~/Documents/Kitematic/centos:/mnt centos:latest
+&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#">
+<meta property="og:updated_time" content="2016-09-17T07:54:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker常用命令">
-<meta name="twitter:description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
-&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#x6620;&amp;#x5C">
+<meta name="twitter:description" content="&amp;#x8FD0;&amp;#x884C;&amp;#x5BB9;&amp;#x5668;docker run  -d -t --name centos -v ~/Documents/Kitematic/centos:/mnt centos:latest
+&amp;#x955C;&amp;#x50CF;&amp;#x4E3A;&amp;#xFF1A;centos:latest&amp;#x5BB9;&amp;#x5668;&amp;#x540D;&amp;#xFF1A;centos&amp;#">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -55,7 +55,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="&#x8FD0;&#x884C;&#x5BB9;&#x5668;"><a href="#&#x8FD0;&#x884C;&#x5BB9;&#x5668;" class="headerlink" title="&#x8FD0;&#x884C;&#x5BB9;&#x5668;"></a>&#x8FD0;&#x884C;&#x5BB9;&#x5668;</h3><pre><code>docker run  -d -t --name centos -v /usr/local/centos:/mnt centos:latest
+        <h3 id="&#x8FD0;&#x884C;&#x5BB9;&#x5668;"><a href="#&#x8FD0;&#x884C;&#x5BB9;&#x5668;" class="headerlink" title="&#x8FD0;&#x884C;&#x5BB9;&#x5668;"></a>&#x8FD0;&#x884C;&#x5BB9;&#x5668;</h3><pre><code>docker run  -d -t --name centos -v ~/Documents/Kitematic/centos:/mnt centos:latest
 </code></pre><p>&#x955C;&#x50CF;&#x4E3A;&#xFF1A;centos:latest<br>&#x5BB9;&#x5668;&#x540D;&#xFF1A;centos<br>&#x6620;&#x5C04;&#x672C;&#x5730;&#x76EE;&#x5F55;&#x5230;&#x5BB9;&#x5668;/mnt&#x76EE;&#x5F55;&#x4E2D;&#xFF1A;/usr/local/centos</p>
 <h3 id="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"><a href="#&#x5BFC;&#x51FA;&#x955C;&#x50CF;" class="headerlink" title="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"></a>&#x5BFC;&#x51FA;&#x955C;&#x50CF;</h3><pre><code>docker save centos:latest &gt; centos.tar
 </code></pre><h3 id="&#x5BFC;&#x51FA;&#x955C;&#x50CF;-1"><a href="#&#x5BFC;&#x51FA;&#x955C;&#x50CF;-1" class="headerlink" title="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"></a>&#x5BFC;&#x51FA;&#x955C;&#x50CF;</h3><pre><code>docker load centos.tar
