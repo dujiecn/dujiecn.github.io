@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用jaxb对字符串操作 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x5BF9;&amp;#x8C61;&amp;#x8F6C;xml&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;/**
+ * 
+ * @param obj
+ * @XmlAccessorType(XmlAccessType.FIELD) @XmlRootElement(name = &amp;quot;xml&amp;quot;)
+ * @param encoding
+ * @return
+ */
+public stati">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用jaxb对字符串操作">
+<meta property="og:url" content="http://yoursite.com/2016/09/19/使用jaxb对字符串操作/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="&amp;#x5BF9;&amp;#x8C61;&amp;#x8F6C;xml&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;/**
+ * 
+ * @param obj
+ * @XmlAccessorType(XmlAccessType.FIELD) @XmlRootElement(name = &amp;quot;xml&amp;quot;)
+ * @param encoding
+ * @return
+ */
+public stati">
+<meta property="og:updated_time" content="2016-09-19T03:16:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用jaxb对字符串操作">
+<meta name="twitter:description" content="&amp;#x5BF9;&amp;#x8C61;&amp;#x8F6C;xml&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;/**
+ * 
+ * @param obj
+ * @XmlAccessorType(XmlAccessType.FIELD) @XmlRootElement(name = &amp;quot;xml&amp;quot;)
+ * @param encoding
+ * @return
+ */
+public stati">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-使用jaxb对字符串操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用jaxb对字符串操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/19/使用jaxb对字符串操作/" class="article-date">
+  <time datetime="2016-09-19T03:11:33.000Z" itemprop="datePublished">2016-09-19</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x5BF9;&#x8C61;&#x8F6C;xml&#x5B57;&#x7B26;&#x4E32;"><a href="#&#x5BF9;&#x8C61;&#x8F6C;xml&#x5B57;&#x7B26;&#x4E32;" class="headerlink" title="&#x5BF9;&#x8C61;&#x8F6C;xml&#x5B57;&#x7B26;&#x4E32;"></a>&#x5BF9;&#x8C61;&#x8F6C;xml&#x5B57;&#x7B26;&#x4E32;</h3><pre><code>/**
+ * 
+ * @param obj
+ * @XmlAccessorType(XmlAccessType.FIELD) @XmlRootElement(name = &quot;xml&quot;)
+ * @param encoding
+ * @return
+ */
+public static String convertToXml(Object obj, String encoding) {
+    String result = null;
+    try {
+        JAXBContext context = JAXBContext.newInstance(obj.getClass());
+        Marshaller marshaller = context.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshaller.setProperty(Marshaller.JAXB_ENCODING, encoding);
+
+        StringWriter writer = new StringWriter();
+        marshaller.marshal(obj, writer);
+        result = writer.toString();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    return result;
+}
+</code></pre><h3 id="xml&#x5B57;&#x7B26;&#x4E32;&#x8F6C;java&#x5BF9;&#x8C61;"><a href="#xml&#x5B57;&#x7B26;&#x4E32;&#x8F6C;java&#x5BF9;&#x8C61;" class="headerlink" title="xml&#x5B57;&#x7B26;&#x4E32;&#x8F6C;java&#x5BF9;&#x8C61;"></a>xml&#x5B57;&#x7B26;&#x4E32;&#x8F6C;java&#x5BF9;&#x8C61;</h3><pre><code>public static &lt;T&gt; T converToJavaBean(String xml, Class&lt;T&gt; clazz) {
+    try {
+        JAXBContext context = JAXBContext.newInstance(clazz);
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+        AbstractUnmarshallerImpl abstractUnmarshallerImpl = (AbstractUnmarshallerImpl) unmarshaller;
+        return (T) abstractUnmarshallerImpl.unmarshal(new StringReader(xml));
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }
+}    
+</code></pre><p>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x9519;&#x8BEF;&#xFF1A;SAXNotRecognizedException: Feature &#x2018;<a href="http://javax.xml.XMLConstants/feature/secure-" target="_blank" rel="external">http://javax.xml.XMLConstants/feature/secure-</a></p>
+<p>&#x672C;&#x5730;&#x8FD0;&#x884C;&#x662F;&#x597D;&#x7684;&#xFF0C;&#x670D;&#x52A1;&#x8FD0;&#x884C;&#x62A5;&#x9519;&#x3002;&#x539F;&#x56E0;&#x662F;&#x672C;&#x5730;&#x7684;jdk&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x662F;1.7&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x662F;1.8&#x3002;&#x6240;&#x4EE5;&#x5BFC;&#x81F4;&#x6B64;&#x5F02;&#x5E38;&#x3002;</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/13/mysql语句中常见的技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mysql语句中常见的技巧</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 wall jay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
