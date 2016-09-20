@@ -5,9 +5,9 @@
 # Site
 title: walljay的备忘博客
 subtitle:
-description:
-author: wall jay
-language:
+description: java,javascript,docker,linux...
+author: walljay
+language: zh-CN
 timezone:
 
 # URL
@@ -63,12 +63,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-jane
+theme: jane 
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repository: git@github.com:dujiecn/dujiecn.github.io.git
-  #repository: git@github.com:wangyuanjun008/wangyuanjun008.github.io.git
   branch: master
