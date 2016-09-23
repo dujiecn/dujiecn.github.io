@@ -31,6 +31,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-linux下安装nginx" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/linux下安装nginx/">linux下安装nginx</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/linux下安装nginx/" class="article-date">
+  <time datetime="2016-09-08T09:16:31.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>yum install -y gcc</p>
+<p>yum install -y gcc-c++</p>
+<p>wget <a href="http://nginx.org/download/nginx-1.10.0.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.10.0.tar.gz</a></p>
+<p>yum install -y pcre pcre-devel</p>
+<p>yum install -y zlib zlib-devel</p>
+<p>yum install -y openssl openssl-devel</p>
+<p>tar zxvf nginx-1.10.0.tar.gz</p>
+<p>cd nginx-1.10.0</p>
+<p>./configure</p>
+<p>make &amp;&amp; make install</p>
+<p>cd /usr/local/nginx</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mysql-经纬度两点间的距离" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -402,73 +447,6 @@ ssh username@remote_server_ip &#x201C;your_command1;your_command2; your_command3
 </code></pre><p> &#x5220;&#x9664;&#x96C6;&#x5408;&#xFF1A;db.myCollection.drop()<br> &#x67E5;&#x8BE2;&#x96C6;&#x5408;&#xFF1A;db.myCollection.find()//.pretty()</p>
 <pre><code>&#x5177;&#x4F53;&#x67E5;&#x8BE2;&#x7684;where&#x6761;&#x4EF6;&#x53C2;&#x7167;&#xFF1A;http://www.yiibai.com/mongodb/mongodb_query_document.html
 </code></pre></li>
-</ol>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/git常用命令/">git常用命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/git常用命令/" class="article-date">
-  <time datetime="2016-09-08T08:36:18.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;"><a href="#&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;" class="headerlink" title="&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;"></a>&#x6DFB;&#x52A0;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;</h4><pre><code>git add file
-</code></pre><h4 id="&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;"><a href="#&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;" class="headerlink" title="&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;"></a>&#x63D0;&#x4EA4;&#x6587;&#x4EF6;&#x5230;&#x4ED3;&#x5E93;</h4><pre><code>git commit -m &apos;desc&apos;
-</code></pre><h4 id="&#x663E;&#x793A;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;"><a href="#&#x663E;&#x793A;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;" class="headerlink" title="&#x663E;&#x793A;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;"></a>&#x663E;&#x793A;&#x5F53;&#x524D;&#x4ED3;&#x5E93;&#x7684;&#x72B6;&#x6001;</h4><pre><code>git status
-</code></pre><h4 id="&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;"><a href="#&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;" class="headerlink" title="&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;"></a>&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x7684;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;</h4><pre><code>git log --pretty=oneline
-</code></pre><h4 id="&#x56DE;&#x9000;&#x7248;&#x672C;"><a href="#&#x56DE;&#x9000;&#x7248;&#x672C;" class="headerlink" title="&#x56DE;&#x9000;&#x7248;&#x672C;"></a>&#x56DE;&#x9000;&#x7248;&#x672C;</h4><pre><code>git reset --hard HEAD^
-git reset --hard head~100 &#x5F80;&#x56DE;100&#x4E2A;&#x7248;&#x672C;
-git reset --hard 08b8637 &#x56DE;&#x9000;&#x6307;&#x5B9A;&#x7248;&#x672C;
-</code></pre><h4 id="&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;"><a href="#&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;" class="headerlink" title="&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;"></a>&#x663E;&#x793A;&#x63D0;&#x4EA4;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x7248;&#x672C;</h4><pre><code>git reflog
-</code></pre><h4 id="&#x590D;&#x539F;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git-commit&#x6216;commit-add&#xFF09;"><a href="#&#x590D;&#x539F;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git-commit&#x6216;commit-add&#xFF09;" class="headerlink" title="&#x590D;&#x539F;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git commit&#x6216;commit add&#xFF09;"></a>&#x590D;&#x539F;&#x5DE5;&#x4F5C;&#x533A;&#x7684;&#x6587;&#x4EF6;&#xFF08;&#x56DE;&#x5230;&#x6700;&#x8FD1;&#x4E00;&#x6B21;git commit&#x6216;commit add&#xFF09;</h4><pre><code>git checkout -- file
-</code></pre><h4 id="&#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;&#x4FEE;&#x6539;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;"><a href="#&#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;&#x4FEE;&#x6539;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;" class="headerlink" title="&#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;&#x4FEE;&#x6539;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;"></a>&#x64A4;&#x9500;&#x6682;&#x5B58;&#x533A;&#x4FEE;&#x6539;&#xFF0C;&#x91CD;&#x65B0;&#x653E;&#x56DE;&#x5DE5;&#x4F5C;&#x533A;</h4><pre><code>git reset head file
-</code></pre><h4 id="&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x5220;&#x9664;&#x6587;&#x4EF6;"><a href="#&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x5220;&#x9664;&#x6587;&#x4EF6;" class="headerlink" title="&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x5220;&#x9664;&#x6587;&#x4EF6;"></a>&#x4ECE;&#x7248;&#x672C;&#x5E93;&#x5220;&#x9664;&#x6587;&#x4EF6;</h4><pre><code>git rm test.txt
-git commit -m &apos;del file&apos;
-</code></pre><h4 id="&#x8FDC;&#x7A0B;&#x5173;&#x8054;github"><a href="#&#x8FDC;&#x7A0B;&#x5173;&#x8054;github" class="headerlink" title="&#x8FDC;&#x7A0B;&#x5173;&#x8054;github"></a>&#x8FDC;&#x7A0B;&#x5173;&#x8054;github</h4><pre><code>git remote add origin git@github.com:dujiecn/learngit.git
-</code></pre><h4 id="&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;"><a href="#&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;" class="headerlink" title="&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;"></a>&#x63D0;&#x4EA4;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</h4><pre><code>git push -u origin master
-</code></pre><h5 id="&#x62F7;&#x8D1D;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;"><a href="#&#x62F7;&#x8D1D;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;" class="headerlink" title="&#x62F7;&#x8D1D;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;"></a>&#x62F7;&#x8D1D;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4EE3;&#x7801;</h5><pre><code>git clone git@github.com:dujiecn/gitskills.git
-</code></pre><h4 id="&#x67E5;&#x770B;&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x5185;&#x5BB9;"><a href="#&#x67E5;&#x770B;&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x5185;&#x5BB9;" class="headerlink" title="&#x67E5;&#x770B;&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x5185;&#x5BB9;"></a>&#x67E5;&#x770B;&#x6700;&#x8FD1;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x5185;&#x5BB9;</h4><pre><code>git log -n 1 --stat
-</code></pre><ol>
-<li><p>&#x521B;&#x5EFA;&#x5206;&#x652F;</p>
-<p>  &#x521B;&#x5EFA;&#x5206;&#x652F;&#x5F88;&#x7B80;&#x5355;&#xFF1A;git branch &lt;&#x5206;&#x652F;&#x540D;&gt;</p>
-</li>
-<li><p>&#x5207;&#x6362;&#x5206;&#x652F;</p>
-<p>  git checkout &lt;&#x5206;&#x652F;&#x540D;&gt;<br>&#x8BE5;&#x8BED;&#x53E5;&#x548C;&#x4E0A;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x548C;&#x8D77;&#x6765;&#x7528;&#x4E00;&#x4E2A;&#x8BED;&#x53E5;&#x8868;&#x793A;&#xFF1A;git checkout -b &lt;&#x5206;&#x652F;&#x540D;&gt;</p>
-</li>
-<li><p>&#x5206;&#x652F;&#x5408;&#x5E76;</p>
-<p> &#x6BD4;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x5C06;&#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x5206;&#x652F;&#xFF08;develop&#xFF09;&#xFF0C;&#x5408;&#x5E76;&#x5230;&#x7A33;&#x5B9A;&#x5206;&#x652F;&#xFF08;master&#xFF09;&#xFF0C;&#x9996;&#x5148;&#x5207;&#x6362;&#x7684;master&#x5206;&#x652F;&#xFF1A;git checkout master&#x3002;&#x7136;&#x540E;&#x6267;&#x884C;&#x5408;&#x5E76;&#x64CD;&#x4F5C;&#xFF1A;git merge develop&#x3002;&#x5982;&#x679C;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;&#x4F60;&#xFF0C;&#x8C03;&#x7528;git status&#x67E5;&#x770B;&#x51B2;&#x7A81;&#x6587;&#x4EF6;&#x3002;&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;git add&#x6216;git rm&#x5C06;&#x89E3;&#x51B3;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x6682;&#x5B58;&#x3002;&#x6240;&#x6709;&#x51B2;&#x7A81;&#x89E3;&#x51B3;&#x540E;&#xFF0C;git commit &#x63D0;&#x4EA4;&#x66F4;&#x6539;&#x3002;</p>
-</li>
-<li><p>&#x5206;&#x652F;&#x884D;&#x5408;</p>
-<p> &#x5206;&#x652F;&#x884D;&#x5408;&#x548C;&#x5206;&#x652F;&#x5408;&#x5E76;&#x7684;&#x5DEE;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x5206;&#x652F;&#x884D;&#x5408;&#x4E0D;&#x4F1A;&#x4FDD;&#x7559;&#x5408;&#x5E76;&#x7684;&#x65E5;&#x5FD7;&#xFF0C;&#x4E0D;&#x7559;&#x75D5;&#x8FF9;&#xFF0C;&#x800C; &#x5206;&#x652F;&#x5408;&#x5E76;&#x5219;&#x4F1A;&#x4FDD;&#x7559;&#x5408;&#x5E76;&#x7684;&#x65E5;&#x5FD7;&#x3002;&#x8981;&#x5C06;&#x5F00;&#x53D1;&#x4E2D;&#x7684;&#x5206;&#x652F;&#xFF08;develop&#xFF09;&#xFF0C;&#x884D;&#x5408;&#x5230;&#x7A33;&#x5B9A;&#x5206;&#x652F;&#xFF08;master&#xFF09;&#x3002;&#x9996;&#x5148;&#x5207;&#x6362;&#x7684;master&#x5206;&#x652F;&#xFF1A;git checkout master&#x3002;&#x7136;&#x540E;&#x6267;&#x884C;&#x884D;&#x548C;&#x64CD;&#x4F5C;&#xFF1A;git rebase develop&#x3002;&#x5982;&#x679C;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x4F1A;&#x63D0;&#x793A;&#x4F60;&#xFF0C;&#x8C03;&#x7528;git status&#x67E5;&#x770B;&#x51B2;&#x7A81;&#x6587;&#x4EF6;&#x3002;&#x89E3;&#x51B3;&#x51B2;&#x7A81;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528;git add&#x6216;git rm&#x5C06;&#x89E3;&#x51B3;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x6682;&#x5B58;&#x3002;&#x6240;&#x6709;&#x51B2;&#x7A81;&#x89E3;&#x51B3;&#x540E;&#xFF0C;git rebase &#x2013;continue &#x63D0;&#x4EA4;&#x66F4;&#x6539;&#x3002;</p>
-</li>
-<li><p>&#x5220;&#x9664;&#x5206;&#x652F;</p>
-<p>  &#x6267;&#x884C;git branch -d &lt;&#x5206;&#x652F;&#x540D;&gt;<br>  &#x5982;&#x679C;&#x8BE5;&#x5206;&#x652F;&#x6CA1;&#x6709;&#x5408;&#x5E76;&#x5230;&#x4E3B;&#x5206;&#x652F;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x5F3A;&#x5236;&#x5220;&#x9664;git branch -D &lt;&#x5206;&#x652F;&#x540D;&gt;</p>
-</li>
 </ol>
 
       

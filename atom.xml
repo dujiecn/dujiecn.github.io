@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-19T03:16:30.000Z</updated>
+  <updated>2016-09-23T01:51:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql时间转换函数</title>
+    <link href="http://yoursite.com/2016/09/23/mysql%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2016/09/23/mysql时间转换函数/</id>
+    <published>2016-09-23T00:48:36.000Z</published>
+    <updated>2016-09-23T01:51:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>date_add(current_timestamp,interval - 1 month)<br>date_format(date,&#x2019;%Y%m%d&#x2019;);</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;date_add(current_timestamp,interval - 1 month)&lt;br&gt;date_format(date,&amp;#x2019;%Y%m%d&amp;#x2019;);&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>使用jaxb对字符串操作</title>
@@ -1049,39 +1071,6 @@ min-height:200px;
     
     
       <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux下安装nginx</title>
-    <link href="http://yoursite.com/2016/09/08/linux%E4%B8%8B%E5%AE%89%E8%A3%85nginx/"/>
-    <id>http://yoursite.com/2016/09/08/linux下安装nginx/</id>
-    <published>2016-09-08T09:16:31.000Z</published>
-    <updated>2016-09-08T09:17:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>yum install -y gcc</p>
-<p>yum install -y gcc-c++</p>
-<p>wget <a href="http://nginx.org/download/nginx-1.10.0.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.10.0.tar.gz</a></p>
-<p>yum install -y pcre pcre-devel</p>
-<p>yum install -y zlib zlib-devel</p>
-<p>yum install -y openssl openssl-devel</p>
-<p>tar zxvf nginx-1.10.0.tar.gz</p>
-<p>cd nginx-1.10.0</p>
-<p>./configure</p>
-<p>make &amp;&amp; make install</p>
-<p>cd /usr/local/nginx</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;yum install -y gcc&lt;/p&gt;
-&lt;p&gt;yum install -y gcc-c++&lt;/p&gt;
-&lt;p&gt;wget &lt;a href=&quot;http://nginx.org/download/nginx-1.10.0.tar.gz&quot; target=&quot;_blank&quot; rel=
-    
-    </summary>
-    
-    
-      <category term="nginx" scheme="http://yoursite.com/tags/nginx/"/>
     
   </entry>
   
