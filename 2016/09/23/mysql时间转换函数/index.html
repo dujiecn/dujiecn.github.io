@@ -5,16 +5,25 @@
   
   <title>mysql时间转换函数 | walljay的备忘博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="date_add(current_timestamp,interval - 1 month)date_format(date,&amp;#x2019;%Y%m%d&amp;#x2019;);">
+  <meta name="description" content="date_add(current_timestamp,interval - 1 month)
+date_format(date,&amp;#x2019;%Y%m%d&amp;#x2019;);
+last_day(&amp;#x2018;2007-03-01&amp;#x2019;);
+1 &amp;#x67D0;&amp;#x4E00;&amp;#x5929;&amp;#x7684;&amp;#x6240;&amp;#x5728;&amp;#x6708;&amp;#x7684;&amp;#x7B2C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql时间转换函数">
 <meta property="og:url" content="http://yoursite.com/2016/09/23/mysql时间转换函数/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
-<meta property="og:description" content="date_add(current_timestamp,interval - 1 month)date_format(date,&amp;#x2019;%Y%m%d&amp;#x2019;);">
-<meta property="og:updated_time" content="2016-09-23T01:51:35.000Z">
+<meta property="og:description" content="date_add(current_timestamp,interval - 1 month)
+date_format(date,&amp;#x2019;%Y%m%d&amp;#x2019;);
+last_day(&amp;#x2018;2007-03-01&amp;#x2019;);
+1 &amp;#x67D0;&amp;#x4E00;&amp;#x5929;&amp;#x7684;&amp;#x6240;&amp;#x5728;&amp;#x6708;&amp;#x7684;&amp;#x7B2C">
+<meta property="og:updated_time" content="2016-09-23T07:24:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql时间转换函数">
-<meta name="twitter:description" content="date_add(current_timestamp,interval - 1 month)date_format(date,&amp;#x2019;%Y%m%d&amp;#x2019;);">
+<meta name="twitter:description" content="date_add(current_timestamp,interval - 1 month)
+date_format(date,&amp;#x2019;%Y%m%d&amp;#x2019;);
+last_day(&amp;#x2018;2007-03-01&amp;#x2019;);
+1 &amp;#x67D0;&amp;#x4E00;&amp;#x5929;&amp;#x7684;&amp;#x6240;&amp;#x5728;&amp;#x6708;&amp;#x7684;&amp;#x7B2C">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -52,8 +61,14 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>date_add(current_timestamp,interval - 1 month)<br>date_format(date,&#x2019;%Y%m%d&#x2019;);</p>
-
+        <p>date_add(current_timestamp,interval - 1 month)</p>
+<p>date_format(date,&#x2019;%Y%m%d&#x2019;);</p>
+<p>last_day(&#x2018;2007-03-01&#x2019;);</p>
+<p>1 &#x67D0;&#x4E00;&#x5929;&#x7684;&#x6240;&#x5728;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF1A;</p>
+<pre><code>select date_add(date_add(last_day(&apos;2008-02-01&apos;),interval 1 day),interval -1 month);
+</code></pre><p>&#x67D0;&#x4E00;&#x5929;&#x7684;&#x6240;&#x5728;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5929;&#xFF1A;</p>
+<pre><code>select last_day(&apos;2008-02-01&apos;);
+</code></pre>
       
 
       
@@ -63,6 +78,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/09/23/mybatis中if里面字符串比较/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          mybatis中if里面字符串比较
+        
+      </div>
+    </a>
   
   
     <a href="/2016/09/19/使用jaxb对字符串操作/" id="article-nav-older" class="article-nav-link-wrap">

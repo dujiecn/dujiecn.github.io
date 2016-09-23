@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mybatis中if里面字符串比较 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mybatis&amp;#x4E2D;&amp;#x5982;&amp;#x679C;&amp;#x4F7F;&amp;#x7528;&amp;#x5982;&amp;#x4E0B;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x6BD4;&amp;#x8F83;&amp;#x4F1A;&amp;#x62A5;&amp;#x9519;&amp;#xFF1A;
+&amp;lt;choose&amp;gt;
+    &amp;lt;when test=&amp;quot;module == &amp;apos;d&amp;apos;&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mybatis中if里面字符串比较">
+<meta property="og:url" content="http://yoursite.com/2016/09/23/mybatis中if里面字符串比较/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="mybatis&amp;#x4E2D;&amp;#x5982;&amp;#x679C;&amp;#x4F7F;&amp;#x7528;&amp;#x5982;&amp;#x4E0B;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x6BD4;&amp;#x8F83;&amp;#x4F1A;&amp;#x62A5;&amp;#x9519;&amp;#xFF1A;
+&amp;lt;choose&amp;gt;
+    &amp;lt;when test=&amp;quot;module == &amp;apos;d&amp;apos;&amp;q">
+<meta property="og:updated_time" content="2016-09-23T02:24:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mybatis中if里面字符串比较">
+<meta name="twitter:description" content="mybatis&amp;#x4E2D;&amp;#x5982;&amp;#x679C;&amp;#x4F7F;&amp;#x7528;&amp;#x5982;&amp;#x4E0B;&amp;#x5B57;&amp;#x7B26;&amp;#x4E32;&amp;#x6BD4;&amp;#x8F83;&amp;#x4F1A;&amp;#x62A5;&amp;#x9519;&amp;#xFF1A;
+&amp;lt;choose&amp;gt;
+    &amp;lt;when test=&amp;quot;module == &amp;apos;d&amp;apos;&amp;q">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-mybatis中if里面字符串比较" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mybatis中if里面字符串比较
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/23/mybatis中if里面字符串比较/" class="article-date">
+  <time datetime="2016-09-23T02:22:01.000Z" itemprop="datePublished">2016-09-23</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mybatis&#x4E2D;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;&#x4F1A;&#x62A5;&#x9519;&#xFF1A;</p>
+<pre><code>&lt;choose&gt;
+    &lt;when test=&quot;module == &apos;d&apos;&quot;&gt;
+        topic_module_dynamic b
+    &lt;/when&gt;
+&lt;/choose&gt;
+</code></pre><p>&#x6539;&#x5199;&#x6210;&#x8FD9;&#x6837;&#x5C31;ok&#x4E86;&#xFF1A;</p>
+<pre><code>&lt;choose&gt;
+    &lt;when test=&quot;module == &apos;d&apos;.toString()&quot;&gt;
+        topic_module_dynamic b
+    &lt;/when&gt;
+&lt;/choose&gt;
+</code></pre><p>&#x6216;&#x8005;</p>
+<pre><code>&lt;choose&gt;
+    &lt;when test=&apos;module == &quot;d&quot;&apos;&gt;
+        topic_module_dynamic b
+    &lt;/when&gt;
+&lt;/choose&gt;    
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/23/mysql时间转换函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mysql时间转换函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 walljay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
