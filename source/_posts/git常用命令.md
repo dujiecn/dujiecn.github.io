@@ -35,6 +35,17 @@ tags: "git"
 #### 查看最近一次提交的内容
 	git log -n 1 --stat
 
+### 创建一个tag标签
+	
+	git tag -a v3.0.0 -m '3.0.0版本'
+	
+### 删除一个tag标签
+
+	git tag -d v3.0.0
+	
+### 删除远程tag标签
+
+	git push origin --delete v3.0.0		
 
 1. 创建分支
  	
