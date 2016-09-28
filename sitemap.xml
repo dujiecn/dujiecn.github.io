@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/09/08/linux-%E8%BF%9C%E7%A8%8B%E5%85%8D%E7%99%BB%E5%BD%95/</loc>
+    
+    <lastmod>2016-09-28T08:14:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/08/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2016-09-24T09:31:33.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/2016/09/23/mybatis%E4%B8%ADif%E9%87%8C%E9%9D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/</loc>
     
     <lastmod>2016-09-23T02:24:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/09/08/linux-%E8%BF%9C%E7%A8%8B%E5%85%8D%E7%99%BB%E5%BD%95/</loc>
-    
-    <lastmod>2016-09-19T15:28:04.000Z</lastmod>
     
   </url>
   

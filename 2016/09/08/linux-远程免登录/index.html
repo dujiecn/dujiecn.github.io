@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/08/linux-远程免登录/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
 <meta property="og:description" content="A&amp;#x4E3A;&amp;#x672C;&amp;#x5730;&amp;#x4E3B;&amp;#x673A;(&amp;#x5373;&amp;#x7528;&amp;#x4E8E;&amp;#x63A7;&amp;#x5236;&amp;#x5176;&amp;#x4ED6;&amp;#x4E3B;&amp;#x673A;&amp;#x7684;&amp;#x673A;&amp;#x5668;) ;B&amp;#x4E3A;&amp;#x8FDC;&amp;#x7A0B;&amp;#x4E3B;&amp;#x673A;(&amp;#x5373;&amp;#x88AB;&amp;">
-<meta property="og:updated_time" content="2016-09-19T15:28:04.000Z">
+<meta property="og:updated_time" content="2016-09-28T08:14:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux_远程免登录">
 <meta name="twitter:description" content="A&amp;#x4E3A;&amp;#x672C;&amp;#x5730;&amp;#x4E3B;&amp;#x673A;(&amp;#x5373;&amp;#x7528;&amp;#x4E8E;&amp;#x63A7;&amp;#x5236;&amp;#x5176;&amp;#x4ED6;&amp;#x4E3B;&amp;#x673A;&amp;#x7684;&amp;#x673A;&amp;#x5668;) ;B&amp;#x4E3A;&amp;#x8FDC;&amp;#x7A0B;&amp;#x4E3B;&amp;#x673A;(&amp;#x5373;&amp;#x88AB;&amp;">
@@ -54,6 +54,7 @@
       
         <p>A&#x4E3A;&#x672C;&#x5730;&#x4E3B;&#x673A;(&#x5373;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x7684;&#x673A;&#x5668;) ;B&#x4E3A;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;(&#x5373;&#x88AB;&#x63A7;&#x5236;&#x7684;&#x673A;&#x5668;Server), &#x5047;&#x5982;ip&#x4E3A;172.24.253.2 ;A&#x548C;B&#x7684;&#x7CFB;&#x7EDF;&#x90FD;&#x662F;Linux;</p>
 <h3 id="&#x5728;A&#x4E0A;&#x7684;&#x547D;&#x4EE4;"><a href="#&#x5728;A&#x4E0A;&#x7684;&#x547D;&#x4EE4;" class="headerlink" title="&#x5728;A&#x4E0A;&#x7684;&#x547D;&#x4EE4;:"></a>&#x5728;A&#x4E0A;&#x7684;&#x547D;&#x4EE4;:</h3><pre><code># ssh-keygen -t rsa (&#x8FDE;&#x7EED;&#x4E09;&#x6B21;&#x56DE;&#x8F66;,&#x5373;&#x5728;&#x672C;&#x5730;&#x751F;&#x6210;&#x4E86;&#x516C;&#x94A5;&#x548C;&#x79C1;&#x94A5;,&#x4E0D;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;)
+&#x6216;&#x8005;ssh-keygen -t dsa -P &apos;&apos; -f ~/.ssh/id_dsa 
 # ssh root@172.24.253.2 &quot;mkdir .ssh;chmod 0700 .ssh&quot; (&#x9700;&#x8981;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C; &#x6CE8;:&#x5FC5;&#x987B;&#x5C06;.ssh&#x7684;&#x6743;&#x9650;&#x8BBE;&#x4E3A;700)
 # scp ~/.ssh/id_rsa.pub root@172.24.253.2:.ssh/id_rsa.pub (&#x9700;&#x8981;&#x8F93;&#x5165;&#x5BC6;&#x7801;)
 </code></pre><h3 id="&#x5728;B&#x4E0A;&#x7684;&#x547D;&#x4EE4;"><a href="#&#x5728;B&#x4E0A;&#x7684;&#x547D;&#x4EE4;" class="headerlink" title="&#x5728;B&#x4E0A;&#x7684;&#x547D;&#x4EE4;:"></a>&#x5728;B&#x4E0A;&#x7684;&#x547D;&#x4EE4;:</h3><pre><code># touch /root/.ssh/authorized_keys (&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;, &#x8DF3;&#x8FC7;&#x8FD9;&#x6761;)
