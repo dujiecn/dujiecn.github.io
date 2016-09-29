@@ -31,6 +31,110 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mac硬盘显示bug" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/mac硬盘显示bug/">mac硬盘显示bug</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/mac硬盘显示bug/" class="article-date">
+  <time datetime="2016-09-08T09:02:18.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x6253;&#x5F00;&#x5B9E;&#x7528;&#x5DE5;&#x5177; - &#x7EC8;&#x7AEF;&#xFF0C;&#x5E76;&#x5728;&#x5176;&#x4E2D;&#x8F93;&#x5165;&#x547D;&#x4EE4;</p>
+<pre><code>sudo mdutil -E /
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-linux-远程免登录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/linux-远程免登录/">linux_远程免登录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/linux-远程免登录/" class="article-date">
+  <time datetime="2016-09-08T08:48:06.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>A&#x4E3A;&#x672C;&#x5730;&#x4E3B;&#x673A;(&#x5373;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x7684;&#x673A;&#x5668;) ;B&#x4E3A;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;(&#x5373;&#x88AB;&#x63A7;&#x5236;&#x7684;&#x673A;&#x5668;Server), &#x5047;&#x5982;ip&#x4E3A;172.24.253.2 ;A&#x548C;B&#x7684;&#x7CFB;&#x7EDF;&#x90FD;&#x662F;Linux;</p>
+<h3 id="&#x5728;A&#x4E0A;&#x7684;&#x547D;&#x4EE4;"><a href="#&#x5728;A&#x4E0A;&#x7684;&#x547D;&#x4EE4;" class="headerlink" title="&#x5728;A&#x4E0A;&#x7684;&#x547D;&#x4EE4;:"></a>&#x5728;A&#x4E0A;&#x7684;&#x547D;&#x4EE4;:</h3><pre><code># ssh-keygen -t rsa (&#x8FDE;&#x7EED;&#x4E09;&#x6B21;&#x56DE;&#x8F66;,&#x5373;&#x5728;&#x672C;&#x5730;&#x751F;&#x6210;&#x4E86;&#x516C;&#x94A5;&#x548C;&#x79C1;&#x94A5;,&#x4E0D;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;)
+&#x6216;&#x8005;ssh-keygen -t dsa -P &apos;&apos; -f ~/.ssh/id_dsa 
+# ssh root@172.24.253.2 &quot;mkdir .ssh;chmod 0700 .ssh&quot; (&#x9700;&#x8981;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C; &#x6CE8;:&#x5FC5;&#x987B;&#x5C06;.ssh&#x7684;&#x6743;&#x9650;&#x8BBE;&#x4E3A;700)
+# scp ~/.ssh/id_rsa.pub root@172.24.253.2:.ssh/id_rsa.pub (&#x9700;&#x8981;&#x8F93;&#x5165;&#x5BC6;&#x7801;)
+</code></pre><h3 id="&#x5728;B&#x4E0A;&#x7684;&#x547D;&#x4EE4;"><a href="#&#x5728;B&#x4E0A;&#x7684;&#x547D;&#x4EE4;" class="headerlink" title="&#x5728;B&#x4E0A;&#x7684;&#x547D;&#x4EE4;:"></a>&#x5728;B&#x4E0A;&#x7684;&#x547D;&#x4EE4;:</h3><pre><code># touch /root/.ssh/authorized_keys (&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;, &#x8DF3;&#x8FC7;&#x8FD9;&#x6761;)
+# chmod 600 ~/.ssh/authorized_keys  (# &#x6CE8;&#x610F;&#xFF1A; &#x5FC5;&#x987B;&#x5C06;~/.ssh/authorized_keys&#x7684;&#x6743;&#x9650;&#x6539;&#x4E3A;600, &#x8BE5;&#x6587;&#x4EF6;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;ssh&#x5BA2;&#x6237;&#x7AEF;&#x751F;&#x6210;&#x7684;&#x516C;&#x94A5;&#xFF0C;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x670D;&#x52A1;&#x5668;&#x7684;ssh&#x670D;&#x52A1;&#x7AEF;&#x914D;&#x7F6E;&#x6587;&#x4EF6;/etc/ssh/sshd_config&#x6765;&#x6307;&#x5B9A;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x540D;&#xFF09;
+# cat /root/.ssh/id_rsa.pub  &gt;&gt; /root/.ssh/authorized_keys (&#x5C06;id_rsa.pub&#x7684;&#x5185;&#x5BB9;&#x8FFD;&#x52A0;&#x5230; authorized_keys &#x4E2D;, &#x6CE8;&#x610F;&#x4E0D;&#x8981;&#x7528; &gt; &#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x6E05;&#x7A7A;&#x539F;&#x6709;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F7F;&#x5176;&#x4ED6;&#x4EBA;&#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x539F;&#x6709;&#x7684;&#x5BC6;&#x94A5;&#x767B;&#x5F55;)
+</code></pre><h3 id="&#x56DE;&#x5230;A&#x673A;&#x5668;"><a href="#&#x56DE;&#x5230;A&#x673A;&#x5668;" class="headerlink" title="&#x56DE;&#x5230;A&#x673A;&#x5668;:"></a>&#x56DE;&#x5230;A&#x673A;&#x5668;:</h3><pre><code># ssh root@172.24.253.2 (&#x4E0D;&#x9700;&#x8981;&#x5BC6;&#x7801;, &#x767B;&#x5F55;&#x6210;&#x529F;)
+</code></pre><p>&#x5047;&#x5982;&#x5728;&#x751F;&#x6210;&#x5BC6;&#x94A5;&#x5BF9;&#x7684;&#x65F6;&#x5019;&#x6307;&#x5B9A;&#x4E86;&#x5176;&#x4ED6;&#x6587;&#x4EF6;&#x540D;&#xFF08;&#x6216;&#x8005;&#x9700;&#x8981;&#x63A7;&#x5236;N&#x53F0;&#x673A;&#x5668;&#xFF0C;&#x6B64;&#x65F6;&#x4F60;&#x4F1A;&#x751F;&#x6210;&#x591A;&#x5BF9;&#x5BC6;&#x94A5;&#xFF09;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x53C2;&#x6570;-i&#x6307;&#x5B9A;&#x79C1;&#x94A5;&#x6587;&#x4EF6;</p>
+<pre><code># ssh root@172.24.253.2 -i /path/to/your_id_rsa    
+</code></pre><p>scp&#x4E5F;&#x662F;&#x4E00;&#x6837;&#xFF0C;&#x5982;:</p>
+<pre><code>scp &#xFF0D;i /root/.ssh/id_rsa  ./xxx 192.168.102.158:/home/wwy/bak
+</code></pre><p>&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;ssh&#x547D;&#x4EE4;&#x4F1A;&#x4F7F;&#x7528;~/.ssh/id_rsa&#x4F5C;&#x4E3A;&#x79C1;&#x94A5;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x767B;&#x5F55;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x8FDE;&#x63A5;&#x591A;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x800C;&#x53C8;&#x4E0D;&#x5E0C;&#x671B;&#x6BCF;&#x6B21;&#x4F7F;&#x7528;ssh&#x547D;&#x4EE4;&#x65F6;&#x6307;&#x5B9A;&#x79C1;&#x94A5;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;ssh&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6587;&#x4EF6;/etc/ssh/ssh_config&#xFF08;&#x6216;&#x672C;&#x5730;&#x914D;&#x7F6E;&#x6587;&#x4EF6;~/.ssh/config, &#x5982;&#x679C;&#x8BE5;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x5EFA;&#x7ACB;&#x4E00;&#x4EFD;&#xFF09;&#x4E2D;&#x589E;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;</p>
+<pre><code>IdentityFile /path/to/your_id_rsa
+</code></pre><p>&#x4E5F;&#x53EF;&#x4EE5;&#x4E3A;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;Host&#x914D;&#x7F6E;:  </p>
+<pre><code>Host 172.24.253.2
+    IdentityFile /path/to/your_id_rsa
+</code></pre><p>&#x5982;&#x679C;&#x8FDE;&#x63A5;&#x65F6;&#x51FA;&#x73B0;&#x5982;&#x4E0B;&#x7684;&#x9519;&#x8BEF;&#xFF1A;<br>  Agent admitted failure to sign using the key<br>&#x5219;&#x4F7F;&#x7528; ssh-add &#x6307;&#x4EE4;&#x5C06;&#x79C1;&#x94A5;&#x52A0;&#x8FDB;&#x6765;&#xFF08;&#x6839;&#x636E;&#x4E2A;&#x4EBA;&#x7684;&#x5BC6;&#x5319;&#x547D;&#x540D;&#x4E0D;&#x540C;&#x66F4;&#x6539; id_rsa&#xFF09;</p>
+<pre><code>ssh-add   ~/.ssh/id_rsa
+</code></pre><p>&#x5982;&#x679C;&#x80FD;&#x4FDD;&#x62A4;&#x597D;&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x94A5;, &#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x76F8;&#x5BF9;&#x5728;shell&#x4E0A;&#x8F93;&#x5165;&#x5BC6;&#x7801;, &#x8981;&#x5B89;&#x5168;&#x4E00;&#x4E9B;</p>
+<h3 id="&#x6DF1;&#x5165;&#x4E00;&#x70B9;"><a href="#&#x6DF1;&#x5165;&#x4E00;&#x70B9;" class="headerlink" title="&#x6DF1;&#x5165;&#x4E00;&#x70B9;:"></a>&#x6DF1;&#x5165;&#x4E00;&#x70B9;:</h3><p>&#x4ECE;&#x8868;&#x9762;&#x4E0A;&#x7B80;&#x5355;&#x7684;&#x7406;&#x89E3;&#x4E00;&#x4E0B;&#x767B;&#x5F55;&#x7684;&#x8FC7;&#x7A0B;,<br>&#x9996;&#x5148; ssh-keygen -t rsa &#x547D;&#x4EE4;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x5BC6;&#x94A5;&#x548C;&#x4E00;&#x4E2A;&#x516C;&#x94A5;, &#x800C;&#x4E14;&#x5BC6;&#x94A5;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x81EA;&#x5DF1;&#x7684;&#x5BC6;&#x7801;<br>&#x53EF;&#x4EE5;&#x628A;&#x5BC6;&#x94A5;&#x7406;&#x89E3;&#x6210;&#x4E00;&#x628A;&#x94A5;&#x5319;, &#x516C;&#x94A5;&#x7406;&#x89E3;&#x6210;&#x8FD9;&#x628A;&#x94A5;&#x5319;&#x5BF9;&#x5E94;&#x7684;&#x9501;&#x5934;,<br>&#x628A;&#x9501;&#x5934;(&#x516C;&#x94A5;)&#x653E;&#x5230;&#x60F3;&#x8981;&#x63A7;&#x5236;&#x7684;server&#x4E0A;, &#x9501;&#x4F4F;server, &#x53EA;&#x6709;&#x62E5;&#x6709;&#x94A5;&#x5319;(&#x5BC6;&#x94A5;)&#x7684;&#x4EBA;, &#x624D;&#x80FD;&#x6253;&#x5F00;&#x9501;&#x5934;, &#x8FDB;&#x5165;server&#x5E76;&#x63A7;&#x5236;<br>&#x800C;&#x5BF9;&#x4E8E;&#x62E5;&#x6709;&#x8FD9;&#x628A;&#x94A5;&#x5319;&#x7684;&#x4EBA;, &#x5FC5;&#x9700;&#x5F97;&#x77E5;&#x9053;&#x94A5;&#x5319;&#x672C;&#x8EAB;&#x7684;&#x5BC6;&#x7801;,&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x8FD9;&#x628A;&#x94A5;&#x5319; (&#x9664;&#x975E;&#x8FD9;&#x628A;&#x94A5;&#x5319;&#x6CA1;&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;), &#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x9632;&#x6B62;&#x94A5;&#x5319;&#x88AB;&#x4E86;&#x914D;&#x4E86;(&#x79C1;&#x94A5;&#x88AB;&#x4EBA;&#x590D;&#x5236;)</p>
+<p>&#x5F53;&#x7136;, &#x8FD9;&#x79CD;&#x4F8B;&#x5B50;&#x53EA;&#x662F;&#x65B9;&#x4FBF;&#x7406;&#x89E3;&#x7F62;&#x4E86;,<br>&#x62E5;&#x6709;root&#x5BC6;&#x7801;&#x7684;&#x4EBA;&#x5F53;&#x7136;&#x662F;&#x4E0D;&#x4F1A;&#x88AB;&#x9501;&#x4F4F;&#x7684;, &#x800C;&#x4E14;&#x4E0D;&#x4E00;&#x5B9A;&#x53EA;&#x6709;&#x4E00;&#x628A;&#x9501;(&#x516C;&#x94A5;), &#x4F46;&#x5982;&#x679C;&#x4EFB;&#x4F55;&#x4E00;&#x628A;&#x9501;, &#x88AB;&#x4EBA;&#x7528;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x94A5;&#x5319;(&#x79C1;&#x94A5;)&#x6253;&#x5F00;&#x4E86;, server&#x5C31;&#x53EF;&#x4EE5;&#x88AB;&#x90A3;&#x4E2A;&#x4EBA;&#x63A7;&#x5236;&#x4E86;<br>&#x6240;&#x4EE5;&#x8BF4;, &#x53EA;&#x8981;&#x4F60;&#x66FE;&#x7ECF;&#x77E5;&#x9053;server&#x7684;root&#x5BC6;&#x7801;, &#x5E76;&#x5C06;&#x6709;root&#x8EAB;&#x4EFD;&#x7684;&#x516C;&#x94A5;&#x653E;&#x5230;&#x4E0A;&#x9762;, &#x5C31;&#x53EF;&#x4EE5;&#x7528;&#x8FD9;&#x4E2A;&#x516C;&#x94A5;&#x5BF9;&#x5E94;&#x7684;&#x79C1;&#x94A5;&#x201D;&#x6253;&#x5F00;&#x201D; server, &#x518D;&#x4EE5;root&#x7684;&#x8EAB;&#x5206;&#x767B;&#x5F55;, &#x5373;&#x4F7F;&#x73B0;&#x5728;root&#x5BC6;&#x7801;&#x5DF2;&#x7ECF;&#x66F4;&#x6539;!</p>
+<hr>
+<h3 id="&#x65B9;&#x6CD5;&#x4E8C;&#x3001;&#x5B89;&#x88C5;sshpass"><a href="#&#x65B9;&#x6CD5;&#x4E8C;&#x3001;&#x5B89;&#x88C5;sshpass" class="headerlink" title="&#x65B9;&#x6CD5;&#x4E8C;&#x3001;&#x5B89;&#x88C5;sshpass"></a>&#x65B9;&#x6CD5;&#x4E8C;&#x3001;&#x5B89;&#x88C5;sshpass</h3><pre><code># sudo apt-get install sshpass
+</code></pre><p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x4F7F;&#x7528;sshpass&#x5141;&#x8BB8;&#x4F60;&#x7528; -p &#x53C2;&#x6570;&#x6307;&#x5B9A;&#x660E;&#x6587;&#x5BC6;&#x7801;&#xFF0C;&#x7136;&#x540E;&#x76F4;&#x63A5;&#x767B;&#x5F55;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre><code># sshpass -p &apos;&#x4F60;&#x7684;&#x5BC6;&#x7801;&apos; ssh &#x7528;&#x6237;&#x540D;@&#x670D;&#x52A1;&#x5668;ip&#x5730;&#x5740;
+</code></pre><p>&#x7528; &#x2018;-p&#x2019; &#x6307;&#x5B9A;&#x4E86;&#x5BC6;&#x7801;&#x540E;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5728;&#x540E;&#x9762;&#x8DDF;&#x4E0A;&#x6807;&#x51C6;&#x7684; ssh &#x8FDE;&#x63A5;&#x547D;&#x4EE4;&#x3002;</p>
+<p>Sshd&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;/etc/ssh/ssd_config</p>
+<hr>
+<p>ssh&#x65E0;&#x5BC6;&#x7801;&#x9A8C;&#x8BC1;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5411;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x53D1;&#x9001;&#x547D;&#x4EE4;</p>
+<pre><code>&#x53D1;&#x9001;&#x4E00;&#x6761;:
+ssh username@remote_server_ip your_command
+ssh username@remote_server_ip &#x201C;your_command1;your_command2; your_command3&#x201D;
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mongodb安装" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">

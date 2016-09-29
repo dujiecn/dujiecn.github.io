@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hdfs伪分布式环境搭建 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x672C;&amp;#x5730;&amp;#x73AF;&amp;#x5883;&amp;#x662F;mac
+&amp;#x5B89;&amp;#x88C5;&amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#xFF0C;&amp;#x8BBE;&amp;#x7F6E;&amp;#x57FA;&amp;#x672C;&amp;#x73AF;&amp;#x5883;
+&amp;#x5B89;&amp;#x88C5;vm&amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#xFF0C;&amp;#x5E76;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hdfs伪分布式环境搭建">
+<meta property="og:url" content="http://yoursite.com/2016/09/29/hdfs伪分布式环境搭建/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="&amp;#x672C;&amp;#x5730;&amp;#x73AF;&amp;#x5883;&amp;#x662F;mac
+&amp;#x5B89;&amp;#x88C5;&amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#xFF0C;&amp;#x8BBE;&amp;#x7F6E;&amp;#x57FA;&amp;#x672C;&amp;#x73AF;&amp;#x5883;
+&amp;#x5B89;&amp;#x88C5;vm&amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#xFF0C;&amp;#x5E76;&amp;">
+<meta property="og:updated_time" content="2016-09-29T07:00:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hdfs伪分布式环境搭建">
+<meta name="twitter:description" content="&amp;#x672C;&amp;#x5730;&amp;#x73AF;&amp;#x5883;&amp;#x662F;mac
+&amp;#x5B89;&amp;#x88C5;&amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#xFF0C;&amp;#x8BBE;&amp;#x7F6E;&amp;#x57FA;&amp;#x672C;&amp;#x73AF;&amp;#x5883;
+&amp;#x5B89;&amp;#x88C5;vm&amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#xFF0C;&amp;#x5E76;&amp;">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-hdfs伪分布式环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hdfs伪分布式环境搭建
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/29/hdfs伪分布式环境搭建/" class="article-date">
+  <time datetime="2016-09-29T05:50:14.000Z" itemprop="datePublished">2016-09-29</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x672C;&#x5730;&#x73AF;&#x5883;&#x662F;mac</p>
+<h3 id="&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x73AF;&#x5883;"><a href="#&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x73AF;&#x5883;" class="headerlink" title="&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x73AF;&#x5883;"></a>&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x73AF;&#x5883;</h3><ol>
+<li>&#x5B89;&#x88C5;vm&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x5E76;&#x5B89;&#x88C5;centos7&#x7CFB;&#x7EDF;&#xFF0C;&#x62F7;&#x8D1D;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x53D8;&#x6210;node1,node2,node3</li>
+<li><p>&#x8BBE;&#x7F6E;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x81EA;&#x5B9A;&#x4E49;IP&#xFF0C;&#x4FDD;&#x8BC1;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7F51;&#x6BB5;<br> DNS:172.16.153.2</p>
+</li>
+<li><p>&#x5173;&#x95ED;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x9632;&#x706B;&#x5899;</p>
+<pre><code>systemctl stop firewalld
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;&#x514D;&#x767B;&#x5F55;</p>
+<pre><code>ssh-keygen -t dsa -P &apos;&apos; -f ~/.ssh/id_dsa &amp;&amp; cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys
+</code></pre><p> &#x628A;&#x672C;&#x5730;&#x7684;.ssh/id_rsa.pub &#x62F7;&#x8D1D;&#x5230;&#x9700;&#x8981;&#x63A7;&#x5236;&#x7684;&#x8282;&#x70B9;&#x7684;~/.ssh/authorized_keys&#x6587;&#x4EF6;&#x4E2D;</p>
+</li>
+<li><p>&#x4FEE;&#x6539;&#x672C;&#x5730;&#x73AF;&#x5883;&#x7684;/etc/hosts</p>
+<pre><code>sudo vim /etc/hosts
+172.16.153.10    node1
+172.16.153.20    node2
+172.16.153.30    node3
+</code></pre></li>
+</ol>
+<h3 id="&#x5B89;&#x88C5;HDSF"><a href="#&#x5B89;&#x88C5;HDSF" class="headerlink" title="&#x5B89;&#x88C5;HDSF"></a>&#x5B89;&#x88C5;HDSF</h3><p>&#x5047;&#x8BBE;node1&#x662F;namenode&#xFF0C;node2&#x548C;node3&#x662F;datanode&#xFF0C;secondarynode&#x5728;node2&#x4E0A;&#x9762;&#xFF1B;</p>
+<h4 id="&#x8BBE;&#x7F6E;node1"><a href="#&#x8BBE;&#x7F6E;node1" class="headerlink" title="&#x8BBE;&#x7F6E;node1"></a>&#x8BBE;&#x7F6E;node1</h4><p>&#x89E3;&#x538B;hadoop-1.2.1&#x5230;/home/hadoop-1.2&#xFF0C;cd&#x5230;/home/hadoop-1.2&#x76EE;&#x5F55;&#x4E0B;&#xFF1B;    </p>
+<ol>
+<li><p>&#x8BBE;&#x7F6E;core-site.xml&#x5185;&#x5BB9;(&#x914D;&#x7F6E;&#x67E5;&#x8003;<code>docs/core-default.html</code>)</p>
+<pre><code>vim conf/core-site.xml
+
+&lt;configuration&gt;
+ &lt;property&gt;
+     &lt;name&gt;fs.default.name&lt;/name&gt;
+     &lt;value&gt;hdfs://node1:9000&lt;/value&gt;
+ &lt;/property&gt;
+ &lt;property&gt;
+     &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+     &lt;value&gt;/opt/hadoop-1.2&lt;/value&gt;
+ &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre><p> <code>fs.default.name</code>&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;namenode&#xFF1B;<br> <code>hadoop.tmp.dir</code>&#x8BBE;&#x7F6E;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x5728;<code>/tmp</code>&#x4E0B;&#x9762;&#xFF0C;    &#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x91CD;&#x542F;&#x4E4B;&#x540E;&#x6570;&#x636E;&#x5C31;&#x6CA1;&#x6709;&#x54AF;&#x3002;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x3002;</p>
+</li>
+<li><p>&#x8BBE;&#x7F6E;hdfs-site.xml(&#x914D;&#x7F6E;&#x67E5;&#x8003;<code>docs/hdfs-default.html</code>)</p>
+<pre><code>vim conf/hdfs-site.xml
+
+&lt;configuration&gt;
+    &lt;property&gt;
+         &lt;name&gt;dfs.replication&lt;/name&gt;
+         &lt;value&gt;2&lt;/value&gt;
+     &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre><p> <code>dfs.replication</code>&#x8BBE;&#x7F6E;datanode&#x8282;&#x70B9;&#x4E2A;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;3&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x662F;datanode&#x662F;node2&#x548C;node3&#xFF0C;&#x6240;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;2&#x3002;</p>
+</li>
+<li><p>&#x8BBE;&#x7F6E;datanode</p>
+<pre><code>vim conf/slaves
+
+node2
+node3
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;secondarynode,&#x8FD9;&#x91CC;&#x662F;&#x8BBE;&#x7F6E;&#x5728;node2&#x4E0A;</p>
+<pre><code>vim conf/master
+
+node2            
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;    JAVA_HOME&#x53D8;&#x91CF;</p>
+<pre><code>vim conf/hadoop-env.sh
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.102-1.b14.el7_2.x86_64/jre
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;datanode&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;<br> &#x8FD9;&#x91CC;&#x6211;&#x9700;&#x8981;&#x5728;namenode(node1)&#x7EDF;&#x4E00;&#x542F;&#x52A8;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x9700;&#x8981;&#x4ECE;node1&#x5230;node2&#xFF0C;node3&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;</p>
+<pre><code>ssh root@node2
+ssh root@node3
+</code></pre><p> &#x8FD9;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;&#x7684;&#x3002;</p>
+</li>
+</ol>
+<p>&#x81F3;&#x6B64;&#xFF0C;namenode&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
+<p>&#x6700;&#x540E;&#x9700;&#x8981;&#x62F7;&#x8D1D;&#x4E00;&#x6837;&#x7684;hadoop&#x73AF;&#x5883;&#x5230;node2&#x548C;node3</p>
+<pre><code>scp /home/hadoop-1.2 root@node2:/home/
+scp /home/hadoop-1.2 root@node3:/home/
+</code></pre><p>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;</p>
+<p><strong><em>&#x4FDD;&#x8BC1;hadoop&#x7684;&#x5305;&#x73AF;&#x5883;&#x5B8C;&#x5168;&#x4E00;&#x81F4;</em></strong></p>
+<p><strong><em>&#x8BBE;&#x7F6E;&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;</em></strong></p>
+<p><strong><em>&#x8BBE;&#x7F6E;JAVA_HOME</em></strong></p>
+<p><strong><em>&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;</em></strong></p>
+<p>&#x5728;&#x672C;&#x5730;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;:<a href="http://node1:50070&#x5C31;&#x80FD;&#x770B;&#x5230;&#x6210;&#x679C;&#x4E86;&#x3002;" target="_blank" rel="external">http://node1:50070&#x5C31;&#x80FD;&#x770B;&#x5230;&#x6210;&#x679C;&#x4E86;&#x3002;</a></p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/29/centos卸载自带的java版本/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">centos卸载自带的java版本</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 walljay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
