@@ -46,4 +46,5 @@ tags: ["JAXB"]
 
 可能出现的错误：SAXNotRecognizedException: Feature 'http://javax.xml.XMLConstants/feature/secure-
 
-本地运行是好的，服务运行报错。原因是本地的jdk运行环境是1.7，服务器运行环境是1.8。所以导致此异常。
+本地模式运行是好的，服务器模式下运行报错。原因是本地的jdk运行环境是1.7，服务器运行环境是1.8。所以导致此异常。
+开发环境里面可以设置eclipse的jre
