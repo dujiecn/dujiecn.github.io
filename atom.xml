@@ -116,11 +116,11 @@ scp /home/hadoop-1.2 root@node3:/home/
   </entry>
   
   <entry>
-    <title>centos卸载自带的java版本</title>
+    <title>centos安装jps命令</title>
     <link href="http://yoursite.com/2016/09/29/centos%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6%E7%9A%84java%E7%89%88%E6%9C%AC/"/>
     <id>http://yoursite.com/2016/09/29/centos卸载自带的java版本/</id>
     <published>2016-09-29T03:05:36.000Z</published>
-    <updated>2016-09-29T04:24:09.000Z</updated>
+    <updated>2016-10-10T02:42:52.000Z</updated>
     
     <content type="html"><![CDATA[<p>hadoop&#x91CC;&#x9762;&#x4F7F;&#x7528;&#x5230;jps&#x547D;&#x4EE4;&#xFF0C;centos7 &#x81EA;&#x5E26;java&#x73AF;&#x5883;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;jps&#x547D;&#x4EE4;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x884C;&#x5B89;&#x88C5;&#xFF1A;</p>
 <pre><code>yum search java-1.8.0
