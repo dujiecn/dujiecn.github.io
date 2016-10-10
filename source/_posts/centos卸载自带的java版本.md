@@ -1,5 +1,5 @@
 ---
-title: centos卸载自带的java版本
+title: centos安装jps命令
 date: 2016-09-29 11:05:36
 tags:
 ---
