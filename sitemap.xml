@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/10/14/%E4%BD%BF%E7%94%A8springboot%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BC%82%E5%B8%B8/</loc>
+    
+    <lastmod>2016-10-14T05:21:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/19/%E4%BD%BF%E7%94%A8jaxb%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/</loc>
+    
+    <lastmod>2016-10-10T09:21:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/29/centos%E5%AE%89%E8%A3%85jps%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2016-10-10T02:44:31.000Z</lastmod>
@@ -61,13 +75,6 @@
     <loc>http://yoursite.com/2016/09/07/%E5%88%A9%E7%94%A8hexo%E5%86%99%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2016-09-19T14:36:29.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/09/19/%E4%BD%BF%E7%94%A8jaxb%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/</loc>
-    
-    <lastmod>2016-09-19T03:16:30.000Z</lastmod>
     
   </url>
   

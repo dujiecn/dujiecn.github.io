@@ -31,6 +31,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-使用springboot发送邮件可能存在的异常" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/14/使用springboot发送邮件可能存在的异常/">使用springboot发送邮件可能存在的异常</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/10/14/使用springboot发送邮件可能存在的异常/" class="article-date">
+  <time datetime="2016-10-14T05:11:44.000Z" itemprop="datePublished">2016-10-14</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x4F7F;&#x7528;springboot &#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x5B58;&#x5728;&#x5F02;&#x5E38;</p>
+<ol>
+<li><p><code>handshake_failure</code>&#x5F02;&#x5E38;</p>
+<pre><code>Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: smtp.qq.com, port: 465;
+nested exception is: javax.NET.ssl.SSLHandshakeException: Received fatal alert: handshake_failure. Failed messages: javax.mail. MessagingException: Could not connect to SMTP host: smtp.qq.com, port: 465;
+nested exception is:     javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
+</code></pre><p> &#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5728;jdk1.8&#x4E2D;&#x51FA;&#x73B0;&#xFF0C;&#x66FF;&#x6362;jdk&#x5B89;&#x88C5;&#x76EE;&#x5F55;<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/security</code>&#x5305;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;<code>US_export_policy.jar</code>&#x548C;<code>US_export_policy.jar</code>&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x3002;&#x4F7F;&#x7528;jdk1.7&#x7248;&#x672C;&#x540C;&#x6837;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x66FF;&#x6362;</p>
+</li>
+</ol>
+<ol>
+<li><p>the trustAnchors parameter must be non-empty</p>
+<p> &#x53EF;&#x80FD;&#x4F7F;&#x7528;&#x7684;jdk1.7&#x4E2D;<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/security</code>&#x8DEF;&#x5F84;&#x4E0B;&#x7F3A;&#x5C11;&#x8BC1;&#x4E66;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x7684;&#x7535;&#x8111;&#x5B89;&#x88C5;&#x4E24;&#x4E2A;jdk&#x7248;&#x672C;&#xFF0C;&#x6211;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x62F7;&#x8D1D;1.8&#x7248;&#x672C;&#x7684;<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/security</code>&#x6587;&#x4EF6;&#x5939;&#x5230;1.7&#x7248;&#x672C;&#xFF0C;&#x6216;&#x8005;&#x5230;&#x540C;&#x4E8B;&#x7684;&#x7535;&#x8111;&#x7684;&#x62F7;&#x8D1D;&#x3002;</p>
+</li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hdfs伪分布式环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -332,7 +380,7 @@ public static String convertToXml(Object obj, String encoding) {
     }
 }    
 </code></pre><p>&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x9519;&#x8BEF;&#xFF1A;SAXNotRecognizedException: Feature &#x2018;<a href="http://javax.xml.XMLConstants/feature/secure-" target="_blank" rel="external">http://javax.xml.XMLConstants/feature/secure-</a></p>
-<p>&#x672C;&#x5730;&#x8FD0;&#x884C;&#x662F;&#x597D;&#x7684;&#xFF0C;&#x670D;&#x52A1;&#x8FD0;&#x884C;&#x62A5;&#x9519;&#x3002;&#x539F;&#x56E0;&#x662F;&#x672C;&#x5730;&#x7684;jdk&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x662F;1.7&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x662F;1.8&#x3002;&#x6240;&#x4EE5;&#x5BFC;&#x81F4;&#x6B64;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x672C;&#x5730;&#x6A21;&#x5F0F;&#x8FD0;&#x884C;&#x662F;&#x597D;&#x7684;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;&#x4E0B;&#x8FD0;&#x884C;&#x62A5;&#x9519;&#x3002;&#x539F;&#x56E0;&#x662F;&#x672C;&#x5730;&#x7684;jdk&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x662F;1.7&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x662F;1.8&#x3002;&#x6240;&#x4EE5;&#x5BFC;&#x81F4;&#x6B64;&#x5F02;&#x5E38;&#x3002;<br>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x91CC;&#x9762;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;eclipse&#x7684;jre</p>
 
       
 
@@ -555,58 +603,6 @@ server.tomcat.compression=on
 server.tomcat.compressableMimeTypes=application/json,application/xml
 </code></pre><h3 id="secruity"><a href="#secruity" class="headerlink" title="secruity"></a>secruity</h3><pre><code>security.user.name=admin
 security.user.password=admin    
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-springboot项目中使用docker-maven-plugin" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/10/springboot项目中使用docker-maven-plugin/">springboot项目中使用docker-maven-plugin</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/10/springboot项目中使用docker-maven-plugin/" class="article-date">
-  <time datetime="2016-09-10T02:48:53.000Z" itemprop="datePublished">2016-09-10</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>&lt;plugin&gt;
-        &lt;groupId&gt;com.spotify&lt;/groupId&gt;
-        &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;0.4.12&lt;/version&gt;
-        &lt;configuration&gt;
-            &lt;imageName&gt;${project.name}&lt;/imageName&gt;
-            &lt;baseImage&gt;java&lt;/baseImage&gt;
-            &lt;entryPoint&gt;[&quot;java&quot;, &quot;-jar&quot;, &quot;/${project.build.finalName}.jar&quot;]&lt;/entryPoint&gt;
-            &lt;resources&gt;
-                &lt;resource&gt;
-                    &lt;targetPath&gt;/&lt;/targetPath&gt;
-                    &lt;directory&gt;${project.build.directory}&lt;/directory&gt;
-                    &lt;include&gt;${project.build.finalName}.jar&lt;/include&gt;
-                &lt;/resource&gt;
-            &lt;/resources&gt;
-            &lt;forceTags&gt;true&lt;/forceTags&gt;
-        &lt;/configuration&gt;
-    &lt;/plugin&gt;
 </code></pre>
       
 
