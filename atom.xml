@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-16T15:14:49.000Z</updated>
+  <updated>2016-10-16T15:35:52.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>docker中centos镜像启动systemctl异常</title>
+    <link href="http://yoursite.com/2016/10/16/docker%E4%B8%ADcentos%E9%95%9C%E5%83%8F%E5%90%AF%E5%8A%A8systemctl%E5%BC%82%E5%B8%B8/"/>
+    <id>http://yoursite.com/2016/10/16/docker中centos镜像启动systemctl异常/</id>
+    <published>2016-10-16T15:27:47.000Z</published>
+    <updated>2016-10-16T15:35:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x5728;docker&#x7684;centos:latest&#x955C;&#x50CF;&#x4E2D;&#x8FD0;&#x884C;systemctl&#x547D;&#x4EE4;<code>Failed to get D-Bus connection: Operation not permitted</code>&#x9519;&#x8BEF;&#xFF0C;&#x6DFB;&#x52A0;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x5C31;&#x80FD;&#x591F;&#x89E3;&#x51B3;</p>
+<pre><code>docker run -itd \
+  --security-opt seccomp=unconfined \
+    --cap-add=SYS_ADMIN \
+  -e &quot;container=docker&quot; \
+  -v /Users/dujie/Documents/Kitematic/centos/sys/fs/cgroup:/sys/fs/cgroup \
+  --name=centos \
+  centos:latest /usr/sbin/init
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x5728;docker&amp;#x7684;centos:latest&amp;#x955C;&amp;#x50CF;&amp;#x4E2D;&amp;#x8FD0;&amp;#x884C;systemctl&amp;#x547D;&amp;#x4EE4;&lt;code&gt;Failed to get D-Bus connection:
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>制作docker的基础镜像</title>
@@ -808,31 +836,6 @@ fireOnThis.dispatchEvent(evObj);
     
     
       <category term="sublime text" scheme="http://yoursite.com/tags/sublime-text/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>eclipse中svn提交设置忽略文件夹</title>
-    <link href="http://yoursite.com/2016/09/09/eclipse%E4%B8%ADsvn%E6%8F%90%E4%BA%A4%E8%AE%BE%E7%BD%AE%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
-    <id>http://yoursite.com/2016/09/09/eclipse中svn提交设置忽略文件夹/</id>
-    <published>2016-09-09T02:11:00.000Z</published>
-    <updated>2016-09-09T02:11:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>&#x6253;&#x5F00;eclipse &#x7684;proference</p>
-<p>&#x3000;&#x3000;Team -&gt; Ignored Resources</p>
-<p>&#x3000;&#x3000;&#x7136;&#x540E;&#x81EA;&#x5DF1;&#x6DFB;&#x52A0;pattern</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;#x6253;&amp;#x5F00;eclipse &amp;#x7684;proference&lt;/p&gt;
-&lt;p&gt;&amp;#x3000;&amp;#x3000;Team -&amp;gt; Ignored Resources&lt;/p&gt;
-&lt;p&gt;&amp;#x3000;&amp;#x3000;&amp;#x7136;&amp;#x540E;&amp;#x
-    
-    </summary>
-    
-    
-      <category term="eclipse" scheme="http://yoursite.com/tags/eclipse/"/>
     
   </entry>
   
