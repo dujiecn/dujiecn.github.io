@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-15T08:28:01.000Z</updated>
+  <updated>2016-10-16T15:06:24.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>制作docker的基础镜像</title>
+    <link href="http://yoursite.com/2016/10/16/%E5%88%B6%E4%BD%9Cdocker%E7%9A%84%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F/"/>
+    <id>http://yoursite.com/2016/10/16/制作docker的基础镜像/</id>
+    <published>2016-10-16T14:56:37.000Z</published>
+    <updated>2016-10-16T15:06:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>&#x5229;&#x7528;Dockerfile</p>
+<pre><code>FROM centos:latest
+MAINTAINER walljay &lt;760813193@qq.com&gt;
+RUN yum -y update
+RUN yum -y install sudo
+RUN yum -y install net-tools
+RUN yum -y install openssh-server
+RUN yum -y install vim
+RUN yum -y install java-1.8.0-openjdk-devel
+CMD [&quot;/bin/bash&quot;]
+</code></pre><p>&#x5305;&#x542B;&#x57FA;&#x672C;&#x7684;java vim ssh net&#x547D;&#x4EE4;&#xFF0C;&#x540E;&#x7EED;&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;&#x5DE5;&#x5177;    </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x5229;&amp;#x7528;Dockerfile&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;FROM centos:latest
+MAINTAINER walljay &amp;lt;760813193@qq.com&amp;gt;
+RUN yum -y update
+RUN yum -y ins
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>java.security.KeyException</title>
@@ -791,35 +826,6 @@ fireOnThis.dispatchEvent(evObj);
     
     
       <category term="eclipse" scheme="http://yoursite.com/tags/eclipse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>虚拟机参数配置</title>
-    <link href="http://yoursite.com/2016/09/09/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE/"/>
-    <id>http://yoursite.com/2016/09/09/虚拟机参数配置/</id>
-    <published>2016-09-09T02:09:23.000Z</published>
-    <updated>2016-09-09T02:09:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>-Xverify:none // &#x907F;&#x514D;&#x865A;&#x62DF;&#x673A;&#x8FDB;&#x884C;&#x5B50;&#x8282;&#x7801;&#x9A8C;&#x8BC1;&#xFF0C;&#x56E0;&#x4E3A;eclipse&#x5B50;&#x8282;&#x7801;&#x7F16;&#x8BD1;&#x5DF2;&#x7ECF;&#x5F88;&#x53EF;&#x9760;</p>
-<p>-Xmx512m &#x5806;&#x5BB9;&#x91CF;</p>
-<p>-Xms512m</p>
-<p>-Xmn128m //&#x65B0;&#x751F;&#x4EE3;&#x5BB9;&#x91CF;</p>
-<p>-XX:PermSize=128m</p>
-<p>-XX:MaxPermSize=128m</p>
-<p>-XX:+DisableExplicitGC // &#x5C4F;&#x853D;eclipse&#x663E;&#x5F0F;&#x89E6;&#x53D1;System.gc()</p>
-<p>-XX:+UseConcMarkSweepGC </p>
-<p>-XX:+UseParNewGC (&#x65B0;&#x751F;&#x4EE3;&#x6536;&#x96C6;&#x5668;)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;-Xverify:none // &amp;#x907F;&amp;#x514D;&amp;#x865A;&amp;#x62DF;&amp;#x673A;&amp;#x8FDB;&amp;#x884C;&amp;#x5B50;&amp;#x8282;&amp;#x7801;&amp;#x9A8C;&amp;#x8BC1;&amp;#xFF0C;&amp;#x56E0;&amp;#x4E3A;
-    
-    </summary>
-    
-    
-      <category term="java虚拟机" scheme="http://yoursite.com/tags/java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   

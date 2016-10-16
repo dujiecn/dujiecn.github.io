@@ -31,6 +31,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-制作docker的基础镜像" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/16/制作docker的基础镜像/">制作docker的基础镜像</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/10/16/制作docker的基础镜像/" class="article-date">
+  <time datetime="2016-10-16T14:56:37.000Z" itemprop="datePublished">2016-10-16</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5229;&#x7528;Dockerfile</p>
+<pre><code>FROM centos:latest
+MAINTAINER walljay &lt;760813193@qq.com&gt;
+RUN yum -y update
+RUN yum -y install sudo
+RUN yum -y install net-tools
+RUN yum -y install openssh-server
+RUN yum -y install vim
+RUN yum -y install java-1.8.0-openjdk-devel
+CMD [&quot;/bin/bash&quot;]
+</code></pre><p>&#x5305;&#x542B;&#x57FA;&#x672C;&#x7684;java vim ssh net&#x547D;&#x4EE4;&#xFF0C;&#x540E;&#x7EED;&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;&#x5DE5;&#x5177;    </p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-java-security-KeyException" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -540,64 +585,6 @@ public static String convertToXml(Object obj, String encoding) {
     ]
 });
 </code></pre><p>&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x4F1A;&#x5BFC;&#x81F4;&#x7EC4;&#x4EF6;&#x91CC;&#x9762;&#x6709;&#x4E9B;store&#x662F;&#x5355;&#x4F8B;&#xFF0C;&#x53EA;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x6B21;&#x3002;&#x5219;&#x4F1A;&#x51FA;&#x73B0;&#x7EC4;&#x4EF6;&#x7684;&#x72B6;&#x6001;&#x5171;&#x7528;&#x95EE;&#x9898;&#x3002;</p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-maven项目强制不热重启配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/10/maven项目强制不热重启配置/">maven项目强制不热重启配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/10/maven项目强制不热重启配置/" class="article-date">
-  <time datetime="2016-09-10T03:02:42.000Z" itemprop="datePublished">2016-09-10</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><p>&#x547D;&#x4EE4;&#x65B9;&#x5F0F;</p>
-<pre><code>clean jetty:run -Djetty.port=8081 -Djetty.reload=manual
-</code></pre></li>
-<li><p>pom.xml&#x4E2D;&#x914D;&#x7F6E;        </p>
-<pre><code>&lt;plugin&gt;
-        &lt;groupId&gt;org.mortbay.jetty&lt;/groupId&gt;
-        &lt;artifactId&gt;maven-jetty-plugin&lt;/artifactId&gt;
-        &lt;version&gt;6.1.26&lt;/version&gt;
-        &lt;configuration&gt;
-            &lt;reload&gt;manual&lt;/reload&gt;
-            &lt;connectors&gt;
-                &lt;connector implementation=&quot;org.mortbay.jetty.nio.SelectChannelConnector&quot;&gt;
-                    &lt;port&gt;8080&lt;/port&gt;
-                    &lt;maxIdleTime&gt;30000&lt;/maxIdleTime&gt;
-                &lt;/connector&gt;
-            &lt;/connectors&gt;
-            &lt;scanIntervalSeconds&gt;3&lt;/scanIntervalSeconds&gt;
-            &lt;webAppSourceDirectory&gt;src/main/webapp&lt;/webAppSourceDirectory&gt;
-            &lt;contextPath&gt;/&lt;/contextPath&gt;
-        &lt;/configuration&gt;
-    &lt;/plugin&gt;
-</code></pre></li>
-</ol>
 
       
 
