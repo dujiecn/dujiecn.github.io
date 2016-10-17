@@ -148,11 +148,11 @@ vim Dockerfile
 <pre><code>docker build -t walljay/centos:devel .
 </code></pre><p>-t &#x662F;&#x6807;&#x8BB0;tag&#x53C2;&#x6570;&#xFF0C;&#x6362;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;[&#x4ED3;&#x5E93;&#x540D;:&#x7248;&#x672C;],&#x6CE8;&#x610F;&#x540E;&#x9762;&#x7684;&#x201C;.&#x201D;&#x4E0D;&#x80FD;&#x5C11;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x8868;&#x793A;Dockerfile&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;</p>
 <p>&#x542F;&#x52A8;centos&#x5BB9;&#x5668;&#xFF1A;</p>
-<pre><code>docker run -d -i -t \                                  
-        --privileged \                                                              
-        -e container=docker \                                                       
-        -v /sys/fs/cgroup:/sys/fs/cgroup \                                         
-        walljay/centos:devel /usr/sbin/init
+<pre><code>docker run -itd \
+--privileged \
+-e cotainer=docker \
+-v /sys/fs/cgroup:/sys/fs/cgroup \
+walljay/centos:devel /usr/sbin/init
 </code></pre>
       
 
