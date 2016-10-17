@@ -10,9 +10,10 @@ tags: docker
 	MAINTAINER walljay <760813193@qq.com>
 	RUN yum -y update
 	RUN yum -y install sudo && yum -y install net-tools && yum -y install openssh-server && yum -y install openssh-clients && yum -y install vim && yum -y install git && yum -y install java-1.8.0-openjdk-devel
+	RUN sudo curl -sSL https://get.docker.com/ | sh
 	CMD ["/usr/sbin/init"]
 	
-包含基本的java vim ssh net命令，后续添加必要的工具
+包含基本的java vim ssh net,git,docker命令，后续添加必要的工具
 
 生成镜像的步骤：
 	
