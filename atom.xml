@@ -47,17 +47,15 @@
     <link href="dujiecn.github.io/2016/10/16/docker%E4%B8%ADcentos%E9%95%9C%E5%83%8F%E5%90%AF%E5%8A%A8systemctl%E5%BC%82%E5%B8%B8/"/>
     <id>dujiecn.github.io/2016/10/16/docker中centos镜像启动systemctl异常/</id>
     <published>2016-10-16T15:27:47.000Z</published>
-    <updated>2016-10-17T09:22:32.000Z</updated>
+    <updated>2016-10-17T09:40:01.000Z</updated>
     
     <content type="html"><![CDATA[<p>&#x5728;docker&#x7684;centos:latest&#x955C;&#x50CF;&#x4E2D;&#x8FD0;&#x884C;systemctl&#x547D;&#x4EE4;<code>Failed to get D-Bus connection: Operation not permitted</code>&#x9519;&#x8BEF;&#xFF0C;&#x6DFB;&#x52A0;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x5C31;&#x80FD;&#x591F;&#x89E3;&#x51B3;</p>
 <pre><code>docker run -d -i -t \
     --privileged \
-  --security-opt seccomp=unconfined \
-  --cap-add SYS_ADMIN \
-  -e container=docker \
-  -v /sys/fs/cgroup:/sys/fs/cgroup \
-  --name=centos \
-  centos:latest /usr/sbin/init
+      --cap-add SYS_ADMIN \
+      -e container=docker \
+      -v /sys/fs/cgroup:/sys/fs/cgroup \
+      centos:latest /usr/sbin/init
 </code></pre>]]></content>
     
     <summary type="html">
@@ -78,7 +76,7 @@
     <link href="dujiecn.github.io/2016/10/16/%E5%88%B6%E4%BD%9Cdocker%E7%9A%84%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F/"/>
     <id>dujiecn.github.io/2016/10/16/制作docker的基础镜像/</id>
     <published>2016-10-16T14:56:37.000Z</published>
-    <updated>2016-10-17T09:31:11.000Z</updated>
+    <updated>2016-10-17T09:40:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>&#x5229;&#x7528;Dockerfile</p>
 <pre><code>FROM centos:latest

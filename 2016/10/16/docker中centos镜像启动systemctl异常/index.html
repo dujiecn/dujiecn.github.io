@@ -11,7 +11,7 @@
 <meta property="og:url" content="dujiecn.github.io/2016/10/16/docker中centos镜像启动systemctl异常/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
 <meta property="og:description" content="&amp;#x5728;docker&amp;#x7684;centos:latest&amp;#x955C;&amp;#x50CF;&amp;#x4E2D;&amp;#x8FD0;&amp;#x884C;systemctl&amp;#x547D;&amp;#x4EE4;Failed to get D-Bus connection: Operation not permitted&amp;#x9519;&amp;#x8BEF;&amp;#xFF0C;&amp;#x6DFB;&amp;#x52A0;&amp;#x54">
-<meta property="og:updated_time" content="2016-10-17T09:22:32.000Z">
+<meta property="og:updated_time" content="2016-10-17T09:40:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker中centos容器执行systemctl命令异常">
 <meta name="twitter:description" content="&amp;#x5728;docker&amp;#x7684;centos:latest&amp;#x955C;&amp;#x50CF;&amp;#x4E2D;&amp;#x8FD0;&amp;#x884C;systemctl&amp;#x547D;&amp;#x4EE4;Failed to get D-Bus connection: Operation not permitted&amp;#x9519;&amp;#x8BEF;&amp;#xFF0C;&amp;#x6DFB;&amp;#x52A0;&amp;#x54">
@@ -55,12 +55,10 @@
         <p>&#x5728;docker&#x7684;centos:latest&#x955C;&#x50CF;&#x4E2D;&#x8FD0;&#x884C;systemctl&#x547D;&#x4EE4;<code>Failed to get D-Bus connection: Operation not permitted</code>&#x9519;&#x8BEF;&#xFF0C;&#x6DFB;&#x52A0;&#x542F;&#x52A8;&#x53C2;&#x6570;&#x5C31;&#x80FD;&#x591F;&#x89E3;&#x51B3;</p>
 <pre><code>docker run -d -i -t \
     --privileged \
-  --security-opt seccomp=unconfined \
-  --cap-add SYS_ADMIN \
-  -e container=docker \
-  -v /sys/fs/cgroup:/sys/fs/cgroup \
-  --name=centos \
-  centos:latest /usr/sbin/init
+      --cap-add SYS_ADMIN \
+      -e container=docker \
+      -v /sys/fs/cgroup:/sys/fs/cgroup \
+      centos:latest /usr/sbin/init
 </code></pre>
       
 
