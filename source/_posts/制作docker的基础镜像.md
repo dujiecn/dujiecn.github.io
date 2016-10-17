@@ -10,7 +10,7 @@ tags: docker
 	MAINTAINER walljay <760813193@qq.com>
 	RUN yum -y update
 	RUN yum -y install sudo && yum -y install net-tools && yum -y install openssh-server && yum -y install openssh-clients && yum -y install vim && yum -y install git && yum -y install java-1.8.0-openjdk-devel
-	CMD ["/bin/bash"]
+	CMD ["/usr/sbin/init"]
 	
 包含基本的java vim ssh net命令，后续添加必要的工具
 
@@ -24,4 +24,14 @@ tags: docker
 	
 	docker build -t walljay/centos:devel .
 
--t 是标记tag参数，换成自己的，格式为[仓库名:版本],注意后面的“.”不能少，这个是表示Dockerfile所在的目录		
+-t 是标记tag参数，换成自己的，格式为[仓库名:版本],注意后面的“.”不能少，这个是表示Dockerfile所在的目录
+
+启动centos容器：
+
+	docker run -d -i -t \                                  
+			--privileged \                                                              
+			-e container=docker \                                                       
+			-v /sys/fs/cgroup:/sys/fs/cgroup \                                         
+			walljay/centos:devel /usr/sbin/init
+
+	
