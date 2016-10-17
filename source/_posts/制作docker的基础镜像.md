@@ -9,11 +9,7 @@ tags: docker
 	FROM centos:latest
 	MAINTAINER walljay <760813193@qq.com>
 	RUN yum -y update
-	RUN yum -y install sudo
-	RUN yum -y install net-tools
-	RUN yum -y install openssh-server
-	RUN yum -y install vim
-	RUN yum -y install java-1.8.0-openjdk-devel
+	RUN yum -y install sudo && yum -y install net-tools && yum -y install openssh-server && yum -y install vim && yum -y install git && yum -y install java-1.8.0-openjdk-devel
 	CMD ["/bin/bash"]
 	
 包含基本的java vim ssh net命令，后续添加必要的工具
