@@ -81,7 +81,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/16/制作docker的基础镜像/">制作docker的基础镜像</a>
+      <a class="article-title" href="/2016/10/16/制作docker的基础镜像/">基于centos制作docker的基础镜像</a>
     </h1>
   
 
@@ -99,7 +99,7 @@
 <pre><code>FROM centos:latest
 MAINTAINER walljay &lt;760813193@qq.com&gt;
 RUN yum -y update
-RUN yum -y install sudo &amp;&amp; yum -y install net-tools &amp;&amp; yum -y install openssh-server &amp;&amp; yum -y install vim &amp;&amp; yum -y install git &amp;&amp; yum -y install java-1.8.0-openjdk-devel
+RUN yum -y install sudo &amp;&amp; yum -y install net-tools &amp;&amp; yum -y install openssh-server &amp;&amp; yum -y install openssh-clients &amp;&amp; yum -y install vim &amp;&amp; yum -y install git &amp;&amp; yum -y install java-1.8.0-openjdk-devel
 CMD [&quot;/bin/bash&quot;]
 </code></pre><p>&#x5305;&#x542B;&#x57FA;&#x672C;&#x7684;java vim ssh net&#x547D;&#x4EE4;&#xFF0C;&#x540E;&#x7EED;&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;&#x5DE5;&#x5177;</p>
 <p>&#x751F;&#x6210;&#x955C;&#x50CF;&#x7684;&#x6B65;&#x9AA4;&#xFF1A;</p>
