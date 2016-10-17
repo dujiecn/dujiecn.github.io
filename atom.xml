@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="dujiecn.github.io/"/>
   <updated>2016-10-16T15:49:18.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>dujiecn.github.io/</id>
   
   <author>
     <name>walljay</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>docker中centos镜像启动systemctl异常</title>
-    <link href="http://yoursite.com/2016/10/16/docker%E4%B8%ADcentos%E9%95%9C%E5%83%8F%E5%90%AF%E5%8A%A8systemctl%E5%BC%82%E5%B8%B8/"/>
-    <id>http://yoursite.com/2016/10/16/docker中centos镜像启动systemctl异常/</id>
+    <link href="dujiecn.github.io/2016/10/16/docker%E4%B8%ADcentos%E9%95%9C%E5%83%8F%E5%90%AF%E5%8A%A8systemctl%E5%BC%82%E5%B8%B8/"/>
+    <id>dujiecn.github.io/2016/10/16/docker中centos镜像启动systemctl异常/</id>
     <published>2016-10-16T15:27:47.000Z</published>
     <updated>2016-10-16T15:49:18.000Z</updated>
     
@@ -39,14 +39,14 @@
     </summary>
     
     
-      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+      <category term="docker" scheme="dujiecn.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>基于centos制作docker的基础镜像</title>
-    <link href="http://yoursite.com/2016/10/16/%E5%88%B6%E4%BD%9Cdocker%E7%9A%84%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F/"/>
-    <id>http://yoursite.com/2016/10/16/制作docker的基础镜像/</id>
+    <link href="dujiecn.github.io/2016/10/16/%E5%88%B6%E4%BD%9Cdocker%E7%9A%84%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F/"/>
+    <id>dujiecn.github.io/2016/10/16/制作docker的基础镜像/</id>
     <published>2016-10-16T14:56:37.000Z</published>
     <updated>2016-10-17T05:40:48.000Z</updated>
     
@@ -77,14 +77,14 @@ RUN yum -y ins
     </summary>
     
     
-      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+      <category term="docker" scheme="dujiecn.github.io/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>java.security.KeyException</title>
-    <link href="http://yoursite.com/2016/10/15/java-security-KeyException/"/>
-    <id>http://yoursite.com/2016/10/15/java-security-KeyException/</id>
+    <link href="dujiecn.github.io/2016/10/15/java-security-KeyException/"/>
+    <id>dujiecn.github.io/2016/10/15/java-security-KeyException/</id>
     <published>2016-10-15T08:26:34.000Z</published>
     <updated>2016-10-15T08:28:01.000Z</updated>
     
@@ -117,14 +117,14 @@ at sun.security.ec.ECKeyPairGenerator.generateKeyPair(ECKeyPairGenerator.java:12
     </summary>
     
     
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+      <category term="java" scheme="dujiecn.github.io/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>使用springboot发送邮件可能存在的异常</title>
-    <link href="http://yoursite.com/2016/10/14/%E4%BD%BF%E7%94%A8springboot%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BC%82%E5%B8%B8/"/>
-    <id>http://yoursite.com/2016/10/14/使用springboot发送邮件可能存在的异常/</id>
+    <link href="dujiecn.github.io/2016/10/14/%E4%BD%BF%E7%94%A8springboot%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%E5%8F%AF%E8%83%BD%E5%AD%98%E5%9C%A8%E7%9A%84%E5%BC%82%E5%B8%B8/"/>
+    <id>dujiecn.github.io/2016/10/14/使用springboot发送邮件可能存在的异常/</id>
     <published>2016-10-14T05:11:44.000Z</published>
     <updated>2016-10-14T05:28:17.000Z</updated>
     
@@ -151,14 +151,14 @@ nested exception is:     javax.net.ssl.SSLHandshakeException: Received fatal ale
     </summary>
     
     
-      <category term="springboot" scheme="http://yoursite.com/tags/springboot/"/>
+      <category term="springboot" scheme="dujiecn.github.io/tags/springboot/"/>
     
   </entry>
   
   <entry>
     <title>hdfs伪分布式环境搭建</title>
-    <link href="http://yoursite.com/2016/09/29/hdfs%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2016/09/29/hdfs伪分布式环境搭建/</id>
+    <link href="dujiecn.github.io/2016/09/29/hdfs%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>dujiecn.github.io/2016/09/29/hdfs伪分布式环境搭建/</id>
     <published>2016-09-29T05:50:14.000Z</published>
     <updated>2016-09-29T07:00:23.000Z</updated>
     
@@ -251,14 +251,14 @@ scp /home/hadoop-1.2 root@node3:/home/
     </summary>
     
     
-      <category term="hadoop" scheme="http://yoursite.com/tags/hadoop/"/>
+      <category term="hadoop" scheme="dujiecn.github.io/tags/hadoop/"/>
     
   </entry>
   
   <entry>
     <title>centos安装jps命令</title>
-    <link href="http://yoursite.com/2016/09/29/centos%E5%AE%89%E8%A3%85jps%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2016/09/29/centos安装jps命令/</id>
+    <link href="dujiecn.github.io/2016/09/29/centos%E5%AE%89%E8%A3%85jps%E5%91%BD%E4%BB%A4/"/>
+    <id>dujiecn.github.io/2016/09/29/centos安装jps命令/</id>
     <published>2016-09-29T03:05:36.000Z</published>
     <updated>2016-10-10T02:44:31.000Z</updated>
     
@@ -279,8 +279,8 @@ yum install -y java-1.8.0-openjdk-devel.x86_64
   
   <entry>
     <title>mybatis中if里面字符串比较</title>
-    <link href="http://yoursite.com/2016/09/23/mybatis%E4%B8%ADif%E9%87%8C%E9%9D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/"/>
-    <id>http://yoursite.com/2016/09/23/mybatis中if里面字符串比较/</id>
+    <link href="dujiecn.github.io/2016/09/23/mybatis%E4%B8%ADif%E9%87%8C%E9%9D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83/"/>
+    <id>dujiecn.github.io/2016/09/23/mybatis中if里面字符串比较/</id>
     <published>2016-09-23T02:22:01.000Z</published>
     <updated>2016-09-23T02:24:09.000Z</updated>
     
@@ -311,14 +311,14 @@ yum install -y java-1.8.0-openjdk-devel.x86_64
     </summary>
     
     
-      <category term="mybatis" scheme="http://yoursite.com/tags/mybatis/"/>
+      <category term="mybatis" scheme="dujiecn.github.io/tags/mybatis/"/>
     
   </entry>
   
   <entry>
     <title>mysql时间转换函数</title>
-    <link href="http://yoursite.com/2016/09/23/mysql%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/"/>
-    <id>http://yoursite.com/2016/09/23/mysql时间转换函数/</id>
+    <link href="dujiecn.github.io/2016/09/23/mysql%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0/"/>
+    <id>dujiecn.github.io/2016/09/23/mysql时间转换函数/</id>
     <published>2016-09-23T00:48:36.000Z</published>
     <updated>2016-09-23T07:24:48.000Z</updated>
     
@@ -340,14 +340,14 @@ yum install -y java-1.8.0-openjdk-devel.x86_64
     </summary>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+      <category term="mysql" scheme="dujiecn.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>使用jaxb对字符串操作</title>
-    <link href="http://yoursite.com/2016/09/19/%E4%BD%BF%E7%94%A8jaxb%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2016/09/19/使用jaxb对字符串操作/</id>
+    <link href="dujiecn.github.io/2016/09/19/%E4%BD%BF%E7%94%A8jaxb%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/"/>
+    <id>dujiecn.github.io/2016/09/19/使用jaxb对字符串操作/</id>
     <published>2016-09-19T03:11:33.000Z</published>
     <updated>2016-10-10T09:21:58.000Z</updated>
     
@@ -396,14 +396,14 @@ public static String convertToXml(Object obj, String encoding) {
     </summary>
     
     
-      <category term="JAXB" scheme="http://yoursite.com/tags/JAXB/"/>
+      <category term="JAXB" scheme="dujiecn.github.io/tags/JAXB/"/>
     
   </entry>
   
   <entry>
     <title>mysql语句中常见的技巧</title>
-    <link href="http://yoursite.com/2016/09/13/mysql%E8%AF%AD%E5%8F%A5%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8A%80%E5%B7%A7/"/>
-    <id>http://yoursite.com/2016/09/13/mysql语句中常见的技巧/</id>
+    <link href="dujiecn.github.io/2016/09/13/mysql%E8%AF%AD%E5%8F%A5%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8A%80%E5%B7%A7/"/>
+    <id>dujiecn.github.io/2016/09/13/mysql语句中常见的技巧/</id>
     <published>2016-09-13T04:43:10.000Z</published>
     <updated>2016-09-13T06:44:23.000Z</updated>
     
@@ -434,14 +434,14 @@ public static String convertToXml(Object obj, String encoding) {
     </summary>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+      <category term="mysql" scheme="dujiecn.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>ExtJS中组件使用注意点</title>
-    <link href="http://yoursite.com/2016/09/13/mvc%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E7%82%B9/"/>
-    <id>http://yoursite.com/2016/09/13/mvc组件使用注意点/</id>
+    <link href="dujiecn.github.io/2016/09/13/mvc%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E7%82%B9/"/>
+    <id>dujiecn.github.io/2016/09/13/mvc组件使用注意点/</id>
     <published>2016-09-13T01:10:01.000Z</published>
     <updated>2016-09-13T09:19:18.000Z</updated>
     
@@ -476,14 +476,14 @@ public static String convertToXml(Object obj, String encoding) {
     </summary>
     
     
-      <category term="extjs" scheme="http://yoursite.com/tags/extjs/"/>
+      <category term="extjs" scheme="dujiecn.github.io/tags/extjs/"/>
     
   </entry>
   
   <entry>
     <title>maven项目强制不热重启配置</title>
-    <link href="http://yoursite.com/2016/09/10/maven%E9%A1%B9%E7%9B%AE%E5%BC%BA%E5%88%B6%E4%B8%8D%E7%83%AD%E9%87%8D%E5%90%AF%E9%85%8D%E7%BD%AE/"/>
-    <id>http://yoursite.com/2016/09/10/maven项目强制不热重启配置/</id>
+    <link href="dujiecn.github.io/2016/09/10/maven%E9%A1%B9%E7%9B%AE%E5%BC%BA%E5%88%B6%E4%B8%8D%E7%83%AD%E9%87%8D%E5%90%AF%E9%85%8D%E7%BD%AE/"/>
+    <id>dujiecn.github.io/2016/09/10/maven项目强制不热重启配置/</id>
     <published>2016-09-10T03:02:42.000Z</published>
     <updated>2016-09-10T03:04:21.000Z</updated>
     
@@ -524,14 +524,14 @@ public static String convertToXml(Object obj, String encoding) {
     </summary>
     
     
-      <category term="maven" scheme="http://yoursite.com/tags/maven/"/>
+      <category term="maven" scheme="dujiecn.github.io/tags/maven/"/>
     
   </entry>
   
   <entry>
     <title>springboot中application.properties常用配置</title>
-    <link href="http://yoursite.com/2016/09/10/springboot%E4%B8%ADapplication-properties%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
-    <id>http://yoursite.com/2016/09/10/springboot中application-properties常用配置/</id>
+    <link href="dujiecn.github.io/2016/09/10/springboot%E4%B8%ADapplication-properties%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
+    <id>dujiecn.github.io/2016/09/10/springboot中application-properties常用配置/</id>
     <published>2016-09-10T02:54:38.000Z</published>
     <updated>2016-09-10T02:59:44.000Z</updated>
     
@@ -567,14 +567,14 @@ security.user.password=admin
     </summary>
     
     
-      <category term="springboot" scheme="http://yoursite.com/tags/springboot/"/>
+      <category term="springboot" scheme="dujiecn.github.io/tags/springboot/"/>
     
   </entry>
   
   <entry>
     <title>springboot项目中使用docker-maven-plugin</title>
-    <link href="http://yoursite.com/2016/09/10/springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8docker-maven-plugin/"/>
-    <id>http://yoursite.com/2016/09/10/springboot项目中使用docker-maven-plugin/</id>
+    <link href="dujiecn.github.io/2016/09/10/springboot%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8docker-maven-plugin/"/>
+    <id>dujiecn.github.io/2016/09/10/springboot项目中使用docker-maven-plugin/</id>
     <published>2016-09-10T02:48:53.000Z</published>
     <updated>2016-09-10T02:52:43.000Z</updated>
     
@@ -607,16 +607,16 @@ security.user.password=admin
     </summary>
     
     
-      <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
+      <category term="docker" scheme="dujiecn.github.io/tags/docker/"/>
     
-      <category term="springboot" scheme="http://yoursite.com/tags/springboot/"/>
+      <category term="springboot" scheme="dujiecn.github.io/tags/springboot/"/>
     
   </entry>
   
   <entry>
     <title>mysql快速拷贝数据库</title>
-    <link href="http://yoursite.com/2016/09/09/mysql%E5%BF%AB%E9%80%9F%E6%8B%B7%E8%B4%9D%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <id>http://yoursite.com/2016/09/09/mysql快速拷贝数据库/</id>
+    <link href="dujiecn.github.io/2016/09/09/mysql%E5%BF%AB%E9%80%9F%E6%8B%B7%E8%B4%9D%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>dujiecn.github.io/2016/09/09/mysql快速拷贝数据库/</id>
     <published>2016-09-09T06:12:33.000Z</published>
     <updated>2016-09-09T06:16:34.000Z</updated>
     
@@ -638,14 +638,14 @@ security.user.password=admin
     </summary>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+      <category term="mysql" scheme="dujiecn.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>内容垂直居中</title>
-    <link href="http://yoursite.com/2016/09/09/%E5%86%85%E5%AE%B9%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
-    <id>http://yoursite.com/2016/09/09/内容垂直居中/</id>
+    <link href="dujiecn.github.io/2016/09/09/%E5%86%85%E5%AE%B9%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
+    <id>dujiecn.github.io/2016/09/09/内容垂直居中/</id>
     <published>2016-09-09T02:27:12.000Z</published>
     <updated>2016-09-09T02:30:21.000Z</updated>
     
@@ -689,14 +689,14 @@ security.user.password=admin
     </summary>
     
     
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+      <category term="css" scheme="dujiecn.github.io/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>JS中手动触发事件的方法</title>
-    <link href="http://yoursite.com/2016/09/09/JS%E4%B8%AD%E6%89%8B%E5%8A%A8%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2016/09/09/JS中手动触发事件的方法/</id>
+    <link href="dujiecn.github.io/2016/09/09/JS%E4%B8%AD%E6%89%8B%E5%8A%A8%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>dujiecn.github.io/2016/09/09/JS中手动触发事件的方法/</id>
     <published>2016-09-09T02:23:31.000Z</published>
     <updated>2016-09-19T15:27:06.000Z</updated>
     
@@ -739,14 +739,14 @@ fireOnThis.dispatchEvent(evObj);
     </summary>
     
     
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+      <category term="javascript" scheme="dujiecn.github.io/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>设置多行文本显示省略号</title>
-    <link href="http://yoursite.com/2016/09/09/%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7/"/>
-    <id>http://yoursite.com/2016/09/09/设置多行文本显示省略号/</id>
+    <link href="dujiecn.github.io/2016/09/09/%E8%AE%BE%E7%BD%AE%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7/"/>
+    <id>dujiecn.github.io/2016/09/09/设置多行文本显示省略号/</id>
     <published>2016-09-09T02:22:45.000Z</published>
     <updated>2016-09-09T02:23:05.000Z</updated>
     
@@ -760,14 +760,14 @@ fireOnThis.dispatchEvent(evObj);
     </summary>
     
     
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+      <category term="css" scheme="dujiecn.github.io/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>window安装mysql5.6</title>
-    <link href="http://yoursite.com/2016/09/09/window%E5%AE%89%E8%A3%85mysql5-6/"/>
-    <id>http://yoursite.com/2016/09/09/window安装mysql5-6/</id>
+    <link href="dujiecn.github.io/2016/09/09/window%E5%AE%89%E8%A3%85mysql5-6/"/>
+    <id>dujiecn.github.io/2016/09/09/window安装mysql5-6/</id>
     <published>2016-09-09T02:15:14.000Z</published>
     <updated>2016-09-09T02:21:03.000Z</updated>
     
@@ -810,14 +810,14 @@ fireOnThis.dispatchEvent(evObj);
     </summary>
     
     
-      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+      <category term="mysql" scheme="dujiecn.github.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>sublimetext个人习惯的快捷键设置</title>
-    <link href="http://yoursite.com/2016/09/09/text%E4%B8%AA%E4%BA%BA%E4%B9%A0%E6%83%AF%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%BE%E7%BD%AE/"/>
-    <id>http://yoursite.com/2016/09/09/text个人习惯的快捷键设置/</id>
+    <link href="dujiecn.github.io/2016/09/09/text%E4%B8%AA%E4%BA%BA%E4%B9%A0%E6%83%AF%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE%E8%AE%BE%E7%BD%AE/"/>
+    <id>dujiecn.github.io/2016/09/09/text个人习惯的快捷键设置/</id>
     <published>2016-09-09T02:12:39.000Z</published>
     <updated>2016-09-13T09:34:40.000Z</updated>
     
@@ -831,7 +831,7 @@ fireOnThis.dispatchEvent(evObj);
     </summary>
     
     
-      <category term="sublime text" scheme="http://yoursite.com/tags/sublime-text/"/>
+      <category term="sublime text" scheme="dujiecn.github.io/tags/sublime-text/"/>
     
   </entry>
   
