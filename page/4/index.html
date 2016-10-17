@@ -31,6 +31,41 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql-根据id集合排序" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/mysql-根据id集合排序/">mysql_根据id集合排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/mysql-根据id集合排序/" class="article-date">
+  <time datetime="2016-09-08T09:12:08.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>select * from table where id IN (3,6,9,1,2,5,8,7) order by field(id,3,6,9,1,2,5,8,7); </p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mysql-随机产生纪录条数" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -534,47 +569,6 @@ return function(files) {
 }
 
 })();    
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-docker常用命令" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/docker常用命令/">docker常用命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/docker常用命令/" class="article-date">
-  <time datetime="2016-09-08T06:01:53.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x8FD0;&#x884C;&#x5BB9;&#x5668;"><a href="#&#x8FD0;&#x884C;&#x5BB9;&#x5668;" class="headerlink" title="&#x8FD0;&#x884C;&#x5BB9;&#x5668;"></a>&#x8FD0;&#x884C;&#x5BB9;&#x5668;</h3><pre><code>docker run  -d -t --name centos -v ~/Documents/Kitematic/centos:/mnt centos:latest
-</code></pre><p>&#x955C;&#x50CF;&#x4E3A;&#xFF1A;centos:latest<br>&#x5BB9;&#x5668;&#x540D;&#xFF1A;centos<br>&#x6620;&#x5C04;&#x672C;&#x5730;&#x76EE;&#x5F55;&#x5230;&#x5BB9;&#x5668;/mnt&#x76EE;&#x5F55;&#x4E2D;&#xFF1A;/usr/local/centos</p>
-<h3 id="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"><a href="#&#x5BFC;&#x51FA;&#x955C;&#x50CF;" class="headerlink" title="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"></a>&#x5BFC;&#x51FA;&#x955C;&#x50CF;</h3><pre><code>docker save centos:latest &gt; centos.tar
-</code></pre><h3 id="&#x5BFC;&#x51FA;&#x955C;&#x50CF;-1"><a href="#&#x5BFC;&#x51FA;&#x955C;&#x50CF;-1" class="headerlink" title="&#x5BFC;&#x51FA;&#x955C;&#x50CF;"></a>&#x5BFC;&#x51FA;&#x955C;&#x50CF;</h3><pre><code>docker load centos.tar
-</code></pre><h3 id="&#x4FEE;&#x6539;&#x5BB9;&#x5668;&#x5E76;&#x63D0;&#x4EA4;&#x65B0;&#x7684;&#x955C;&#x50CF;"><a href="#&#x4FEE;&#x6539;&#x5BB9;&#x5668;&#x5E76;&#x63D0;&#x4EA4;&#x65B0;&#x7684;&#x955C;&#x50CF;" class="headerlink" title="&#x4FEE;&#x6539;&#x5BB9;&#x5668;&#x5E76;&#x63D0;&#x4EA4;&#x65B0;&#x7684;&#x955C;&#x50CF;"></a>&#x4FEE;&#x6539;&#x5BB9;&#x5668;&#x5E76;&#x63D0;&#x4EA4;&#x65B0;&#x7684;&#x955C;&#x50CF;</h3><pre><code>docker commit -m &apos;update&apos; -a &apos;walljay&apos; centos walljay/centos:latest
-</code></pre><p>-m &#x66F4;&#x65B0;&#x65E5;&#x5FD7;<br>-a &#x4F5C;&#x8005;<br>centos &#x5BB9;&#x5668;&#x540D;<br>walljay/centos:lastest &#x955C;&#x50CF;</p>
-<h3 id="&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x65F6;&#x95F4;"><a href="#&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x65F6;&#x95F4;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x65F6;&#x95F4;"></a>&#x8BBE;&#x7F6E;&#x5BB9;&#x5668;&#x65F6;&#x95F4;</h3><pre><code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </code></pre>
       
 

@@ -31,6 +31,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql语句中常见的技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/13/mysql语句中常见的技巧/">mysql语句中常见的技巧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/13/mysql语句中常见的技巧/" class="article-date">
+  <time datetime="2016-09-13T04:43:10.000Z" itemprop="datePublished">2016-09-13</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>update topic_config set value = cast(value as DECIMAL) + 1
+</code></pre><p>&#x4F7F;&#x7528; cast(value as DECIMAL) &#x628A;varchar&#x7C7B;&#x578B;&#x7684;value&#x503C;&#x8F6C;&#x6210;int&#x7C7B;&#x578B;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;</p>
+<pre><code>insert into dictionary (value) values ((select * from (select ifnull(max(value),0) from dictionary where type = 2) tmp) + 1)        
+</code></pre><p>insert&#x8BED;&#x53E5;&#x4E2D;&#x5305;&#x542B;select&#x8BED;&#x53E5;&#xFF0C;&#x83B7;&#x53D6;&#x590D;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6700;&#x5927;&#x503C;&#x7136;&#x540E;&#x52A0;1&#xFF0C;&#x5E38;&#x89C1;&#x4E8E;&#x6392;&#x5E8F;&#x5B57;&#x6BB5;    </p>
+<pre><code>insert into topic_module_subject_category
+    (type,text,ptype)
+    values
+    ( 
+    &lt;choose&gt;
+        &lt;when test=&quot;ptype == 0&quot;&gt;
+            (select * from (select ifnull(max(type),100000) from topic_module_subject_category where ptype = #{ptype}) tmp) + 10000
+        &lt;/when&gt;
+        &lt;otherwise&gt;
+            (select * from (select ifnull(max(type),${ptype}) from topic_module_subject_category where ptype = #{ptype}) tmp) + 1
+        &lt;/otherwise&gt;
+    &lt;/choose&gt;
+    ,#{text},#{ptype})
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="extjs-mvc组件使用注意点" class="article article-type-extjs" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -510,41 +561,6 @@ fireOnThis.dispatchEvent(evObj);
 <pre><code>mysql -uroot -p123456
 </code></pre></li>
 </ol>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-text个人习惯的快捷键设置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/09/text个人习惯的快捷键设置/">sublimetext个人习惯的快捷键设置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/09/text个人习惯的快捷键设置/" class="article-date">
-  <time datetime="2016-09-09T02:12:39.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[<br>{ &#x201C;keys&#x201D;: [&#x201C;ctrl+d&#x201D;], &#x201C;command&#x201D;: &#x201C;find_under_expand&#x201D; },<br>// &#x5220;&#x9664;&#x4E00;&#x6574;&#x884C;<br>{ &#x201C;keys&#x201D;: [&#x201C;super+d&#x201D;], &#x201C;command&#x201D;: &#x201C;run_macro_file&#x201D;, &#x201C;args&#x201D;: {&#x201C;file&#x201D;: &#x201C;Packages/Default/Delete Line.sublime-macro&#x201D;} },<br>// &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x4E0B;&#x4E00;&#x884C;<br>{ &#x201C;keys&#x201D;: [&#x201C;shift+enter&#x201D;], &#x201C;command&#x201D;: &#x201C;run_macro_file&#x201D;, &#x201C;args&#x201D;: {&#x201C;file&#x201D;: &#x201C;Packages/Default/Add Line.sublime-macro&#x201D;} },<br>// &#x5F53;&#x524D;&#x884C;&#x4E0E;&#x524D;&#x4E00;&#x884C;&#x4E92;&#x6362;&#x4F4D;&#x7F6E;<br>{ &#x201C;keys&#x201D;: [&#x201C;super+up&#x201D;], &#x201C;command&#x201D;: &#x201C;swap_line_up&#x201D; },<br>// &#x5F53;&#x524D;&#x884C;&#x4E0E;&#x4E0B;&#x4E00;&#x884C;&#x4E92;&#x6362;&#x4F4D;&#x7F6E;<br>{ &#x201C;keys&#x201D;: [&#x201C;super+down&#x201D;], &#x201C;command&#x201D;: &#x201C;swap_line_down&#x201D; }<br>]</p>
 
       
 
