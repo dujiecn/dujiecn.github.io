@@ -27,11 +27,11 @@ tags: docker
 -t 是标记tag参数，换成自己的，格式为[仓库名:版本],注意后面的“.”不能少，这个是表示Dockerfile所在的目录
 
 启动centos容器：
-
-	docker run -d -i -t \                                  
-			--privileged \                                                              
-			-e container=docker \                                                       
-			-v /sys/fs/cgroup:/sys/fs/cgroup \                                         
-			walljay/centos:devel /usr/sbin/init
+	
+	docker run -itd \
+	--privileged \
+	-e cotainer=docker \
+	-v /sys/fs/cgroup:/sys/fs/cgroup \
+	walljay/centos:devel /usr/sbin/init
 
 	
