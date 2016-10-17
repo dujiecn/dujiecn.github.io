@@ -1,5 +1,5 @@
 ---
-title: 制作docker的基础镜像
+title: 基于centos制作docker的基础镜像
 date: 2016-10-16 22:56:37
 tags: docker
 ---
@@ -9,7 +9,7 @@ tags: docker
 	FROM centos:latest
 	MAINTAINER walljay <760813193@qq.com>
 	RUN yum -y update
-	RUN yum -y install sudo && yum -y install net-tools && yum -y install openssh-server && yum -y install vim && yum -y install git && yum -y install java-1.8.0-openjdk-devel
+	RUN yum -y install sudo && yum -y install net-tools && yum -y install openssh-server && yum -y install openssh-clients && yum -y install vim && yum -y install git && yum -y install java-1.8.0-openjdk-devel
 	CMD ["/bin/bash"]
 	
 包含基本的java vim ssh net命令，后续添加必要的工具
