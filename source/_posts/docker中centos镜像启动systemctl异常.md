@@ -8,12 +8,10 @@ tags: ["docker","centos"]
 
 	docker run -d -i -t \
 		--privileged \
-	  --security-opt seccomp=unconfined \
-  	--cap-add SYS_ADMIN \
-	  -e container=docker \
-	  -v /sys/fs/cgroup:/sys/fs/cgroup \
-	  --name=centos \
-	  centos:latest /usr/sbin/init
+  		--cap-add SYS_ADMIN \
+	  	-e container=docker \
+	  	-v /sys/fs/cgroup:/sys/fs/cgroup \
+	  	centos:latest /usr/sbin/init
 
 
 
