@@ -134,8 +134,8 @@
         <p>&#x5229;&#x7528;Dockerfile</p>
 <pre><code>FROM centos:latest
 MAINTAINER walljay &lt;760813193@qq.com&gt;
-RUN yum -y update
-RUN yum -y install sudo &amp;&amp; yum -y install net-tools &amp;&amp; yum -y install openssh-server &amp;&amp; yum -y install openssh-clients &amp;&amp; yum -y install vim &amp;&amp; yum -y install git &amp;&amp; yum -y install java-1.8.0-openjdk-devel
+RUN yum -y -q update
+RUN yum -y -q install sudo &amp;&amp; yum -y -q install net-tools &amp;&amp; yum -y -q install openssh-server &amp;&amp; yum -y -q install openssh-clients &amp;&amp; yum -y -q install vim &amp;&amp; yum -y -q install git &amp;&amp; yum -y -q install java-1.8.0-openjdk-devel
 RUN curl -sSL https://get.docker.com/ | sh
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 CMD [&quot;/usr/sbin/init&quot;]
