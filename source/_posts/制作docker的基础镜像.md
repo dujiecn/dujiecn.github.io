@@ -9,7 +9,7 @@ tags: docker
 	FROM centos:latest
 	MAINTAINER walljay <760813193@qq.com>
 	RUN yum -y update
-	RUN yum -y install sudo && yum -y install net-tools && yum -y install openssh-server && yum -y install openssh-clients && yum -y install vim && yum -y install git && yum -y install java-1.8.0-openjdk-devel
+	RUN yum -y install net-tools git vim sudo openssh-server openssh-clients java-1.8.0-openjdk-devel
 	RUN curl -sSL https://get.docker.com/ | sh
 	RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 	CMD ["/usr/sbin/init"]
