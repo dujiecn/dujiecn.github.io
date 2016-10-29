@@ -9,12 +9,20 @@ tags: docker
 	FROM centos:latest
 	MAINTAINER walljay <760813193@qq.com>
 	RUN yum -y update
-	RUN yum -y install net-tools git vim sudo openssh-server openssh-clients java-1.8.0-openjdk-devel
-	RUN curl -sSL https://get.docker.com/ | sh
-	RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+	RUN yum -y install sudo \
+			&& yum -y install net-tools \
+			&& yum -y install openssh-server \
+			&& yum -y install openssh-clients \
+			&& yum -y install vim \
+			&& yum -y install git \
+			&& yum -y install java-1.8.0-openjdk-devel
+	# RUN curl -sSL https://get.docker.com/ | sh
+
+	ENV container docker
+	VOLUME ["/sys/fs/cgroup"]
 	CMD ["/usr/sbin/init"]
 	
-包含基本的java vim ssh net,git,docker命令，后续添加必要的工具
+包含基本的java vim ssh net,git等工具，后续添加必要的工具
 
 生成镜像的步骤：
 	
@@ -30,10 +38,4 @@ tags: docker
 
 启动centos容器：
 	
-	docker run -itd \
-	--privileged \
-	-e cotainer=docker \
-	-v /sys/fs/cgroup:/sys/fs/cgroup \
-	walljay/centos:devel /usr/sbin/init
-
-	
+	docker run -itd walljay/centos:devel
