@@ -8,8 +8,10 @@
   <meta name="description" content="&amp;#x5229;&amp;#x7528;Dockerfile
 FROM centos:latest
 MAINTAINER walljay &amp;lt;760813193@qq.com&amp;gt;
-RUN yum -y -q update
-RUN yum -y -q install sudo &amp;amp;&amp;amp; yum -y -q install net-tools &amp;amp;&amp;amp; yum -y -q in">
+RUN yum -y update
+RUN yum -y install sudo \
+        &amp;amp;&amp;amp; yum -y install net-tools \
+        &amp;amp;&amp;amp; y">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于centos制作docker的基础镜像">
 <meta property="og:url" content="dujiecn.github.io/2016/10/16/制作docker的基础镜像/index.html">
@@ -17,16 +19,20 @@ RUN yum -y -q install sudo &amp;amp;&amp;amp; yum -y -q install net-tools &amp;a
 <meta property="og:description" content="&amp;#x5229;&amp;#x7528;Dockerfile
 FROM centos:latest
 MAINTAINER walljay &amp;lt;760813193@qq.com&amp;gt;
-RUN yum -y -q update
-RUN yum -y -q install sudo &amp;amp;&amp;amp; yum -y -q install net-tools &amp;amp;&amp;amp; yum -y -q in">
-<meta property="og:updated_time" content="2016-10-21T01:40:09.000Z">
+RUN yum -y update
+RUN yum -y install sudo \
+        &amp;amp;&amp;amp; yum -y install net-tools \
+        &amp;amp;&amp;amp; y">
+<meta property="og:updated_time" content="2016-10-29T00:18:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于centos制作docker的基础镜像">
 <meta name="twitter:description" content="&amp;#x5229;&amp;#x7528;Dockerfile
 FROM centos:latest
 MAINTAINER walljay &amp;lt;760813193@qq.com&amp;gt;
-RUN yum -y -q update
-RUN yum -y -q install sudo &amp;amp;&amp;amp; yum -y -q install net-tools &amp;amp;&amp;amp; yum -y -q in">
+RUN yum -y update
+RUN yum -y install sudo \
+        &amp;amp;&amp;amp; yum -y install net-tools \
+        &amp;amp;&amp;amp; y">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -67,12 +73,20 @@ RUN yum -y -q install sudo &amp;amp;&amp;amp; yum -y -q install net-tools &amp;a
         <p>&#x5229;&#x7528;Dockerfile</p>
 <pre><code>FROM centos:latest
 MAINTAINER walljay &lt;760813193@qq.com&gt;
-RUN yum -y -q update
-RUN yum -y -q install sudo &amp;&amp; yum -y -q install net-tools &amp;&amp; yum -y -q install openssh-server &amp;&amp; yum -y -q install openssh-clients &amp;&amp; yum -y -q install vim &amp;&amp; yum -y -q install git &amp;&amp; yum -y -q install java-1.8.0-openjdk-devel
-RUN curl -sSL https://get.docker.com/ | sh
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN yum -y update
+RUN yum -y install sudo \
+        &amp;&amp; yum -y install net-tools \
+        &amp;&amp; yum -y install openssh-server \
+        &amp;&amp; yum -y install openssh-clients \
+        &amp;&amp; yum -y install vim \
+        &amp;&amp; yum -y install git \
+        &amp;&amp; yum -y install java-1.8.0-openjdk-devel
+# RUN curl -sSL https://get.docker.com/ | sh
+
+ENV container docker
+VOLUME [&quot;/sys/fs/cgroup&quot;]
 CMD [&quot;/usr/sbin/init&quot;]
-</code></pre><p>&#x5305;&#x542B;&#x57FA;&#x672C;&#x7684;java vim ssh net,git,docker&#x547D;&#x4EE4;&#xFF0C;&#x540E;&#x7EED;&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;&#x5DE5;&#x5177;</p>
+</code></pre><p>&#x5305;&#x542B;&#x57FA;&#x672C;&#x7684;java vim ssh net,git&#x7B49;&#x5DE5;&#x5177;&#xFF0C;&#x540E;&#x7EED;&#x6DFB;&#x52A0;&#x5FC5;&#x8981;&#x7684;&#x5DE5;&#x5177;</p>
 <p>&#x751F;&#x6210;&#x955C;&#x50CF;&#x7684;&#x6B65;&#x9AA4;&#xFF1A;</p>
 <pre><code>mkdir -p test
 cd test
@@ -81,11 +95,7 @@ vim Dockerfile
 <pre><code>docker build -t walljay/centos:devel .
 </code></pre><p>-t &#x662F;&#x6807;&#x8BB0;tag&#x53C2;&#x6570;&#xFF0C;&#x6362;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A;[&#x4ED3;&#x5E93;&#x540D;:&#x7248;&#x672C;],&#x6CE8;&#x610F;&#x540E;&#x9762;&#x7684;&#x201C;.&#x201D;&#x4E0D;&#x80FD;&#x5C11;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x8868;&#x793A;Dockerfile&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;</p>
 <p>&#x542F;&#x52A8;centos&#x5BB9;&#x5668;&#xFF1A;</p>
-<pre><code>docker run -itd \
---privileged \
--e cotainer=docker \
--v /sys/fs/cgroup:/sys/fs/cgroup \
-walljay/centos:devel /usr/sbin/init
+<pre><code>docker run -itd walljay/centos:devel
 </code></pre>
       
 
