@@ -8,6 +8,8 @@ tags: docker
 	
 	FROM centos:latest
 	MAINTAINER walljay <760813193@qq.com>
+	# 设置时区
+	RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 	RUN yum -y update
 	RUN yum -y install sudo \
 			&& yum -y install net-tools \
@@ -17,8 +19,6 @@ tags: docker
 			&& yum -y install git \
 			&& yum -y install java-1.8.0-openjdk-devel
 	# RUN curl -sSL https://get.docker.com/ | sh
-	# 设置时区
-	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 	ENV container docker
 	VOLUME ["/sys/fs/cgroup"]
 	CMD ["/usr/sbin/init"]
