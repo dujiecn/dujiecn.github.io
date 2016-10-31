@@ -76,11 +76,13 @@
     <link href="dujiecn.github.io/2016/10/16/%E5%88%B6%E4%BD%9Cdocker%E7%9A%84%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F/"/>
     <id>dujiecn.github.io/2016/10/16/制作docker的基础镜像/</id>
     <published>2016-10-16T14:56:37.000Z</published>
-    <updated>2016-10-29T00:34:07.000Z</updated>
+    <updated>2016-10-31T05:41:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>&#x5229;&#x7528;Dockerfile</p>
 <pre><code>FROM centos:latest
 MAINTAINER walljay &lt;760813193@qq.com&gt;
+# &#x8BBE;&#x7F6E;&#x65F6;&#x533A;
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN yum -y update
 RUN yum -y install sudo \
         &amp;&amp; yum -y install net-tools \
@@ -90,7 +92,6 @@ RUN yum -y install sudo \
         &amp;&amp; yum -y install git \
         &amp;&amp; yum -y install java-1.8.0-openjdk-devel
 # RUN curl -sSL https://get.docker.com/ | sh
-
 ENV container docker
 VOLUME [&quot;/sys/fs/cgroup&quot;]
 CMD [&quot;/usr/sbin/init&quot;]
@@ -111,8 +112,7 @@ vim Dockerfile
       &lt;p&gt;&amp;#x5229;&amp;#x7528;Dockerfile&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;FROM centos:latest
 MAINTAINER walljay &amp;lt;760813193@qq.com&amp;gt;
-RUN yum -y update
-RUN yum -y ins
+# &amp;#x8BBE;&amp;#x7F6E;&amp;#x65F6;&amp;#x533
     
     </summary>
     

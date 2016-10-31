@@ -8,10 +8,10 @@
   <meta name="description" content="&amp;#x5229;&amp;#x7528;Dockerfile
 FROM centos:latest
 MAINTAINER walljay &amp;lt;760813193@qq.com&amp;gt;
+# &amp;#x8BBE;&amp;#x7F6E;&amp;#x65F6;&amp;#x533A;
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN yum -y update
-RUN yum -y install sudo \
-        &amp;amp;&amp;amp; yum -y install net-tools \
-        &amp;amp;&amp;amp; y">
+R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于centos制作docker的基础镜像">
 <meta property="og:url" content="dujiecn.github.io/2016/10/16/制作docker的基础镜像/index.html">
@@ -19,20 +19,20 @@ RUN yum -y install sudo \
 <meta property="og:description" content="&amp;#x5229;&amp;#x7528;Dockerfile
 FROM centos:latest
 MAINTAINER walljay &amp;lt;760813193@qq.com&amp;gt;
+# &amp;#x8BBE;&amp;#x7F6E;&amp;#x65F6;&amp;#x533A;
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN yum -y update
-RUN yum -y install sudo \
-        &amp;amp;&amp;amp; yum -y install net-tools \
-        &amp;amp;&amp;amp; y">
-<meta property="og:updated_time" content="2016-10-29T00:34:07.000Z">
+R">
+<meta property="og:updated_time" content="2016-10-31T05:41:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于centos制作docker的基础镜像">
 <meta name="twitter:description" content="&amp;#x5229;&amp;#x7528;Dockerfile
 FROM centos:latest
 MAINTAINER walljay &amp;lt;760813193@qq.com&amp;gt;
+# &amp;#x8BBE;&amp;#x7F6E;&amp;#x65F6;&amp;#x533A;
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN yum -y update
-RUN yum -y install sudo \
-        &amp;amp;&amp;amp; yum -y install net-tools \
-        &amp;amp;&amp;amp; y">
+R">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -73,6 +73,8 @@ RUN yum -y install sudo \
         <p>&#x5229;&#x7528;Dockerfile</p>
 <pre><code>FROM centos:latest
 MAINTAINER walljay &lt;760813193@qq.com&gt;
+# &#x8BBE;&#x7F6E;&#x65F6;&#x533A;
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN yum -y update
 RUN yum -y install sudo \
         &amp;&amp; yum -y install net-tools \
@@ -82,7 +84,6 @@ RUN yum -y install sudo \
         &amp;&amp; yum -y install git \
         &amp;&amp; yum -y install java-1.8.0-openjdk-devel
 # RUN curl -sSL https://get.docker.com/ | sh
-
 ENV container docker
 VOLUME [&quot;/sys/fs/cgroup&quot;]
 CMD [&quot;/usr/sbin/init&quot;]
