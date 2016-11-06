@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="dujiecn.github.io/"/>
-  <updated>2016-11-06T13:00:40.000Z</updated>
+  <updated>2016-11-06T13:42:37.000Z</updated>
   <id>dujiecn.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>gitlab+jenkins实现自动化部署</title>
+    <title>gitlab-jenkins实现自动化部署</title>
     <link href="dujiecn.github.io/2016/11/06/gitlab-jenkins%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
     <id>dujiecn.github.io/2016/11/06/gitlab-jenkins实现自动化部署/</id>
     <published>2016-11-06T02:24:20.000Z</published>
-    <updated>2016-11-06T13:00:40.000Z</updated>
+    <updated>2016-11-06T13:42:37.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="&#x5B89;&#x88C5;gitlab"><a href="#&#x5B89;&#x88C5;gitlab" class="headerlink" title="&#x5B89;&#x88C5;gitlab"></a>&#x5B89;&#x88C5;gitlab</h3><p>&#x6CE8;&#x660E;&#xFF1A;&#x672C;&#x5730;&#x7684;IP&#x5730;&#x5740;&#x4E3A;192.168.1.10</p>
 <p>&#x4F7F;&#x7528;docker&#x5B89;&#x88C5;gitlab</p>
