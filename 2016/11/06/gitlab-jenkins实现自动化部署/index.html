@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gitlab+jenkins实现自动化部署 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x5B89;&amp;#x88C5;gitlab&amp;#x6CE8;&amp;#x660E;&amp;#xFF1A;&amp;#x672C;&amp;#x5730;&amp;#x7684;IP&amp;#x5730;&amp;#x5740;&amp;#x4E3A;192.168.1.10
+&amp;#x4F7F;&amp;#x7528;docker&amp;#x5B89;&amp;#x88C5;gitlab
+docker pull gitlab/gitlab-ce
+&amp;#x5229;&amp;#x7528;k">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitlab+jenkins实现自动化部署">
+<meta property="og:url" content="dujiecn.github.io/2016/11/06/gitlab-jenkins实现自动化部署/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="&amp;#x5B89;&amp;#x88C5;gitlab&amp;#x6CE8;&amp;#x660E;&amp;#xFF1A;&amp;#x672C;&amp;#x5730;&amp;#x7684;IP&amp;#x5730;&amp;#x5740;&amp;#x4E3A;192.168.1.10
+&amp;#x4F7F;&amp;#x7528;docker&amp;#x5B89;&amp;#x88C5;gitlab
+docker pull gitlab/gitlab-ce
+&amp;#x5229;&amp;#x7528;k">
+<meta property="og:image" content="dujiecn.github.io/06/gitlab-jenkins实现自动化部署/2.png">
+<meta property="og:image" content="dujiecn.github.io/06/gitlab-jenkins实现自动化部署/3.png">
+<meta property="og:image" content="dujiecn.github.io/06/gitlab-jenkins实现自动化部署/4.png">
+<meta property="og:image" content="dujiecn.github.io/06/gitlab-jenkins实现自动化部署/5.png">
+<meta property="og:image" content="dujiecn.github.io/06/gitlab-jenkins实现自动化部署/6.png">
+<meta property="og:updated_time" content="2016-11-06T13:00:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gitlab+jenkins实现自动化部署">
+<meta name="twitter:description" content="&amp;#x5B89;&amp;#x88C5;gitlab&amp;#x6CE8;&amp;#x660E;&amp;#xFF1A;&amp;#x672C;&amp;#x5730;&amp;#x7684;IP&amp;#x5730;&amp;#x5740;&amp;#x4E3A;192.168.1.10
+&amp;#x4F7F;&amp;#x7528;docker&amp;#x5B89;&amp;#x88C5;gitlab
+docker pull gitlab/gitlab-ce
+&amp;#x5229;&amp;#x7528;k">
+<meta name="twitter:image" content="dujiecn.github.io/06/gitlab-jenkins实现自动化部署/2.png">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-gitlab-jenkins实现自动化部署" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gitlab+jenkins实现自动化部署
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/11/06/gitlab-jenkins实现自动化部署/" class="article-date">
+  <time datetime="2016-11-06T02:24:20.000Z" itemprop="datePublished">2016-11-06</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x5B89;&#x88C5;gitlab"><a href="#&#x5B89;&#x88C5;gitlab" class="headerlink" title="&#x5B89;&#x88C5;gitlab"></a>&#x5B89;&#x88C5;gitlab</h3><p>&#x6CE8;&#x660E;&#xFF1A;&#x672C;&#x5730;&#x7684;IP&#x5730;&#x5740;&#x4E3A;192.168.1.10</p>
+<p>&#x4F7F;&#x7528;docker&#x5B89;&#x88C5;gitlab</p>
+<pre><code>docker pull gitlab/gitlab-ce
+</code></pre><p>&#x5229;&#x7528;kitematic&#x5DE5;&#x5177;&#x4FEE;&#x6539;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#x3002;<br>&#x7531;&#x4E8E;&#x662F;docker&#x955C;&#x50CF;&#x5236;&#x4F5C;&#x7684;gitlab&#x670D;&#x52A1;&#xFF0C;&#x6240;&#x4EE5;&#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x7684;&#x5730;&#x5740;&#x5F62;&#x5982;<code>git@b5563cc2ca26:root/jenkins-test.git</code>,&#x8FD9;&#x6837;&#x7684;&#x5730;&#x5740;&#x5BFC;&#x81F4;git clone&#x4E0B;&#x8F7D;&#x4E0D;&#x4E0B;&#x6765;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x4FEE;&#x6539;&#x751F;&#x6210;&#x7684;&#x5730;&#x5740;&#x4E3A;<code>git@192.168.1.10:root/jenkins-test.git</code>,<br>&#x8FDB;&#x5165;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#x4FEE;&#x6539;&#x6587;&#x4EF6;<code>/etc/gitlab/gitlab.rb</code></p>
+<pre><code>nano /etc/gitlab/gitlab.rb
+</code></pre><p>&#x4FEE;&#x6539;<code>external_url &apos;http://192.168.1.10&apos;</code></p>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00;<a href="http://localhost" target="_blank" rel="external">http://localhost</a>&#xFF0C;&#x521D;&#x59CB;&#x8BBF;&#x95EE;&#x63D0;&#x793A;&#x4FEE;&#x6539;&#x5BC6;&#x7801;&#x4E3A;8&#x4E3A;&#x6709;&#x6548;&#x5B57;&#x7B26;&#x4E32;,&#x7528;&#x6237;&#x540D;&#x9ED8;&#x8BA4;&#x4E3A;<code>root</code>&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;github&#xFF0C;&#x6DFB;&#x52A0;sshkey&#x3002;</p>
+<p>&#x767B;&#x5F55;&#x8FDB;&#x53BB;&#x4E4B;&#x540E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x5E93;&#xFF0C;&#x6DFB;&#x52A0;webhooks<code>http://192.168.1.10:9090/gitlab/notify_commit</code>&#xFF0C;<br><code>http://192.168.1.10:9090</code>&#x4E3A;jenkins&#x7684;&#x8BBF;&#x95EE;&#x5730;&#x5740;<br><img src="/06/gitlab-jenkins&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x5316;&#x90E8;&#x7F72;/2.png" alt="webhooks&#x914D;&#x7F6E;"></p>
+<h3 id="&#x5B89;&#x88C5;jenkins"><a href="#&#x5B89;&#x88C5;jenkins" class="headerlink" title="&#x5B89;&#x88C5;jenkins"></a>&#x5B89;&#x88C5;jenkins</h3><pre><code>docker pull jenkins
+</code></pre><p>&#x542F;&#x52A8;jenkins&#x5BB9;&#x5668;&#xFF0C;&#x4FEE;&#x6539;&#x7AEF;&#x53E3;&#x6620;&#x5C04;&#x4E3A;<code>9090</code>&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00;<a href="http://localhost:9090" target="_blank" rel="external">http://localhost:9090</a>,&#x6839;&#x636E;&#x63D0;&#x793A;&#x5B89;&#x88C5;&#x63A8;&#x8350;&#x7684;&#x63D2;&#x4EF6;&#xFF0C;&#x7528;&#x6237;&#x540D;&#x5BC6;&#x7801;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x6709;&#x63D0;&#x793A;&#x3002;</p>
+<p>1.&#x5B89;&#x88C5;gitlab-hook-plugin&#x63D2;&#x4EF6;<br>    &#x70B9;&#x51FB;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;-&#x7BA1;&#x7406;&#x63D2;&#x4EF6;<br><img src="/06/gitlab-jenkins&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x5316;&#x90E8;&#x7F72;/3.png" alt="&#x5B89;&#x88C5;Gitlab Hook Plugin&#x63D2;&#x4EF6;"><br>&#x56E0;&#x4E3A;&#x6211;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#xFF0C;&#x6240;&#x5728;&#x5728;&#x5DF2;&#x5B89;&#x88C5;&#x5217;&#x8868;&#x91CC;&#x9762;&#x3002;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x91CD;&#x542F;Jenkins&#x670D;&#x52A1;&#x3002;<br>2.&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x4F5C;&#x4E1A;&#xFF0C;&#x4E3B;&#x8981;&#x914D;&#x7F6E;&#x5982;&#x56FE;<br><img src="/06/gitlab-jenkins&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x5316;&#x90E8;&#x7F72;/4.png" alt="&#x6E90;&#x7801;&#x7BA1;&#x7406;"><br><img src="/06/gitlab-jenkins&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x5316;&#x90E8;&#x7F72;/5.png" alt="&#x6784;&#x5EFA;&#x89E6;&#x53D1;&#x5668;"><br>&#x56E0;&#x4E3A;&#x662F;maven&#x9879;&#x76EE;&#xFF0C;&#x6240;&#x4EE5;&#x6784;&#x5EFA;&#x8FD9;&#x91CC;&#x7684;&#x914D;&#x7F6E;&#x5982;&#x56FE;<br><img src="/06/gitlab-jenkins&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x5316;&#x90E8;&#x7F72;/6.png" alt="&#x6784;&#x5EFA;"></p>
+<p>&#x8FD9;&#x6837;&#x5B50;&#x53EA;&#x8981;&#x5BA2;&#x6237;&#x7AEF;git push &#x4E4B;&#x540E;gitlab&#x5C31;&#x4F1A;&#x89E6;&#x53D1;hook&#x6765;&#x81EA;&#x52A8;&#x8C03;&#x7528;jenkins&#x6784;&#x5EFA;&#x4F5C;&#x4E1A;&#x3002;</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/17/解决centos中不能用yum安装redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">解决centos中不能用yum安装redis</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 walljay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
