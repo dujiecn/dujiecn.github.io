@@ -1,7 +1,7 @@
 ---
 title: gitlab+jenkins实现自动化部署
 date: 2016-11-06 10:24:20
-tags:jenkins
+tags: jenkins
 ---
 
 
