@@ -31,6 +31,104 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-编写docker-compose项目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/13/编写docker-compose项目/">编写docker-compose项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/11/13/编写docker-compose项目/" class="article-date">
+  <time datetime="2016-11-13T13:13:37.000Z" itemprop="datePublished">2016-11-13</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x65B0;&#x5EFA;docker-compose&#x9879;&#x76EE;&#xFF0C;&#x4FDD;&#x8BC1;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x5B58;&#x5728;docker-compose.yml&#x6587;&#x4EF6;&#x3002;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>version: &apos;2&apos;
+
+services:
+  elasticsearch:
+    image: elasticsearch:latest
+    # container_name: elasticsearch
+    ports:
+      - &quot;9200:9200&quot;
+      - &quot;9300:9300&quot; 
+    environment:
+      ES_JAVA_OPTS: &quot;-Xms512m -Xmx512m&quot;
+    volumes:
+      - ./elasticsearch/config:/etc/elasticsearch
+      - ./elasticsearch/plugins:/usr/share/elasticsearch/plugins
+      - ~/Documents/Kitematic/elasticsearch/usr/share/elasticsearch/data:/usr/share/elasticsearch/data
+    networks:
+      - docker_elk
+  logstash:
+    # build: logstash/
+    image: logstash:latest
+    # container_name: logstash
+    command: -f /etc/logstash/conf.d/logstash.conf
+    volumes:
+      - ./logstash/config:/etc/logstash/conf.d
+    ports:
+      - &quot;5000:5000&quot;
+    networks:
+      - docker_elk
+    depends_on:
+      - elasticsearch
+      - redis
+    # links:
+    #   - elasticsearch
+  kibana:
+    image: kibana:latest
+    # container_name: kibana
+    volumes:
+      - ./kibana/config:/etc/kibana
+    ports:
+      - &quot;5601:5601&quot;
+    networks:
+      - docker_elk
+    depends_on:
+      - elasticsearch
+    # links:
+    #   - elasticsearch
+  redis:
+    image: redis:latest
+    # container_name: redis
+    ports:
+      - &quot;6379:6379&quot;
+    command: /etc/redis/redis.conf
+    volumes:
+      - ./redis/config:/etc/redis/
+    networks:
+      - docker_elk
+
+networks:
+  docker_elk:
+    driver: bridge
+</code></pre><p>&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#xFF1A;</p>
+<pre><code>docker-compose down
+docker-compose up
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-gitlab-jenkins实现自动化部署" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -507,47 +605,6 @@ yum install -y java-1.8.0-openjdk-devel.x86_64
         topic_module_dynamic b
     &lt;/when&gt;
 &lt;/choose&gt;    
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mysql时间转换函数" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/23/mysql时间转换函数/">mysql时间转换函数</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/23/mysql时间转换函数/" class="article-date">
-  <time datetime="2016-09-23T00:48:36.000Z" itemprop="datePublished">2016-09-23</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>date_add(current_timestamp,interval - 1 month)</p>
-<p>date_format(date,&#x2019;%Y%m%d&#x2019;);</p>
-<p>last_day(&#x2018;2007-03-01&#x2019;);</p>
-<p>1 &#x67D0;&#x4E00;&#x5929;&#x7684;&#x6240;&#x5728;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF1A;</p>
-<pre><code>select date_add(date_add(last_day(&apos;2008-02-01&apos;),interval 1 day),interval -1 month);
-</code></pre><p>&#x67D0;&#x4E00;&#x5929;&#x7684;&#x6240;&#x5728;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5929;&#xFF1A;</p>
-<pre><code>select last_day(&apos;2008-02-01&apos;);
 </code></pre>
       
 
