@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MYSQL使用建议使用整型保存ip地址 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mysql&amp;#x4E2D;&amp;#x5EFA;&amp;#x8BAE;&amp;#x4F7F;&amp;#x7528;&amp;#x6574;&amp;#x578B;&amp;#x4FDD;&amp;#x5B58;ip&amp;#x5730;&amp;#x5740;&amp;#xFF0C;&amp;#x901A;&amp;#x8FC7;&amp;#x51FD;&amp;#x6570;&amp;#x8F6C;&amp;#x6362;
+set @ip = &amp;apos;192.168.1.110&amp;apos;;
+select inet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL使用建议使用整型保存ip地址">
+<meta property="og:url" content="dujiecn.github.io/2016/11/25/MYSQL使用建议使用整型保存ip地址/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="mysql&amp;#x4E2D;&amp;#x5EFA;&amp;#x8BAE;&amp;#x4F7F;&amp;#x7528;&amp;#x6574;&amp;#x578B;&amp;#x4FDD;&amp;#x5B58;ip&amp;#x5730;&amp;#x5740;&amp;#xFF0C;&amp;#x901A;&amp;#x8FC7;&amp;#x51FD;&amp;#x6570;&amp;#x8F6C;&amp;#x6362;
+set @ip = &amp;apos;192.168.1.110&amp;apos;;
+select inet">
+<meta property="og:updated_time" content="2016-11-25T08:22:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MYSQL使用建议使用整型保存ip地址">
+<meta name="twitter:description" content="mysql&amp;#x4E2D;&amp;#x5EFA;&amp;#x8BAE;&amp;#x4F7F;&amp;#x7528;&amp;#x6574;&amp;#x578B;&amp;#x4FDD;&amp;#x5B58;ip&amp;#x5730;&amp;#x5740;&amp;#xFF0C;&amp;#x901A;&amp;#x8FC7;&amp;#x51FD;&amp;#x6570;&amp;#x8F6C;&amp;#x6362;
+set @ip = &amp;apos;192.168.1.110&amp;apos;;
+select inet">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-MYSQL使用建议使用整型保存ip地址" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MYSQL使用建议使用整型保存ip地址
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/11/25/MYSQL使用建议使用整型保存ip地址/" class="article-date">
+  <time datetime="2016-11-25T08:21:46.000Z" itemprop="datePublished">2016-11-25</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mysql&#x4E2D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x6574;&#x578B;&#x4FDD;&#x5B58;ip&#x5730;&#x5740;&#xFF0C;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x8F6C;&#x6362;</p>
+<pre><code>set @ip = &apos;192.168.1.110&apos;;
+select inet_aton(@ip);
+select inet_ntoa(inet_aton(@ip));
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/13/编写docker-compose项目/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">编写docker-compose项目</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 walljay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

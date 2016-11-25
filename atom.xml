@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="dujiecn.github.io/"/>
-  <updated>2016-11-13T13:19:49.000Z</updated>
+  <updated>2016-11-25T08:22:34.000Z</updated>
   <id>dujiecn.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MYSQL使用建议使用整型保存ip地址</title>
+    <link href="dujiecn.github.io/2016/11/25/MYSQL%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8%E6%95%B4%E5%9E%8B%E4%BF%9D%E5%AD%98ip%E5%9C%B0%E5%9D%80/"/>
+    <id>dujiecn.github.io/2016/11/25/MYSQL使用建议使用整型保存ip地址/</id>
+    <published>2016-11-25T08:21:46.000Z</published>
+    <updated>2016-11-25T08:22:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>mysql&#x4E2D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x6574;&#x578B;&#x4FDD;&#x5B58;ip&#x5730;&#x5740;&#xFF0C;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x8F6C;&#x6362;</p>
+<pre><code>set @ip = &apos;192.168.1.110&apos;;
+select inet_aton(@ip);
+select inet_ntoa(inet_aton(@ip));
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;mysql&amp;#x4E2D;&amp;#x5EFA;&amp;#x8BAE;&amp;#x4F7F;&amp;#x7528;&amp;#x6574;&amp;#x578B;&amp;#x4FDD;&amp;#x5B58;ip&amp;#x5730;&amp;#x5740;&amp;#xFF0C;&amp;#x901A;&amp;#x8FC7;&amp;#x51FD;&amp;#x6570;&amp;#
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="dujiecn.github.io/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>编写docker-compose项目</title>
@@ -846,56 +870,6 @@ security.user.password=admin
     
     
       <category term="css" scheme="dujiecn.github.io/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS中手动触发事件的方法</title>
-    <link href="dujiecn.github.io/2016/09/09/JS%E4%B8%AD%E6%89%8B%E5%8A%A8%E8%A7%A6%E5%8F%91%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>dujiecn.github.io/2016/09/09/JS中手动触发事件的方法/</id>
-    <published>2016-09-09T02:23:31.000Z</published>
-    <updated>2016-09-19T15:27:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>&#x5982;&#x679C;&#x5927;&#x5BB6;&#x5C06;&#x4E00;&#x5F20;&#x7F51;&#x9875;&#x770B;&#x6210;&#x4E00;&#x4E2A;form&#x7684;&#x8BDD;&#xFF0C;&#x5927;&#x81F4;&#x4E0A;&#x5C31;&#x6210;&#x4E86;&#x4E00;&#x4E2A;web form&#x7684;&#x6A21;&#x578B;&#x3002;&#x5728;win form &#x4E0B;&#x8981;&#x60F3;&#x624B;&#x52A8;&#x89E6;&#x53D1;&#x67D0;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x4E8B;&#x4EF6;&#x662F;&#x5F88;&#x7B80;&#x5355;&#x7684;&#xFF0C;&#x53EA;&#x8981;&#x53D1;&#x9001;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x5373;&#x53EF;&#x8FBE;&#x6210;&#x3002;(PostMessage) &#x4F46;&#x662F;&#x7F51;&#x9875;&#x5E76;&#x4E0D;&#x662F;&#x57FA;&#x4E8E;&#x6D88;&#x606F;&#x673A;&#x5236;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x60F3;&#x5728;&#x4E00;&#x5F20;&#x7F51;&#x9875;&#x4E0A;&#x5199;&#x51FA;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E;&#x6309;&#x952E;&#x7CBE;&#x7075;&#x7684;&#x529F;&#x80FD;&#x8BE5;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x5462;&#xFF1F;<br>&#x4E3A;&#x5927;&#x5BB6;&#x4ECB;&#x7ECD;js&#x4E0B;&#x7684;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<ol>
-<li>createEvent&#xFF08;eventType&#xFF09;<br>&#x53C2;&#x6570;&#xFF1A;eventType &#x5171;5&#x79CD;&#x7C7B;&#x578B;&#xFF1A;<br> Events &#xFF1A;&#x5305;&#x62EC;&#x6240;&#x6709;&#x7684;&#x4E8B;&#x4EF6;. <pre><code>HTMLEvents&#xFF1A;&#x5305;&#x62EC; &apos;abort&apos;, &apos;blur&apos;, &apos;change&apos;, &apos;error&apos;, &apos;focus&apos;, &apos;load&apos;, &apos;reset&apos;, &apos;resize&apos;, &apos;scroll&apos;, &apos;select&apos;, 
-                          &apos;submit&apos;, &apos;unload&apos;. &#x4E8B;&#x4EF6;
-UIEevents &#xFF1A;&#x5305;&#x62EC; &apos;DOMActivate&apos;, &apos;DOMFocusIn&apos;, &apos;DOMFocusOut&apos;, &apos;keydown&apos;, &apos;keypress&apos;, &apos;keyup&apos;.
-                        &#x95F4;&#x63A5;&#x5305;&#x542B; MouseEvents. 
-MouseEvents&#xFF1A;&#x5305;&#x62EC; &apos;click&apos;, &apos;mousedown&apos;, &apos;mousemove&apos;, &apos;mouseout&apos;, &apos;mouseover&apos;, &apos;mouseup&apos;. 
-MutationEvents:&#x5305;&#x62EC; &apos;DOMAttrModified&apos;, &apos;DOMNodeInserted&apos;, &apos;DOMNodeRemoved&apos;, 
-                            &apos;DOMCharacterDataModified&apos;, &apos;DOMNodeInsertedIntoDocument&apos;, 
-                            &apos;DOMNodeRemovedFromDocument&apos;, &apos;DOMSubtreeModified&apos;. 
-</code></pre></li>
-<li>&#x5728;createEvent&#x540E;&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E3A;&#x5927;&#x5BB6;&#x4ECB;&#x7ECD;5&#x79CD;&#x5BF9;&#x5E94;&#x7684;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;<br>HTMLEvents &#x548C; &#x901A;&#x7528; Events&#xFF1A;<pre><code>initEvent( &apos;type&apos;, bubbles, cancelable )
-</code></pre> UIEvents &#xFF1A;<pre><code>initUIEvent( &apos;type&apos;, bubbles, cancelable, windowObject, detail )
-</code></pre> MouseEvents&#xFF1A; <pre><code>initMouseEvent( &apos;type&apos;, bubbles, cancelable, windowObject, detail, screenX, screenY, 
-clientX, clientY, ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget )
-</code></pre> MutationEvents &#xFF1A;<pre><code>initMutationEvent( &apos;type&apos;, bubbles, cancelable, relatedNode, prevValue, newValue, 
-attrName, attrChange ) 
-</code></pre></li>
-<li>&#x5728;&#x521D;&#x59CB;&#x5316;&#x5B8C;&#x6210;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x968F;&#x65F6;&#x89E6;&#x53D1;&#x9700;&#x8981;&#x7684;&#x4E8B;&#x4EF6;&#x4E86;&#xFF0C;&#x4E3A;&#x5927;&#x5BB6;&#x4ECB;&#x7ECD;targetObj.dispatchEvent(event)<br> &#x4F7F;targetObj&#x5BF9;&#x8C61;&#x7684;event&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;<br>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x5728;IE 5.5+&#x7248;&#x672C;&#x4E0A;&#x8BF7;&#x7528;fireEvent&#x65B9;&#x6CD5;&#xFF0C;&#x8FD8;&#x662F;&#x6D4F;&#x89C8;&#x517C;&#x5BB9;&#x7684;&#x8003;&#x8651;</li>
-<li><p>&#x4F8B;&#x5B50;<br> //&#x4F8B;&#x5B50;1  &#x7ACB;&#x5373;&#x89E6;&#x53D1;&#x9F20;&#x6807;&#x88AB;&#x6309;&#x4E0B;&#x4E8B;&#x4EF6;<br> var fireOnThis = document.getElementById(&#x2018;someID&#x2019;);</p>
-<pre><code>var evObj = document.createEvent(&apos;MouseEvents&apos;);
-evObj.initMouseEvent( &apos;click&apos;, true, true, window, 1, 12, 345, 7, 220, false, false, true, false, 0, null );
-fireOnThis.dispatchEvent(evObj);
-</code></pre><p>//&#x4F8B;&#x5B50;2  &#x8003;&#x8651;&#x517C;&#x5BB9;&#x6027;&#x7684;&#x4E00;&#x4E2A;&#x9F20;&#x6807;&#x79FB;&#x52A8;&#x4E8B;&#x4EF6;<br> var fireOnThis = document.getElementById(&#x2018;someID&#x2019;);<br> if( document.createEvent )<br> {</p>
-<pre><code>var evObj = document.createEvent(&apos;MouseEvents&apos;);
-evObj.initEvent( &apos;mousemove&apos;, true, false );
-fireOnThis.dispatchEvent(evObj);
-</code></pre><p> }<br>else if( document.createEventObject )<br>{<br>   fireOnThis.fireEvent(&#x2018;onmousemove&#x2019;);<br>}</p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;#x5982;&amp;#x679C;&amp;#x5927;&amp;#x5BB6;&amp;#x5C06;&amp;#x4E00;&amp;#x5F20;&amp;#x7F51;&amp;#x9875;&amp;#x770B;&amp;#x6210;&amp;#x4E00;&amp;#x4E2A;form&amp;#x7684;&amp;#x8BDD;&amp;#xFF0C;&amp;#x59
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="dujiecn.github.io/tags/javascript/"/>
     
   </entry>
   

@@ -31,6 +31,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MYSQL使用建议使用整型保存ip地址" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/25/MYSQL使用建议使用整型保存ip地址/">MYSQL使用建议使用整型保存ip地址</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/11/25/MYSQL使用建议使用整型保存ip地址/" class="article-date">
+  <time datetime="2016-11-25T08:21:46.000Z" itemprop="datePublished">2016-11-25</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mysql&#x4E2D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x6574;&#x578B;&#x4FDD;&#x5B58;ip&#x5730;&#x5740;&#xFF0C;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x8F6C;&#x6362;</p>
+<pre><code>set @ip = &apos;192.168.1.110&apos;;
+select inet_aton(@ip);
+select inet_ntoa(inet_aton(@ip));
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-编写docker-compose项目" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -554,58 +592,6 @@ scp /home/hadoop-1.2 root@node3:/home/
 yum install -y java-1.8.0-openjdk-devel.x86_64
 </code></pre><p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x5C31;&#x4F1A;&#x6709;jps&#x547D;&#x4EE4;            </p>
 
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mybatis中if里面字符串比较" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/23/mybatis中if里面字符串比较/">mybatis中if里面字符串比较</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/23/mybatis中if里面字符串比较/" class="article-date">
-  <time datetime="2016-09-23T02:22:01.000Z" itemprop="datePublished">2016-09-23</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>mybatis&#x4E2D;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;&#x4F1A;&#x62A5;&#x9519;&#xFF1A;</p>
-<pre><code>&lt;choose&gt;
-    &lt;when test=&quot;module == &apos;d&apos;&quot;&gt;
-        topic_module_dynamic b
-    &lt;/when&gt;
-&lt;/choose&gt;
-</code></pre><p>&#x6539;&#x5199;&#x6210;&#x8FD9;&#x6837;&#x5C31;ok&#x4E86;&#xFF1A;</p>
-<pre><code>&lt;choose&gt;
-    &lt;when test=&quot;module == &apos;d&apos;.toString()&quot;&gt;
-        topic_module_dynamic b
-    &lt;/when&gt;
-&lt;/choose&gt;
-</code></pre><p>&#x6216;&#x8005;</p>
-<pre><code>&lt;choose&gt;
-    &lt;when test=&apos;module == &quot;d&quot;&apos;&gt;
-        topic_module_dynamic b
-    &lt;/when&gt;
-&lt;/choose&gt;    
-</code></pre>
       
 
       
