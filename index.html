@@ -31,6 +31,515 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mybatis配置文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/03/mybatis配置文件/">mybatis配置文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/12/03/mybatis配置文件/" class="article-date">
+  <time datetime="2016-12-03T05:16:01.000Z" itemprop="datePublished">2016-12-03</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;mybatis-3-config.dtd,http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+
+    &lt;settings&gt;
+        &lt;setting name=&quot;callSettersOnNulls&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x4F7F;&#x5168;&#x5C40;&#x7684;&#x6620;&#x5C04;&#x5668;&#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x7F13;&#x5B58;&#x3002; --&gt;
+        &lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x5168;&#x5C40;&#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x3002;&#x5F53;&#x7981;&#x7528;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x5373;&#x65F6;&#x52A0;&#x8F7D;&#x3002; --&gt;
+        &lt;setting name=&quot;lazyLoadingEnabled&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x5F53;&#x542F;&#x7528;&#x65F6;&#xFF0C;&#x6709;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x5C5E;&#x6027;&#x7684;&#x5BF9;&#x8C61;&#x5728;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x5C06;&#x4F1A;&#x5B8C;&#x5168;&#x52A0;&#x8F7D;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x6BCF;&#x79CD;&#x5C5E;&#x6027;&#x5C06;&#x4F1A;&#x6309;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x3002; --&gt;
+        &lt;setting name=&quot;aggressiveLazyLoading&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x662F;&#x5426;&#x5141;&#x8BB8;&#x5355;&#x6761;sql &#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x96C6; (&#x53D6;&#x51B3;&#x4E8E;&#x9A71;&#x52A8;&#x7684;&#x517C;&#x5BB9;&#x6027;) default:true --&gt;
+        &lt;setting name=&quot;multipleResultSetsEnabled&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x662F;&#x5426;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5217;&#x7684;&#x522B;&#x540D; (&#x53D6;&#x51B3;&#x4E8E;&#x9A71;&#x52A8;&#x7684;&#x517C;&#x5BB9;&#x6027;) default:true --&gt;
+        &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x5141;&#x8BB8;JDBC &#x751F;&#x6210;&#x4E3B;&#x952E;&#x3002;&#x9700;&#x8981;&#x9A71;&#x52A8;&#x5668;&#x652F;&#x6301;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x4E3A;&#x4E86;true&#xFF0C;&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E;&#x5C06;&#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x88AB;&#x751F;&#x6210;&#x7684;&#x4E3B;&#x952E;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x9A71;&#x52A8;&#x5668;&#x4E0D;&#x517C;&#x5BB9;&#x4E0D;&#x8FC7;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x3002; default:false --&gt;
+        &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x6307;&#x5B9A; MyBatis &#x5982;&#x4F55;&#x81EA;&#x52A8;&#x6620;&#x5C04; &#x6570;&#x636E;&#x57FA;&#x8868;&#x7684;&#x5217; NONE&#xFF1A;&#x4E0D;&#x9690;&#x5C04; PARTIAL:&#x90E8;&#x5206; FULL:&#x5168;&#x90E8; --&gt;
+        &lt;setting name=&quot;autoMappingBehavior&quot; value=&quot;PARTIAL&quot; /&gt;
+        &lt;!-- &#x8FD9;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x6267;&#x884C;&#x7C7B;&#x578B; &#xFF08;SIMPLE: &#x7B80;&#x5355;&#xFF1B; REUSE: &#x6267;&#x884C;&#x5668;&#x53EF;&#x80FD;&#x91CD;&#x590D;&#x4F7F;&#x7528;prepared statements&#x8BED;&#x53E5;&#xFF1B;BATCH: 
+            &#x6267;&#x884C;&#x5668;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x6267;&#x884C;&#x8BED;&#x53E5;&#x548C;&#x6279;&#x91CF;&#x66F4;&#x65B0;&#xFF09; --&gt;
+        &lt;setting name=&quot;defaultExecutorType&quot; value=&quot;SIMPLE&quot; /&gt;
+        &lt;!-- &#x4F7F;&#x7528;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x6CD5;&#x8F6C;&#x6362;&#x5B57;&#x6BB5;&#x3002; --&gt;
+        &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x8BBE;&#x7F6E;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x8303;&#x56F4; session:&#x5C31;&#x4F1A;&#x6709;&#x6570;&#x636E;&#x7684;&#x5171;&#x4EAB; statement:&#x8BED;&#x53E5;&#x8303;&#x56F4; (&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x6709;&#x6570;&#x636E;&#x7684;&#x5171;&#x4EAB; ) defalut:session --&gt;
+        &lt;setting name=&quot;localCacheScope&quot; value=&quot;SESSION&quot; /&gt;
+        &lt;!-- &#x8BBE;&#x7F6E;&#x5F53;JDBC&#x7C7B;&#x578B;&#x4E3A;&#x7A7A;&#x65F6;,&#x67D0;&#x4E9B;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F; &#x8981;&#x6307;&#x5B9A;&#x503C;,default:OTHER&#xFF0C;&#x63D2;&#x5165;&#x7A7A;&#x503C;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x7C7B;&#x578B; --&gt;
+        &lt;setting name=&quot;jdbcTypeForNull&quot; value=&quot;NULL&quot; /&gt;
+
+    &lt;/settings&gt;
+
+    &lt;plugins&gt;
+        &lt;plugin interceptor=&quot;com.github.pagehelper.PageHelper&quot;&gt;
+            &lt;!-- 4.0.0&#x4EE5;&#x540E;&#x7248;&#x672C;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;&#x8BE5;&#x53C2;&#x6570; --&gt;
+            &lt;property name=&quot;dialect&quot; value=&quot;mysql&quot; /&gt;
+            &lt;!-- &#x8BE5;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x4E3A;false --&gt;
+            &lt;!-- &#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;RowBounds&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;offset&#x5F53;&#x6210;pageNum&#x9875;&#x7801;&#x4F7F;&#x7528; --&gt;
+            &lt;!-- &#x548C;startPage&#x4E2D;&#x7684;pageNum&#x6548;&#x679C;&#x4E00;&#x6837; --&gt;
+            &lt;property name=&quot;offsetAsPageNum&quot; value=&quot;true&quot; /&gt;
+            &lt;!-- &#x8BE5;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x4E3A;false --&gt;
+            &lt;!-- &#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;&#xFF0C;&#x4F7F;&#x7528;RowBounds&#x5206;&#x9875;&#x4F1A;&#x8FDB;&#x884C;count&#x67E5;&#x8BE2; --&gt;
+            &lt;property name=&quot;rowBoundsWithCount&quot; value=&quot;true&quot; /&gt;
+            &lt;!-- &#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;&#xFF0C;&#x5982;&#x679C;pageSize=0&#x6216;&#x8005;RowBounds.limit = 0&#x5C31;&#x4F1A;&#x67E5;&#x8BE2;&#x51FA;&#x5168;&#x90E8;&#x7684;&#x7ED3;&#x679C; --&gt;
+            &lt;!-- &#xFF08;&#x76F8;&#x5F53;&#x4E8E;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#xFF0C;&#x4F46;&#x662F;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4ECD;&#x7136;&#x662F;Page&#x7C7B;&#x578B;&#xFF09; --&gt;
+            &lt;property name=&quot;pageSizeZero&quot; value=&quot;true&quot; /&gt;
+            &lt;!-- 3.3.0&#x7248;&#x672C;&#x53EF;&#x7528; - &#x5206;&#x9875;&#x53C2;&#x6570;&#x5408;&#x7406;&#x5316;&#xFF0C;&#x9ED8;&#x8BA4;false&#x7981;&#x7528; --&gt;
+            &lt;!-- &#x542F;&#x7528;&#x5408;&#x7406;&#x5316;&#x65F6;&#xFF0C;&#x5982;&#x679C;pageNum&lt;1&#x4F1A;&#x67E5;&#x8BE2;&#x7B2C;&#x4E00;&#x9875;&#xFF0C;&#x5982;&#x679C;pageNum&gt;pages&#x4F1A;&#x67E5;&#x8BE2;&#x6700;&#x540E;&#x4E00;&#x9875; --&gt;
+            &lt;!-- &#x7981;&#x7528;&#x5408;&#x7406;&#x5316;&#x65F6;&#xFF0C;&#x5982;&#x679C;pageNum&lt;1&#x6216;pageNum&gt;pages&#x4F1A;&#x8FD4;&#x56DE;&#x7A7A;&#x6570;&#x636E; --&gt;
+            &lt;property name=&quot;reasonable&quot; value=&quot;false&quot; /&gt;
+            &lt;!-- 3.5.0&#x7248;&#x672C;&#x53EF;&#x7528; - &#x4E3A;&#x4E86;&#x652F;&#x6301;startPage(Object params)&#x65B9;&#x6CD5; --&gt;
+            &lt;!-- &#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;`params`&#x53C2;&#x6570;&#x6765;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6620;&#x5C04;&#xFF0C;&#x7528;&#x4E8E;&#x4ECE;Map&#x6216;ServletRequest&#x4E2D;&#x53D6;&#x503C; --&gt;
+            &lt;!-- &#x53EF;&#x4EE5;&#x914D;&#x7F6E;pageNum,pageSize,count,pageSizeZero,reasonable,orderBy,&#x4E0D;&#x914D;&#x7F6E;&#x6620;&#x5C04;&#x7684;&#x7528;&#x9ED8;&#x8BA4;&#x503C; --&gt;
+            &lt;!-- &#x4E0D;&#x7406;&#x89E3;&#x8BE5;&#x542B;&#x4E49;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x4E0D;&#x8981;&#x968F;&#x4FBF;&#x590D;&#x5236;&#x8BE5;&#x914D;&#x7F6E; --&gt;
+            &lt;property name=&quot;params&quot; value=&quot;pageNum=start;pageSize=limit;&quot; /&gt;
+            &lt;!-- &#x652F;&#x6301;&#x901A;&#x8FC7;Mapper&#x63A5;&#x53E3;&#x53C2;&#x6570;&#x6765;&#x4F20;&#x9012;&#x5206;&#x9875;&#x53C2;&#x6570; --&gt;
+            &lt;property name=&quot;supportMethodsArguments&quot; value=&quot;true&quot; /&gt;
+            &lt;!-- always&#x603B;&#x662F;&#x8FD4;&#x56DE;PageInfo&#x7C7B;&#x578B;,check&#x68C0;&#x67E5;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x4E3A;PageInfo,none&#x8FD4;&#x56DE;Page --&gt;
+            &lt;property name=&quot;returnPageInfo&quot; value=&quot;always&quot; /&gt;
+        &lt;/plugin&gt;
+
+    &lt;/plugins&gt;
+&lt;/configuration&gt;
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-springboot配置文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/03/springboot配置文件/">springboot配置文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/12/03/springboot配置文件/" class="article-date">
+  <time datetime="2016-12-03T05:14:11.000Z" itemprop="datePublished">2016-12-03</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code># ===================================================================
+# COMMON SPRING BOOT PROPERTIES
+#
+# This sample file is provided as a guideline. Do NOT copy it in its
+# entirety to your own application.               ^^^
+# ===================================================================
+
+# ----------------------------------------
+# CORE PROPERTIES
+# ----------------------------------------
+
+# SPRING CONFIG (ConfigFileApplicationListener)
+#spring.config.name= # config file name (default to &apos;application&apos;)
+#spring.config.location= # location of config file
+#
+## PROFILES
+#spring.profiles= # comma list of active profiles
+#
+## APPLICATION SETTINGS (SpringApplication)
+#spring.main.sources=
+#spring.main.web-environment= # detect by default
+#spring.main.show-banner=true
+#spring.main....= # see class for all properties
+#
+## LOGGING
+#logging.path=/var/logs
+#logging.file=myapp.log
+#logging.config=
+#
+## IDENTITY (ContextIdApplicationContextInitializer)
+#spring.application.name=
+#spring.application.index=
+#
+## EMBEDDED SERVER CONFIGURATION (ServerProperties)
+#server.port=8080
+#server.address= # bind to a specific NIC
+#server.session-timeout= # session timeout in seconds
+#server.context-path= # the context path, defaults to &apos;/&apos;
+#server.servlet-path= # the servlet path, defaults to &apos;/&apos;
+#server.tomcat.access-log-pattern= # log pattern of the access log
+#server.tomcat.compression=on
+#server.tomcat.access-log-enabled=false # is access logging enabled
+#server.tomcat.protocol-header=x-forwarded-proto # ssl forward headers
+#server.tomcat.remote-ip-header=x-forwarded-for
+#server.tomcat.basedir=/tmp # base dir (usually not needed, defaults to tmp)
+#server.tomcat.background-processor-delay=30; # in seconds
+#server.tomcat.max-threads = 0 # number of threads in protocol handler
+#server.tomcat.uri-encoding = UTF-8 # character encoding to use for URL decoding
+#
+## SPRING MVC (HttpMapperProperties)
+#http.mappers.json-pretty-print=false # pretty print JSON
+#http.mappers.json-sort-keys=false # sort keys
+#spring.mvc.locale= # set fixed locale, e.g. en_UK
+#spring.mvc.date-format= # set fixed date format, e.g. dd/MM/yyyy
+#spring.mvc.message-codes-resolver-format= # PREFIX_ERROR_CODE / POSTFIX_ERROR_CODE
+#spring.view.prefix= # MVC view prefix
+#spring.view.suffix= # ... and suffix
+#spring.resources.cache-period= # cache timeouts in headers sent to browser
+#spring.resources.add-mappings=true # if default mappings should be added
+#
+## THYMELEAF (ThymeleafAutoConfiguration)
+#spring.thymeleaf.prefix=classpath:/templates/
+#spring.thymeleaf.suffix=.html
+#spring.thymeleaf.mode=HTML5
+#spring.thymeleaf.encoding=UTF-8
+#spring.thymeleaf.content-type=text/html # ;charset=&lt;encoding&gt; is added
+#spring.thymeleaf.cache=true # set to false for hot refresh
+#
+## FREEMARKER (FreeMarkerAutoConfiguration)
+#spring.freemarker.allowRequestOverride=false
+#spring.freemarker.allowSessionOverride=false
+#spring.freemarker.cache=true
+#spring.freemarker.checkTemplateLocation=true
+#spring.freemarker.contentType=text/html
+#spring.freemarker.exposeRequestAttributes=false
+#spring.freemarker.exposeSessionAttributes=false
+#spring.freemarker.exposeSpringMacroHelpers=false
+#spring.freemarker.prefix=
+#spring.freemarker.requestContextAttribute=
+#spring.freemarker.settings.*=
+#spring.freemarker.suffix=.ftl
+#spring.freemarker.templateEncoding=UTF-8
+#spring.freemarker.templateLoaderPath=classpath:/templates/
+#spring.freemarker.viewNames= # whitelist of view names that can be resolved
+#
+## GROOVY TEMPLATES (GroovyTemplateAutoConfiguration)
+#spring.groovy.template.allowRequestOverride=false
+#spring.groovy.template.allowSessionOverride=false
+#spring.groovy.template.cache=true
+#spring.groovy.template.configuration.*= # See Groovy&apos;s TemplateConfiguration
+#spring.groovy.template.contentType=text/html
+#spring.groovy.template.prefix=classpath:/templates/
+#spring.groovy.template.suffix=.tpl
+#spring.groovy.template.templateEncoding=UTF-8
+#spring.groovy.template.viewNames= # whitelist of view names that can be resolved
+
+# VELOCITY TEMPLATES (VelocityAutoConfiguration)
+#spring.velocity.allowRequestOverride=false
+#spring.velocity.allowSessionOverride=false
+#spring.velocity.cache=true
+#spring.velocity.checkTemplateLocation=true
+#spring.velocity.contentType=text/html
+#spring.velocity.dateToolAttribute=
+#spring.velocity.exposeRequestAttributes=false
+#spring.velocity.exposeSessionAttributes=false
+#spring.velocity.exposeSpringMacroHelpers=false
+#spring.velocity.numberToolAttribute=
+#spring.velocity.prefix=
+#spring.velocity.properties.*=
+#spring.velocity.requestContextAttribute=
+#spring.velocity.resourceLoaderPath=classpath:/templates/
+#spring.velocity.suffix=.vm
+#spring.velocity.templateEncoding=UTF-8
+#spring.velocity.viewNames= # whitelist of view names that can be resolved
+
+# INTERNATIONALIZATION (MessageSourceAutoConfiguration)
+#spring.messages.basename=messages
+#spring.messages.cacheSeconds=-1
+#spring.messages.encoding=UTF-8
+
+
+# SECURITY (SecurityProperties)
+#security.user.name=user # login username
+#security.user.password= # login password
+#security.user.role=USER # role assigned to the user
+#security.require-ssl=false # advanced settings ...
+#security.enable-csrf=false
+#security.basic.enabled=true
+#security.basic.realm=Spring
+#security.basic.path= # /**
+#security.headers.xss=false
+#security.headers.cache=false
+#security.headers.frame=false
+#security.headers.contentType=false
+#security.headers.hsts=all # none / domain / all
+#security.sessions=stateless # always / never / if_required / stateless
+#security.ignored=false
+#
+## DATASOURCE (DataSourceAutoConfiguration &amp; DataSourceProperties)
+#spring.datasource.name= # name of the data source
+#spring.datasource.initialize=true # populate using data.sql
+#spring.datasource.schema= # a schema (DDL) script resource reference
+#spring.datasource.data= # a data (DML) script resource reference
+#spring.datasource.platform= # the platform to use in the schema resource (schema-${platform}.sql)
+#spring.datasource.continueOnError=false # continue even if can&apos;t be initialized
+#spring.datasource.separator=; # statement separator in SQL initialization scripts
+#spring.datasource.driverClassName= # JDBC Settings...
+#spring.datasource.url=
+#spring.datasource.username=
+#spring.datasource.password=
+#spring.datasource.max-active=100 # Advanced configuration...
+#spring.datasource.max-idle=8
+#spring.datasource.min-idle=8
+#spring.datasource.initial-size=10
+#spring.datasource.validation-query=
+#spring.datasource.test-on-borrow=false
+#spring.datasource.test-on-return=false
+#spring.datasource.test-while-idle=
+#spring.datasource.time-between-eviction-runs-millis=
+#spring.datasource.min-evictable-idle-time-millis=
+#spring.datasource.max-wait-millis=
+#
+## MONGODB (MongoProperties)
+#spring.data.mongodb.host= # the db host
+#spring.data.mongodb.port=27017 # the connection port (defaults to 27107)
+#spring.data.mongodb.uri=mongodb://localhost/test # connection URL
+#spring.data.mongo.repositories.enabled=true # if spring data repository support is enabled
+#
+## JPA (JpaBaseConfiguration, HibernateJpaAutoConfiguration)
+#spring.jpa.properties.*= # properties to set on the JPA connection
+#spring.jpa.openInView=true
+#spring.jpa.show-sql=true
+#spring.jpa.database-platform=
+#spring.jpa.database=
+#spring.jpa.generate-ddl=false # ignored by Hibernate, might be useful for other vendors
+#spring.jpa.hibernate.naming-strategy= # naming classname
+#spring.jpa.hibernate.ddl-auto= # defaults to create-drop for embedded dbs
+#spring.data.jpa.repositories.enabled=true # if spring data repository support is enabled
+#
+## SOLR (SolrProperties})
+#spring.data.solr.host=http://127.0.0.1:8983/solr
+#spring.data.solr.zkHost=
+#spring.data.solr.repositories.enabled=true # if spring data repository support is enabled
+#
+## ELASTICSEARCH (ElasticsearchProperties})
+#spring.data.elasticsearch.cluster-name= # The cluster name (defaults to elasticsearch)
+#spring.data.elasticsearch.cluster-nodes= # The address(es) of the server node (comma-separated; if not specified starts a client node)
+#spring.data.elasticsearch.local=true # if local mode should be used with client nodes
+#spring.data.elasticsearch.repositories.enabled=true # if spring data repository support is enabled
+#
+#
+#
+## FLYWAY (FlywayProperties)
+#flyway.locations=classpath:db/migrations # locations of migrations scripts
+#flyway.schemas= # schemas to update
+#flyway.initVersion= 1 # version to start migration
+#flyway.prefix=V
+#flyway.suffix=.sql
+#flyway.enabled=true
+#flyway.url= # JDBC url if you want Flyway to create its own DataSource
+#flyway.user= # JDBC username if you want Flyway to create its own DataSource
+#flyway.password= # JDBC password if you want Flyway to create its own DataSource
+#
+## LIQUIBASE (LiquibaseProperties)
+#liquibase.change-log=classpath:/db/changelog/db.changelog-master.yaml
+#liquibase.contexts= # runtime contexts to use
+#liquibase.default-schema= # default database schema to use
+#liquibase.drop-first=false
+#liquibase.enabled=true
+#
+## JMX
+## Expose MBeans from Spring
+#spring.jmx.enabled=true
+#
+## RABBIT (RabbitProperties)
+#spring.rabbitmq.host= # connection host
+#spring.rabbitmq.port= # connection port
+#spring.rabbitmq.addresses= # connection addresses (e.g. myhost:9999,otherhost:1111)
+#spring.rabbitmq.username= # login user
+#spring.rabbitmq.password= # login password
+#spring.rabbitmq.virtualhost=
+#spring.rabbitmq.dynamic=
+#
+## REDIS (RedisProperties)
+## server host
+#spring.redis.host=localhost
+## server password
+#spring.redis.password=
+## connection port
+#spring.redis.port=6379
+## pool settings ...
+#spring.redis.pool.max-idle=8
+#spring.redis.pool.min-idle=0
+#spring.redis.pool.max-active=8
+#spring.redis.pool.max-wait=-1
+#spring.redis.timeout=0
+#spring.redis.database=0
+#
+## ACTIVEMQ (ActiveMQProperties)
+#spring.activemq.broker-url=tcp://localhost:61616 # connection URL
+#spring.activemq.user=
+#spring.activemq.password=
+## broker kind to create if no broker-url is specified
+#spring.activemq.in-memory=true
+#spring.activemq.pooled=false
+
+# HornetQ (HornetQProperties)
+#spring.hornetq.mode= # connection mode (native, embedded)
+#spring.hornetq.host=localhost # hornetQ host (native mode)
+#spring.hornetq.port=5445 # hornetQ port (native mode)
+#spring.hornetq.embedded.enabled=true # if the embedded server is enabled (needs hornetq-jms-server.jar)
+#spring.hornetq.embedded.serverId= # auto-generated id of the embedded server (integer)
+#spring.hornetq.embedded.persistent=false # message persistence
+#spring.hornetq.embedded.data-directory= # location of data content (when persistence is enabled)
+#spring.hornetq.embedded.queues= # comma separate queues to create on startup
+#spring.hornetq.embedded.topics= # comma separate topics to create on startup
+#spring.hornetq.embedded.cluster-password= # customer password (randomly generated by default)
+
+# JMS (JmsProperties)
+#spring.jms.pub-sub-domain= # false for queue (default), true for topic
+
+# SPRING BATCH (BatchDatabaseInitializer)
+#spring.batch.job.names=job1,job2
+#spring.batch.job.enabled=true
+#spring.batch.initializer.enabled=true
+#spring.batch.schema= # batch schema to load
+
+# AOP
+spring.aop.auto=
+spring.aop.proxy-target-class=
+
+# FILE ENCODING (FileEncodingApplicationListener)
+#spring.mandatory-file-encoding=false
+
+# SPRING SOCIAL (SocialWebAutoConfiguration)
+#spring.social.auto-connection-views=true # Set to true for default connection views or false if you provide your own
+
+# SPRING SOCIAL FACEBOOK (FacebookAutoConfiguration)
+#spring.social.facebook.app-id= # your application&apos;s Facebook App ID
+#spring.social.facebook.app-secret= # your application&apos;s Facebook App Secret
+#
+## SPRING SOCIAL LINKEDIN (LinkedInAutoConfiguration)
+#spring.social.linkedin.app-id= # your application&apos;s LinkedIn App ID
+#spring.social.linkedin.app-secret= # your application&apos;s LinkedIn App Secret
+#
+## SPRING SOCIAL TWITTER (TwitterAutoConfiguration)
+#spring.social.twitter.app-id= # your application&apos;s Twitter App ID
+#spring.social.twitter.app-secret= # your application&apos;s Twitter App Secret
+#
+## SPRING MOBILE SITE PREFERENCE (SitePreferenceAutoConfiguration)
+#spring.mobile.sitepreference.enabled=true # enabled by default
+#
+## SPRING MOBILE DEVICE VIEWS (DeviceDelegatingViewResolverAutoConfiguration)
+#spring.mobile.devicedelegatingviewresolver.enabled=true # disabled by default
+#spring.mobile.devicedelegatingviewresolver.normalPrefix=
+#spring.mobile.devicedelegatingviewresolver.normalSuffix=
+#spring.mobile.devicedelegatingviewresolver.mobilePrefix=mobile/
+#spring.mobile.devicedelegatingviewresolver.mobileSuffix=
+#spring.mobile.devicedelegatingviewresolver.tabletPrefix=tablet/
+#spring.mobile.devicedelegatingviewresolver.tabletSuffix=
+#
+## ----------------------------------------
+## ACTUATOR PROPERTIES
+## ----------------------------------------
+#
+## MANAGEMENT HTTP SERVER (ManagementServerProperties)
+#management.port= # defaults to &apos;server.port&apos;
+#management.address= # bind to a specific NIC
+#management.contextPath= # default to &apos;/&apos;
+#
+## ENDPOINTS (AbstractEndpoint subclasses)
+#endpoints.autoconfig.id=autoconfig
+#endpoints.autoconfig.sensitive=true
+#endpoints.autoconfig.enabled=true
+#endpoints.beans.id=beans
+#endpoints.beans.sensitive=true
+#endpoints.beans.enabled=true
+#endpoints.configprops.id=configprops
+#endpoints.configprops.sensitive=true
+#endpoints.configprops.enabled=true
+#endpoints.configprops.keys-to-sanitize=password,secret
+#endpoints.dump.id=dump
+#endpoints.dump.sensitive=true
+#endpoints.dump.enabled=true
+#endpoints.env.id=env
+#endpoints.env.sensitive=true
+#endpoints.env.enabled=true
+#endpoints.health.id=health
+#endpoints.health.sensitive=false
+#endpoints.health.enabled=true
+#endpoints.info.id=info
+#endpoints.info.sensitive=false
+#endpoints.info.enabled=true
+#endpoints.metrics.id=metrics
+#endpoints.metrics.sensitive=true
+#endpoints.metrics.enabled=true
+#endpoints.shutdown.id=shutdown
+#endpoints.shutdown.sensitive=true
+#endpoints.shutdown.enabled=false
+#endpoints.trace.id=trace
+#endpoints.trace.sensitive=true
+#endpoints.trace.enabled=true
+#
+## MVC ONLY ENDPOINTS
+#endpoints.jolokia.path=jolokia
+#endpoints.jolokia.sensitive=true
+#endpoints.jolokia.enabled=true # when using Jolokia
+#endpoints.error.path=/error
+#
+## JMX ENDPOINT (EndpointMBeanExportProperties)
+#endpoints.jmx.enabled=true
+#endpoints.jmx.domain= # the JMX domain, defaults to &apos;org.springboot&apos;
+#endpoints.jmx.unique-names=false
+#endpoints.jmx.enabled=true
+#endpoints.jmx.staticNames=
+#
+## JOLOKIA (JolokiaProperties)
+#jolokia.config.*= # See Jolokia manual
+#
+## REMOTE SHELL
+#shell.auth=simple # jaas, key, simple, spring
+#shell.command-refresh-interval=-1
+#shell.command-path-pattern= # classpath*:/commands/**, classpath*:/crash/commands/**
+#shell.config-path-patterns= # classpath*:/crash/*
+#shell.disabled-plugins=false # don&apos;t expose plugins
+#shell.ssh.enabled= # ssh settings ...
+#shell.ssh.keyPath=
+#shell.ssh.port=
+#shell.telnet.enabled= # telnet settings ...
+#shell.telnet.port=
+#shell.auth.jaas.domain= # authentication settings ...
+#shell.auth.key.path=
+#shell.auth.simple.user.name=
+#shell.auth.simple.user.password=
+#shell.auth.spring.roles=
+
+# GIT INFO
+spring.git.properties= # resource ref to generated git info properties file
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-MYSQL使用建议使用整型保存ip地址" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -440,157 +949,6 @@ nested exception is:     javax.net.ssl.SSLHandshakeException: Received fatal ale
 <p> &#x53EF;&#x80FD;&#x539F;&#x56E0;&#x662F;&#x4F7F;&#x7528;&#x7684;jdk1.7&#x4E2D;<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/security</code>&#x8DEF;&#x5F84;&#x4E0B;&#x7F3A;&#x5C11;&#x8BC1;&#x4E66;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x7684;&#x7535;&#x8111;&#x5B89;&#x88C5;&#x4E24;&#x4E2A;jdk&#x7248;&#x672C;&#xFF0C;&#x6211;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x62F7;&#x8D1D;1.8&#x7248;&#x672C;&#x7684;<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/security</code>&#x6587;&#x4EF6;&#x5939;&#x5230;1.7&#x7248;&#x672C;&#xFF0C;&#x6216;&#x8005;&#x5230;&#x540C;&#x4E8B;&#x7684;&#x7535;&#x8111;&#x7684;&#x62F7;&#x8D1D;&#x3002;</p>
 </li>
 </ol>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hdfs伪分布式环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/29/hdfs伪分布式环境搭建/">hdfs伪分布式环境搭建</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/29/hdfs伪分布式环境搭建/" class="article-date">
-  <time datetime="2016-09-29T05:50:14.000Z" itemprop="datePublished">2016-09-29</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x672C;&#x5730;&#x73AF;&#x5883;&#x662F;mac</p>
-<h3 id="&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x73AF;&#x5883;"><a href="#&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x73AF;&#x5883;" class="headerlink" title="&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x73AF;&#x5883;"></a>&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x8BBE;&#x7F6E;&#x57FA;&#x672C;&#x73AF;&#x5883;</h3><ol>
-<li>&#x5B89;&#x88C5;vm&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x5E76;&#x5B89;&#x88C5;centos7&#x7CFB;&#x7EDF;&#xFF0C;&#x62F7;&#x8D1D;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#x3002;&#x53D8;&#x6210;node1,node2,node3</li>
-<li><p>&#x8BBE;&#x7F6E;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x81EA;&#x5B9A;&#x4E49;IP&#xFF0C;&#x4FDD;&#x8BC1;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7F51;&#x6BB5;<br> DNS:172.16.153.2</p>
-</li>
-<li><p>&#x5173;&#x95ED;&#x6240;&#x6709;&#x8282;&#x70B9;&#x7684;&#x9632;&#x706B;&#x5899;</p>
-<pre><code>systemctl stop firewalld
-</code></pre></li>
-<li><p>&#x8BBE;&#x7F6E;&#x514D;&#x767B;&#x5F55;</p>
-<pre><code>ssh-keygen -t dsa -P &apos;&apos; -f ~/.ssh/id_dsa &amp;&amp; cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys
-</code></pre><p> &#x628A;&#x672C;&#x5730;&#x7684;.ssh/id_rsa.pub &#x62F7;&#x8D1D;&#x5230;&#x9700;&#x8981;&#x63A7;&#x5236;&#x7684;&#x8282;&#x70B9;&#x7684;~/.ssh/authorized_keys&#x6587;&#x4EF6;&#x4E2D;</p>
-</li>
-<li><p>&#x4FEE;&#x6539;&#x672C;&#x5730;&#x73AF;&#x5883;&#x7684;/etc/hosts</p>
-<pre><code>sudo vim /etc/hosts
-172.16.153.10    node1
-172.16.153.20    node2
-172.16.153.30    node3
-</code></pre></li>
-</ol>
-<h3 id="&#x5B89;&#x88C5;HDSF"><a href="#&#x5B89;&#x88C5;HDSF" class="headerlink" title="&#x5B89;&#x88C5;HDSF"></a>&#x5B89;&#x88C5;HDSF</h3><p>&#x5047;&#x8BBE;node1&#x662F;namenode&#xFF0C;node2&#x548C;node3&#x662F;datanode&#xFF0C;secondarynode&#x5728;node2&#x4E0A;&#x9762;&#xFF1B;</p>
-<h4 id="&#x8BBE;&#x7F6E;node1"><a href="#&#x8BBE;&#x7F6E;node1" class="headerlink" title="&#x8BBE;&#x7F6E;node1"></a>&#x8BBE;&#x7F6E;node1</h4><p>&#x89E3;&#x538B;hadoop-1.2.1&#x5230;/home/hadoop-1.2&#xFF0C;cd&#x5230;/home/hadoop-1.2&#x76EE;&#x5F55;&#x4E0B;&#xFF1B;    </p>
-<ol>
-<li><p>&#x8BBE;&#x7F6E;core-site.xml&#x5185;&#x5BB9;(&#x914D;&#x7F6E;&#x67E5;&#x8003;<code>docs/core-default.html</code>)</p>
-<pre><code>vim conf/core-site.xml
-
-&lt;configuration&gt;
- &lt;property&gt;
-     &lt;name&gt;fs.default.name&lt;/name&gt;
-     &lt;value&gt;hdfs://node1:9000&lt;/value&gt;
- &lt;/property&gt;
- &lt;property&gt;
-     &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
-     &lt;value&gt;/opt/hadoop-1.2&lt;/value&gt;
- &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre><p> <code>fs.default.name</code>&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;namenode&#xFF1B;<br> <code>hadoop.tmp.dir</code>&#x8BBE;&#x7F6E;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x5728;<code>/tmp</code>&#x4E0B;&#x9762;&#xFF0C;    &#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x91CD;&#x542F;&#x4E4B;&#x540E;&#x6570;&#x636E;&#x5C31;&#x6CA1;&#x6709;&#x54AF;&#x3002;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x3002;</p>
-</li>
-<li><p>&#x8BBE;&#x7F6E;hdfs-site.xml(&#x914D;&#x7F6E;&#x67E5;&#x8003;<code>docs/hdfs-default.html</code>)</p>
-<pre><code>vim conf/hdfs-site.xml
-
-&lt;configuration&gt;
-    &lt;property&gt;
-         &lt;name&gt;dfs.replication&lt;/name&gt;
-         &lt;value&gt;2&lt;/value&gt;
-     &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre><p> <code>dfs.replication</code>&#x8BBE;&#x7F6E;datanode&#x8282;&#x70B9;&#x4E2A;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;3&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x662F;datanode&#x662F;node2&#x548C;node3&#xFF0C;&#x6240;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;2&#x3002;</p>
-</li>
-<li><p>&#x8BBE;&#x7F6E;datanode</p>
-<pre><code>vim conf/slaves
-
-node2
-node3
-</code></pre></li>
-<li><p>&#x8BBE;&#x7F6E;secondarynode,&#x8FD9;&#x91CC;&#x662F;&#x8BBE;&#x7F6E;&#x5728;node2&#x4E0A;</p>
-<pre><code>vim conf/master
-
-node2            
-</code></pre></li>
-<li><p>&#x8BBE;&#x7F6E;    JAVA_HOME&#x53D8;&#x91CF;</p>
-<pre><code>vim conf/hadoop-env.sh
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.102-1.b14.el7_2.x86_64/jre
-</code></pre></li>
-<li><p>&#x8BBE;&#x7F6E;datanode&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;<br> &#x8FD9;&#x91CC;&#x6211;&#x9700;&#x8981;&#x5728;namenode(node1)&#x7EDF;&#x4E00;&#x542F;&#x52A8;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x9700;&#x8981;&#x4ECE;node1&#x5230;node2&#xFF0C;node3&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;</p>
-<pre><code>ssh root@node2
-ssh root@node3
-</code></pre><p> &#x8FD9;&#x4E24;&#x4E2A;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;&#x7684;&#x3002;</p>
-</li>
-</ol>
-<p>&#x81F3;&#x6B64;&#xFF0C;namenode&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
-<p>&#x6700;&#x540E;&#x9700;&#x8981;&#x62F7;&#x8D1D;&#x4E00;&#x6837;&#x7684;hadoop&#x73AF;&#x5883;&#x5230;node2&#x548C;node3</p>
-<pre><code>scp /home/hadoop-1.2 root@node2:/home/
-scp /home/hadoop-1.2 root@node3:/home/
-</code></pre><p>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;</p>
-<p><strong><em>&#x4FDD;&#x8BC1;hadoop&#x7684;&#x5305;&#x73AF;&#x5883;&#x5B8C;&#x5168;&#x4E00;&#x81F4;</em></strong></p>
-<p><strong><em>&#x8BBE;&#x7F6E;&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;</em></strong></p>
-<p><strong><em>&#x8BBE;&#x7F6E;JAVA_HOME</em></strong></p>
-<p><strong><em>&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;</em></strong></p>
-<p>&#x5728;&#x672C;&#x5730;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;:<a href="http://node1:50070&#x5C31;&#x80FD;&#x770B;&#x5230;&#x6210;&#x679C;&#x4E86;&#x3002;" target="_blank" rel="external">http://node1:50070&#x5C31;&#x80FD;&#x770B;&#x5230;&#x6210;&#x679C;&#x4E86;&#x3002;</a></p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-centos安装jps命令" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/29/centos安装jps命令/">centos安装jps命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/29/centos安装jps命令/" class="article-date">
-  <time datetime="2016-09-29T03:05:36.000Z" itemprop="datePublished">2016-09-29</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>hadoop&#x91CC;&#x9762;&#x4F7F;&#x7528;&#x5230;jps&#x547D;&#x4EE4;&#xFF0C;centos7 &#x81EA;&#x5E26;java&#x73AF;&#x5883;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;jps&#x547D;&#x4EE4;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x884C;&#x5B89;&#x88C5;&#xFF1A;</p>
-<pre><code>yum search java-1.8.0
-yum install -y java-1.8.0-openjdk-devel.x86_64
-</code></pre><p>&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x5C31;&#x4F1A;&#x6709;jps&#x547D;&#x4EE4;            </p>
 
       
 

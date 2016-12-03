@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>mybatis配置文件 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE configuration PUBLIC &amp;quot;-//mybatis.org//DTD Config 3.0//EN&amp;quot; &amp;quot;mybatis-3-config.dtd,http://mybatis.org/dtd/myba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mybatis配置文件">
+<meta property="og:url" content="dujiecn.github.io/2016/12/03/mybatis配置文件/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE configuration PUBLIC &amp;quot;-//mybatis.org//DTD Config 3.0//EN&amp;quot; &amp;quot;mybatis-3-config.dtd,http://mybatis.org/dtd/myba">
+<meta property="og:updated_time" content="2016-12-03T05:16:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mybatis配置文件">
+<meta name="twitter:description" content="&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;!DOCTYPE configuration PUBLIC &amp;quot;-//mybatis.org//DTD Config 3.0//EN&amp;quot; &amp;quot;mybatis-3-config.dtd,http://mybatis.org/dtd/myba">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-mybatis配置文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mybatis配置文件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/12/03/mybatis配置文件/" class="article-date">
+  <time datetime="2016-12-03T05:16:01.000Z" itemprop="datePublished">2016-12-03</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot; &quot;mybatis-3-config.dtd,http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+
+    &lt;settings&gt;
+        &lt;setting name=&quot;callSettersOnNulls&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x4F7F;&#x5168;&#x5C40;&#x7684;&#x6620;&#x5C04;&#x5668;&#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x7F13;&#x5B58;&#x3002; --&gt;
+        &lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x5168;&#x5C40;&#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x3002;&#x5F53;&#x7981;&#x7528;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x5173;&#x8054;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x5373;&#x65F6;&#x52A0;&#x8F7D;&#x3002; --&gt;
+        &lt;setting name=&quot;lazyLoadingEnabled&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x5F53;&#x542F;&#x7528;&#x65F6;&#xFF0C;&#x6709;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x5C5E;&#x6027;&#x7684;&#x5BF9;&#x8C61;&#x5728;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x5C06;&#x4F1A;&#x5B8C;&#x5168;&#x52A0;&#x8F7D;&#x4EFB;&#x610F;&#x5C5E;&#x6027;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x6BCF;&#x79CD;&#x5C5E;&#x6027;&#x5C06;&#x4F1A;&#x6309;&#x9700;&#x8981;&#x52A0;&#x8F7D;&#x3002; --&gt;
+        &lt;setting name=&quot;aggressiveLazyLoading&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x662F;&#x5426;&#x5141;&#x8BB8;&#x5355;&#x6761;sql &#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x96C6; (&#x53D6;&#x51B3;&#x4E8E;&#x9A71;&#x52A8;&#x7684;&#x517C;&#x5BB9;&#x6027;) default:true --&gt;
+        &lt;setting name=&quot;multipleResultSetsEnabled&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x662F;&#x5426;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5217;&#x7684;&#x522B;&#x540D; (&#x53D6;&#x51B3;&#x4E8E;&#x9A71;&#x52A8;&#x7684;&#x517C;&#x5BB9;&#x6027;) default:true --&gt;
+        &lt;setting name=&quot;useColumnLabel&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x5141;&#x8BB8;JDBC &#x751F;&#x6210;&#x4E3B;&#x952E;&#x3002;&#x9700;&#x8981;&#x9A71;&#x52A8;&#x5668;&#x652F;&#x6301;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x4E3A;&#x4E86;true&#xFF0C;&#x8FD9;&#x4E2A;&#x8BBE;&#x7F6E;&#x5C06;&#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x88AB;&#x751F;&#x6210;&#x7684;&#x4E3B;&#x952E;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x9A71;&#x52A8;&#x5668;&#x4E0D;&#x517C;&#x5BB9;&#x4E0D;&#x8FC7;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x3002; default:false --&gt;
+        &lt;setting name=&quot;useGeneratedKeys&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x6307;&#x5B9A; MyBatis &#x5982;&#x4F55;&#x81EA;&#x52A8;&#x6620;&#x5C04; &#x6570;&#x636E;&#x57FA;&#x8868;&#x7684;&#x5217; NONE&#xFF1A;&#x4E0D;&#x9690;&#x5C04; PARTIAL:&#x90E8;&#x5206; FULL:&#x5168;&#x90E8; --&gt;
+        &lt;setting name=&quot;autoMappingBehavior&quot; value=&quot;PARTIAL&quot; /&gt;
+        &lt;!-- &#x8FD9;&#x662F;&#x9ED8;&#x8BA4;&#x7684;&#x6267;&#x884C;&#x7C7B;&#x578B; &#xFF08;SIMPLE: &#x7B80;&#x5355;&#xFF1B; REUSE: &#x6267;&#x884C;&#x5668;&#x53EF;&#x80FD;&#x91CD;&#x590D;&#x4F7F;&#x7528;prepared statements&#x8BED;&#x53E5;&#xFF1B;BATCH: 
+            &#x6267;&#x884C;&#x5668;&#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x6267;&#x884C;&#x8BED;&#x53E5;&#x548C;&#x6279;&#x91CF;&#x66F4;&#x65B0;&#xFF09; --&gt;
+        &lt;setting name=&quot;defaultExecutorType&quot; value=&quot;SIMPLE&quot; /&gt;
+        &lt;!-- &#x4F7F;&#x7528;&#x9A7C;&#x5CF0;&#x547D;&#x540D;&#x6CD5;&#x8F6C;&#x6362;&#x5B57;&#x6BB5;&#x3002; --&gt;
+        &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot; /&gt;
+        &lt;!-- &#x8BBE;&#x7F6E;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x8303;&#x56F4; session:&#x5C31;&#x4F1A;&#x6709;&#x6570;&#x636E;&#x7684;&#x5171;&#x4EAB; statement:&#x8BED;&#x53E5;&#x8303;&#x56F4; (&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x6709;&#x6570;&#x636E;&#x7684;&#x5171;&#x4EAB; ) defalut:session --&gt;
+        &lt;setting name=&quot;localCacheScope&quot; value=&quot;SESSION&quot; /&gt;
+        &lt;!-- &#x8BBE;&#x7F6E;&#x5F53;JDBC&#x7C7B;&#x578B;&#x4E3A;&#x7A7A;&#x65F6;,&#x67D0;&#x4E9B;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F; &#x8981;&#x6307;&#x5B9A;&#x503C;,default:OTHER&#xFF0C;&#x63D2;&#x5165;&#x7A7A;&#x503C;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x7C7B;&#x578B; --&gt;
+        &lt;setting name=&quot;jdbcTypeForNull&quot; value=&quot;NULL&quot; /&gt;
+
+    &lt;/settings&gt;
+
+    &lt;plugins&gt;
+        &lt;plugin interceptor=&quot;com.github.pagehelper.PageHelper&quot;&gt;
+            &lt;!-- 4.0.0&#x4EE5;&#x540E;&#x7248;&#x672C;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;&#x8BE5;&#x53C2;&#x6570; --&gt;
+            &lt;property name=&quot;dialect&quot; value=&quot;mysql&quot; /&gt;
+            &lt;!-- &#x8BE5;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x4E3A;false --&gt;
+            &lt;!-- &#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;RowBounds&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;offset&#x5F53;&#x6210;pageNum&#x9875;&#x7801;&#x4F7F;&#x7528; --&gt;
+            &lt;!-- &#x548C;startPage&#x4E2D;&#x7684;pageNum&#x6548;&#x679C;&#x4E00;&#x6837; --&gt;
+            &lt;property name=&quot;offsetAsPageNum&quot; value=&quot;true&quot; /&gt;
+            &lt;!-- &#x8BE5;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x4E3A;false --&gt;
+            &lt;!-- &#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;&#xFF0C;&#x4F7F;&#x7528;RowBounds&#x5206;&#x9875;&#x4F1A;&#x8FDB;&#x884C;count&#x67E5;&#x8BE2; --&gt;
+            &lt;property name=&quot;rowBoundsWithCount&quot; value=&quot;true&quot; /&gt;
+            &lt;!-- &#x8BBE;&#x7F6E;&#x4E3A;true&#x65F6;&#xFF0C;&#x5982;&#x679C;pageSize=0&#x6216;&#x8005;RowBounds.limit = 0&#x5C31;&#x4F1A;&#x67E5;&#x8BE2;&#x51FA;&#x5168;&#x90E8;&#x7684;&#x7ED3;&#x679C; --&gt;
+            &lt;!-- &#xFF08;&#x76F8;&#x5F53;&#x4E8E;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x5206;&#x9875;&#x67E5;&#x8BE2;&#xFF0C;&#x4F46;&#x662F;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4ECD;&#x7136;&#x662F;Page&#x7C7B;&#x578B;&#xFF09; --&gt;
+            &lt;property name=&quot;pageSizeZero&quot; value=&quot;true&quot; /&gt;
+            &lt;!-- 3.3.0&#x7248;&#x672C;&#x53EF;&#x7528; - &#x5206;&#x9875;&#x53C2;&#x6570;&#x5408;&#x7406;&#x5316;&#xFF0C;&#x9ED8;&#x8BA4;false&#x7981;&#x7528; --&gt;
+            &lt;!-- &#x542F;&#x7528;&#x5408;&#x7406;&#x5316;&#x65F6;&#xFF0C;&#x5982;&#x679C;pageNum&lt;1&#x4F1A;&#x67E5;&#x8BE2;&#x7B2C;&#x4E00;&#x9875;&#xFF0C;&#x5982;&#x679C;pageNum&gt;pages&#x4F1A;&#x67E5;&#x8BE2;&#x6700;&#x540E;&#x4E00;&#x9875; --&gt;
+            &lt;!-- &#x7981;&#x7528;&#x5408;&#x7406;&#x5316;&#x65F6;&#xFF0C;&#x5982;&#x679C;pageNum&lt;1&#x6216;pageNum&gt;pages&#x4F1A;&#x8FD4;&#x56DE;&#x7A7A;&#x6570;&#x636E; --&gt;
+            &lt;property name=&quot;reasonable&quot; value=&quot;false&quot; /&gt;
+            &lt;!-- 3.5.0&#x7248;&#x672C;&#x53EF;&#x7528; - &#x4E3A;&#x4E86;&#x652F;&#x6301;startPage(Object params)&#x65B9;&#x6CD5; --&gt;
+            &lt;!-- &#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;`params`&#x53C2;&#x6570;&#x6765;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x6620;&#x5C04;&#xFF0C;&#x7528;&#x4E8E;&#x4ECE;Map&#x6216;ServletRequest&#x4E2D;&#x53D6;&#x503C; --&gt;
+            &lt;!-- &#x53EF;&#x4EE5;&#x914D;&#x7F6E;pageNum,pageSize,count,pageSizeZero,reasonable,orderBy,&#x4E0D;&#x914D;&#x7F6E;&#x6620;&#x5C04;&#x7684;&#x7528;&#x9ED8;&#x8BA4;&#x503C; --&gt;
+            &lt;!-- &#x4E0D;&#x7406;&#x89E3;&#x8BE5;&#x542B;&#x4E49;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x4E0D;&#x8981;&#x968F;&#x4FBF;&#x590D;&#x5236;&#x8BE5;&#x914D;&#x7F6E; --&gt;
+            &lt;property name=&quot;params&quot; value=&quot;pageNum=start;pageSize=limit;&quot; /&gt;
+            &lt;!-- &#x652F;&#x6301;&#x901A;&#x8FC7;Mapper&#x63A5;&#x53E3;&#x53C2;&#x6570;&#x6765;&#x4F20;&#x9012;&#x5206;&#x9875;&#x53C2;&#x6570; --&gt;
+            &lt;property name=&quot;supportMethodsArguments&quot; value=&quot;true&quot; /&gt;
+            &lt;!-- always&#x603B;&#x662F;&#x8FD4;&#x56DE;PageInfo&#x7C7B;&#x578B;,check&#x68C0;&#x67E5;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x4E3A;PageInfo,none&#x8FD4;&#x56DE;Page --&gt;
+            &lt;property name=&quot;returnPageInfo&quot; value=&quot;always&quot; /&gt;
+        &lt;/plugin&gt;
+
+    &lt;/plugins&gt;
+&lt;/configuration&gt;
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/03/springboot配置文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">springboot配置文件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 walljay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

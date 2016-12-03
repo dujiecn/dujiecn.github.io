@@ -31,6 +31,114 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql快速拷贝数据库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/09/mysql快速拷贝数据库/">mysql快速拷贝数据库</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/09/mysql快速拷贝数据库/" class="article-date">
+  <time datetime="2016-09-09T06:12:33.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x6570;&#x636E;&#x5E93;db1&#xFF0C;&#x62F7;&#x8D1D;&#x5230;&#x65B0;&#x5EFA;&#x7684;db2</p>
+<ol>
+<li><p>&#x65B0;&#x5EFA;&#x6570;&#x636E;&#x5E93;db2</p>
+<pre><code>create database db2 default charset utf8mb4;
+</code></pre></li>
+<li><p>&#x5728;shell&#x63A7;&#x5236;&#x53F0;&#x4F7F;&#x7528;mysqldump&#x547D;&#x4EE4;</p>
+<pre><code>mysqldump db1 -uroot -p123 --add-drop-table | mysql db2 -uroot -p123    
+</code></pre></li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
+    <article id="div-内容垂直居中" class="article article-type-div" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/09/内容垂直居中/">内容垂直居中</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/09/内容垂直居中/" class="article-date">
+  <time datetime="2016-09-09T02:27:12.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x867D;&#x7136;Div&#x5E03;&#x5C40;&#x5DF2;&#x7ECF;&#x57FA;&#x672C;&#x4E0A;&#x53D6;&#x4EE3;&#x4E86;&#x8868;&#x683C;&#x5E03;&#x5C40;&#xFF0C;&#x4F46;&#x8868;&#x683C;&#x5E03;&#x5C40;&#x548C;Div&#x5E03;&#x5C40;&#x4ECD;&#x7136;&#x5404;&#x6709;&#x5343;&#x79CB;&#xFF0C;&#x4E92;&#x6709;&#x957F;&#x5904;&#x3002;&#x6BD4;&#x5982;&#x8868;&#x683C;&#x5E03;&#x5C40;&#x4E2D;&#x7684;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x5C31;&#x662F;Div&#x5E03;&#x5C40;&#x7684;&#x4E00;&#x5927;&#x5F31;&#x9879;&#xFF0C;&#x4E0D;&#x8FC7;&#x597D;&#x5728;&#x5343;&#x53D8;&#x4E07;&#x5316;&#x7684;CSS&#x53EF;&#x4EE5;&#x7075;&#x6D3B;&#x8FD0;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5236;&#x4F5C;&#x51FA;&#x51C6;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x6548;&#x679C;&#xFF0C;&#x52C9;&#x5F3A;&#x8FC7;&#x5173;&#x3002; &#x8981;&#x8BA9;div&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF0C;&#x65E0;&#x975E;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x7B49;&#x6211;&#x4E00;&#x4E00;&#x5217;&#x4E3E;&#xFF1A;</p>
+<ol>
+<li><p>&#x884C;&#x9AD8;&#xFF08;line-height&#xFF09;&#x6CD5;</p>
+<p> &#x5982;&#x679C;&#x8981;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x7684;&#x53EA;&#x6709;&#x4E00;&#x884C;&#x6216;&#x51E0;&#x4E2A;&#x6587;&#x5B57;&#xFF0C;&#x90A3;&#x5B83;&#x7684;&#x5236;&#x4F5C;&#x6700;&#x4E3A;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x8981;&#x8BA9;&#x6587;&#x5B57;&#x7684;&#x884C;&#x9AD8;&#x548C;&#x5BB9;&#x5668;&#x7684;&#x9AD8;&#x5EA6;&#x76F8;&#x540C;&#x5373;&#x53EF;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code>p { height:30px; line-height:30px; width:100px; overflow:hidden; }
+</code></pre><p> &#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x8BA9;&#x6587;&#x5B57;&#x5728;&#x6BB5;&#x843D;&#x4E2D;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+</li>
+<li><p>&#x5185;&#x8FB9;&#x8DDD;&#xFF08;padding&#xFF09;&#x6CD5;</p>
+<p> &#x53E6;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x548C;&#x884C;&#x9AD8;&#x6CD5;&#x5F88;&#x76F8;&#x4F3C;&#xFF0C;&#x5B83;&#x540C;&#x6837;&#x9002;&#x5408;&#x4E00;&#x884C;&#x6216;&#x51E0;&#x884C;&#x6587;&#x5B57;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF0C;&#x539F;&#x7406;&#x5C31;&#x662F;&#x5229;&#x7528;padding&#x5C06;&#x5185;&#x5BB9;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<pre><code>p { padding:30px; }
+</code></pre><p> &#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x6548;&#x679C;&#x548C;line-height&#x6CD5;&#x5DEE;&#x4E0D;&#x591A;&#x3002;</p>
+</li>
+<li><p>&#x6A21;&#x62DF;&#x8868;&#x683C;&#x6CD5;</p>
+<p> &#x6A21;&#x62DF;&#x8868;&#x683C;&#x6CD5;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x7528;CSS&#x4E2D;&#x5BF9;&#x5143;&#x7D20;&#x7684;&#x58F0;&#x660E;&#x8BA9;&#x5757;&#x5143;&#x7D20;&#x50CF;&#x8868;&#x683C;&#x4E00;&#x6837;&#x663E;&#x793A;&#xFF0C;&#x7528;    &#x5230;&#x7684;CSS&#x5C5E;&#x6027;&#x6709;display&#x3001;vertical-align&#x7B49;&#x3002; &#x5148;&#x770B;&#x4E0B;&#x9762;&#x7684;Html&#x4EE3;    &#x7801;&#xFF1A;</p>
+<pre><code>&lt;div id=&quot;box&quot;&gt; &lt;div id=&quot;content&quot;&gt;&#x5C45;&#x4E2D;&#x663E;&#x793A;&lt;/div&gt; &lt;/div&gt;
+</code></pre><p> &#x53C2;&#x7167;&#x4EE5;&#x4E0A;Html&#x4EE3;&#x7801;&#xFF0C;&#x8BA9;&#x6700;&#x5916;&#x9762;&#x540D;&#x4E3A;box&#x7684;Div&#x5448;&#x8868;&#x683C;&#x6837;&#x5F0F;&#x663E;&#x793A;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8BA9;    box&#x4E2D;&#x540D;&#x4E3A;content&#x7684;Div&#x5448;&#x5355;&#x5143;&#x683C;&#x663E;&#x793A;&#xFF0C;&#x5E76;&#x5229;&#x7528;vertical-    align:middle&#x8BA9;&#x5176;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x6A21;&#x62DF;&#x51FA;&#x6765;&#x548C;&#x8868;&#x683C;&#x4E00;&#x6837;&#x7684;&#x663E;&#x793A;&#x65B9;    &#x5F0F;&#xFF0C;CSS&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>#wrap { height:400px; display:table; } #content { vertical-align:middle; display:table-cell; border:1px solid #FF0099; background:#000; width:400px; }
+</code></pre><p> &#x4F46;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x6709;&#x4E00;&#x4E2A;&#x5F0A;&#x7AEF;&#xFF0C;&#x7531;&#x4E8E;IE&#x6D4F;&#x89C8;&#x5668;&#x5BF9;&#x9AD8;&#x5EA6;&#x7406;&#x89E3;&#x4F1A;&#x4EA7;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x4EC5;&#x5BF9;Firefox&#x6709;&#x6548;&#xFF0C;&#x5BF9;IE&#x65E0;&#x6548;&#xFF0C;&#x65E2;&#x7136;&#x8FD9;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x627E;&#x51FA;&#x5BF9;IE&#x7684;&#x4FEE;&#x6B63;&#x65B9;&#x6CD5;&#xFF0C;&#x4E8E;&#x662F;&#x6709;&#x4E86;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
+</li>
+<li><p>&#x5B9A;&#x4F4D;&#x6CD5;</p>
+<p> &#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x5B9A;&#x4F4D;&#x6CD5;&#x662F;&#x5229;&#x7528;CSS&#x5B9A;&#x4F4D;&#x5C5E;&#x6027;position&#x5BF9;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x5B9A;&#x4F4D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x5C5E;&#x4E8E;&#x6A21;&#x62DF;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x8FC7;&#x5B83;&#x5BF9;IE&#x7684;&#x652F;&#x6301;&#x8FD8;&#x662F;&#x4E0D;&#x9519;&#x7684;&#x3002; &#x5B83;&#x7684;Html&#x4EE3;&#x7801;&#x4E3A;&#xFF1A;</p>
+<pre><code>&lt;div id=&quot;box&quot;&gt;
+&lt;div id=&quot;sub&quot;&gt; 
+&lt;div id=&quot;content&quot;&gt;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p> &#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x6BD4;&#x4E0A;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x4E2D;&#x591A;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;sub&#x7684;Div&#xFF0C;&#x5B83;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x7528;&#x6765;&#x5B9A;&#x4F4D;&#xFF0C;&#x539F;&#x7406;&#x5C31;&#x662F;&#xFF1A;&#x9996;&#x5148;&#x8BA9;box&#x51FA;&#x4E8E;&#x76F8;&#x5BF9;&#x5B9A;&#x4F4D;&#xFF0C;sub&#x76F8;&#x5BF9;box&#x51FA;&#x4E8E;&#x76F8;&#x5BF9;&#x5B9A;&#x4F4D;&#xFF0C;&#x4F4D;&#x4E8E;box&#x5782;&#x76F4;&#x65B9;&#x5411;&#x7684;50%&#xFF0C;&#x518D;&#x8BA9;content&#x4E2D;&#x7684;&#x771F;&#x6B63;&#x5185;&#x5BB9;&#x51FA;&#x4E8E;sub&#x5782;&#x76F4;&#x65B9;&#x5411;&#x7684;-50%&#xFF0C;&#x4ECE;&#x800C;&#x5236;&#x4F5C;&#x51FA;content&#x5728;box&#x4E2D;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;CSS&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>#wrap { border:1px solid #000; background:#F00; width:400px; height:400px; position:relative; } #subwrap { position:absolute; top:50%; } #content { border:1px solid #000; position:relative; top:-50%; color:#FFF; }
+</code></pre><p> &#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x65E0;&#x8BBA;&#x662F;&#x5728;IE&#x4E2D;&#x8FD8;&#x662F;Firefox&#x4E2D;&#xFF0C;&#x90FD;&#x80FD;&#x6B63;&#x5E38;&#x5C45;&#x4E2D;&#x4E86;</p>
+</li>
+</ol>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS中手动触发事件的方法" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -690,131 +798,6 @@ min-height:200px;
         <p>&#x6279;&#x91CF;&#x5220;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x540D;&#x5B57;&#x662F;_md&#x540E;&#x7F00;&#x7684;&#x4EFB;&#x4F55;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;    </p>
 <pre><code>find . -name &quot;*_md.*&quot; -exec rm -rf {} \;
 </code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-服务器跨域问题处理方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/服务器跨域问题处理方法/">服务器跨域问题处理方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/服务器跨域问题处理方法/" class="article-date">
-  <time datetime="2016-09-08T09:27:46.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/08/&#x670D;&#x52A1;&#x5668;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x5904;&#x7406;&#x65B9;&#x6CD5;/webxml&#x914D;&#x7F6E;.png" alt="webxml&#x914D;&#x7F6E;"><br><img src="/08/&#x670D;&#x52A1;&#x5668;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x5904;&#x7406;&#x65B9;&#x6CD5;/&#x62E6;&#x622A;&#x5668;&#x914D;&#x7F6E;.png" alt="&#x62E6;&#x622A;&#x5668;&#x914D;&#x7F6E;"></p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-tomcat-ssl-配置步骤" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/08/tomcat-ssl-配置步骤/">tomcat_ssl_配置步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/08/tomcat-ssl-配置步骤/" class="article-date">
-  <time datetime="2016-09-08T09:22:44.000Z" itemprop="datePublished">2016-09-08</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x7CFB;&#x7EDF;&#x9700;&#x6C42;&#xFF1A;</p>
-<p>1&#x3001;  Windows&#x7CFB;&#x7EDF;&#x6216;Linux&#x7CFB;&#x7EDF;</p>
-<p>2&#x3001;  &#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;JDK 1.6.0_13</p>
-<p>3&#x3001;  &#x5B89;&#x88C5;&#x5E76;&#x914D;&#x7F6E;Tomcat 6.0</p>
-<h3 id="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x751F;&#x6210;&#x8BC1;&#x4E66;"><a href="#&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x751F;&#x6210;&#x8BC1;&#x4E66;" class="headerlink" title="&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x751F;&#x6210;&#x8BC1;&#x4E66;"></a>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x751F;&#x6210;&#x8BC1;&#x4E66;</h3><ol>
-<li>Windows&#x7CFB;&#x7EDF;</li>
-</ol>
-<p>&#x201C;&#x8FD0;&#x884C;&#x201D;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x8FDB;&#x5165;%JAVA_HOME%/bin&#x76EE;&#x5F55;<br>&#x4F7F;&#x7528;keytool&#x4E3A;Tomcat&#x751F;&#x6210;&#x8BC1;&#x4E66;&#xFF0C;&#x5047;&#x5B9A;&#x76EE;&#x6807;&#x673A;&#x5668;&#x7684;&#x57DF;&#x540D;&#x662F;&#x201C;localhost&#x201D;&#xFF0C;keystore&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x5728;&#x201C;D:\home\tomcat.keystore&#x201D;&#xFF0C;&#x53E3;&#x4EE4;&#x4E3A;&#x201C;password&#x201D;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x751F;&#x6210;&#xFF1A;</p>
-<p>keytool -genkey -v -alias tomcat -keyalg RSA -keystore D:\home\tomcat.keystore -validity 36500</p>
-<p>(&#x53C2;&#x6570;&#x7B80;&#x8981;&#x8BF4;&#x660E;&#xFF1A;&#x201C;D:\home\tomcat.keystore&#x201D;&#x542B;&#x4E49;&#x662F;&#x5C06;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x7684;&#x4FDD;&#x5B58;&#x8DEF;&#x5F84;&#xFF0C;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x662F;tomcat.keystore &#xFF1B;&#x201C;-validity 36500&#x201D;&#x542B;&#x4E49;&#x662F;&#x8BC1;&#x4E66;&#x6709;&#x6548;&#x671F;&#xFF0C;36500&#x8868;&#x793A;100&#x5E74;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;90&#x5929;)</p>
-<p>&#x5728;&#x547D;&#x4EE4;&#x884C;&#x586B;&#x5199;&#x5FC5;&#x8981;&#x53C2;&#x6570;&#xFF1A;<br>A&#x3001;&#x8F93;&#x5165;keystore&#x5BC6;&#x7801;&#xFF1A;&#x6B64;&#x5904;&#x9700;&#x8981;&#x8F93;&#x5165;&#x5927;&#x4E8E;6&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
-<p>B&#x3001;&#x201C;&#x60A8;&#x7684;&#x540D;&#x5B57;&#x4E0E;&#x59D3;&#x6C0F;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x201D;&#x8FD9;&#x662F;&#x5FC5;&#x586B;&#x9879;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x662F;TOMCAT&#x90E8;&#x7F72;&#x4E3B;&#x673A;&#x7684;&#x57DF;&#x540D;&#x6216;&#x8005;IP[&#x5982;&#xFF1A;gbcom.com &#x6216;&#x8005; 10.1.25.251]&#xFF08;&#x5C31;&#x662F;&#x4F60;&#x5C06;&#x6765;&#x8981;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;&#x7684;&#x8BBF;&#x95EE;&#x5730;&#x5740;&#xFF09;&#xFF0C;&#x5426;&#x5219;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x5F39;&#x51FA;&#x8B66;&#x544A;&#x7A97;&#x53E3;&#xFF0C;&#x63D0;&#x793A;&#x7528;&#x6237;&#x8BC1;&#x4E66;&#x4E0E;&#x6240;&#x5728;&#x57DF;&#x4E0D;&#x5339;&#x914D;&#x3002;&#x5728;&#x672C;&#x5730;&#x505A;&#x5F00;&#x53D1;&#x6D4B;&#x8BD5;&#x65F6;&#xFF0C;&#x5E94;&#x586B;&#x5165;&#x201C;localhost&#x201D;</p>
-<p>C&#x3001;&#x201C;&#x4F60;&#x7684;&#x7EC4;&#x7EC7;&#x5355;&#x4F4D;&#x540D;&#x79F0;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x201D;&#x3001;&#x201C;&#x60A8;&#x7684;&#x7EC4;&#x7EC7;&#x540D;&#x79F0;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x201D;&#x3001;&#x201C;&#x60A8;&#x6240;&#x5728;&#x57CE;&#x5E02;&#x6216;&#x533A;&#x57DF;&#x540D;&#x79F0;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x201D;&#x3001;&#x201C;&#x60A8;&#x6240;&#x5728;&#x7684;&#x5DDE;&#x6216;&#x8005;&#x7701;&#x4EFD;&#x540D;&#x79F0;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x201D;&#x3001;&#x201C;&#x8BE5;&#x5355;&#x4F4D;&#x7684;&#x4E24;&#x5B57;&#x6BCD;&#x56FD;&#x5BB6;&#x4EE3;&#x7801;&#x662F;&#x4EC0;&#x4E48;&#xFF1F;&#x201D;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x9700;&#x8981;&#x586B;&#x5199;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x586B;&#x5199;&#x76F4;&#x63A5;&#x56DE;&#x8F66;&#xFF0C;&#x5728;&#x7CFB;&#x7EDF;&#x8BE2;&#x95EE;&#x201C;&#x6B63;&#x786E;&#x5417;&#xFF1F;&#x201D;&#x65F6;&#xFF0C;&#x5BF9;&#x7167;&#x8F93;&#x5165;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x5219;&#x4F7F;&#x7528;&#x952E;&#x76D8;&#x8F93;&#x5165;&#x5B57;&#x6BCD;&#x201C;y&#x201D;&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x5165;&#x201C;n&#x201D;&#x91CD;&#x65B0;&#x586B;&#x5199;&#x4E0A;&#x9762;&#x7684;&#x4FE1;&#x606F;</p>
-<p>D&#x3001;&#x8F93;&#x5165;<tomcat>&#x7684;&#x4E3B;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x9879;&#x8F83;&#x4E3A;&#x91CD;&#x8981;&#xFF0C;&#x4F1A;&#x5728;tomcat&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x5EFA;&#x8BAE;&#x8F93;&#x5165;&#x4E0E;keystore&#x7684;&#x5BC6;&#x7801;&#x4E00;&#x81F4;&#xFF0C;&#x8BBE;&#x7F6E;&#x5176;&#x5B83;&#x5BC6;&#x7801;&#x4E5F;&#x53EF;&#x4EE5;</tomcat></p>
-<p>&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x8F93;&#x5165;&#x540E;&#xFF0C;&#x76F4;&#x63A5;&#x56DE;&#x8F66;&#x5219;&#x5728;&#x4F60;&#x5728;&#x7B2C;&#x4E8C;&#x6B65;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x4F4D;&#x7F6E;&#x627E;&#x5230;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;</p>
-<ol>
-<li>Linux&#x7CFB;&#x7EDF;</li>
-</ol>
-<p>&#x201C;&#x8FD0;&#x884C;&#x201D;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x8FDB;&#x5165;%JAVA_HOME%/bin&#x76EE;&#x5F55;<br>&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x751F;&#x6210;&#xFF1A;</p>
-<p>keytool -genkey -alias tomcat -keyalg RSA -keystore ./tomcat.keystore -validity 36500</p>
-<p>(&#x53C2;&#x6570;&#x7B80;&#x8981;&#x8BF4;&#x660E;&#xFF1A;&#x201C;/etc/tomcat.keystore&#x201D;&#x542B;&#x4E49;&#x662F;&#x5C06;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x5728;&#x8DEF;&#x5F84;/usr/local/ac/web/&#x4E0B;&#xFF0C;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x662F;tomcat.keystore &#xFF1B;&#x201C;-validity 36500&#x201D;&#x542B;&#x4E49;&#x662F;&#x8BC1;&#x4E66;&#x6709;&#x6548;&#x671F;&#xFF0C;36500&#x8868;&#x793A;100&#x5E74;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;90&#x5929;)</p>
-<p>&#x5728;&#x547D;&#x4EE4;&#x884C;&#x586B;&#x5199;&#x5FC5;&#x8981;&#x53C2;&#x6570;&#xFF1A;<br>A&#x3001;Enter keystore password&#xFF1A;&#x6B64;&#x5904;&#x9700;&#x8981;&#x8F93;&#x5165;&#x5927;&#x4E8E;6&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
-<p>B&#x3001;&#x201C;What is your first and last name?&#x201D;&#x8FD9;&#x662F;&#x5FC5;&#x586B;&#x9879;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x662F;TOMCAT&#x90E8;&#x7F72;&#x4E3B;&#x673A;&#x7684;&#x57DF;&#x540D;&#x6216;&#x8005;IP[&#x5982;&#xFF1A;gbcom.com &#x6216;&#x8005; 10.1.25.251]&#xFF0C;&#x5C31;&#x662F;&#x4F60;&#x5C06;&#x6765;&#x8981;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;&#x7684;&#x8BBF;&#x95EE;&#x5730;&#x5740;</p>
-<p>C&#x3001;&#x201C;What is the name of your organizational unit?&#x201D;&#x3001;&#x201C;What is the name of your organization?&#x201D;&#x3001;&#x201C;What is the name of your City or Locality?&#x201D;&#x3001;&#x201C;What is the name of your State or Province?&#x201D;&#x3001;&#x201C;What is the two-letter country code for this unit?&#x201D;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x9700;&#x8981;&#x586B;&#x5199;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x586B;&#x5199;&#x76F4;&#x63A5;&#x56DE;&#x8F66;&#xFF0C;&#x5728;&#x7CFB;&#x7EDF;&#x8BE2;&#x95EE;&#x201C;correct?&#x201D;&#x65F6;&#xFF0C;&#x5BF9;&#x7167;&#x8F93;&#x5165;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x5219;&#x4F7F;&#x7528;&#x952E;&#x76D8;&#x8F93;&#x5165;&#x5B57;&#x6BCD;&#x201C;y&#x201D;&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x5165;&#x201C;n&#x201D;&#x91CD;&#x65B0;&#x586B;&#x5199;&#x4E0A;&#x9762;&#x7684;&#x4FE1;&#x606F;</p>
-<p>D&#x3001;Enter key password for <tomcat>&#xFF0C;&#x8FD9;&#x9879;&#x8F83;&#x4E3A;&#x91CD;&#x8981;&#xFF0C;&#x4F1A;&#x5728;tomcat&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x5EFA;&#x8BAE;&#x8F93;&#x5165;&#x4E0E;keystore&#x7684;&#x5BC6;&#x7801;&#x4E00;&#x81F4;&#xFF0C;&#x8BBE;&#x7F6E;&#x5176;&#x5B83;&#x5BC6;&#x7801;&#x4E5F;&#x53EF;&#x4EE5;</tomcat></p>
-<p>&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x8F93;&#x5165;&#x540E;&#xFF0C;&#x76F4;&#x63A5;&#x56DE;&#x8F66;&#x5219;&#x5728;&#x4F60;&#x5728;&#x7B2C;&#x4E8C;&#x6B65;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x4F4D;&#x7F6E;&#x627E;&#x5230;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;</p>
-<h3 id="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x751F;&#x6210;&#x8BC1;&#x4E66;"><a href="#&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x751F;&#x6210;&#x8BC1;&#x4E66;" class="headerlink" title="&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x751F;&#x6210;&#x8BC1;&#x4E66;"></a>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x4E3A;&#x5BA2;&#x6237;&#x7AEF;&#x751F;&#x6210;&#x8BC1;&#x4E66;</h3><p>&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x751F;&#x6210;&#x8BC1;&#x4E66;&#xFF0C;&#x4EE5;&#x4FBF;&#x8BA9;&#x670D;&#x52A1;&#x5668;&#x6765;&#x9A8C;&#x8BC1;&#x5B83;&#x3002;&#x4E3A;&#x4E86;&#x80FD;&#x5C06;&#x8BC1;&#x4E66;&#x987A;&#x5229;&#x5BFC;&#x5165;&#x81F3;IE&#x548C;Firefox&#xFF0C;&#x8BC1;&#x4E66;&#x683C;&#x5F0F;&#x5E94;&#x8BE5;&#x662F;PKCS12&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x751F;&#x6210;&#xFF1A;</p>
-<p>keytool -genkey -v -alias client -keyalg RSA -storetype PKCS12 -keystore ./client.p12</p>
-<p>&#x5BF9;&#x5E94;&#x7684;&#x8BC1;&#x4E66;&#x5E93;&#x5B58;&#x653E;&#x5728;&#x201C;D:\home\mykey.p12&#x201D;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;CN&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x610F;&#x503C;&#x3002;&#x53CC;&#x51FB;mykey.p12&#x6587;&#x4EF6;&#xFF0C;&#x5373;&#x53EF;&#x5C06;&#x8BC1;&#x4E66;&#x5BFC;&#x5165;&#x81F3;&#x6D4F;&#x89C8;&#x5668;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;</p>
-<h3 id="&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x8BA9;&#x670D;&#x52A1;&#x5668;&#x4FE1;&#x4EFB;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;"><a href="#&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x8BA9;&#x670D;&#x52A1;&#x5668;&#x4FE1;&#x4EFB;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;" class="headerlink" title="&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x8BA9;&#x670D;&#x52A1;&#x5668;&#x4FE1;&#x4EFB;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;"></a>&#x7B2C;&#x4E09;&#x6B65;&#xFF1A;&#x8BA9;&#x670D;&#x52A1;&#x5668;&#x4FE1;&#x4EFB;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;</h3><p>&#x7531;&#x4E8E;&#x662F;&#x53CC;&#x5411;SSL&#x8BA4;&#x8BC1;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5FC5;&#x987B;&#x8981;&#x4FE1;&#x4EFB;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5FC5;&#x987B;&#x628A;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;&#x6DFB;&#x52A0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x7684;&#x4FE1;&#x4EFB;&#x8BA4;&#x8BC1;&#x3002;&#x7531;&#x4E8E;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5C06;PKCS12&#x683C;&#x5F0F;&#x7684;&#x8BC1;&#x4E66;&#x5E93;&#x5BFC;&#x5165;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x628A;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;&#x5BFC;&#x51FA;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;CER&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
-<p>keytool -export -alias client -keystore ./client.p12 -storetype PKCS12 -storepass password -rfc -file ./client.cer</p>
-<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;&#x5C31;&#x88AB;&#x6211;&#x4EEC;&#x5BFC;&#x51FA;&#x5230;&#x201C;D:\home\mykey.cer&#x201D;&#x6587;&#x4EF6;&#x4E86;&#x3002;&#x4E0B;&#x4E00;&#x6B65;&#xFF0C;&#x662F;&#x5C06;&#x8BE5;&#x6587;&#x4EF6;&#x5BFC;&#x5165;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8BC1;&#x4E66;&#x5E93;&#xFF0C;&#x6DFB;&#x52A0;&#x4E3A;&#x4E00;&#x4E2A;&#x4FE1;&#x4EFB;&#x8BC1;&#x4E66;&#xFF1A;</p>
-<p>keytool -import -v -file ./client.cer -keystore D:\home\tomcat.keystore</p>
-<p>&#x901A;&#x8FC7;list&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8BC1;&#x4E66;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E24;&#x4E2A;&#x8BC1;&#x4E66;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;&#xFF1A;</p>
-<p>keytool -list -v -storepass password -keystore D:\home\tomcat.keystore</p>
-<h3 id="&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x8BA9;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x4EFB;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;"><a href="#&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x8BA9;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x4EFB;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;" class="headerlink" title="&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x8BA9;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x4EFB;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;"></a>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x8BA9;&#x5BA2;&#x6237;&#x7AEF;&#x4FE1;&#x4EFB;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;</h3><p>&#x7531;&#x4E8E;&#x662F;&#x53CC;&#x5411;SSL&#x8BA4;&#x8BC1;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x4E5F;&#x8981;&#x9A8C;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5FC5;&#x987B;&#x628A;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x6DFB;&#x52A0;&#x5230;&#x6D4F;&#x89C8;&#x7684;&#x201C;&#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x6839;&#x8BC1;&#x4E66;&#x9881;&#x53D1;&#x673A;&#x6784;&#x201D;&#x3002;&#x7531;&#x4E8E;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x5C06;keystore&#x683C;&#x5F0F;&#x7684;&#x8BC1;&#x4E66;&#x5E93;&#x5BFC;&#x5165;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x628A;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x5BFC;&#x51FA;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;CER&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
-<p>keytool -keystore ./tomcat.keystore -export -alias tomcat -file ./tomcat.cer</p>
-<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x5C31;&#x88AB;&#x6211;&#x4EEC;&#x5BFC;&#x51FA;&#x5230;&#x201C;D:\home\tomcat.cer&#x201D;&#x6587;&#x4EF6;&#x4E86;&#x3002;&#x53CC;&#x51FB;tomcat.cer&#x6587;&#x4EF6;&#xFF0C;&#x6309;&#x7167;&#x63D0;&#x793A;&#x5B89;&#x88C5;&#x8BC1;&#x4E66;&#xFF0C;&#x5C06;&#x8BC1;&#x4E66;&#x586B;&#x5165;&#x5230;&#x201C;&#x53D7;&#x4FE1;&#x4EFB;&#x7684;&#x6839;&#x8BC1;&#x4E66;&#x9881;&#x53D1;&#x673A;&#x6784;&#x201D;&#x3002;<br>&#x7B2C;&#x56DB;&#x6B65;&#xFF1A;&#x914D;&#x7F6E;Tomcat&#x670D;&#x52A1;&#x5668;</p>
-<p>&#x6253;&#x5F00;Tomcat&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;/conf/server.xml&#xFF0C;&#x627E;&#x5230;&#x5982;&#x4E0B;&#x914D;&#x7F6E;&#x6BB5;&#xFF0C;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</p>
-<connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol" sslenabled="true" maxthreads="150" scheme="https" secure="true" clientauth="true" sslprotocol="TLS" keystorefile="D:\\home\\test.keystore" keystorepass="123456" truststorefile="D:\\home\\test.keystore" truststorepass="123456">
-
-<p>&#x5C5E;&#x6027;&#x8BF4;&#x660E;&#xFF1A;</p>
-<p>clientAuth:&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x53CC;&#x5411;&#x9A8C;&#x8BC1;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;false&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;true&#x4EE3;&#x8868;&#x53CC;&#x5411;&#x9A8C;&#x8BC1;<br>keystoreFile:&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;<br>keystorePass:&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;&#x5BC6;&#x7801;<br>truststoreFile:&#x7528;&#x6765;&#x9A8C;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;&#x7684;&#x6839;&#x8BC1;&#x4E66;&#xFF0C;&#x6B64;&#x4F8B;&#x4E2D;&#x5C31;&#x662F;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;<br>truststorePass:&#x6839;&#x8BC1;&#x4E66;&#x5BC6;&#x7801;</p>
-<h3 id="&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;"><a href="#&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;" class="headerlink" title="&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;"></a>&#x7B2C;&#x4E94;&#x6B65;&#xFF1A;&#x6D4B;&#x8BD5;</h3><p>&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;:<a href="https://localhost:8443/&#xFF0C;&#x4F1A;&#x5F39;&#x51FA;&#x9009;&#x62E9;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;&#x754C;&#x9762;&#xFF0C;&#x70B9;&#x51FB;&#x201C;&#x786E;&#x5B9A;&#x201D;&#xFF0C;&#x4F1A;&#x8FDB;&#x5165;tomcat&#x4E3B;&#x9875;&#xFF0C;&#x5730;&#x5740;&#x680F;&#x540E;&#x4F1A;&#x6709;&#x201C;&#x9501;&#x201D;&#x56FE;&#x6807;&#xFF0C;&#x8868;&#x793A;&#x672C;&#x6B21;&#x4F1A;&#x8BDD;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;HTTPS&#x53CC;&#x5411;&#x9A8C;&#x8BC1;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4F1A;&#x8BDD;&#x8FC7;&#x7A0B;&#x4E2D;&#x6240;&#x4F20;&#x8F93;&#x7684;&#x4FE1;&#x606F;&#x90FD;&#x5DF2;&#x7ECF;&#x8FC7;SSL&#x4FE1;&#x606F;&#x52A0;&#x5BC6;&#x3002;" target="_blank" rel="external">https://localhost:8443/&#xFF0C;&#x4F1A;&#x5F39;&#x51FA;&#x9009;&#x62E9;&#x5BA2;&#x6237;&#x7AEF;&#x8BC1;&#x4E66;&#x754C;&#x9762;&#xFF0C;&#x70B9;&#x51FB;&#x201C;&#x786E;&#x5B9A;&#x201D;&#xFF0C;&#x4F1A;&#x8FDB;&#x5165;tomcat&#x4E3B;&#x9875;&#xFF0C;&#x5730;&#x5740;&#x680F;&#x540E;&#x4F1A;&#x6709;&#x201C;&#x9501;&#x201D;&#x56FE;&#x6807;&#xFF0C;&#x8868;&#x793A;&#x672C;&#x6B21;&#x4F1A;&#x8BDD;&#x5DF2;&#x7ECF;&#x901A;&#x8FC7;HTTPS&#x53CC;&#x5411;&#x9A8C;&#x8BC1;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4F1A;&#x8BDD;&#x8FC7;&#x7A0B;&#x4E2D;&#x6240;&#x4F20;&#x8F93;&#x7684;&#x4FE1;&#x606F;&#x90FD;&#x5DF2;&#x7ECF;&#x8FC7;SSL&#x4FE1;&#x606F;&#x52A0;&#x5BC6;&#x3002;</a></p>
-<p>&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#xFF1A;&#x8C8C;&#x4F3C;&#x5BFC;&#x5165;&#x8BC1;&#x4E66;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6700;&#x597D;&#x5BFC;&#x5165;&#x5230;&#x201C;&#x4E2A;&#x4EBA;&#x201D;&#x90A3;&#x4E00;&#x680F;&#x91CC;&#x9762;&#xFF0C;&#x8C8C;&#x4F3C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7528;&#x6237;&#x540D;&#x4E0D;&#x586B;&#x5199;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x968F;&#x4FBF;&#x586B;&#x5199;&#x3002;</p>
-<p><a href="http://licg1234.blog.163.com/blog/static/13908233320121165356868/" target="_blank" rel="external">http://licg1234.blog.163.com/blog/static/13908233320121165356868/</a> </p>
-<p>=====================================================================================================<br>keytool -genkey -v -alias tomcat -keyalg RSA -keystore ./tomcat.keystore -validity 36500<br>keytool -genkey -v -alias client -keyalg RSA -storetype PKCS12 -keystore ./client.p12 -validity 36500<br>keytool -export -alias client -keystore ./client.p12 -storetype PKCS12 -storepass 123456 -rfc -file ./client.cer<br>keytool -import -v -alias client -file ./client.cer -keystore ./tomcat.keystore -storepass 123456<br>keytool -list -v -storepass 123456 -keystore ./tomcat.keystore<br>keytool -keystore ./tomcat.keystore -export -alias tomcat -file ./tomcat.cer -storepass 123456</p>
-<connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol" sslenabled="true" maxthreads="150" scheme="https" secure="true" clientauth="true" sslprotocol="TLS" keystorefile="D:\\home\\test.keystore" keystorepass="123456" truststorefile="D:\\home\\test.keystore" truststorepass="123456">
-
-
-
-
-
-
-<p>keytool -genkeypair -alias &#x201C;tomcat&#x201D; -keyalg &#x201C;RSA&#x201D; -keystore &#x201C;./tomcat.keystore&#x201D;</p>
-<connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol" maxthreads="150" sslenabled="true" scheme="https" secure="true" clientauth="false" sslprotocol="TLS" keystorefile="/usr/local/tomcat/tomcat.keystore" keystorepass="123456" ciphers="TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_ECDHE_RSA_WITH_RC4_128_SHA,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA,SSL_RSA_WITH_RC4_128_SHA">
-</connector></connector></connector>
       
 
       
