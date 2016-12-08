@@ -262,10 +262,13 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>sin(sqrt(pow(sin((31.9142918173043 * PI() / 180.0 - lat * PI() / 180.0) / 2), 2)
-            + cos(31.9142918173043 * PI() / 180.0) * cos(lat * PI() / 180.0) * pow(sin((118.8068875093988 * PI() / 180.0 - lng * PI() / 180.0) / 2), 2))) * 6378.137
-</code></pre><p>lat &#x7EAC;&#x5EA6; lng &#x7ECF;&#x5EA6;&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#x8DDD;&#x79BB;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x7C73;</p>
-
+        <p>&#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x5750;&#x6807;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E24;&#x70B9;&#x7406;&#x8BBA;&#x8DDD;&#x79BB;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;KM</p>
+<pre><code>set @lat1 = 31.9587090000;
+set @lng1 = 118.8255550000;
+set @lat2 = 31.9520910000;
+set @lng2 = 118.8127630000;            
+select 2 * asin(sqrt(pow(sin((@lat1 - @lat2) * PI() / 180.0 / 2), 2) + cos(@lat1 * PI() / 180.0) * cos(@lat2 * PI() /180.0) * pow(sin((@lng1 - @lng2) * PI() / 180.0 / 2), 2))) * 6378.137;
+</code></pre>
       
 
       

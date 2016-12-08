@@ -5,19 +5,16 @@
   
   <title>mysql_经纬度两点间的距离 | walljay的备忘博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="sin(sqrt(pow(sin((31.9142918173043 * PI() / 180.0 - lat * PI() / 180.0) / 2), 2)
-            + cos(31.9142918173043 * PI() / 180.0) * cos(lat * PI() / 180.0) * pow(sin((118.8068875093988 * PI() / 180.">
+  <meta name="description" content="&amp;#x5B9A;&amp;#x4E49;&amp;#x4E24;&amp;#x4E2A;&amp;#x70B9;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#xFF0C;&amp;#x4E0B;&amp;#x9762;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;&amp;#x8FD4;&amp;#x56DE;&amp;#x4E24;&amp;#x70B9;&amp;#x7406;&amp;#x8BBA;&amp;#x8DDD;&amp;#x79BB;&amp;#xFF0C;&amp;#x5355;&amp;#x4F4D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql_经纬度两点间的距离">
 <meta property="og:url" content="dujiecn.github.io/2016/09/08/mysql-经纬度两点间的距离/index.html">
 <meta property="og:site_name" content="walljay的备忘博客">
-<meta property="og:description" content="sin(sqrt(pow(sin((31.9142918173043 * PI() / 180.0 - lat * PI() / 180.0) / 2), 2)
-            + cos(31.9142918173043 * PI() / 180.0) * cos(lat * PI() / 180.0) * pow(sin((118.8068875093988 * PI() / 180.">
-<meta property="og:updated_time" content="2016-09-08T09:15:43.000Z">
+<meta property="og:description" content="&amp;#x5B9A;&amp;#x4E49;&amp;#x4E24;&amp;#x4E2A;&amp;#x70B9;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#xFF0C;&amp;#x4E0B;&amp;#x9762;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;&amp;#x8FD4;&amp;#x56DE;&amp;#x4E24;&amp;#x70B9;&amp;#x7406;&amp;#x8BBA;&amp;#x8DDD;&amp;#x79BB;&amp;#xFF0C;&amp;#x5355;&amp;#x4F4D;">
+<meta property="og:updated_time" content="2016-12-08T06:11:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql_经纬度两点间的距离">
-<meta name="twitter:description" content="sin(sqrt(pow(sin((31.9142918173043 * PI() / 180.0 - lat * PI() / 180.0) / 2), 2)
-            + cos(31.9142918173043 * PI() / 180.0) * cos(lat * PI() / 180.0) * pow(sin((118.8068875093988 * PI() / 180.">
+<meta name="twitter:description" content="&amp;#x5B9A;&amp;#x4E49;&amp;#x4E24;&amp;#x4E2A;&amp;#x70B9;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#xFF0C;&amp;#x4E0B;&amp;#x9762;&amp;#x7684;&amp;#x65B9;&amp;#x6CD5;&amp;#x8FD4;&amp;#x56DE;&amp;#x4E24;&amp;#x70B9;&amp;#x7406;&amp;#x8BBA;&amp;#x8DDD;&amp;#x79BB;&amp;#xFF0C;&amp;#x5355;&amp;#x4F4D;">
   
     <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
   
@@ -55,10 +52,13 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>sin(sqrt(pow(sin((31.9142918173043 * PI() / 180.0 - lat * PI() / 180.0) / 2), 2)
-            + cos(31.9142918173043 * PI() / 180.0) * cos(lat * PI() / 180.0) * pow(sin((118.8068875093988 * PI() / 180.0 - lng * PI() / 180.0) / 2), 2))) * 6378.137
-</code></pre><p>lat &#x7EAC;&#x5EA6; lng &#x7ECF;&#x5EA6;&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#x8DDD;&#x79BB;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x7C73;</p>
-
+        <p>&#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x5750;&#x6807;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E24;&#x70B9;&#x7406;&#x8BBA;&#x8DDD;&#x79BB;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;KM</p>
+<pre><code>set @lat1 = 31.9587090000;
+set @lng1 = 118.8255550000;
+set @lat2 = 31.9520910000;
+set @lng2 = 118.8127630000;            
+select 2 * asin(sqrt(pow(sin((@lat1 - @lat2) * PI() / 180.0 / 2), 2) + cos(@lat1 * PI() / 180.0) * cos(@lat2 * PI() /180.0) * pow(sin((@lng1 - @lng2) * PI() / 180.0 / 2), 2))) * 6378.137;
+</code></pre>
       
 
       
