@@ -31,6 +31,119 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-springboot打包不进去第三方jar的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/20/springboot打包不进去第三方jar的问题/">springboot打包不进去第三方jar的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/12/20/springboot打包不进去第三方jar的问题/" class="article-date">
+  <time datetime="2016-12-20T02:05:00.000Z" itemprop="datePublished">2016-12-20</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5728;springboot maven&#x6784;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7528;&#x5230;&#x7B2C;&#x4E09;&#x65B9;&#x7684;jar&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x9879;&#x76EE;eclipse&#x8FD0;&#x884C;&#x53EF;&#x80FD;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x6253;&#x5305;&#x6210;&#x53EF;&#x6267;&#x884C;jar&#x5305;&#x7684;&#x65F6;&#x5019;&#x7B2C;&#x4E09;&#x65B9;jar&#x5305;&#x6253;&#x4E0D;&#x8FDB;&#x53BB;&#x3002;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;<br>1.&#x521B;&#x5EFA;&#x76EE;&#x5F55;<code>src/main/webapp/WEB-INF/lib</code>,&#x628A;&#x7B2C;&#x4E09;&#x65B9;&#x7684;jar&#x5305;&#x653E;&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;<br>2.pom.xml&#x5F15;&#x7528;&#xFF1A;</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.yunpian.sdk&lt;/groupId&gt;
+    &lt;artifactId&gt;yunpian-java-sdk&lt;/artifactId&gt;
+    &lt;version&gt;12&lt;/version&gt;
+    &lt;scope&gt;system&lt;/scope&gt;
+    &lt;systemPath&gt;${project.basedir}/src/main/webapp/WEB-INF/lib/yunpian-java-sdk.jar&lt;/systemPath&gt;
+&lt;/dependency&gt;
+</code></pre><p>3.&#x914D;&#x7F6E;&#x6253;&#x5305;&#x8D44;&#x6E90;&#xFF1A;</p>
+<pre><code>&lt;resources&gt;
+    &lt;resource&gt;
+        &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
+        &lt;targetPath&gt;BOOT-INF/lib/&lt;/targetPath&gt;
+        &lt;includes&gt;
+            &lt;include&gt;**/*.jar&lt;/include&gt;
+        &lt;/includes&gt;
+    &lt;/resource&gt;
+
+    &lt;resource&gt;
+        &lt;directory&gt;src/main/resources&lt;/directory&gt;
+        &lt;targetPath&gt;BOOT-INF/classes/&lt;/targetPath&gt;
+    &lt;/resource&gt;
+&lt;/resources&gt;
+</code></pre><p>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<p>&#x5C40;&#x90E8;&#x5B8C;&#x6574;&#x7684;pom.xml&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+            &lt;groupId&gt;com.yunpian.sdk&lt;/groupId&gt;
+            &lt;artifactId&gt;yunpian-java-sdk&lt;/artifactId&gt;
+            &lt;version&gt;12&lt;/version&gt;
+            &lt;scope&gt;system&lt;/scope&gt;
+            &lt;systemPath&gt;${project.basedir}/src/main/webapp/WEB-INF/lib/yunpian-java-sdk.jar&lt;/systemPath&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+
+&lt;build&gt;
+    &lt;resources&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
+            &lt;targetPath&gt;BOOT-INF/lib/&lt;/targetPath&gt;
+            &lt;includes&gt;
+                &lt;include&gt;**/*.jar&lt;/include&gt;
+            &lt;/includes&gt;
+        &lt;/resource&gt;
+
+        &lt;resource&gt;
+            &lt;directory&gt;src/main/resources&lt;/directory&gt;
+            &lt;targetPath&gt;BOOT-INF/classes/&lt;/targetPath&gt;
+        &lt;/resource&gt;
+    &lt;/resources&gt;
+
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;1.8&lt;/source&gt;
+                &lt;target&gt;1.8&lt;/target&gt;
+                &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;configuration&gt;
+                &lt;mainClass&gt;com.helper.server.Application&lt;/mainClass&gt;
+            &lt;/configuration&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;repackage&lt;/goal&gt;
+                    &lt;/goals&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mybatis配置文件" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -904,52 +1017,6 @@ at sun.security.ec.ECKeyPairGenerator.generateKeyPair(ECKeyPairGenerator.java:12
 <p>&#x5347;&#x7EA7;nss</p>
 <pre><code>sudo yum upgrade nss
 </code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-使用springboot发送邮件可能存在的异常" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/14/使用springboot发送邮件可能存在的异常/">使用springboot发送邮件可能存在的异常</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/10/14/使用springboot发送邮件可能存在的异常/" class="article-date">
-  <time datetime="2016-10-14T05:11:44.000Z" itemprop="datePublished">2016-10-14</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x4F7F;&#x7528;springboot &#x53D1;&#x9001;&#x90AE;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x5B58;&#x5728;&#x5F02;&#x5E38;</p>
-<ol>
-<li><p><code>handshake_failure</code>&#x5F02;&#x5E38;</p>
-<pre><code>Mail server connection failed; nested exception is javax.mail.MessagingException: Could not connect to SMTP host: smtp.qq.com, port: 465;
-nested exception is: javax.NET.ssl.SSLHandshakeException: Received fatal alert: handshake_failure. Failed messages: javax.mail. MessagingException: Could not connect to SMTP host: smtp.qq.com, port: 465;
-nested exception is:     javax.net.ssl.SSLHandshakeException: Received fatal alert: handshake_failure
-</code></pre><p> &#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5728;jdk1.8&#x4E2D;&#x51FA;&#x73B0;&#xFF0C;&#x901A;&#x8FC7;&#x66FF;&#x6362;jdk1.8&#x5B89;&#x88C5;&#x76EE;&#x5F55;<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/security</code>&#x5305;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;<code>US_export_policy.jar</code>&#x548C;<code>US_export_policy.jar</code>&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x6765;&#x89E3;&#x51B3;&#x3002;&#x4F7F;&#x7528;jdk1.7&#x7248;&#x672C;&#x540C;&#x6837;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x66FF;&#x6362;&#x3002;&#x6216;&#x8005;&#x5230;&#x8FD9;&#x91CC;&#x4E0B;&#x8F7D;<a href="http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html</a></p>
-</li>
-<li><p>the trustAnchors parameter must be non-empty</p>
-<p> &#x53EF;&#x80FD;&#x539F;&#x56E0;&#x662F;&#x4F7F;&#x7528;&#x7684;jdk1.7&#x4E2D;<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/security</code>&#x8DEF;&#x5F84;&#x4E0B;&#x7F3A;&#x5C11;&#x8BC1;&#x4E66;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x7684;&#x7535;&#x8111;&#x5B89;&#x88C5;&#x4E24;&#x4E2A;jdk&#x7248;&#x672C;&#xFF0C;&#x6211;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x62F7;&#x8D1D;1.8&#x7248;&#x672C;&#x7684;<code>/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/security</code>&#x6587;&#x4EF6;&#x5939;&#x5230;1.7&#x7248;&#x672C;&#xFF0C;&#x6216;&#x8005;&#x5230;&#x540C;&#x4E8B;&#x7684;&#x7535;&#x8111;&#x7684;&#x62F7;&#x8D1D;&#x3002;</p>
-</li>
-</ol>
-
       
 
       

@@ -31,6 +31,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-springboot项目中使用docker-maven-plugin" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/10/springboot项目中使用docker-maven-plugin/">springboot项目中使用docker-maven-plugin</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/10/springboot项目中使用docker-maven-plugin/" class="article-date">
+  <time datetime="2016-09-10T02:48:53.000Z" itemprop="datePublished">2016-09-10</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>&lt;plugin&gt;
+        &lt;groupId&gt;com.spotify&lt;/groupId&gt;
+        &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
+        &lt;version&gt;0.4.12&lt;/version&gt;
+        &lt;configuration&gt;
+            &lt;imageName&gt;${project.name}&lt;/imageName&gt;
+            &lt;baseImage&gt;java&lt;/baseImage&gt;
+            &lt;entryPoint&gt;[&quot;java&quot;, &quot;-jar&quot;, &quot;/${project.build.finalName}.jar&quot;]&lt;/entryPoint&gt;
+            &lt;resources&gt;
+                &lt;resource&gt;
+                    &lt;targetPath&gt;/&lt;/targetPath&gt;
+                    &lt;directory&gt;${project.build.directory}&lt;/directory&gt;
+                    &lt;include&gt;${project.build.finalName}.jar&lt;/include&gt;
+                &lt;/resource&gt;
+            &lt;/resources&gt;
+            &lt;forceTags&gt;true&lt;/forceTags&gt;
+        &lt;/configuration&gt;
+    &lt;/plugin&gt;
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mysql快速拷贝数据库" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -762,42 +814,6 @@ min-height:200px;
 </ol>
 <p>&#x66F4;&#x591A;&#x8BF7;&#x67E5;&#x770B;&#xFF1A;<a href="http://www.jq-school.com/" target="_blank" rel="external">http://www.jq-school.com/</a></p>
 
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linux下批量删除某目录下的某种类型的文件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/09/linux下批量删除某目录下的某种类型的文件/">linux下批量删除某目录下的某种类型的文件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/09/linux下批量删除某目录下的某种类型的文件/" class="article-date">
-  <time datetime="2016-09-09T00:51:22.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x6279;&#x91CF;&#x5220;&#x9664;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x540D;&#x5B57;&#x662F;_md&#x540E;&#x7F00;&#x7684;&#x4EFB;&#x4F55;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;    </p>
-<pre><code>find . -name &quot;*_md.*&quot; -exec rm -rf {} \;
-</code></pre>
       
 
       

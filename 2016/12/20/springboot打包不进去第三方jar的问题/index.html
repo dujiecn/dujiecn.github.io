@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>springboot打包不进去第三方jar的问题 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x5728;springboot maven&amp;#x6784;&amp;#x5EFA;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;&amp;#xFF0C;&amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x7528;&amp;#x5230;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x7684;jar&amp;#xFF0C;&amp;#x8FD9;&amp;#x65F6;&amp;#x5019;&amp;#x98">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot打包不进去第三方jar的问题">
+<meta property="og:url" content="dujiecn.github.io/2016/12/20/springboot打包不进去第三方jar的问题/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="&amp;#x5728;springboot maven&amp;#x6784;&amp;#x5EFA;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;&amp;#xFF0C;&amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x7528;&amp;#x5230;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x7684;jar&amp;#xFF0C;&amp;#x8FD9;&amp;#x65F6;&amp;#x5019;&amp;#x98">
+<meta property="og:updated_time" content="2016-12-20T02:09:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="springboot打包不进去第三方jar的问题">
+<meta name="twitter:description" content="&amp;#x5728;springboot maven&amp;#x6784;&amp;#x5EFA;&amp;#x7684;&amp;#x9879;&amp;#x76EE;&amp;#x4E2D;&amp;#xFF0C;&amp;#x53EF;&amp;#x80FD;&amp;#x9700;&amp;#x8981;&amp;#x7528;&amp;#x5230;&amp;#x7B2C;&amp;#x4E09;&amp;#x65B9;&amp;#x7684;jar&amp;#xFF0C;&amp;#x8FD9;&amp;#x65F6;&amp;#x5019;&amp;#x98">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-springboot打包不进去第三方jar的问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      springboot打包不进去第三方jar的问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/12/20/springboot打包不进去第三方jar的问题/" class="article-date">
+  <time datetime="2016-12-20T02:05:00.000Z" itemprop="datePublished">2016-12-20</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x5728;springboot maven&#x6784;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7528;&#x5230;&#x7B2C;&#x4E09;&#x65B9;&#x7684;jar&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x9879;&#x76EE;eclipse&#x8FD0;&#x884C;&#x53EF;&#x80FD;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x6253;&#x5305;&#x6210;&#x53EF;&#x6267;&#x884C;jar&#x5305;&#x7684;&#x65F6;&#x5019;&#x7B2C;&#x4E09;&#x65B9;jar&#x5305;&#x6253;&#x4E0D;&#x8FDB;&#x53BB;&#x3002;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;<br>1.&#x521B;&#x5EFA;&#x76EE;&#x5F55;<code>src/main/webapp/WEB-INF/lib</code>,&#x628A;&#x7B2C;&#x4E09;&#x65B9;&#x7684;jar&#x5305;&#x653E;&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;<br>2.pom.xml&#x5F15;&#x7528;&#xFF1A;</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.yunpian.sdk&lt;/groupId&gt;
+    &lt;artifactId&gt;yunpian-java-sdk&lt;/artifactId&gt;
+    &lt;version&gt;12&lt;/version&gt;
+    &lt;scope&gt;system&lt;/scope&gt;
+    &lt;systemPath&gt;${project.basedir}/src/main/webapp/WEB-INF/lib/yunpian-java-sdk.jar&lt;/systemPath&gt;
+&lt;/dependency&gt;
+</code></pre><p>3.&#x914D;&#x7F6E;&#x6253;&#x5305;&#x8D44;&#x6E90;&#xFF1A;</p>
+<pre><code>&lt;resources&gt;
+    &lt;resource&gt;
+        &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
+        &lt;targetPath&gt;BOOT-INF/lib/&lt;/targetPath&gt;
+        &lt;includes&gt;
+            &lt;include&gt;**/*.jar&lt;/include&gt;
+        &lt;/includes&gt;
+    &lt;/resource&gt;
+
+    &lt;resource&gt;
+        &lt;directory&gt;src/main/resources&lt;/directory&gt;
+        &lt;targetPath&gt;BOOT-INF/classes/&lt;/targetPath&gt;
+    &lt;/resource&gt;
+&lt;/resources&gt;
+</code></pre><p>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<p>&#x5C40;&#x90E8;&#x5B8C;&#x6574;&#x7684;pom.xml&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+            &lt;groupId&gt;com.yunpian.sdk&lt;/groupId&gt;
+            &lt;artifactId&gt;yunpian-java-sdk&lt;/artifactId&gt;
+            &lt;version&gt;12&lt;/version&gt;
+            &lt;scope&gt;system&lt;/scope&gt;
+            &lt;systemPath&gt;${project.basedir}/src/main/webapp/WEB-INF/lib/yunpian-java-sdk.jar&lt;/systemPath&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+
+&lt;build&gt;
+    &lt;resources&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
+            &lt;targetPath&gt;BOOT-INF/lib/&lt;/targetPath&gt;
+            &lt;includes&gt;
+                &lt;include&gt;**/*.jar&lt;/include&gt;
+            &lt;/includes&gt;
+        &lt;/resource&gt;
+
+        &lt;resource&gt;
+            &lt;directory&gt;src/main/resources&lt;/directory&gt;
+            &lt;targetPath&gt;BOOT-INF/classes/&lt;/targetPath&gt;
+        &lt;/resource&gt;
+    &lt;/resources&gt;
+
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;1.8&lt;/source&gt;
+                &lt;target&gt;1.8&lt;/target&gt;
+                &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;configuration&gt;
+                &lt;mainClass&gt;com.helper.server.Application&lt;/mainClass&gt;
+            &lt;/configuration&gt;
+            &lt;executions&gt;
+                &lt;execution&gt;
+                    &lt;goals&gt;
+                        &lt;goal&gt;repackage&lt;/goal&gt;
+                    &lt;/goals&gt;
+                &lt;/execution&gt;
+            &lt;/executions&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/03/mybatis配置文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mybatis配置文件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2016 walljay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
