@@ -18,16 +18,15 @@ tags:
 	
 	<resources>
 		<resource>
-			<directory>src/main/webapp/WEB-INF/lib</directory>
+			<directory>${project.basedir}/src/main/resources</directory>
+			<filtering>true</filtering>
+		</resource>
+		<resource>
+			<directory>${project.basedir}/src/main/webapp/WEB-INF/lib</directory>
 			<targetPath>BOOT-INF/lib/</targetPath>
 			<includes>
 				<include>**/*.jar</include>
 			</includes>
-		</resource>
-
-		<resource>
-			<directory>src/main/resources</directory>
-			<targetPath>BOOT-INF/classes/</targetPath>
 		</resource>
 	</resources>
 	
@@ -49,16 +48,15 @@ tags:
 	<build>
 		<resources>
 			<resource>
-				<directory>src/main/webapp/WEB-INF/lib</directory>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/src/main/webapp/WEB-INF/lib</directory>
 				<targetPath>BOOT-INF/lib/</targetPath>
 				<includes>
 					<include>**/*.jar</include>
 				</includes>
-			</resource>
-
-			<resource>
-				<directory>src/main/resources</directory>
-				<targetPath>BOOT-INF/classes/</targetPath>
 			</resource>
 		</resources>
 
