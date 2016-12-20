@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="dujiecn.github.io/"/>
-  <updated>2016-12-20T02:09:58.000Z</updated>
+  <updated>2016-12-20T02:57:03.000Z</updated>
   <id>dujiecn.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="dujiecn.github.io/2016/12/20/springboot%E6%89%93%E5%8C%85%E4%B8%8D%E8%BF%9B%E5%8E%BB%E7%AC%AC%E4%B8%89%E6%96%B9jar%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>dujiecn.github.io/2016/12/20/springboot打包不进去第三方jar的问题/</id>
     <published>2016-12-20T02:05:00.000Z</published>
-    <updated>2016-12-20T02:09:58.000Z</updated>
+    <updated>2016-12-20T02:57:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>&#x5728;springboot maven&#x6784;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x7528;&#x5230;&#x7B2C;&#x4E09;&#x65B9;&#x7684;jar&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x9879;&#x76EE;eclipse&#x8FD0;&#x884C;&#x53EF;&#x80FD;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x6253;&#x5305;&#x6210;&#x53EF;&#x6267;&#x884C;jar&#x5305;&#x7684;&#x65F6;&#x5019;&#x7B2C;&#x4E09;&#x65B9;jar&#x5305;&#x6253;&#x4E0D;&#x8FDB;&#x53BB;&#x3002;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;<br>1.&#x521B;&#x5EFA;&#x76EE;&#x5F55;<code>src/main/webapp/WEB-INF/lib</code>,&#x628A;&#x7B2C;&#x4E09;&#x65B9;&#x7684;jar&#x5305;&#x653E;&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;<br>2.pom.xml&#x5F15;&#x7528;&#xFF1A;</p>
 <pre><code>&lt;dependency&gt;
@@ -33,16 +33,15 @@
 </code></pre><p>3.&#x914D;&#x7F6E;&#x6253;&#x5305;&#x8D44;&#x6E90;&#xFF1A;</p>
 <pre><code>&lt;resources&gt;
     &lt;resource&gt;
-        &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
+        &lt;directory&gt;${project.basedir}/src/main/resources&lt;/directory&gt;
+        &lt;filtering&gt;true&lt;/filtering&gt;
+    &lt;/resource&gt;
+    &lt;resource&gt;
+        &lt;directory&gt;${project.basedir}/src/main/webapp/WEB-INF/lib&lt;/directory&gt;
         &lt;targetPath&gt;BOOT-INF/lib/&lt;/targetPath&gt;
         &lt;includes&gt;
             &lt;include&gt;**/*.jar&lt;/include&gt;
         &lt;/includes&gt;
-    &lt;/resource&gt;
-
-    &lt;resource&gt;
-        &lt;directory&gt;src/main/resources&lt;/directory&gt;
-        &lt;targetPath&gt;BOOT-INF/classes/&lt;/targetPath&gt;
     &lt;/resource&gt;
 &lt;/resources&gt;
 </code></pre><p>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
@@ -61,16 +60,15 @@
 &lt;build&gt;
     &lt;resources&gt;
         &lt;resource&gt;
-            &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
+            &lt;directory&gt;${project.basedir}/src/main/resources&lt;/directory&gt;
+            &lt;filtering&gt;true&lt;/filtering&gt;
+        &lt;/resource&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;${project.basedir}/src/main/webapp/WEB-INF/lib&lt;/directory&gt;
             &lt;targetPath&gt;BOOT-INF/lib/&lt;/targetPath&gt;
             &lt;includes&gt;
                 &lt;include&gt;**/*.jar&lt;/include&gt;
             &lt;/includes&gt;
-        &lt;/resource&gt;
-
-        &lt;resource&gt;
-            &lt;directory&gt;src/main/resources&lt;/directory&gt;
-            &lt;targetPath&gt;BOOT-INF/classes/&lt;/targetPath&gt;
         &lt;/resource&gt;
     &lt;/resources&gt;
 

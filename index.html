@@ -64,16 +64,15 @@
 </code></pre><p>3.&#x914D;&#x7F6E;&#x6253;&#x5305;&#x8D44;&#x6E90;&#xFF1A;</p>
 <pre><code>&lt;resources&gt;
     &lt;resource&gt;
-        &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
+        &lt;directory&gt;${project.basedir}/src/main/resources&lt;/directory&gt;
+        &lt;filtering&gt;true&lt;/filtering&gt;
+    &lt;/resource&gt;
+    &lt;resource&gt;
+        &lt;directory&gt;${project.basedir}/src/main/webapp/WEB-INF/lib&lt;/directory&gt;
         &lt;targetPath&gt;BOOT-INF/lib/&lt;/targetPath&gt;
         &lt;includes&gt;
             &lt;include&gt;**/*.jar&lt;/include&gt;
         &lt;/includes&gt;
-    &lt;/resource&gt;
-
-    &lt;resource&gt;
-        &lt;directory&gt;src/main/resources&lt;/directory&gt;
-        &lt;targetPath&gt;BOOT-INF/classes/&lt;/targetPath&gt;
     &lt;/resource&gt;
 &lt;/resources&gt;
 </code></pre><p>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
@@ -92,16 +91,15 @@
 &lt;build&gt;
     &lt;resources&gt;
         &lt;resource&gt;
-            &lt;directory&gt;src/main/webapp/WEB-INF/lib&lt;/directory&gt;
+            &lt;directory&gt;${project.basedir}/src/main/resources&lt;/directory&gt;
+            &lt;filtering&gt;true&lt;/filtering&gt;
+        &lt;/resource&gt;
+        &lt;resource&gt;
+            &lt;directory&gt;${project.basedir}/src/main/webapp/WEB-INF/lib&lt;/directory&gt;
             &lt;targetPath&gt;BOOT-INF/lib/&lt;/targetPath&gt;
             &lt;includes&gt;
                 &lt;include&gt;**/*.jar&lt;/include&gt;
             &lt;/includes&gt;
-        &lt;/resource&gt;
-
-        &lt;resource&gt;
-            &lt;directory&gt;src/main/resources&lt;/directory&gt;
-            &lt;targetPath&gt;BOOT-INF/classes/&lt;/targetPath&gt;
         &lt;/resource&gt;
     &lt;/resources&gt;
 
