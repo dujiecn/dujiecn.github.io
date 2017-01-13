@@ -31,6 +31,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql的update语句高级用法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/08/mysql的update语句高级用法/">mysql的update语句高级用法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/08/mysql的update语句高级用法/" class="article-date">
+  <time datetime="2016-09-08T09:07:25.000Z" itemprop="datePublished">2016-09-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>update tableName set column=2 where limit &#x6761;&#x6570;;</p>
+<p>replace into tableName(id,name)  values(1,&#x2019;abc);</p>
+<p>insert into tableName(id,name) on duplicate key update name = ?;</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-linux系统安装mysql步骤" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -557,67 +594,9 @@ return function(files) {
 
 
   
-    <article id="post-利用hexo写博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/07/利用hexo写博客/">利用hexo写博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/07/利用hexo写博客/" class="article-date">
-  <time datetime="2016-09-07T04:13:22.000Z" itemprop="datePublished">2016-09-07</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x5B89;&#x88C5;node"><a href="#&#x5B89;&#x88C5;node" class="headerlink" title="&#x5B89;&#x88C5;node"></a>&#x5B89;&#x88C5;node</h3><h3 id="&#x5B89;&#x88C5;hexo"><a href="#&#x5B89;&#x88C5;hexo" class="headerlink" title="&#x5B89;&#x88C5;hexo"></a>&#x5B89;&#x88C5;hexo</h3><pre><code>npm install -g hexo
-</code></pre><h3 id="&#x521D;&#x59CB;&#x5316;"><a href="#&#x521D;&#x59CB;&#x5316;" class="headerlink" title="&#x521D;&#x59CB;&#x5316;"></a>&#x521D;&#x59CB;&#x5316;</h3><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7528;&#x6765;&#x5199;&#x535A;&#x5BA2;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5E76;cd&#x5230;&#x8BE5;&#x76EE;&#x5F55;&#x8FD0;&#x884C;:</p>
-<pre><code>hexo init
-hexo g
-npm install hexo-deployer-git --save
-</code></pre><h3 id="&#x914D;&#x7F6E;git"><a href="#&#x914D;&#x7F6E;git" class="headerlink" title="&#x914D;&#x7F6E;git"></a>&#x914D;&#x7F6E;git</h3><p>&#x5728;github.com&#x4E0A;&#x9762;&#x521B;&#x5EFA;<username>.github.io&#x7684;&#x4ED3;&#x5E93;<br>&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x4FEE;&#x6539;_config.yml&#x6700;&#x4E0B;&#x9762;&#xFF0C;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x5E76;&#x4FDD;&#x5B58;<br>git&#x5730;&#x5740;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x4ED3;&#x5E93;&#x5730;&#x5740;,&#x6CE8;&#x610F;&#x201C;&#xFF1A;&#x201D;&#x540E;&#x9762;&#x7684;&#x7A7A;&#x683C;</username></p>
-<pre><code>deploy:
-    type: git
-    repository: git@github.com:dujiecn/dujiecn.github.io.git
-    branch: master
-</code></pre><h3 id="&#x53D1;&#x5E03;"><a href="#&#x53D1;&#x5E03;" class="headerlink" title="&#x53D1;&#x5E03;"></a>&#x53D1;&#x5E03;</h3><pre><code>hexo clean
-hexo g
-hexo d
-</code></pre><h3 id="&#x9A8C;&#x8BC1;"><a href="#&#x9A8C;&#x8BC1;" class="headerlink" title="&#x9A8C;&#x8BC1;"></a>&#x9A8C;&#x8BC1;</h3><pre><code>&#x8BBF;&#x95EE;dujiecn.github.io      
-</code></pre><h3 id="&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63D2;&#x4EF6;"><a href="#&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63D2;&#x4EF6;" class="headerlink" title="&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63D2;&#x4EF6;"></a>&#x63D2;&#x5165;&#x56FE;&#x7247;&#x63D2;&#x4EF6;</h3><pre><code>npm install https://github.com/CodeFalling/hexo-asset-image --save
-
-MacGesture2-Publish
-&#x251C;&#x2500;&#x2500; apppicker.jpg
-&#x251C;&#x2500;&#x2500; logo.jpg
-&#x2514;&#x2500;&#x2500; rules.jpg
-MacGesture2-Publish.md
-</code></pre><p>&#x8FD9;&#x6837;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF08;&#x76EE;&#x5F55;&#x540D;&#x548C;&#x6587;&#x7AE0;&#x540D;&#x4E00;&#x81F4;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x4F7F;&#x7528; </p>
-<pre><code>![logo](MacGesture2-Publish/logo.jpg) 
-</code></pre><p>&#x5C31;&#x53EF;&#x4EE5;&#x63D2;&#x5165;&#x56FE;&#x7247;        </p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -642,7 +621,7 @@ MacGesture2-Publish.md
       <footer id="footer">
   
 	<div id="footer-info" class="inner">
-	  &copy; 2016 walljay 
+	  &copy; 2017 walljay 
 	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
 	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
 	</div>

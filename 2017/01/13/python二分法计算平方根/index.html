@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python二分法计算平方根 | walljay的备忘博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#!/user/bin/python
+# coding=utf-8
+
+&amp;apos;&amp;apos;&amp;apos;
+
+&amp;apos;&amp;apos;&amp;apos;
+
+
+def sqrt(v,t = 0.0001):
+    &amp;apos;&amp;apos;&amp;apos;
+        &amp;#x4E8C;&amp;#x5206;&amp;#x6CD5;&amp;#x8BA1;&amp;#x7B97;&amp;#x5E73;&amp;#x65B9;&amp;#x6839;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python二分法计算平方根">
+<meta property="og:url" content="dujiecn.github.io/2017/01/13/python二分法计算平方根/index.html">
+<meta property="og:site_name" content="walljay的备忘博客">
+<meta property="og:description" content="#!/user/bin/python
+# coding=utf-8
+
+&amp;apos;&amp;apos;&amp;apos;
+
+&amp;apos;&amp;apos;&amp;apos;
+
+
+def sqrt(v,t = 0.0001):
+    &amp;apos;&amp;apos;&amp;apos;
+        &amp;#x4E8C;&amp;#x5206;&amp;#x6CD5;&amp;#x8BA1;&amp;#x7B97;&amp;#x5E73;&amp;#x65B9;&amp;#x6839;">
+<meta property="og:updated_time" content="2017-01-13T09:03:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python二分法计算平方根">
+<meta name="twitter:description" content="#!/user/bin/python
+# coding=utf-8
+
+&amp;apos;&amp;apos;&amp;apos;
+
+&amp;apos;&amp;apos;&amp;apos;
+
+
+def sqrt(v,t = 0.0001):
+    &amp;apos;&amp;apos;&amp;apos;
+        &amp;#x4E8C;&amp;#x5206;&amp;#x6CD5;&amp;#x8BA1;&amp;#x7B97;&amp;#x5E73;&amp;#x65B9;&amp;#x6839;">
+  
+    <link rel="alternative" href="/atom.xml" title="walljay的备忘博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-python二分法计算平方根" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python二分法计算平方根
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/01/13/python二分法计算平方根/" class="article-date">
+  <time datetime="2017-01-13T09:02:44.000Z" itemprop="datePublished">2017-01-13</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>#!/user/bin/python
+# coding=utf-8
+
+&apos;&apos;&apos;
+
+&apos;&apos;&apos;
+
+
+def sqrt(v,t = 0.0001):
+    &apos;&apos;&apos;
+        &#x4E8C;&#x5206;&#x6CD5;&#x8BA1;&#x7B97;&#x5E73;&#x65B9;&#x6839;     
+    &apos;&apos;&apos;
+    v = v + 0.0
+    s = 0
+    e = v / 2
+    r = 0
+    while((e - s) &gt; (t * 2)):
+        r = (s + e) / 2
+        if(r * r &gt; v): 
+            e = r
+        elif (r * r &lt; v):
+            s = r
+        else:
+            return r 
+
+    return r
+
+print sqrt(9)
+print sqrt(10,0.1)
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/20/springboot打包不进去第三方jar的问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">springboot打包不进去第三方jar的问题</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2017 walljay 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

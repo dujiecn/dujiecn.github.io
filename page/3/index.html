@@ -31,6 +31,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-springboot中application-properties常用配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/10/springboot中application-properties常用配置/">springboot中application.properties常用配置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2016/09/10/springboot中application-properties常用配置/" class="article-date">
+  <time datetime="2016-09-10T02:54:38.000Z" itemprop="datePublished">2016-09-10</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x6570;&#x636E;&#x5E93;"><a href="#&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x6570;&#x636E;&#x5E93;"></a>&#x6570;&#x636E;&#x5E93;</h3><pre><code>spring.datasource.url=jdbc:mysql://localhost:3306/going_user?useUnicode=true&amp;characterEncoding=UTF-8&amp;rewriteBatchedStatements=true&amp;autoReconnect=true&amp;useSSL=false
+spring.datasource.username=root
+spring.datasource.password=123
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+</code></pre><h3 id="&#x7F13;&#x5B58;"><a href="#&#x7F13;&#x5B58;" class="headerlink" title="&#x7F13;&#x5B58;"></a>&#x7F13;&#x5B58;</h3><pre><code>spring.redis.host=localhost
+spring.redis.database=1
+spring.redis.password=123
+spring.redis.port=6379
+#spring.redis.pool.max-idle=8  
+#spring.redis.pool.min-idle=0  
+#spring.redis.pool.max-active=8  
+#spring.redis.pool.max-wait=-1
+</code></pre><h3 id="&#x65E5;&#x5FD7;"><a href="#&#x65E5;&#x5FD7;" class="headerlink" title="&#x65E5;&#x5FD7;"></a>&#x65E5;&#x5FD7;</h3><pre><code>logging.file=var/log/user.log
+#logging.path=var/log
+logging.level.org.springframework.web=INFO
+logging.level.org.hibernate=WARN
+logging.level.org.springframework.data=DEBUG
+</code></pre><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><pre><code>server.port=8083
+server.tomcat.compression=on
+#server.tomcat.compression=4096
+server.tomcat.compressableMimeTypes=application/json,application/xml
+</code></pre><h3 id="secruity"><a href="#secruity" class="headerlink" title="secruity"></a>secruity</h3><pre><code>security.user.name=admin
+security.user.password=admin    
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-springboot项目中使用docker-maven-plugin" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -466,368 +523,9 @@ fireOnThis.dispatchEvent(evObj);
 
 
   
-    <article id="post-浏览器兼容性问题大汇总" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/09/浏览器兼容性问题大汇总/">浏览器兼容性问题大汇总</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/09/09/浏览器兼容性问题大汇总/" class="article-date">
-  <time datetime="2016-09-09T00:53:45.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="JavaScript-3"><a href="#JavaScript-3" class="headerlink" title="JavaScript 3"></a>JavaScript 3</h3><ol>
-<li><p>HTML&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>const&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>event.x&#x4E0E;event.y&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>window.location.href&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>frame&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>&#x6A21;&#x6001;&#x548C;&#x975E;&#x6A21;&#x6001;&#x7A97;&#x53E3;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>firefox&#x4E0E;IE&#x7684;&#x7236;&#x5143;&#x7D20;(parentElement)&#x7684;&#x533A;&#x522B; 3</p>
-</li>
-<li><p>document.formName.item(&#x201D;itemName&#x201D;) &#x95EE;&#x9898; 3</p>
-</li>
-<li><p>&#x96C6;&#x5408;&#x7C7B;&#x5BF9;&#x8C61;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>input.type&#x5C5E;&#x6027;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>event.srcElement&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>body&#x8F7D;&#x5165;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>&#x4E8B;&#x4EF6;&#x59D4;&#x6258;&#x65B9;&#x6CD5; 3</p>
-</li>
-<li><p>Table&#x64CD;&#x4F5C;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>&#x5BF9;&#x8C61;&#x5BBD;&#x9AD8;&#x8D4B;&#x503C;&#x95EE;&#x9898; 3</p>
-</li>
-</ol>
-<h3 id="CSS-3"><a href="#CSS-3" class="headerlink" title="CSS 3"></a>CSS 3</h3><ol>
-<li><p>cursor:hand   VS   cursor:pointer 3</p>
-</li>
-<li><p>innerText&#x5728;IE&#x4E2D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x5728;FireFox&#x4E2D;&#x5374;&#x4E0D;&#x884C;. 3</p>
-</li>
-<li><p>CSS&#x900F;&#x660E; 3</p>
-</li>
-<li><p>css&#x4E2D;&#x7684;width&#x548C;padding 3</p>
-</li>
-<li><p>FF&#x548C;IE BOX&#x6A21;&#x578B;&#x89E3;&#x91CA;&#x4E0D;&#x4E00;&#x81F4;&#x5BFC;&#x81F4;&#x76F8;&#x5DEE;2px 3</p>
-</li>
-<li><p>IE5 &#x548C;IE6&#x7684;BOX&#x89E3;&#x91CA;&#x4E0D;&#x4E00;&#x81F4; 3</p>
-</li>
-<li><p>ul&#x548C;ol&#x5217;&#x8868;&#x7F29;&#x8FDB;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>&#x5143;&#x7D20;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>Div&#x7684;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>margin&#x52A0;&#x500D;&#x7684;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>IE&#x4E0E;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x7684;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>&#x9875;&#x9762;&#x7684;&#x6700;&#x5C0F;&#x5BBD;&#x5EA6; 3</p>
-</li>
-<li><p>DIV&#x6D6E;&#x52A8;IE&#x6587;&#x672C;&#x4EA7;&#x751F;3&#x8C61;&#x7D20;&#x7684;bug 3</p>
-</li>
-<li><p>IE&#x6349;&#x8FF7;&#x85CF;&#x7684;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>float&#x7684;div&#x95ED;&#x5408;;&#x6E05;&#x9664;&#x6D6E;&#x52A8;;&#x81EA;&#x9002;&#x5E94;&#x9AD8;&#x5EA6; 3</p>
-</li>
-<li><p>&#x9AD8;&#x5EA6;&#x4E0D;&#x9002;&#x5E94; 3</p>
-</li>
-<li><p>IE6&#x4E0B;&#x56FE;&#x7247;&#x4E0B;&#x6709;&#x7A7A;&#x9699;&#x4EA7;&#x751F; 3</p>
-</li>
-<li><p>&#x5BF9;&#x9F50;&#x6587;&#x672C;&#x4E0E;&#x6587;&#x672C;&#x8F93;&#x5165;&#x6846; 3</p>
-</li>
-<li><p>LI&#x4E2D;&#x5185;&#x5BB9;&#x8D85;&#x8FC7;&#x957F;&#x5EA6;&#x540E;&#x4EE5;&#x7701;&#x7565;&#x53F7;&#x663E;&#x793A; 3</p>
-</li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;web&#x6807;&#x51C6;&#x4E2D;IE&#x65E0;&#x6CD5;&#x8BBE;&#x7F6E;&#x6EDA;&#x52A8;&#x6761;&#x989C;&#x8272;&#x4E86; 3</p>
-</li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x65E0;&#x6CD5;&#x5B9A;&#x4E49;1px&#x5DE6;&#x53F3;&#x9AD8;&#x5EA6;&#x7684;&#x5BB9;&#x5668; 3</p>
-</li>
-<li><p>&#x94FE;&#x63A5;(a&#x6807;&#x7B7E;)&#x7684;&#x8FB9;&#x6846;&#x4E0E;&#x80CC;&#x666F; 3</p>
-</li>
-<li><p>&#x8D85;&#x94FE;&#x63A5;&#x8BBF;&#x95EE;&#x8FC7;&#x540E;hover&#x6837;&#x5F0F;&#x5C31;&#x4E0D;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898; 3</p>
-</li>
-<li><p>FORM&#x6807;&#x7B7E; 3</p>
-</li>
-<li><p>&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;(&#x8FD9;&#x4E2A;&#x4E0D;&#x80FD;&#x7B97;&#x662F;&#x517C;&#x5BB9;,&#x662F;&#x9690;&#x85CF;css&#x7684;&#x4E00;&#x4E2A;bug) 3</p>
-</li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;FF&#x4E0B;&#x6587;&#x672C;&#x65E0;&#x6CD5;&#x6491;&#x5F00;&#x5BB9;&#x5668;&#x7684;&#x9AD8;&#x5EA6; 3</p>
-</li>
-</ol>
-<p>&#xD8; JavaScript</p>
-<ol>
-<li><p>HTML&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x95EE;&#x9898;<br>FireFox&#xFF1A;document.getElementById(&#x201C;idName&#x201D;);<br>ie:document.idname&#x6216;&#x8005;document.getElementById(&#x201C;idName&#x201D;).<br>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;document.getElementById(&#x201C;idName&#x201D;);</p>
-</li>
-<li><p>const&#x95EE;&#x9898;<br>&#x8BF4;&#x660E;:Firefox&#x4E0B;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;const&#x5173;&#x952E;&#x5B57;&#x6216;var&#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;;<br>IE&#x4E0B;,&#x53EA;&#x80FD;&#x4F7F;&#x7528;var&#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;.<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;var&#x5173;&#x952E;&#x5B57;&#x6765;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;.</p>
-</li>
-<li><p>event.x&#x4E0E;event.y&#x95EE;&#x9898;<br>&#x8BF4;&#x660E;:IE&#x4E0B;,event&#x5BF9;&#x8C61;&#x6709;x,y&#x5C5E;&#x6027;,&#x4F46;&#x662F;&#x6CA1;&#x6709;pageX,pageY&#x5C5E;&#x6027;;<br>Firefox&#x4E0B;,event&#x5BF9;&#x8C61;&#x6709;pageX,pageY&#x5C5E;&#x6027;,&#x4F46;&#x662F;&#x6CA1;&#x6709;x,y&#x5C5E;&#x6027;.<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x4F7F;&#x7528;mX(mX   =   event.x   ?   event.x   :   event.pageX;)&#x6765;&#x4EE3;&#x66FF;IE&#x4E0B;&#x7684;event.x&#x6216;&#x8005;Firefox&#x4E0B;&#x7684;event.pageX. </p>
-</li>
-<li><p>window.location.href&#x95EE;&#x9898;<br>&#x8BF4;&#x660E;:IE&#x6216;&#x8005;Firefox2.0.x&#x4E0B;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;window.location&#x6216;window.location.href;<br>Firefox1.5.x&#x4E0B;,&#x53EA;&#x80FD;&#x4F7F;&#x7528;window.location.<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x4F7F;&#x7528;window.location&#x6765;&#x4EE3;&#x66FF;window.location.href.</p>
-</li>
-<li><p>frame&#x95EE;&#x9898;<br>&#x4EE5;&#x4E0B;&#x9762;&#x7684;frame&#x4E3A;&#x4F8B;&#xFF1A;<br><frame src="xxx.html" id="frameId" name="frameName"><br>(1)&#x8BBF;&#x95EE;frame&#x5BF9;&#x8C61;:<br>IE:&#x4F7F;&#x7528;window.frameId&#x6216;&#x8005;window.frameName&#x6765;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;frame&#x5BF9;&#x8C61;.   frameId&#x548C;frameName&#x53EF;&#x4EE5;&#x540C;&#x540D;&#x3002;<br>Firefox:&#x53EA;&#x80FD;&#x4F7F;&#x7528;window.frameName&#x6765;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;frame&#x5BF9;&#x8C61;.<br>&#x53E6;&#x5916;&#xFF0C;&#x5728;IE&#x548C;Firefox&#x4E2D;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;window.document.getElementById(&#x201C;frameId&#x201D;)&#x6765;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;frame&#x5BF9;&#x8C61;.<br>(2)&#x5207;&#x6362;frame&#x5185;&#x5BB9;:<br>&#x5728; IE&#x548C;Firefox&#x4E2D;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;window.document.getElementById(&#x201C;testFrame&#x201D;).src   =   &#x201C;xxx.html&#x201D;&#x6216;window.frameName.location   =   &#x201C;xxx.html&#x201D;&#x6765;&#x5207;&#x6362;frame&#x7684;&#x5185;&#x5BB9;.<br>&#x5982;&#x679C;&#x9700;&#x8981;&#x5C06;frame&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x56DE;&#x7236;&#x7A97;&#x53E3;(&#x6CE8;&#x610F;&#x4E0D;&#x662F;opener,&#x800C;&#x662F;parent   frame)&#xFF0C;&#x53EF;&#x4EE5;&#x5728;frame&#x4E2D;&#x4F7F;&#x7528;parent&#x6765;&#x8BBF;&#x95EE;&#x7236;&#x7A97;&#x53E3;&#x3002;&#x4F8B;&#x5982;&#xFF1A;parent.document.form1.filename.value=&#x201D;Aqing&#x201D;;</p>
-</li>
-<li><p>&#x6A21;&#x6001;&#x548C;&#x975E;&#x6A21;&#x6001;&#x7A97;&#x53E3;&#x95EE;&#x9898;<br>&#x8BF4;&#x660E;:IE&#x4E0B;,&#x53EF;&#x4EE5;&#x901A;&#x8FC7;showModalDialog&#x548C;showModelessDialog&#x6253;&#x5F00;&#x6A21;&#x6001;&#x548C;&#x975E;&#x6A21;&#x6001;&#x7A97;&#x53E3;;Firefox&#x4E0B;&#x5219;&#x4E0D;&#x80FD;.<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x76F4;&#x63A5;&#x4F7F;&#x7528;window.open(pageURL,name,parameters)&#x65B9;&#x5F0F;&#x6253;&#x5F00;&#x65B0;&#x7A97;&#x53E3;&#x3002;<br>&#x5982;&#x679C;&#x9700;&#x8981;&#x5C06;&#x5B50;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x56DE;&#x7236;&#x7A97;&#x53E3;,&#x53EF;&#x4EE5;&#x5728;&#x5B50;&#x7A97;&#x53E3;&#x4E2D;&#x4F7F;&#x7528;window.opener&#x6765;&#x8BBF;&#x95EE;&#x7236;&#x7A97;&#x53E3;.<br>&#x4F8B;&#x5982;&#xFF1A;var   parWin   =   window.opener;   parWin.document.getElementById(&#x201C;Aqing&#x201D;).value   =   &#x201C;Aqing&#x201D;; </p>
-</li>
-<li><p>firefox&#x4E0E;IE&#x7684;&#x7236;&#x5143;&#x7D20;(parentElement)&#x7684;&#x533A;&#x522B;<br>IE&#xFF1A;obj.parentElement<br>firefox&#xFF1A;obj.parentNode<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;:   &#x56E0;&#x4E3A;firefox&#x4E0E;IE&#x90FD;&#x652F;&#x6301;DOM,&#x56E0;&#x6B64;&#x4F7F;&#x7528;obj.parentNode&#x662F;&#x4E0D;&#x9519;&#x9009;&#x62E9;.</p>
-</li>
-<li><p>document.formName.item(&#x201D;itemName&#x201D;) &#x95EE;&#x9898;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;document.formName.item(&#x201D;itemName&#x201D;) &#x6216;document.formName.elements [&#x201C;elementName&#x201D;]&#xFF1B;Firefox &#x4E0B;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;document.formName.elements[&#x201C;elementName&#x201D;]&#x3002;<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;document.formName.elements[&#x201C;elementName&#x201D;]&#x3002;</p>
-</li>
-<li><p>&#x96C6;&#x5408;&#x7C7B;&#x5BF9;&#x8C61;&#x95EE;&#x9898;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; () &#x6216; [] &#x83B7;&#x53D6;&#x96C6;&#x5408;&#x7C7B;&#x5BF9;&#x8C61;&#xFF1B;Firefox&#x4E0B;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528; [ ]&#x83B7;&#x53D6;&#x96C6;&#x5408;&#x7C7B;&#x5BF9;&#x8C61;&#x3002;<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x7EDF;&#x4E00;&#x4F7F;&#x7528; [] &#x83B7;&#x53D6;&#x96C6;&#x5408;&#x7C7B;&#x5BF9;&#x8C61;&#x3002;</p>
-</li>
-<li><p>&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x95EE;&#x9898;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x83B7;&#x53D6;&#x5E38;&#x89C4;&#x5C5E;&#x6027;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;getAttribute() &#x83B7;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#xFF1B;Firefox&#x4E0B;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;getAttribute() &#x83B7;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x3002;<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x7EDF;&#x4E00;&#x901A;&#x8FC7;getAttribute() &#x83B7;&#x53D6;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x3002;</p>
-</li>
-<li><p>input.type&#x5C5E;&#x6027;&#x95EE;&#x9898;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0B;input.type&#x5C5E;&#x6027;&#x4E3A;&#x53EA;&#x8BFB;&#xFF1B;&#x4F46;&#x662F;Firefox&#x4E0B;input.type&#x5C5E;&#x6027;&#x4E3A;&#x8BFB;&#x5199;&#x3002;<br>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;&#x4E0D;&#x4FEE;&#x6539;input.type&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x5FC5;&#x987B;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x9690;&#x85CF;&#x539F;&#x6765;&#x7684;input&#xFF0C;&#x7136;&#x540E;&#x5728;&#x540C;&#x6837;&#x7684;&#x4F4D;&#x7F6E;&#x518D;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x65B0;&#x7684;input&#x5143;&#x7D20;&#x3002;</p>
-</li>
-<li><p>event.srcElement&#x95EE;&#x9898;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0B;&#xFF0C;even&#x5BF9;&#x8C61;&#x6709;srcElement&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;target&#x5C5E;&#x6027;&#xFF1B;Firefox&#x4E0B;&#xFF0C;even&#x5BF9;&#x8C61;&#x6709;target&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;srcElement&#x5C5E;&#x6027;&#x3002;<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x4F7F;&#x7528;srcObj = event.srcElement ?event.srcElement : event.target;<br>&#x5982;&#x679C;&#x8003;&#x8651;&#x7B2C;8&#x6761;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x6539;&#x7528;myEvent&#x4EE3;&#x66FF;event&#x5373;&#x53EF;&#x3002;</p>
-</li>
-<li><p>body&#x8F7D;&#x5165;&#x95EE;&#x9898;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;Firefox&#x7684;body&#x5BF9;&#x8C61;&#x5728;body&#x6807;&#x7B7E;&#x6CA1;&#x6709;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x5B8C;&#x5168;&#x8BFB;&#x5165;&#x4E4B;&#x524D;&#x5C31;&#x5B58;&#x5728;&#xFF1B;&#x800C;IE&#x7684;body&#x5BF9;&#x8C61;&#x5219;&#x5FC5;&#x987B;&#x5728;body&#x6807;&#x7B7E;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x5B8C;&#x5168;&#x8BFB;&#x5165;&#x4E4B;&#x540E;&#x624D;&#x5B58;&#x5728;&#x3002;<br>[&#x6CE8;] &#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5C1A;&#x672A;&#x5B9E;&#x9645;&#x9A8C;&#x8BC1;&#xFF0C;&#x5F85;&#x9A8C;&#x8BC1;&#x540E;&#x518D;&#x6765;&#x4FEE;&#x6539;&#x3002;<br>[&#x6CE8;] &#x7ECF;&#x9A8C;&#x8BC1;&#xFF0C;IE6&#x3001;Opera9&#x4EE5;&#x53CA;FireFox2&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x4E0A;&#x8FF0;&#x95EE;&#x9898;&#xFF0C;&#x5355;&#x7EAF;&#x7684;JS&#x811A;&#x672C;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5728;&#x811A;&#x672C;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x8F7D;&#x5165;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x548C;&#x5143;&#x7D20;&#xFF0C;&#x5373;&#x4F7F;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x8FD8;&#x6CA1;&#x6709;&#x8F7D;&#x5165;&#x5B8C;&#x6210;&#x3002;</p>
-</li>
-<li><p>&#x4E8B;&#x4EF6;&#x59D4;&#x6258;&#x65B9;&#x6CD5;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;document.body.onload = inject; &#x5176;&#x4E2D;function inject()&#x5728;&#x8FD9;&#x4E4B;&#x524D;&#x5DF2;&#x88AB;&#x5B9E;&#x73B0;&#xFF1B;&#x5728;Firefox&#x4E0B;&#xFF0C;&#x4F7F;&#x7528;document.body.onload = inject();<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;document.body.onload=new Function(&#x2019;inject()&#x2019;); &#x6216;&#x8005;document.body.onload = function(){/<em> &#x8FD9;&#x91CC;&#x662F;&#x4EE3;&#x7801; </em>/}<br>[&#x6CE8;&#x610F;] Function&#x548C;function&#x7684;&#x533A;&#x522B;&#x3002;</p>
-</li>
-<li><p>Table&#x64CD;&#x4F5C;&#x95EE;&#x9898;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;ie&#x3001;firefox&#x4EE5;&#x53CA;&#x5176;&#x5B83;&#x6D4F;&#x89C8;&#x5668;&#x5BF9;&#x4E8E; table &#x6807;&#x7B7E;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x5404;&#x4E0D;&#x76F8;&#x540C;&#xFF0C;&#x5728;ie&#x4E2D;&#x4E0D;&#x5141;&#x8BB8;&#x5BF9;table&#x548C;tr&#x7684;innerHTML&#x8D4B;&#x503C;&#xFF0C;&#x4F7F;&#x7528;js&#x589E;&#x52A0;&#x4E00;&#x4E2A;tr&#x65F6;&#xFF0C;&#x4F7F;&#x7528;appendChild&#x65B9;&#x6CD5;&#x4E5F;&#x4E0D;&#x7BA1;&#x7528;&#x3002;<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;//&#x5411;table&#x8FFD;&#x52A0;&#x4E00;&#x4E2A;&#x7A7A;&#x884C;&#xFF1A;<br>var row = otable.insertRow(-1);var cell = document.createElement(&#x201C;td&#x201D;);cell.innerHTML = &#x201C;&#x201D;;cell.className = &#x201C;XXXX&#x201D;;row.appendChild(cell);[&#x6CE8;] &#x7531;&#x4E8E;&#x4FFA;&#x5F88;&#x5C11;&#x4F7F;&#x7528;JS&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x8868;&#x683C;&#xFF0C;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x6CA1;&#x6709;&#x9047;&#x89C1;&#x8FC7;&#x3002;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;JS&#x6846;&#x67B6;&#x96C6;&#x6765;&#x64CD;&#x4F5C;table&#xFF0C;&#x5982;JQuery&#x3002;</p>
-</li>
-<li><p>&#x5BF9;&#x8C61;&#x5BBD;&#x9AD8;&#x8D4B;&#x503C;&#x95EE;&#x9898;<br>&#x95EE;&#x9898;&#x8BF4;&#x660E;&#xFF1A;FireFox&#x4E2D;&#x7C7B;&#x4F3C;obj.style.height = imgObj.height&#x7684;&#x8BED;&#x53E5;&#x65E0;&#x6548;&#x3002;</p>
-</li>
-</ol>
-<p>&#xD8; CSS</p>
-<ol>
-<li><p>cursor:hand   VS   cursor:pointer<br>firefox&#x4E0D;&#x652F;&#x6301;hand&#xFF0C;&#x4F46;ie&#x652F;&#x6301;pointer<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;:   &#x7EDF;&#x4E00;&#x4F7F;&#x7528;pointer</p>
-</li>
-<li><p>innerText&#x5728;IE&#x4E2D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x5728;FireFox&#x4E2D;&#x5374;&#x4E0D;&#x884C;.<br>&#x9700;&#x7528;textContent&#x3002;<br>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;:<br>if(navigator.appName.indexOf(&#x201C;Explorer&#x201D;)   &gt;   -1){</p>
-<pre><code>document.getElementById(&apos;element&apos;).innerText   =   &quot;my   text&quot;;
-</code></pre><p>}   else{</p>
-<pre><code>document.getElementById(&apos;element&apos;).textContent   =   &quot;my   text&quot;;
-</code></pre><p>}</p>
-</li>
-<li><p>CSS&#x900F;&#x660E;</p>
-<p> IE&#xFF1A;        filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=60)&#x3002;<br> FF&#xFF1A;opacity:0.6&#x3002;</p>
-</li>
-<li><p>css&#x4E2D;&#x7684;width&#x548C;padding<br>&#x5728;IE7&#x548C;FF&#x4E2D;width&#x5BBD;&#x5EA6;&#x4E0D;&#x5305;&#x62EC;padding&#xFF0C;&#x5728;Ie6&#x4E2D;&#x5305;&#x62EC;padding.</p>
-</li>
-<li><p>FF&#x548C;IEBOX&#x6A21;&#x578B;&#x89E3;&#x91CA;&#x4E0D;&#x4E00;&#x81F4;&#x5BFC;&#x81F4;&#x76F8;&#x5DEE;2px</p>
-<p> box.style{width:100;border 1px;}<br> ie&#x7406;&#x89E3;&#x4E3A;box.width = 100<br> ff&#x7406;&#x89E3;&#x4E3A;box.width = 100 + 1*2 = 102  //&#x52A0;&#x4E0A;&#x8FB9;&#x6846;2px </p>
-<p> &#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;div{margin:30px!important;margin:28px;}<br>&#x6CE8;&#x610F;&#x8FD9;&#x4E24;&#x4E2A;margin&#x7684;&#x987A;&#x5E8F;&#x4E00;&#x5B9A;&#x4E0D;&#x80FD;&#x5199;&#x53CD;&#xFF0C; IE&#x4E0D;&#x80FD;&#x8BC6;&#x522B;!important&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x522B;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x3002;&#x6240;&#x4EE5;&#x5728;IE&#x4E0B;&#x5176;&#x5B9E;&#x89E3;&#x91CA;&#x6210;&#x8FD9;&#x6837;&#xFF1A;div{maring:30px;margin:28px}<br>&#x91CD;&#x590D;&#x5B9A;&#x4E49;&#x7684;&#x8BDD;&#x6309;&#x7167;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6765;&#x6267;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x53EF;&#x4EE5;&#x53EA;&#x5199;margin:XXpx!important;</p>
-</li>
-<li><p>IE5 &#x548C;IE6&#x7684;BOX&#x89E3;&#x91CA;&#x4E0D;&#x4E00;&#x81F4;</p>
-<p> IE5&#x4E0B;div{width:300px;margin:0 10px 0 10px;}<br>div &#x7684;&#x5BBD;&#x5EA6;&#x4F1A;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;300px-10px(&#x53F3;&#x586B;&#x5145;)-10px(&#x5DE6;&#x586B;&#x5145;)&#xFF0C;&#x6700;&#x7EC8;div&#x7684;&#x5BBD;&#x5EA6;&#x4E3A;280px&#xFF0C;&#x800C;&#x5728;IE6&#x548C;&#x5176;&#x4ED6;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x5BBD;&#x5EA6;&#x5219;&#x662F;&#x4EE5; 300px+10px(&#x53F3;&#x586B;&#x5145;)+10px(&#x5DE6;&#x586B;&#x5145;)=320px&#x6765;&#x8BA1;&#x7B97;&#x7684;&#x3002;&#x8FD9;&#x65F6;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x505A;&#x5982;&#x4E0B;&#x4FEE;&#x6539; div{width:300px!important;width /**/:340px;margin:0 10px 0 10px}</p>
-</li>
-<li><p>ul&#x548C;ol&#x5217;&#x8868;&#x7F29;&#x8FDB;&#x95EE;&#x9898;</p>
-<p> &#x6D88;&#x9664;ul&#x3001;ol&#x7B49;&#x5217;&#x8868;&#x7684;&#x7F29;&#x8FDB;&#x65F6;&#xFF0C;&#x6837;&#x5F0F;&#x5E94;&#x5199;&#x6210;&#xFF1A;list-style:none;margin:0px;padding:0px;<br>&#x7ECF;&#x9A8C;&#x8BC1;&#xFF0C;&#x5728;IE&#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E;margin:0px&#x53EF;&#x4EE5;&#x53BB;&#x9664;&#x5217;&#x8868;&#x7684;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x7F29;&#x8FDB;&#x3001;&#x7A7A;&#x767D;&#x4EE5;&#x53CA;&#x5217;&#x8868;&#x7F16;&#x53F7;&#x6216;&#x5706;&#x70B9;&#xFF0C;&#x8BBE;&#x7F6E;padding&#x5BF9;&#x6837;&#x5F0F;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#xFF1B;&#x5728; Firefox &#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E;margin:0px&#x4EC5;&#x4EC5;&#x53EF;&#x4EE5;&#x53BB;&#x9664;&#x4E0A;&#x4E0B;&#x7684;&#x7A7A;&#x767D;&#xFF0C;&#x8BBE;&#x7F6E;padding:0px&#x540E;&#x4EC5;&#x4EC5;&#x53EF;&#x4EE5;&#x53BB;&#x6389;&#x5DE6;&#x53F3;&#x7F29;&#x8FDB;&#xFF0C;&#x8FD8;&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;list- style:none&#x624D;&#x80FD;&#x53BB;&#x9664;&#x5217;&#x8868;&#x7F16;&#x53F7;&#x6216;&#x5706;&#x70B9;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5728;IE&#x4E2D;&#x4EC5;&#x4EC5;&#x8BBE;&#x7F6E;margin:0px&#x5373;&#x53EF;&#x8FBE;&#x5230;&#x6700;&#x7EC8;&#x6548;&#x679C;&#xFF0C;&#x800C;&#x5728;Firefox&#x4E2D;&#x5FC5;&#x987B;&#x540C;&#x65F6;&#x8BBE;&#x7F6E;margin:0px&#x3001; padding:0px&#x4EE5;&#x53CA;list-style:none&#x4E09;&#x9879;&#x624D;&#x80FD;&#x8FBE;&#x5230;&#x6700;&#x7EC8;&#x6548;&#x679C;&#x3002;</p>
-</li>
-<li><p>&#x5143;&#x7D20;&#x6C34;&#x5E73;&#x5C45;&#x4E2D;&#x95EE;&#x9898;</p>
-<p> FF: margin:0 auto;<br> IE: &#x7236;&#x7EA7;{ text-align:center; }</p>
-</li>
-<li><p>Div&#x7684;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x95EE;&#x9898;</p>
-<p> vertical-align:middle; &#x5C06;&#x884C;&#x8DDD;&#x589E;&#x52A0;&#x5230;&#x548C;&#x6574;&#x4E2A;DIV&#x4E00;&#x6837;&#x9AD8;&#xFF1A;line-height:200px; &#x7136;&#x540E;&#x63D2;&#x5165;&#x6587;&#x5B57;&#xFF0C;&#x5C31;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#x4E86;&#x3002;&#x7F3A;&#x70B9;&#x662F;&#x8981;&#x63A7;&#x5236;&#x5185;&#x5BB9;&#x4E0D;&#x8981;&#x6362;&#x884C;&#x3002;</p>
-</li>
-<li><p>margin&#x52A0;&#x500D;&#x7684;&#x95EE;&#x9898;</p>
-<p>&#x8BBE;&#x7F6E;&#x4E3A;float&#x7684;div&#x5728;ie&#x4E0B;&#x8BBE;&#x7F6E;&#x7684;margin&#x4F1A;&#x52A0;&#x500D;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;ie6&#x90FD;&#x5B58;&#x5728;    &#x7684;bug&#x3002;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x5728;&#x8FD9;&#x4E2A;div&#x91CC;&#x9762;&#x52A0;&#x4E0A;display:inline;<br>&#x4F8B;&#x5982;&#xFF1A;</p>
-<div id="&#x201D;imfloat&#x201D;">
-
-<p>&#x76F8;&#x5E94;&#x7684;css&#x4E3A;:</p>
-<pre><code>#imfloat { 
-float:left; 
-margin:5px;/*IE&#x4E0B;&#x7406;&#x89E3;&#x4E3A;10px*/ 
-display:inline;/*IE&#x4E0B;&#x518D;&#x7406;&#x89E3;&#x4E3A;5px*/
-}
-</code></pre></div></li>
-<li><p>IE&#x4E0E;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x7684;&#x95EE;&#x9898;<br>IE&#x4E0D;&#x8BA4;&#x5F97;min-&#x8FD9;&#x4E2A;&#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x628A;&#x6B63;&#x5E38;&#x7684;width&#x548C;height&#x5F53;&#x4F5C;&#x6709;    min&#x7684;&#x60C5;&#x51B5;&#x6765;&#x4F7F;&#x3002;&#x8FD9;&#x6837;&#x95EE;&#x9898;&#x5C31;&#x5927;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x7528;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#xFF0C;&#x6B63;&#x5E38;&#x7684;&#x6D4F;&#x89C8;&#x5668;    &#x91CC;&#x8FD9;&#x4E24;&#x4E2A;&#x503C;&#x5C31;&#x4E0D;&#x4F1A;&#x53D8;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x7528;min-width&#x548C;min-height&#x7684;&#x8BDD;&#xFF0C;IE&#x4E0B;    &#x9762;&#x6839;&#x672C;&#x7B49;&#x4E8E;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x3002;</p>
-<p>&#x6BD4;&#x5982;&#x8981;&#x8BBE;&#x7F6E;&#x80CC;&#x666F;&#x56FE;&#x7247;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BBD;&#x5EA6;&#x662F;&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x7684;&#x3002;&#x8981;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;    &#x6837;&#xFF1A;</p>
-<pre><code>#box{ width: 80px; height: 35px;}
-html&gt;body #box{ 
-    width: auto; 
-    height: auto; 
-    min-width: 80px; 
-    min-height: 35px;
-}
-</code></pre></li>
-<li><p>&#x9875;&#x9762;&#x7684;&#x6700;&#x5C0F;&#x5BBD;&#x5EA6;</p>
-<p>&#x5982;&#x4E0A;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;IE&#x4E0D;&#x8BC6;&#x522B;min&#xFF0C;&#x8981;&#x5B9E;&#x73B0;&#x6700;&#x5C0F;&#x5BBD;&#x5EA6;&#xFF0C;&#x53EF;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code>#container{
-min-width: 600px;width:expression(document.body.clientWidth&#xFF1C; 600? &quot;600px&quot;: &quot;auto&quot; );} 
-</code></pre><p>&#x7B2C;&#x4E00;&#x4E2A;min-width&#x662F;&#x6B63;&#x5E38;&#x7684;&#xFF1B;&#x4F46;&#x7B2C;2&#x884C;&#x7684;width&#x4F7F;&#x7528;&#x4E86;Javascript&#xFF0C;&#x8FD9;&#x53EA;&#x6709;IE&#x624D;&#x8BA4;&#x5F97;&#xFF0C;&#x8FD9;&#x4E5F;&#x4F1A;&#x8BA9;&#x4F60;&#x7684;HTML&#x6587;&#x6863;&#x4E0D;&#x592A;&#x6B63;&#x89C4;&#x3002;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x901A;&#x8FC7;Javascript&#x7684;&#x5224;&#x65AD;&#x6765;&#x5B9E;&#x73B0;&#x6700;&#x5C0F;&#x5BBD;&#x5EA6;&#x3002;</p>
-</li>
-<li><p>DIV&#x6D6E;&#x52A8;IE&#x6587;&#x672C;&#x4EA7;&#x751F;3&#x8C61;&#x7D20;&#x7684;bug</p>
-<p>&#x5DE6;&#x8FB9;&#x5BF9;&#x8C61;&#x6D6E;&#x52A8;&#xFF0C;&#x53F3;&#x8FB9;&#x91C7;&#x7528;&#x5916;&#x8865;&#x4E01;&#x7684;&#x5DE6;&#x8FB9;&#x8DDD;&#x6765;&#x5B9A;&#x4F4D;&#xFF0C;&#x53F3;&#x8FB9;&#x5BF9;&#x8C61;&#x5185;&#x7684;&#x6587;&#x672C;&#x4F1A;&#x79BB;&#x5DE6;&#x8FB9;&#x6709;3px&#x7684;&#x95F4;&#x8DDD;. </p>
-<pre><code>#box{ float:left; width:800px;} 
-#left{ float:left; width:50%;} 
-#right{ width:50%;} 
-*html #left{ margin-right:-3px; //&#x8FD9;&#x53E5;&#x662F;&#x5173;&#x952E;} 
-
-&lt;div id=&quot;box&quot;&gt;
-    &lt;div id=&quot;left&quot;&gt;&#xFF1C;/div&gt;
-    &lt;div id=&quot;right&quot;&gt;&#xFF1C;/div&gt;
-&lt;/div&gt;
-</code></pre></li>
-<li><p>IE&#x6349;&#x8FF7;&#x85CF;&#x7684;&#x95EE;&#x9898;</p>
-<p>&#x5F53;div&#x5E94;&#x7528;&#x590D;&#x6742;&#x7684;&#x65F6;&#x5019;&#x6BCF;&#x4E2A;&#x680F;&#x4E2D;&#x53C8;&#x6709;&#x4E00;&#x4E9B;&#x94FE;&#x63A5;&#xFF0C;DIV&#x7B49;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5BB9;&#x6613;&#x53D1;&#x751F;&#x6349;&#x8FF7;&#x85CF;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
-<p>&#x6709;&#x4E9B;&#x5185;&#x5BB9;&#x663E;&#x793A;&#x4E0D;&#x51FA;&#x6765;&#xFF0C;&#x5F53;&#x9F20;&#x6807;&#x9009;&#x62E9;&#x8FD9;&#x4E2A;&#x533A;&#x57DF;&#x662F;&#x53D1;&#x73B0;&#x5185;&#x5BB9;&#x786E;&#x5B9E;&#x5728;&#x9875;&#x9762;&#x3002;</p>
-<p>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF1A;&#x5BF9;#layout&#x4F7F;&#x7528;line-height&#x5C5E;&#x6027;&#x6216;&#x8005;&#x7ED9;#layout&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x9AD8;&#x548C;&#x5BBD;&#x3002;&#x9875;&#x9762;&#x7ED3;&#x6784;&#x5C3D;&#x91CF;&#x7B80;&#x5355;&#x3002;</p>
-</li>
-<li><p>float&#x7684;div&#x95ED;&#x5408;;&#x6E05;&#x9664;&#x6D6E;&#x52A8;;&#x81EA;&#x9002;&#x5E94;&#x9AD8;&#x5EA6;</p>
-<p>&#x2460; &#x4F8B;&#x5982;&#xFF1A;&#xFF1C;div id=&#x201D;floatA&#x201D;&gt;&#xFF1C;div id=&#x201D;floatB&#x201D;&gt;&#xFF1C;div id=&#x201D;NOTfloatC&#x201D;&gt;</p>
-<p>&#x8FD9;&#x91CC;&#x7684;NOTfloatC&#x5E76;&#x4E0D;&#x5E0C;&#x671B;&#x7EE7;&#x7EED;&#x5E73;&#x79FB;&#xFF0C;&#x800C;&#x662F;&#x5E0C;&#x671B;&#x5F80;&#x4E0B;&#x6392;&#x3002;(&#x5176;&#x4E2D;floatA&#x3001;floatB&#x7684;&#x5C5E;&#x6027;&#x5DF2;&#x7ECF;&#x8BBE;&#x7F6E;&#x4E3A;float:left;) </p>
-<p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5728;IE&#x4E2D;&#x6BEB;&#x65E0;&#x95EE;&#x9898;&#xFF0C;&#x95EE;&#x9898;&#x51FA;&#x5728;FF&#x3002;&#x539F;&#x56E0;&#x662F;NOTfloatC&#x5E76;&#x975E;float&#x6807;&#x7B7E;&#xFF0C;&#x5FC5;&#x987B;&#x5C06;float&#x6807;&#x7B7E;&#x95ED;&#x5408;&#x3002;&#x5728;&#xFF1C;div class=&#x201D;floatB&#x201D;&gt;&#xFF1C;div class=&#x201D;NOTfloatC&#x201D;&gt;&#x4E4B;&#x95F4;&#x52A0;&#x4E0A;&#xFF1C;div class=&#x201D;clear&#x201D;&gt;&#x8FD9;&#x4E2A;div&#x4E00;&#x5B9A;&#x8981;&#x6CE8;&#x610F;&#x4F4D;&#x7F6E;&#xFF0C;&#x800C;&#x4E14;&#x5FC5;&#x987B;&#x4E0E;&#x4E24;&#x4E2A;&#x5177;&#x6709;float&#x5C5E;&#x6027;&#x7684;div&#x540C;&#x7EA7;&#xFF0C;&#x4E4B;&#x95F4;&#x4E0D;&#x80FD;&#x5B58;&#x5728;&#x5D4C;&#x5957;&#x5173;&#x7CFB;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x4EA7;&#x751F;&#x5F02;&#x5E38;&#x3002;&#x5E76;&#x4E14;&#x5C06;clear&#x8FD9;&#x79CD;&#x6837;&#x5F0F;&#x5B9A;&#x4E49;&#x4E3A;&#x4E3A;&#x5982;&#x4E0B;&#x5373;&#x53EF;&#xFF1A;.clear{clear:both;}</p>
-<p>&#x2461;&#x4F5C;&#x4E3A;&#x5916;&#x90E8; wrapper &#x7684; div &#x4E0D;&#x8981;&#x5B9A;&#x6B7B;&#x9AD8;&#x5EA6;,&#x4E3A;&#x4E86;&#x8BA9;&#x9AD8;&#x5EA6;&#x80FD;&#x81EA;&#x9002;&#x5E94;&#xFF0C;&#x8981;&#x5728;wrapper&#x91CC;&#x9762;&#x52A0;&#x4E0A;overflow:hidden; &#x5F53;&#x5305;&#x542B;float&#x7684;box&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9AD8;&#x5EA6;&#x81EA;&#x9002;&#x5E94;&#x5728;IE&#x4E0B;&#x65E0;&#x6548;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x5E94;&#x8BE5;&#x89E6;&#x53D1;IE&#x7684;layout&#x79C1;&#x6709;&#x5C5E;&#x6027;(&#x4E07;&#x6076;&#x7684;IE&#x554A;&#xFF01;)&#x7528;zoom:1;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x8FBE;&#x5230;&#x4E86;&#x517C;&#x5BB9;&#x3002;<br>&#x4F8B;&#x5982;&#x67D0;&#x4E00;&#x4E2A;wrapper&#x5982;&#x4E0B;&#x5B9A;&#x4E49;&#xFF1A;</p>
-<pre><code>.colwrapper{overflow:hidden; zoom:1; margin:5px auto;}
-</code></pre><p>&#x2462;&#x5BF9;&#x4E8E;&#x6392;&#x7248;,&#x6211;&#x4EEC;&#x7528;&#x5F97;&#x6700;&#x591A;&#x7684;css&#x63CF;&#x8FF0;&#x53EF;&#x80FD;&#x5C31;&#x662F;float:left.&#x6709;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;n&#x680F;&#x7684;float div&#x540E;&#x9762;&#x505A;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x80CC;&#x666F;,&#x8B6C;&#x5982;: </p>
-<pre><code>&lt;div id=&#x201D;page&#x201D;&gt;
-    &lt;div id=&#x201D;left&#x201D;&gt;&#xFF1C;/div&gt;
-    &lt;div id=&#x201D;center&#x201D;&gt;&#xFF1C;/div&gt;
-    &lt;div id=&#x201D;right&#x201D;&gt;&#xFF1C;/div&gt;
-&lt;/div&gt;
-</code></pre><p>&#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x8981;&#x5C06;page&#x7684;&#x80CC;&#x666F;&#x8BBE;&#x7F6E;&#x6210;&#x84DD;&#x8272;,&#x4EE5;&#x8FBE;&#x5230;&#x6240;&#x6709;&#x4E09;&#x680F;&#x7684;&#x80CC;&#x666F;&#x989C;&#x8272;&#x662F;&#x84DD;&#x8272;&#x7684;&#x76EE;&#x7684;,&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x4F1A;&#x53D1;&#x73B0;&#x968F;&#x7740;left center right&#x7684;&#x5411;&#x4E0B;&#x62C9;&#x957F;,&#x800C;page&#x5C45;&#x7136;&#x4FDD;&#x5B58;&#x9AD8;&#x5EA6;&#x4E0D;&#x53D8;,&#x95EE;&#x9898;&#x6765;&#x4E86;,&#x539F;&#x56E0;&#x5728;&#x4E8E;page&#x4E0D;&#x662F;float&#x5C5E;&#x6027;,&#x800C;&#x6211;&#x4EEC;&#x7684;page&#x7531;&#x4E8E;&#x8981;&#x5C45;&#x4E2D;,&#x4E0D;&#x80FD;&#x8BBE;&#x7F6E;&#x6210;float,&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x8FD9;&#x6837;&#x89E3;&#x51B3;&#xFF1A;</p>
-<pre><code>&lt;div id=&#x201D;page&#x201D;&gt;
-    &lt;div id=&#x201D;bg&#x201D; style=&#x201D;float:left;width:100%&#x201D;&gt;
-        &lt;div id=&#x201D;left&#x201D;&gt;&#xFF1C;/div&gt;
-        &lt;div id=&#x201D;center&#x201D;&gt;&#xFF1C;/div&gt;
-        &lt;div id=&#x201D;right&#x201D;&gt;&#xFF1C;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>&#x518D;&#x5D4C;&#x5165;&#x4E00;&#x4E2A;float left&#x800C;&#x5BBD;&#x5EA6;&#x662F;100%&#x7684;DIV&#x89E3;&#x51B3;&#x4E4B;&#x3002;<br>&#x2463;&#x4E07;&#x80FD;float &#x95ED;&#x5408;(&#x975E;&#x5E38;&#x91CD;&#x8981;!)<br>&#x5173;&#x4E8E; clear float &#x7684;&#x539F;&#x7406;&#x53EF;&#x53C2;&#x89C1; [How To Clear Floats     Without Structural Markup],&#x5C06;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x52A0;&#x5165;Global CSS &#x4E2D;,    &#x7ED9;&#x9700;&#x8981;&#x95ED;&#x5408;&#x7684;div&#x52A0;&#x4E0A;class=&#x201D;clearfix&#x201D; &#x5373;&#x53EF;,&#x5C61;&#x8BD5;&#x4E0D;&#x723D;&#x3002;</p>
-<p>/<em> Clear Fix </em>/<br>.clearfix:after { content:&#x201D;.&#x201D;; display:block; height:0; clear:both; visibility:hidden; }<br>.clearfix { display:inline-block; }<br>/<em> Hide from IE Mac </em>/<br>.clearfix {display:block;}<br>/<em> End hide from IE Mac </em>/<br>/<em> end of clearfix </em>/ </p>
-<p>&#x6216;&#x8005;&#x8FD9;&#x6837;&#x8BBE;&#x7F6E;&#xFF1A;.hackbox{ display:table; //&#x5C06;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x5757;&#x5143;&#x7D20;&#x7EA7;&#x7684;&#x8868;&#x683C;&#x663E;&#x793A;}</p>
-</li>
-<li><p>&#x9AD8;&#x5EA6;&#x4E0D;&#x9002;&#x5E94;</p>
-<p>&#x9AD8;&#x5EA6;&#x4E0D;&#x9002;&#x5E94;&#x662F;&#x5F53;&#x5185;&#x5C42;&#x5BF9;&#x8C61;&#x7684;&#x9AD8;&#x5EA6;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x5916;&#x5C42;&#x9AD8;&#x5EA6;&#x4E0D;&#x80FD;&#x81EA;&#x52A8;&#x8FDB;&#x884C;&#x8C03;&#x8282;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5F53;&#x5185;&#x5C42;&#x5BF9;&#x8C61;&#x4F7F;&#x7528;margin &#x6216;padding&#x65F6;&#x3002;</p>
-<p>&#x4F8B;&#xFF1A;</p>
-<pre><code>#box {background-color:#eee; } 
-#box p {margin-top: 20px;margin-bottom: 20px; text-align:center; } 
-</code></pre></li>
-</ol>
-<pre><code>    &lt;div id=&quot;box&quot;&gt;
-        &lt;p&gt;p&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF1C;/p&gt;
-    &lt;/div&gt;
-
-&#x89E3;&#x51B3;&#x6280;&#x5DE7;&#xFF1A;&#x5728;P&#x5BF9;&#x8C61;&#x4E0A;&#x4E0B;&#x5404;&#x52A0;2&#x4E2A;&#x7A7A;&#x7684;div&#x5BF9;&#x8C61;CSS&#x4EE3;&#x7801;{height:    0px;overflow:hidden;}&#x6216;&#x8005;&#x4E3A;DIV&#x52A0;&#x4E0A;border&#x5C5E;&#x6027;&#x3002;
-</code></pre><ol>
-<li><p>IE6&#x4E0B;&#x56FE;&#x7247;&#x4E0B;&#x6709;&#x7A7A;&#x9699;&#x4EA7;&#x751F;</p>
-<p>&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;BUG&#x7684;&#x6280;&#x5DE7;&#x6709;&#x5F88;&#x591A;,&#x53EF;&#x4EE5;&#x662F;&#x6539;&#x53D8;html&#x7684;&#x6392;&#x7248;,&#x6216;&#x8005;&#x8BBE;&#x7F6E;img&#x4E3A;    display:block&#x6216;&#x8005;&#x8BBE;&#x7F6E;vertical-align&#x5C5E;&#x6027;&#x4E3A;vertical-    align:top/bottom/middle/text-bottom &#x90FD;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;.</p>
-</li>
-<li><p>&#x5BF9;&#x9F50;&#x6587;&#x672C;&#x4E0E;&#x6587;&#x672C;&#x8F93;&#x5165;&#x6846;</p>
-<p>&#x52A0;&#x4E0A;vertical-align:middle; </p>
-<pre><code>&lt;style type=&quot;text/css&quot;&gt;
-&lt;!--
-input { 
-width:200px; 
-height:30px; 
-border:1px solid red; 
-vertical-align:middle; 
-} 
---&gt;
-&lt;/style&gt;
-</code></pre><p>&#x7ECF;&#x9A8C;&#x8BC1;&#xFF0C;&#x5728;IE&#x4E0B;&#x4EFB;&#x4E00;&#x7248;&#x672C;&#x90FD;&#x4E0D;&#x9002;&#x7528;&#xFF0C;&#x800C;ff&#x3001;opera&#x3001;safari&#x3001;chrome&#x5747;OK&#xFF01;</p>
-</li>
-<li><p>LI&#x4E2D;&#x5185;&#x5BB9;&#x8D85;&#x8FC7;&#x957F;&#x5EA6;&#x540E;&#x4EE5;&#x7701;&#x7565;&#x53F7;&#x663E;&#x793A;</p>
-<p>&#x6B64;&#x6280;&#x5DE7;&#x9002;&#x7528;&#x4E0E;IE&#x3001;Opera&#x3001;safari&#x3001;chrom&#x6D4F;&#x89C8;&#x5668;&#xFF0C;FF&#x6682;&#x4E0D;&#x652F;&#x6301;&#x3002;</p>
-<pre><code>&lt;style type=&quot;text/css&quot;&gt;
-&lt;!--
-li { 
-    width:200px; 
-    white-space:nowrap; 
-    text-overflow:ellipsis; 
-    -o-text-overflow:ellipsis; 
-    overflow: hidden; 
-}
---&gt;
-&lt;/style&gt;
-</code></pre></li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;web&#x6807;&#x51C6;&#x4E2D;IE&#x65E0;&#x6CD5;&#x8BBE;&#x7F6E;&#x6EDA;&#x52A8;&#x6761;&#x989C;&#x8272;&#x4E86;</p>
-<p>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#x5C06;body&#x6362;&#x6210;html </p>
-<p>&lt;!DOCTYPE html PUBLIC &#x201C;-//W3C//DTD XHTML 1.0 Strict//    EN&#x201D; &#x201C;<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-</a>    strict.dtd&#x201D;&gt;</p>
-<meta http-equiv="Content-Type" content="text/html;     charset=gb2312">
-
-<pre><code>&lt;style type=&quot;text/css&quot;&gt;
-&lt;!-- 
-html { 
-scrollbar-face-color:#f6f6f6; 
-scrollbar-highlight-color:#fff; 
-scrollbar-shadow-color:#eeeeee; 
-scrollbar-3dlight-color:#eeeeee; 
-scrollbar-arrow-color:#000; 
-scrollbar-track-color:#fff; 
-scrollbar-darkshadow-color:#fff; 
-} 
---&gt;
-&#xFF1C;/style&gt;
-</code></pre></li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x65E0;&#x6CD5;&#x5B9A;&#x4E49;1px&#x5DE6;&#x53F3;&#x9AD8;&#x5EA6;&#x7684;&#x5BB9;&#x5668;</p>
-<p>IE6&#x4E0B;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;&#x884C;&#x9AD8;&#x9020;&#x6210;&#x7684;,&#x89E3;&#x51B3;&#x7684;&#x6280;&#x5DE7;&#x4E5F;&#x6709;&#x5F88;&#x591A;&#xFF1A;</p>
-<p>&#x4F8B;&#x5982;:overflow:hidden&#x3000; zoom:0.08 &#x3000; line-height:1px</p>
-</li>
-<li><p>&#x600E;&#x4E48;&#x6837;&#x624D;&#x80FD;&#x8BA9;&#x5C42;&#x663E;&#x793A;&#x5728;FLASH&#x4E4B;&#x4E0A;&#x5462;</p>
-<p>&#x89E3;&#x51B3;&#x7684;&#x529E;&#x6CD5;&#x662F;&#x7ED9;FLASH&#x8BBE;&#x7F6E;&#x900F;&#x660E;</p>
-<pre><code>&lt;param name=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;
-</code></pre></li>
-<li><p>&#x94FE;&#x63A5;(a&#x6807;&#x7B7E;)&#x7684;&#x8FB9;&#x6846;&#x4E0E;&#x80CC;&#x666F;</p>
-<p>a&#x94FE;&#x63A5;&#x52A0;&#x8FB9;&#x6846;&#x548C;&#x80CC;&#x666F;&#x8272;&#xFF0C;&#x9700;&#x8BBE;&#x7F6E; display: block, &#x540C;&#x65F6;&#x8BBE;&#x7F6E; float: left &#x4FDD;&#x8BC1;&#x4E0D;&#x6362;&#x884C;&#x3002;&#x53C2;&#x7167;menubar, &#x7ED9; a &#x548C;menubar&#x8BBE;&#x7F6E;&#x9AD8;&#x5EA6;&#x662F;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x5E95;&#x8FB9;&#x663E;&#x793A;&#x9519;&#x4F4D;, &#x82E5;&#x4E0D;&#x8BBE; height, &#x53EF;&#x4EE5;&#x5728;menubar&#x4E2D;&#x63D2;&#x5165;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x3002;</p>
-</li>
-<li><p>&#x8D85;&#x94FE;&#x63A5;&#x8BBF;&#x95EE;&#x8FC7;&#x540E;hover&#x6837;&#x5F0F;&#x5C31;&#x4E0D;&#x51FA;&#x73B0;&#x7684;&#x95EE;&#x9898;</p>
-<p>&#x88AB;&#x70B9;&#x51FB;&#x8BBF;&#x95EE;&#x8FC7;&#x7684;&#x8D85;&#x94FE;&#x63A5;&#x6837;&#x5F0F;&#x4E0D;&#x5728;&#x5177;&#x6709;hover&#x548C;active&#x4E86;,&#x5F88;&#x591A;&#x4EBA;&#x5E94;&#x8BE5;&#x90FD;    &#x9047;&#x5230;&#x8FC7;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;,&#x89E3;&#x51B3;&#x6280;&#x5DE7;&#x662F;&#x6539;&#x53D8;CSS&#x5C5E;&#x6027;&#x7684;&#x6392;&#x5217;&#x987A;&#x5E8F;: L-V-H-A </p>
-<p>Code: </p>
-<pre><code>&lt;style type=&quot;text/css&quot;&gt;
-&lt;!--
-a:link {} 
-a:visited {} 
-a:hover {} 
-a:active {} 
---&gt;
-&lt;/style&gt;
-</code></pre></li>
-<li><p>FORM&#x6807;&#x7B7E;</p>
-<p>&#x8FD9;&#x4E2A;&#x6807;&#x7B7E;&#x5728;IE&#x4E2D;,&#x5C06;&#x4F1A;&#x81EA;&#x52A8;margin&#x4E00;&#x4E9B;&#x8FB9;&#x8DDD;,&#x800C;&#x5728;FF&#x4E2D;margin&#x5219;&#x662F;0,&#x56E0;&#x6B64;,&#x5982;&#x679C;&#x60F3;&#x663E;&#x793A;&#x4E00;&#x81F4;,&#x6240;&#x4EE5;&#x6700;&#x597D;&#x5728;css&#x4E2D;&#x6307;&#x5B9A;margin&#x548C; padding,&#x9488;&#x5BF9;&#x4E0A;&#x9762;&#x4E24;&#x4E2A;&#x95EE;&#x9898;,&#x6211;&#x7684;css&#x4E2D;&#x4E00;&#x822C;&#x9996;&#x5148;&#x90FD;&#x4F7F;&#x7528;&#x8FD9;&#x6837;&#x7684;&#x6837;&#x5F0F;ul,form{margin:0;padding:0;}&#x3002;</p>
-</li>
-<li><p>&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;(&#x8FD9;&#x4E2A;&#x4E0D;&#x80FD;&#x7B97;&#x662F;&#x517C;&#x5BB9;,&#x662F;&#x9690;&#x85CF;css&#x7684;&#x4E00;&#x4E2A;bug)</p>
-<p>p[id]{}div[id]{} </p>
-<p>&#x8FD9;&#x4E2A;&#x5BF9;&#x4E8E;IE6.0&#x548C;IE6.0&#x4EE5;&#x4E0B;&#x7684;&#x7248;&#x672C;&#x90FD;&#x9690;&#x85CF;,FF&#x548C;OPera&#x4F5C;&#x7528;.&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;&#x548C;&#x5B50;&#x9009;&#x62E9;&#x5668;&#x8FD8;&#x662F;&#x6709;&#x533A;&#x522B;&#x7684;,&#x5B50;&#x9009;&#x62E9;&#x5668;&#x7684;&#x8303;&#x56F4;&#x4ECE;&#x5F62;&#x5F0F;&#x6765;&#x8BF4;&#x7F29;&#x5C0F;&#x4E86;,&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;&#x7684;&#x8303;&#x56F4;&#x6BD4;&#x8F83;&#x5927;,&#x5982;p[id]&#x4E2D;,&#x6240;&#x6709;p&#x6807;&#x7B7E;&#x4E2D;&#x6709;id&#x7684;&#x90FD;&#x662F;&#x540C;&#x6837;&#x5F0F;&#x7684;.</p>
-</li>
-<li><p>&#x4E3A;&#x4EC0;&#x4E48;FF&#x4E0B;&#x6587;&#x672C;&#x65E0;&#x6CD5;&#x6491;&#x5F00;&#x5BB9;&#x5668;&#x7684;&#x9AD8;&#x5EA6;</p>
-<p>&#x6807;&#x51C6;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x56FA;&#x5B9A;&#x9AD8;&#x5EA6;&#x503C;&#x7684;&#x5BB9;&#x5668;&#x662F;&#x4E0D;&#x4F1A;&#x8C61;IE6&#x91CC;&#x90A3;&#x6837;&#x88AB;&#x6491;&#x5F00;&#x7684;,&#x90A3;&#x6211;&#x53C8;&#x60F3;&#x56FA;&#x5B9A;&#x9AD8;&#x5EA6;,&#x53C8;&#x60F3;&#x80FD;&#x88AB;&#x6491;&#x5F00;&#x9700;&#x8981;&#x600E;&#x6837;&#x8BBE;&#x7F6E;&#x5462;&#xFF1F;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x53BB;&#x6389;height&#x8BBE;&#x7F6E;min-height:200px; &#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x7167;&#x987E;&#x4E0D;&#x8BA4;&#x8BC6;min-height&#x7684;IE6 &#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x5B9A;&#x4E49;:</p>
-<pre><code>{ 
-height:auto!important; 
-height:200px; 
-min-height:200px; 
-} 
-</code></pre></li>
-</ol>
-<p>&#x66F4;&#x591A;&#x8BF7;&#x67E5;&#x770B;&#xFF1A;<a href="http://www.jq-school.com/" target="_blank" rel="external">http://www.jq-school.com/</a></p>
-
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -852,7 +550,7 @@ min-height:200px;
       <footer id="footer">
   
 	<div id="footer-info" class="inner">
-	  &copy; 2016 walljay 
+	  &copy; 2017 walljay 
 	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
 	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
 	</div>

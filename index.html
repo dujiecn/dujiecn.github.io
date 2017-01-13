@@ -31,6 +31,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python二分法计算平方根" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/13/python二分法计算平方根/">python二分法计算平方根</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2017/01/13/python二分法计算平方根/" class="article-date">
+  <time datetime="2017-01-13T09:02:44.000Z" itemprop="datePublished">2017-01-13</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>#!/user/bin/python
+# coding=utf-8
+
+&apos;&apos;&apos;
+
+&apos;&apos;&apos;
+
+
+def sqrt(v,t = 0.0001):
+    &apos;&apos;&apos;
+        &#x4E8C;&#x5206;&#x6CD5;&#x8BA1;&#x7B97;&#x5E73;&#x65B9;&#x6839;     
+    &apos;&apos;&apos;
+    v = v + 0.0
+    s = 0
+    e = v / 2
+    r = 0
+    while((e - s) &gt; (t * 2)):
+        r = (s + e) / 2
+        if(r * r &gt; v): 
+            e = r
+        elif (r * r &lt; v):
+            s = r
+        else:
+            return r 
+
+    return r
+
+print sqrt(9)
+print sqrt(10,0.1)
+</code></pre>
+      
+
+      
+        
+    </div>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-springboot打包不进去第三方jar的问题" class="article article-type-post" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -972,63 +1035,9 @@ vim Dockerfile
 
 
   
-    <article id="post-java-security-KeyException" class="article article-type-post" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/15/java-security-KeyException/">java.security.KeyException</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      <a href="/2016/10/15/java-security-KeyException/" class="article-date">
-  <time datetime="2016-10-15T08:26:34.000Z" itemprop="datePublished">2016-10-15</time>
-</a>
-      
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&#x5728;centos&#x7CFB;&#x7EDF;&#x4E0A;&#x7528;openjdk1.7&#xFF0C; &#x7528;https&#x8BF7;&#x6C42;&#x5FAE;&#x4FE1;api&#xFF0C;&#x62A5;&#x9519;&#x5982;&#x4E0B;</p>
-<pre><code>Caused by: java.security.ProviderException: java.security.KeyException
-at sun.security.ec.ECKeyPairGenerator.generateKeyPair(ECKeyPairGenerator.java:146)
-at java.security.KeyPairGenerator$Delegate.generateKeyPair(KeyPairGenerator.java:704)
-at sun.security.ssl.ECDHCrypt.&lt;init&gt;(ECDHCrypt.java:78)
-at sun.security.ssl.ClientHandshaker.serverKeyExchange(ClientHandshaker.java:717)
-at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:278)
-at sun.security.ssl.Handshaker.processLoop(Handshaker.java:913)
-at sun.security.ssl.Handshaker.process_record(Handshaker.java:849)
-at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1035)
-at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1344)
-at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1371)
-... 52 more
-Caused by: java.security.KeyException
-at sun.security.ec.ECKeyPairGenerator.generateECKeyPair(Native Method)
-at sun.security.ec.ECKeyPairGenerator.generateKeyPair(ECKeyPairGenerator.java:126)
-... 61 more
-</code></pre><p>&#x89E3;&#x51B3;&#x65B9;&#x6848;</p>
-<p>&#x5347;&#x7EA7;nss</p>
-<pre><code>sudo yum upgrade nss
-</code></pre>
-      
-
-      
-        
-    </div>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -1053,7 +1062,7 @@ at sun.security.ec.ECKeyPairGenerator.generateKeyPair(ECKeyPairGenerator.java:12
       <footer id="footer">
   
 	<div id="footer-info" class="inner">
-	  &copy; 2016 walljay 
+	  &copy; 2017 walljay 
 	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
 	  - Theme <a href="https://github.com/Alex-fun/hexo-theme-jane/" target="_blank">Jane</a>
 	</div>
